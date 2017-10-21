@@ -1,0 +1,168 @@
+﻿using System.Collections;
+using System.Collections.Generic;
+using UnityEngine;
+
+public class playercontroller : MonoBehaviour {
+
+	public float moveSpeed;
+	public bool ifRight;
+	public bool Check1;
+
+	public bool grounded;
+	private SpriteRenderer mySpriteRenderer;
+
+	public bool OnDebris;
+	public float DecreaseSpeed;
+	private float currentSpeed;
+
+    public bool isAllMove;
+    public GameObject ViewPanel;
+    public GameObject PauseButton;
+
+	private TimeManager TimeManagerScript;
+    private FireAi FireAIscript;
+    private Animator MyAnimation;
+    private floorcounter FloorCounterScript;
+    private PlusSpeedManager PlusSpeedManagerScript;
+    private PowerupManager PowerupManagerScript;
+    private SwipeTest SwipeTestScript;
+    [SerializeField]
+    private LevelPass LevelPassScript;
+    public bool addSpeed;
+    public bool addStar;
+
+    public AudioSource BoltSfx;
+    public AudioSource StarSfx;
+    public AudioSource HopSfx;
+    public AudioSource Debri_destroy;
+	void start()
+	{	
+		ifRight = true;
+     
+	}
+	private void Awake()
+	{
+        FloorCounterScript = GetComponent<floorcounter>();
+		mySpriteRenderer = GetComponent<SpriteRenderer>();
+		TimeManagerScript = GameObject.Find ("countDown").GetComponent<TimeManager> ();
+        FireAIscript = GameObject.Find("Fire").GetComponent<FireAi>();
+        PlusSpeedManagerScript = GameObject.Find("plusspeedManager").GetComponent<PlusSpeedManager>();
+        PowerupManagerScript = GameObject.Find("PowerupManager").GetComponent<PowerupManager>();
+        LevelPassScript = GameObject.Find("Holder").GetComponent<LevelPass>();
+        SwipeTestScript = GameObject.Find("Swipe").GetComponent<SwipeTest>();
+ 
+        MyAnimation = GetComponent<Animator>();
+		currentSpeed = moveSpeed;
+	}
+	void Update ()
+	{
+        if (isAllMove) { 
+		if (grounded = GetComponent<Rigidbody2D>().IsTouchingLayers (LayerMask.GetMask("Ground"))) {
+            if (Check1)
+            {
+
+                if (ifRight)
+                {
+                    GetComponent<Rigidbody2D>().velocity = new Vector2(-moveSpeed, GetComponent<Rigidbody2D>().velocity.y);
+                    mySpriteRenderer.flipX = false;
+                }
+                else
+                {
+                    GetComponent<Rigidbody2D>().velocity = new Vector2(moveSpeed, GetComponent<Rigidbody2D>().velocity.y);
+                    mySpriteRenderer.flipX = true;
+                }
+
+            }
+            else
+            {
+
+            }
+			GetComponent<Rigidbody2D> ().constraints = RigidbodyConstraints2D.None | RigidbodyConstraints2D.FreezeRotation;
+            //SwipeTestScript.isSwipe = true;
+         
+		}
+		else {
+            HopSfx.Play();
+            //SwipeTestScript.isSwipe = false;
+			GetComponent<Rigidbody2D> ().constraints = RigidbodyConstraints2D.FreezePositionX | RigidbodyConstraints2D.FreezeRotation;
+			}
+        MyAnimation.SetBool("Grounded", grounded);
+        
+		if (OnDebris) {
+			moveSpeed = DecreaseSpeed;
+            PlusSpeedManagerScript.addSpeedActive = false;
+            //SwipeTestScript.isSwipe = false;
+       
+		}
+        MyAnimation.SetBool("OnDebris", !OnDebris);
+		if (!OnDebris) {
+			moveSpeed = currentSpeed;
+            //SwipeTestScript.isSwipe = true;
+            //PlusSpeedManagerScript.addSpeedActive = true;
+		    }
+       
+        }
+        MyAnimation.SetBool("addstar", !addStar);
+        if (PowerupManagerScript.powerupActive == true)
+        {
+            addStar = true;
+        }
+        else
+        {
+            addStar = false;
+        }
+        MyAnimation.SetBool("addspeed", !addSpeed);
+        if (PlusSpeedManagerScript.addSpeedActive == true)
+        {
+            addSpeed = true;
+        }
+        else
+        {
+            addSpeed = false;
+        }
+	}
+    void OnTriggerEnter2D(Collider2D other) 
+    {
+        if (other.gameObject.CompareTag("FireMain"))
+        {
+            FloorCounterScript.isNoFunction = false;
+            TimeManagerScript.isStopMainTime = false;
+            FireAIscript.minSpeed = 50;
+            ViewPanel.SetActive(true);
+            PauseButton.SetActive(false);
+            StartCoroutine(StopFireAnimation());
+             if (PlayerPrefs.HasKey("Building_L" + LevelPassScript.UnlockLevelAmt.ToString()))
+            {
+                PlayerPrefs.SetInt("Building_L" + LevelPassScript.UnlockLevelAmt.ToString(), LevelPassScript.RescuePointAmtCopy);
+            }
+        }
+        if (other.CompareTag("bolt"))
+        {
+            BoltSfx.Play();
+        }
+
+        if (other.CompareTag("Powerup"))
+        {
+            StarSfx.Play();
+        }
+        
+       
+       
+    }
+    void OnTriggerStay2D(Collider2D other)
+    {
+        if (other.CompareTag("debris"))
+        {
+            if (addStar == true)
+            {
+                Debri_destroy.Play();
+            }
+        }
+    }
+    IEnumerator StopFireAnimation()
+    {
+        yield return new WaitForSeconds(1);
+        FireAIscript.StartFire = false;
+    }
+    
+}

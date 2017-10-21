@@ -1,0 +1,21 @@
+fileFormatVersion: 2
+guid: e68a4d8d3d311944183399fe80563b20
+timeCreated: 1504140041
+licenseType: Pro
+TrueTypeFontImporter:
+  serializedVersion: 4
+  fontSize: 16
+  forceTextureCase: -2
+  characterSpacing: 0
+  characterPadding: 1
+  includeFontData: 1
+  fontName: Huxtable
+  fontNames:
+  - Huxtable
+  fallbackFontReferences: []
+  customCharacters: 
+  fontRenderingMode: 0
+  ascentCalculationMode: 1
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
