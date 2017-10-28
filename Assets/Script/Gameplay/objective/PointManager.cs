@@ -81,6 +81,7 @@ public class PointManager : MonoBehaviour {
         Pause.SetActive(false);
         NextLevelMethod();
         CheckerUnlock();
+        StarRateChecker();
         if (PlayerPrefs.GetInt("Building_L" + LevelPassScript.UnlockLevelAmt.ToString()) < LevelPassScript.RescueHolderPlayerPrefAmt )
         {
             if (PlayerPrefs.HasKey("Building_L" + LevelPassScript.UnlockLevelAmt.ToString()))
@@ -91,7 +92,7 @@ public class PointManager : MonoBehaviour {
             PlayerPrefs.SetInt("TotalRescuePoints", PlayerPrefs.GetInt("TotalRescuePoints") + LevelPassScript.RescueHolderPlayerPrefAmt);
             PlayerPrefs.SetInt("TotalRescuePoints", PlayerPrefs.GetInt("TotalRescuePoints") - LevelPassScript.RescuePointAmtCopy);
         }
-        StarRateChecker();
+
 		}
        
 	}

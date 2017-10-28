@@ -90,6 +90,10 @@ MonoBehaviour:
   CurrentButtonPassAmt: 0
   TargetLevel: {fileID: 0}
   CameraColorAmt: {r: 0, g: 0, b: 0, a: 0}
+  debriTipsAmt: 0
+  starTipsAmt: 0
+  boltTipsAmt: 0
+  shakeTipsAmt: 0
 --- !u!114 &114524376093691426
 MonoBehaviour:
   m_ObjectHideFlags: 1

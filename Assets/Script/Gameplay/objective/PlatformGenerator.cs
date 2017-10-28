@@ -39,6 +39,8 @@ public class PlatformGenerator : MonoBehaviour {
     public int prevRescue;
     public GameObject NewHolderOfPlatform;
     private DebriTrigger DebriTriggerScript;
+    [Header("RescueNewGenerate")]
+    public int RescueHolderDivided;
 	void Start()
 	{
 		platFormHeight = floor.GetComponent<BoxCollider2D>().size.y;
@@ -108,34 +110,48 @@ public class PlatformGenerator : MonoBehaviour {
                         }
                     }
                 }
-                //RescueGeneration
-                if (FloorCounterScript.CountFloorPlus >= FloorCounterScript.CheckCountPlus)
+               //
+                /*if (FloorCounterScript.MainFloorDecreaseDivided == 0)
                 {
-                    while (RescueSelector == prevRescue)
-                    {
-                        RescueSelector = Random.Range(0, RescuePointPooler.Length);
-                    }
-                if (Random.Range(0f, 100f) < RescuePointThreshold)
-                {
+                    FloorCounterScript.MainFloorDecreaseDivided = FloorCounterScript.MainFloorHolderDivided;
                     GameObject newRescue = RescuePointPooler[RescueSelector].GetPooledObject();
                     float RescueXposition = Random.Range(8, 12);
                     Vector3 rescuePosition = new Vector3(RescueXposition, RescuePointheight, 0f);
-                    //newRescue.gameObject.tag = "floor";
                     newRescue.transform.position = transform.position + rescuePosition;
                     newRescue.transform.rotation = transform.rotation;
                     newRescue.SetActive(true);
+
                     if (SetRescuePoint == AmountRescuePoint)
                     {
-                        RescuePointThreshold = 0;
                         newRescue.SetActive(false);
                     }
                     else
                     {
                         SetRescuePoint++;
                     }
-                }
-            }//newrrescuegeneration
-                //
+                }*/
+            //newrrescuegeneration----------------------------
+                        RescueHolderDivided = EndGenerate / 5;
+                        if (Counts % RescueHolderDivided ==0)
+                        {
+                            FloorCounterScript.MainFloorDecreaseDivided = FloorCounterScript.MainFloorHolderDivided;
+                            GameObject newRescue = RescuePointPooler[RescueSelector].GetPooledObject();
+                            float RescueXposition = Random.Range(8, 12);
+                            Vector3 rescuePosition = new Vector3(RescueXposition, RescuePointheight, 0f);
+                            newRescue.transform.position = transform.position + rescuePosition;
+                            newRescue.transform.rotation = transform.rotation;
+                            newRescue.SetActive(true);
+
+                            if (SetRescuePoint == AmountRescuePoint)
+                            {
+                                newRescue.SetActive(false);
+                            }
+                            else
+                            {
+                                SetRescuePoint++;
+                            }
+                        }
+            //----------------------------------------------
             //end
             }
         }

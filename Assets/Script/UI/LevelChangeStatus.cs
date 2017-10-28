@@ -28,6 +28,10 @@ public class LevelChangeStatus : MonoBehaviour {
         LevelPassScript.isShakeActivateAmt = LevelValueHolderScript.isShakeActivateValue;
         LevelPassScript.CameraColorAmt = LevelValueHolderScript.CameraColorValue;
         LevelPassScript.RescuePointAmt = LevelValueHolderScript.RescuePointValue;
+        LevelPassScript.debriTipsAmt = LevelValueHolderScript.debriTipsValue;
+        LevelPassScript.starTipsAmt = LevelValueHolderScript.starTipsValue;
+        LevelPassScript.shakeTipsAmt = LevelValueHolderScript.shakeTipsValue;
+        LevelPassScript.boltTipsAmt = LevelValueHolderScript.boltTipsValue;
         LevelPassScript.LevelStatusAmt = LevelPassScript.LevelStatusAmt + 1;
     }
 

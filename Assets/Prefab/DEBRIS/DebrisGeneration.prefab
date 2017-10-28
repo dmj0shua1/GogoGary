@@ -54,8 +54,8 @@ MonoBehaviour:
   debris: {fileID: 1558252485326980, guid: 4f7094790417ef3449d605926f1d513b, type: 2}
   generationPoint: {fileID: 0}
   distanceBetween: 10.6
-  theObjectPools:
-  - {fileID: 0}
+  theObjectPools: []
   randomDebrisThreshold: 0
   debrisPool: {fileID: 0}
-  IsActivate: 1
+  IsActivate: 0
+  FloorCounterScript: {fileID: 0}

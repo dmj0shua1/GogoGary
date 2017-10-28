@@ -18,7 +18,7 @@ public class debrisGeneration : MonoBehaviour {
     private LevelPass MainHolderScript;
     public floorcounter FloorCounterScript;
     private debrisZone DebriZoneScript;
-
+    private SlowMovement SlowMovementScript;
 	void Start()
 	{
 		debrisHeight = debris.GetComponent<BoxCollider2D>().size.y;
@@ -37,8 +37,6 @@ public class debrisGeneration : MonoBehaviour {
 
 	private void DebriGeneration()
 	{
-        if (IsActivate)
-        {
             if (FloorCounterScript.CountFloorPlus >= FloorCounterScript.CheckCountPlus)
             {
             if (transform.position.y > generationPoint.position.y)
@@ -56,10 +54,14 @@ public class debrisGeneration : MonoBehaviour {
                     DebriZoneScript = newDebris.gameObject.GetComponent<debrisZone>();
                     DebriZoneScript.MainDebCollider.enabled = false;
                     DebriZoneScript.deb.enabled = true;
+                    //SlowMovementScript = newDebris.gameObject.GetComponent<SlowMovement>();
+                    //SlowMovementScript.MyAnimation.SetBool("DestroyDeb", !SlowMovementScript.DestroyBool);
+                    
+                    
                     DebriZoneScript.DebrisBodyType.bodyType = RigidbodyType2D.Dynamic;
                     newDebris.SetActive(true);
                 }
-            }
+            
 
         }
       }

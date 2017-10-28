@@ -84,3 +84,4 @@ MonoBehaviour:
   RescueSelector: 0
   prevRescue: 0
   NewHolderOfPlatform: {fileID: 0}
+  RescueHolderDivided: 0

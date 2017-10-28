@@ -11,6 +11,7 @@ public class MainHolder : MonoBehaviour {
     public int ObjectivePass, FloorPass, StartingPass, DebrisPass, TimePass, HalfObjectivePass, UnlockedLevels,FireTriggerPass,PowerupPass,ButtonPass,LevelStatusPass,RescuePointPass,RescueHolderPrefPass;
     public bool isActivateTipsPass,isShakeActivatePass;
     public Color CameraColorPass;
+    public bool debriTipsPass, starTipsPass, boltTipsPass, shakeTipsPass;
     void Start() 
     {
         LevelPassScript = GameObject.Find("Holder").GetComponent<LevelPass>();
@@ -50,6 +51,10 @@ public class MainHolder : MonoBehaviour {
         LevelPassScript.RescuePointAmt = RescuePointPass;
         LevelPassScript.RescueHolderPlayerPrefAmt = RescueHolderPrefPass;
         LevelPassScript.RescuePointAmtCopy = RescueHolderPrefPass;
+        LevelPassScript.debriTipsAmt = debriTipsPass;
+        LevelPassScript.starTipsAmt = starTipsPass;
+        LevelPassScript.shakeTipsAmt = shakeTipsPass;
+        LevelPassScript.boltTipsAmt = boltTipsPass;
     }
     public void RescuePointZero() 
     {

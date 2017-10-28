@@ -35,6 +35,11 @@ public class playercontroller : MonoBehaviour {
     public AudioSource StarSfx;
     public AudioSource HopSfx;
     public AudioSource Debri_destroy;
+    public AudioSource Yes_rescue;
+    public AudioSource booSFX;
+    [SerializeField]
+    private playercontroller PlayerScript;
+    public GameObject temp;
 	void start()
 	{	
 		ifRight = true;
@@ -57,7 +62,8 @@ public class playercontroller : MonoBehaviour {
 	void Update ()
 	{
         if (isAllMove) { 
-		if (grounded = GetComponent<Rigidbody2D>().IsTouchingLayers (LayerMask.GetMask("Ground"))) {
+		if (grounded = GetComponent<Rigidbody2D>().IsTouchingLayers (LayerMask.GetMask("Ground"))) 
+        {
             if (Check1)
             {
 
@@ -82,26 +88,37 @@ public class playercontroller : MonoBehaviour {
          
 		}
 		else {
-            HopSfx.Play();
+            //HopSfx.Play();
             //SwipeTestScript.isSwipe = false;
 			GetComponent<Rigidbody2D> ().constraints = RigidbodyConstraints2D.FreezePositionX | RigidbodyConstraints2D.FreezeRotation;
 			}
-        MyAnimation.SetBool("Grounded", grounded);
-        
-		if (OnDebris) {
-			moveSpeed = DecreaseSpeed;
-            PlusSpeedManagerScript.addSpeedActive = false;
-            //SwipeTestScript.isSwipe = false;
-       
-		}
-        MyAnimation.SetBool("OnDebris", !OnDebris);
-		if (!OnDebris) {
-			moveSpeed = currentSpeed;
-            //SwipeTestScript.isSwipe = true;
-            //PlusSpeedManagerScript.addSpeedActive = true;
-		    }
-       
+        GaryHop();
+        HitOnDebris();
         }
+        GetStarAnimation();
+        GetBoltAnimation();
+	}
+    public void GaryHop() 
+    {
+        MyAnimation.SetBool("Grounded", grounded);
+        if (OnDebris)
+        {
+            moveSpeed = DecreaseSpeed;
+            PlusSpeedManagerScript.addSpeedActive = false;
+        }
+    }
+    public void HitOnDebris()
+    {
+        MyAnimation.SetBool("OnDebris", !OnDebris);
+        if (!OnDebris)
+        {
+            moveSpeed = currentSpeed;
+        }
+        
+    }
+
+    public void GetStarAnimation() 
+    {
         MyAnimation.SetBool("addstar", !addStar);
         if (PowerupManagerScript.powerupActive == true)
         {
@@ -111,6 +128,9 @@ public class playercontroller : MonoBehaviour {
         {
             addStar = false;
         }
+    }
+    public void GetBoltAnimation()
+    {
         MyAnimation.SetBool("addspeed", !addSpeed);
         if (PlusSpeedManagerScript.addSpeedActive == true)
         {
@@ -120,7 +140,8 @@ public class playercontroller : MonoBehaviour {
         {
             addSpeed = false;
         }
-	}
+    }
+
     void OnTriggerEnter2D(Collider2D other) 
     {
         if (other.gameObject.CompareTag("FireMain"))
@@ -130,7 +151,9 @@ public class playercontroller : MonoBehaviour {
             FireAIscript.minSpeed = 50;
             ViewPanel.SetActive(true);
             PauseButton.SetActive(false);
+            booSFX.Play();
             StartCoroutine(StopFireAnimation());
+            PlayerScript.enabled = false;
              if (PlayerPrefs.HasKey("Building_L" + LevelPassScript.UnlockLevelAmt.ToString()))
             {
                 PlayerPrefs.SetInt("Building_L" + LevelPassScript.UnlockLevelAmt.ToString(), LevelPassScript.RescuePointAmtCopy);
@@ -145,7 +168,14 @@ public class playercontroller : MonoBehaviour {
         {
             StarSfx.Play();
         }
-        
+        if (other.CompareTag("Man") || other.CompareTag("Woman"))
+        {
+            Yes_rescue.Play();
+        }
+        if (other.gameObject.CompareTag("Hitbox"))
+        {
+            HopSfx.Play();
+        }
        
        
     }

@@ -158,22 +158,22 @@ Prefab:
     - target: {fileID: 224763489228409114, guid: 9d6f9c057dce9804395b6f9bef9082ba,
         type: 2}
       propertyPath: m_AnchoredPosition.x
-      value: 743
+      value: 685
       objectReference: {fileID: 0}
     - target: {fileID: 224763489228409114, guid: 9d6f9c057dce9804395b6f9bef9082ba,
         type: 2}
       propertyPath: m_AnchoredPosition.y
-      value: -177
+      value: -173
       objectReference: {fileID: 0}
     - target: {fileID: 224763489228409114, guid: 9d6f9c057dce9804395b6f9bef9082ba,
         type: 2}
       propertyPath: m_SizeDelta.x
-      value: 238
+      value: 208
       objectReference: {fileID: 0}
     - target: {fileID: 224763489228409114, guid: 9d6f9c057dce9804395b6f9bef9082ba,
         type: 2}
       propertyPath: m_SizeDelta.y
-      value: 281
+      value: 245
       objectReference: {fileID: 0}
     - target: {fileID: 224763489228409114, guid: 9d6f9c057dce9804395b6f9bef9082ba,
         type: 2}
@@ -285,7 +285,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 56, y: 1513}
+  m_AnchoredPosition: {x: 25, y: 1513}
   m_SizeDelta: {x: 1478, y: 1478}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &16039858
@@ -395,7 +395,7 @@ Camera:
   m_Enabled: 1
   serializedVersion: 2
   m_ClearFlags: 1
-  m_BackGroundColor: {r: 0.46274513, g: 0.70980394, b: 0.24705884, a: 0}
+  m_BackGroundColor: {r: 0.22352943, g: 0.5568628, b: 0.23137257, a: 0}
   m_NormalizedViewPortRect:
     serializedVersion: 2
     x: 0
@@ -628,6 +628,10 @@ MonoBehaviour:
   isActivateTipsPass: 0
   isShakeActivatePass: 1
   CameraColorPass: {r: 0, g: 0, b: 0, a: 0}
+  debriTipsPass: 0
+  starTipsPass: 0
+  boltTipsPass: 0
+  shakeTipsPass: 0
 --- !u!114 &115126014 stripped
 MonoBehaviour:
   m_PrefabParentObject: {fileID: 114076639084672554, guid: 6e3c3592aa8b8f447843281b5e4e56f2,
@@ -792,22 +796,22 @@ Prefab:
     - target: {fileID: 224640473366438660, guid: c7c8c02e139848f40847dfd1f7568b24,
         type: 2}
       propertyPath: m_AnchoredPosition.x
-      value: 825
+      value: 827
       objectReference: {fileID: 0}
     - target: {fileID: 224640473366438660, guid: c7c8c02e139848f40847dfd1f7568b24,
         type: 2}
       propertyPath: m_AnchoredPosition.y
-      value: -424
+      value: -337
       objectReference: {fileID: 0}
     - target: {fileID: 224640473366438660, guid: c7c8c02e139848f40847dfd1f7568b24,
         type: 2}
       propertyPath: m_SizeDelta.x
-      value: 238
+      value: 208
       objectReference: {fileID: 0}
     - target: {fileID: 224640473366438660, guid: c7c8c02e139848f40847dfd1f7568b24,
         type: 2}
       propertyPath: m_SizeDelta.y
-      value: 281
+      value: 245
       objectReference: {fileID: 0}
     - target: {fileID: 224640473366438660, guid: c7c8c02e139848f40847dfd1f7568b24,
         type: 2}
@@ -839,21 +843,6 @@ Prefab:
       propertyPath: m_Pivot.y
       value: 0.5
       objectReference: {fileID: 0}
-    - target: {fileID: 114191356686224280, guid: c7c8c02e139848f40847dfd1f7568b24,
-        type: 2}
-      propertyPath: TestButtonObject
-      value: 
-      objectReference: {fileID: 1399447530}
-    - target: {fileID: 114191356686224280, guid: c7c8c02e139848f40847dfd1f7568b24,
-        type: 2}
-      propertyPath: MainHolderScript
-      value: 
-      objectReference: {fileID: 1399447529}
-    - target: {fileID: 114191356686224280, guid: c7c8c02e139848f40847dfd1f7568b24,
-        type: 2}
-      propertyPath: ButtonCameraViewScript
-      value: 
-      objectReference: {fileID: 2076944143}
     - target: {fileID: 114553066584276278, guid: c7c8c02e139848f40847dfd1f7568b24,
         type: 2}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
@@ -882,6 +871,21 @@ Prefab:
     - target: {fileID: 114553066584276278, guid: c7c8c02e139848f40847dfd1f7568b24,
         type: 2}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[6].m_Target
+      value: 
+      objectReference: {fileID: 2076944143}
+    - target: {fileID: 114191356686224280, guid: c7c8c02e139848f40847dfd1f7568b24,
+        type: 2}
+      propertyPath: TestButtonObject
+      value: 
+      objectReference: {fileID: 1399447530}
+    - target: {fileID: 114191356686224280, guid: c7c8c02e139848f40847dfd1f7568b24,
+        type: 2}
+      propertyPath: MainHolderScript
+      value: 
+      objectReference: {fileID: 1399447529}
+    - target: {fileID: 114191356686224280, guid: c7c8c02e139848f40847dfd1f7568b24,
+        type: 2}
+      propertyPath: ButtonCameraViewScript
       value: 
       objectReference: {fileID: 2076944143}
     m_RemovedComponents: []
@@ -1089,12 +1093,154 @@ MonoBehaviour:
   isActivateTipsPass: 0
   isShakeActivatePass: 0
   CameraColorPass: {r: 0, g: 0, b: 0, a: 0}
+  debriTipsPass: 0
+  starTipsPass: 0
+  boltTipsPass: 0
+  shakeTipsPass: 0
 --- !u!114 &153063180 stripped
 MonoBehaviour:
   m_PrefabParentObject: {fileID: 114076639084672554, guid: 6e3c3592aa8b8f447843281b5e4e56f2,
     type: 2}
   m_PrefabInternal: {fileID: 153063176}
   m_Script: {fileID: 1392445389, guid: f70555f144d8491a825f0804e09c671c, type: 3}
+--- !u!1 &198606268
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 1794894453775004, guid: 6bcddc3d2771d9e42a090b394517931e,
+    type: 2}
+  m_PrefabInternal: {fileID: 0}
+  serializedVersion: 5
+  m_Component:
+  - component: {fileID: 198606269}
+  - component: {fileID: 198606272}
+  - component: {fileID: 198606271}
+  - component: {fileID: 198606270}
+  m_Layer: 5
+  m_Name: MainMenu
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!224 &198606269
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 224557320380930608, guid: 6bcddc3d2771d9e42a090b394517931e,
+    type: 2}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 198606268}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1.0000001, y: 1.0000001, z: 1.0000001}
+  m_Children:
+  - {fileID: 1466636129}
+  m_Father: {fileID: 443927687}
+  m_RootOrder: 4
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 1, y: 1}
+  m_AnchorMax: {x: 1, y: 1}
+  m_AnchoredPosition: {x: -86, y: -1356}
+  m_SizeDelta: {x: 209, y: 189}
+  m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &198606270
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 114664907802246190, guid: 6bcddc3d2771d9e42a090b394517931e,
+    type: 2}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 198606268}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 1392445389, guid: f70555f144d8491a825f0804e09c671c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Navigation:
+    m_Mode: 3
+    m_SelectOnUp: {fileID: 0}
+    m_SelectOnDown: {fileID: 0}
+    m_SelectOnLeft: {fileID: 0}
+    m_SelectOnRight: {fileID: 0}
+  m_Transition: 1
+  m_Colors:
+    m_NormalColor: {r: 1, g: 1, b: 1, a: 1}
+    m_HighlightedColor: {r: 0.9607843, g: 0.9607843, b: 0.9607843, a: 1}
+    m_PressedColor: {r: 0.78431374, g: 0.78431374, b: 0.78431374, a: 1}
+    m_DisabledColor: {r: 0.78431374, g: 0.78431374, b: 0.78431374, a: 0.5019608}
+    m_ColorMultiplier: 1
+    m_FadeDuration: 0.1
+  m_SpriteState:
+    m_HighlightedSprite: {fileID: 0}
+    m_PressedSprite: {fileID: 0}
+    m_DisabledSprite: {fileID: 0}
+  m_AnimationTriggers:
+    m_NormalTrigger: Normal
+    m_HighlightedTrigger: Highlighted
+    m_PressedTrigger: Pressed
+    m_DisabledTrigger: Disabled
+  m_Interactable: 1
+  m_TargetGraphic: {fileID: 198606271}
+  m_OnClick:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 1755987155}
+        m_MethodName: select
+        m_Mode: 3
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 1373480750}
+        m_MethodName: playSfx
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+    m_TypeName: UnityEngine.UI.Button+ButtonClickedEvent, UnityEngine.UI, Version=1.0.0.0,
+      Culture=neutral, PublicKeyToken=null
+--- !u!114 &198606271
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 114628080230395888, guid: 6bcddc3d2771d9e42a090b394517931e,
+    type: 2}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 198606268}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: -765806418, guid: f70555f144d8491a825f0804e09c671c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Material: {fileID: 0}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_RaycastTarget: 1
+  m_OnCullStateChanged:
+    m_PersistentCalls:
+      m_Calls: []
+    m_TypeName: UnityEngine.UI.MaskableGraphic+CullStateChangedEvent, UnityEngine.UI,
+      Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
+  m_Sprite: {fileID: 21300000, guid: 835e9b5ac1d5fe847b3d792312bfcf53, type: 3}
+  m_Type: 1
+  m_PreserveAspect: 0
+  m_FillCenter: 1
+  m_FillMethod: 4
+  m_FillAmount: 1
+  m_FillClockwise: 1
+  m_FillOrigin: 0
+--- !u!222 &198606272
+CanvasRenderer:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 222882280956365800, guid: 6bcddc3d2771d9e42a090b394517931e,
+    type: 2}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 198606268}
 --- !u!1 &200050933 stripped
 GameObject:
   m_PrefabParentObject: {fileID: 1574636069899718, guid: fc8415ec5e03dff45b33b4721224e3c6,
@@ -1198,6 +1344,17 @@ MonoBehaviour:
         m_CallState: 2
       - m_Target: {fileID: 1399447529}
         m_MethodName: Checkbutton
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 1373480750}
+        m_MethodName: playSfx
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -1464,7 +1621,7 @@ MonoBehaviour:
     m_TypeName: UnityEngine.UI.MaskableGraphic+CullStateChangedEvent, UnityEngine.UI,
       Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
   m_FontData:
-    m_Font: {fileID: 12800000, guid: 226ff3673f53af4478e4017ade30041a, type: 3}
+    m_Font: {fileID: 12800000, guid: ccd80c304bcfc154193cc40605749349, type: 3}
     m_FontSize: 58
     m_FontStyle: 0
     m_BestFit: 0
@@ -1533,22 +1690,22 @@ Prefab:
     - target: {fileID: 224364304416612530, guid: 2fc4057b1275aa944a09ca5512747947,
         type: 2}
       propertyPath: m_AnchoredPosition.x
-      value: 577
+      value: 479
       objectReference: {fileID: 0}
     - target: {fileID: 224364304416612530, guid: 2fc4057b1275aa944a09ca5512747947,
         type: 2}
       propertyPath: m_AnchoredPosition.y
-      value: -26
+      value: 60
       objectReference: {fileID: 0}
     - target: {fileID: 224364304416612530, guid: 2fc4057b1275aa944a09ca5512747947,
         type: 2}
       propertyPath: m_SizeDelta.x
-      value: 238
+      value: 208
       objectReference: {fileID: 0}
     - target: {fileID: 224364304416612530, guid: 2fc4057b1275aa944a09ca5512747947,
         type: 2}
       propertyPath: m_SizeDelta.y
-      value: 281
+      value: 245
       objectReference: {fileID: 0}
     - target: {fileID: 224364304416612530, guid: 2fc4057b1275aa944a09ca5512747947,
         type: 2}
@@ -1580,21 +1737,6 @@ Prefab:
       propertyPath: m_Pivot.y
       value: 0.5
       objectReference: {fileID: 0}
-    - target: {fileID: 114185021036101552, guid: 2fc4057b1275aa944a09ca5512747947,
-        type: 2}
-      propertyPath: TestButtonObject
-      value: 
-      objectReference: {fileID: 1399447530}
-    - target: {fileID: 114185021036101552, guid: 2fc4057b1275aa944a09ca5512747947,
-        type: 2}
-      propertyPath: MainHolderScript
-      value: 
-      objectReference: {fileID: 1399447529}
-    - target: {fileID: 114185021036101552, guid: 2fc4057b1275aa944a09ca5512747947,
-        type: 2}
-      propertyPath: ButtonCameraViewScript
-      value: 
-      objectReference: {fileID: 2076944143}
     - target: {fileID: 114601540336891706, guid: 2fc4057b1275aa944a09ca5512747947,
         type: 2}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
@@ -1623,6 +1765,21 @@ Prefab:
     - target: {fileID: 114601540336891706, guid: 2fc4057b1275aa944a09ca5512747947,
         type: 2}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[6].m_Target
+      value: 
+      objectReference: {fileID: 2076944143}
+    - target: {fileID: 114185021036101552, guid: 2fc4057b1275aa944a09ca5512747947,
+        type: 2}
+      propertyPath: TestButtonObject
+      value: 
+      objectReference: {fileID: 1399447530}
+    - target: {fileID: 114185021036101552, guid: 2fc4057b1275aa944a09ca5512747947,
+        type: 2}
+      propertyPath: MainHolderScript
+      value: 
+      objectReference: {fileID: 1399447529}
+    - target: {fileID: 114185021036101552, guid: 2fc4057b1275aa944a09ca5512747947,
+        type: 2}
+      propertyPath: ButtonCameraViewScript
       value: 
       objectReference: {fileID: 2076944143}
     m_RemovedComponents: []
@@ -1830,6 +1987,10 @@ MonoBehaviour:
   isActivateTipsPass: 0
   isShakeActivatePass: 0
   CameraColorPass: {r: 0, g: 0, b: 0, a: 0}
+  debriTipsPass: 0
+  starTipsPass: 0
+  boltTipsPass: 0
+  shakeTipsPass: 0
 --- !u!114 &379175180 stripped
 MonoBehaviour:
   m_PrefabParentObject: {fileID: 114076639084672554, guid: 6e3c3592aa8b8f447843281b5e4e56f2,
@@ -1925,14 +2086,57 @@ RectTransform:
   - {fileID: 1077682969}
   - {fileID: 895829874}
   - {fileID: 134052918}
+  - {fileID: 198606269}
   m_Father: {fileID: 0}
-  m_RootOrder: 7
+  m_RootOrder: 8
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
   m_AnchoredPosition: {x: 540, y: 960}
   m_SizeDelta: {x: 800, y: 1422.2222}
   m_Pivot: {x: 0.5, y: 0.5}
+--- !u!1001 &466669134
+Prefab:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 4673451796441518, guid: 3888c8ee3a9fa6341b59cf2f3bffa7ce, type: 2}
+      propertyPath: m_LocalPosition.x
+      value: 772.66296
+      objectReference: {fileID: 0}
+    - target: {fileID: 4673451796441518, guid: 3888c8ee3a9fa6341b59cf2f3bffa7ce, type: 2}
+      propertyPath: m_LocalPosition.y
+      value: 3639.9053
+      objectReference: {fileID: 0}
+    - target: {fileID: 4673451796441518, guid: 3888c8ee3a9fa6341b59cf2f3bffa7ce, type: 2}
+      propertyPath: m_LocalPosition.z
+      value: 17.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 4673451796441518, guid: 3888c8ee3a9fa6341b59cf2f3bffa7ce, type: 2}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4673451796441518, guid: 3888c8ee3a9fa6341b59cf2f3bffa7ce, type: 2}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4673451796441518, guid: 3888c8ee3a9fa6341b59cf2f3bffa7ce, type: 2}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4673451796441518, guid: 3888c8ee3a9fa6341b59cf2f3bffa7ce, type: 2}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4673451796441518, guid: 3888c8ee3a9fa6341b59cf2f3bffa7ce, type: 2}
+      propertyPath: m_RootOrder
+      value: 7
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_ParentPrefab: {fileID: 100100000, guid: 3888c8ee3a9fa6341b59cf2f3bffa7ce, type: 2}
+  m_IsPrefabParent: 0
 --- !u!1001 &467465286
 Prefab:
   m_ObjectHideFlags: 0
@@ -2125,6 +2329,10 @@ MonoBehaviour:
   isActivateTipsPass: 0
   isShakeActivatePass: 0
   CameraColorPass: {r: 0, g: 0, b: 0, a: 0}
+  debriTipsPass: 0
+  starTipsPass: 0
+  boltTipsPass: 0
+  shakeTipsPass: 0
 --- !u!114 &467465290 stripped
 MonoBehaviour:
   m_PrefabParentObject: {fileID: 114076639084672554, guid: 6e3c3592aa8b8f447843281b5e4e56f2,
@@ -2333,6 +2541,10 @@ MonoBehaviour:
   isActivateTipsPass: 0
   isShakeActivatePass: 1
   CameraColorPass: {r: 0, g: 0, b: 0, a: 0}
+  debriTipsPass: 0
+  starTipsPass: 0
+  boltTipsPass: 0
+  shakeTipsPass: 0
 --- !u!114 &538243441 stripped
 MonoBehaviour:
   m_PrefabParentObject: {fileID: 114076639084672554, guid: 6e3c3592aa8b8f447843281b5e4e56f2,
@@ -2395,22 +2607,22 @@ Prefab:
     - target: {fileID: 224793089313962702, guid: 1e421df19cc389b46af03b7a4c488b11,
         type: 2}
       propertyPath: m_AnchoredPosition.x
-      value: 922
+      value: 750
       objectReference: {fileID: 0}
     - target: {fileID: 224793089313962702, guid: 1e421df19cc389b46af03b7a4c488b11,
         type: 2}
       propertyPath: m_AnchoredPosition.y
-      value: -636
+      value: -587
       objectReference: {fileID: 0}
     - target: {fileID: 224793089313962702, guid: 1e421df19cc389b46af03b7a4c488b11,
         type: 2}
       propertyPath: m_SizeDelta.x
-      value: 238
+      value: 208
       objectReference: {fileID: 0}
     - target: {fileID: 224793089313962702, guid: 1e421df19cc389b46af03b7a4c488b11,
         type: 2}
       propertyPath: m_SizeDelta.y
-      value: 281
+      value: 245
       objectReference: {fileID: 0}
     - target: {fileID: 224793089313962702, guid: 1e421df19cc389b46af03b7a4c488b11,
         type: 2}
@@ -2487,11 +2699,6 @@ Prefab:
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[6].m_Target
       value: 
       objectReference: {fileID: 2076944143}
-    - target: {fileID: 114003604092909988, guid: 1e421df19cc389b46af03b7a4c488b11,
-        type: 2}
-      propertyPath: DebrisValue
-      value: 35
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 1e421df19cc389b46af03b7a4c488b11, type: 2}
   m_IsPrefabParent: 0
@@ -2636,7 +2843,7 @@ MonoBehaviour:
       m_Calls: []
     m_TypeName: UnityEngine.UI.MaskableGraphic+CullStateChangedEvent, UnityEngine.UI,
       Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
-  m_Sprite: {fileID: 21300000, guid: 4fc5aebc7b6f7b34ab58fa33ccbd71ea, type: 3}
+  m_Sprite: {fileID: 21300000, guid: d1a39dd3aa688d64a8d16d02c48973fb, type: 3}
   m_Type: 0
   m_PreserveAspect: 1
   m_FillCenter: 1
@@ -2842,6 +3049,10 @@ MonoBehaviour:
   isActivateTipsPass: 0
   isShakeActivatePass: 0
   CameraColorPass: {r: 0, g: 0, b: 0, a: 0}
+  debriTipsPass: 0
+  starTipsPass: 0
+  boltTipsPass: 0
+  shakeTipsPass: 0
 --- !u!114 &623478583 stripped
 MonoBehaviour:
   m_PrefabParentObject: {fileID: 114076639084672554, guid: 6e3c3592aa8b8f447843281b5e4e56f2,
@@ -3040,6 +3251,10 @@ MonoBehaviour:
   isActivateTipsPass: 0
   isShakeActivatePass: 0
   CameraColorPass: {r: 0, g: 0, b: 0, a: 0}
+  debriTipsPass: 0
+  starTipsPass: 0
+  boltTipsPass: 0
+  shakeTipsPass: 0
 --- !u!114 &624676180 stripped
 MonoBehaviour:
   m_PrefabParentObject: {fileID: 114076639084672554, guid: 6e3c3592aa8b8f447843281b5e4e56f2,
@@ -3106,22 +3321,22 @@ Prefab:
     - target: {fileID: 224004696634135348, guid: acdc738566f75c04893c565710c41b4f,
         type: 2}
       propertyPath: m_AnchoredPosition.x
-      value: 390
+      value: 377
       objectReference: {fileID: 0}
     - target: {fileID: 224004696634135348, guid: acdc738566f75c04893c565710c41b4f,
         type: 2}
       propertyPath: m_AnchoredPosition.y
-      value: -447
+      value: -552
       objectReference: {fileID: 0}
     - target: {fileID: 224004696634135348, guid: acdc738566f75c04893c565710c41b4f,
         type: 2}
       propertyPath: m_SizeDelta.x
-      value: 238
+      value: 208
       objectReference: {fileID: 0}
     - target: {fileID: 224004696634135348, guid: acdc738566f75c04893c565710c41b4f,
         type: 2}
       propertyPath: m_SizeDelta.y
-      value: 281
+      value: 245
       objectReference: {fileID: 0}
     - target: {fileID: 224004696634135348, guid: acdc738566f75c04893c565710c41b4f,
         type: 2}
@@ -3153,21 +3368,6 @@ Prefab:
       propertyPath: m_Pivot.y
       value: 0.5
       objectReference: {fileID: 0}
-    - target: {fileID: 114199752011714330, guid: acdc738566f75c04893c565710c41b4f,
-        type: 2}
-      propertyPath: TestButtonObject
-      value: 
-      objectReference: {fileID: 1399447530}
-    - target: {fileID: 114199752011714330, guid: acdc738566f75c04893c565710c41b4f,
-        type: 2}
-      propertyPath: MainHolderScript
-      value: 
-      objectReference: {fileID: 1399447529}
-    - target: {fileID: 114199752011714330, guid: acdc738566f75c04893c565710c41b4f,
-        type: 2}
-      propertyPath: ButtonCameraViewScript
-      value: 
-      objectReference: {fileID: 2076944143}
     - target: {fileID: 114147017924433688, guid: acdc738566f75c04893c565710c41b4f,
         type: 2}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
@@ -3196,6 +3396,21 @@ Prefab:
     - target: {fileID: 114147017924433688, guid: acdc738566f75c04893c565710c41b4f,
         type: 2}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[6].m_Target
+      value: 
+      objectReference: {fileID: 2076944143}
+    - target: {fileID: 114199752011714330, guid: acdc738566f75c04893c565710c41b4f,
+        type: 2}
+      propertyPath: TestButtonObject
+      value: 
+      objectReference: {fileID: 1399447530}
+    - target: {fileID: 114199752011714330, guid: acdc738566f75c04893c565710c41b4f,
+        type: 2}
+      propertyPath: MainHolderScript
+      value: 
+      objectReference: {fileID: 1399447529}
+    - target: {fileID: 114199752011714330, guid: acdc738566f75c04893c565710c41b4f,
+        type: 2}
+      propertyPath: ButtonCameraViewScript
       value: 
       objectReference: {fileID: 2076944143}
     m_RemovedComponents: []
@@ -3313,6 +3528,11 @@ Prefab:
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[2].m_Target
       value: 
       objectReference: {fileID: 841575425}
+    - target: {fileID: 114377759577320066, guid: e2a997d54abe8b8448be87f4dd2d4527,
+        type: 2}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[4].m_Target
+      value: 
+      objectReference: {fileID: 1373480750}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: e2a997d54abe8b8448be87f4dd2d4527, type: 2}
   m_IsPrefabParent: 0
@@ -3508,6 +3728,10 @@ MonoBehaviour:
   isActivateTipsPass: 0
   isShakeActivatePass: 0
   CameraColorPass: {r: 0, g: 0, b: 0, a: 0}
+  debriTipsPass: 0
+  starTipsPass: 0
+  boltTipsPass: 0
+  shakeTipsPass: 0
 --- !u!114 &654781952 stripped
 MonoBehaviour:
   m_PrefabParentObject: {fileID: 114076639084672554, guid: 6e3c3592aa8b8f447843281b5e4e56f2,
@@ -3546,7 +3770,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 1}
   m_AnchorMax: {x: 0.5, y: 1}
-  m_AnchoredPosition: {x: 17.8, y: 20}
+  m_AnchoredPosition: {x: -5, y: 25}
   m_SizeDelta: {x: 196.5, y: 95}
   m_Pivot: {x: 0.5, y: 1}
 --- !u!114 &678751150
@@ -3569,8 +3793,8 @@ MonoBehaviour:
     m_TypeName: UnityEngine.UI.MaskableGraphic+CullStateChangedEvent, UnityEngine.UI,
       Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
   m_FontData:
-    m_Font: {fileID: 12800000, guid: 226ff3673f53af4478e4017ade30041a, type: 3}
-    m_FontSize: 69
+    m_Font: {fileID: 12800000, guid: ccd80c304bcfc154193cc40605749349, type: 3}
+    m_FontSize: 78
     m_FontStyle: 0
     m_BestFit: 0
     m_MinSize: 10
@@ -3640,22 +3864,22 @@ Prefab:
     - target: {fileID: 224194547328293342, guid: 4efc64f054453ae48a817c9d2eaf202c,
         type: 2}
       propertyPath: m_AnchoredPosition.x
-      value: 825
+      value: 809
       objectReference: {fileID: 0}
     - target: {fileID: 224194547328293342, guid: 4efc64f054453ae48a817c9d2eaf202c,
         type: 2}
       propertyPath: m_AnchoredPosition.y
-      value: 631
+      value: 626
       objectReference: {fileID: 0}
     - target: {fileID: 224194547328293342, guid: 4efc64f054453ae48a817c9d2eaf202c,
         type: 2}
       propertyPath: m_SizeDelta.x
-      value: 238
+      value: 208
       objectReference: {fileID: 0}
     - target: {fileID: 224194547328293342, guid: 4efc64f054453ae48a817c9d2eaf202c,
         type: 2}
       propertyPath: m_SizeDelta.y
-      value: 281
+      value: 245
       objectReference: {fileID: 0}
     - target: {fileID: 224194547328293342, guid: 4efc64f054453ae48a817c9d2eaf202c,
         type: 2}
@@ -3687,21 +3911,6 @@ Prefab:
       propertyPath: m_Pivot.y
       value: 0.5
       objectReference: {fileID: 0}
-    - target: {fileID: 114838929073343750, guid: 4efc64f054453ae48a817c9d2eaf202c,
-        type: 2}
-      propertyPath: TestButtonObject
-      value: 
-      objectReference: {fileID: 1399447530}
-    - target: {fileID: 114838929073343750, guid: 4efc64f054453ae48a817c9d2eaf202c,
-        type: 2}
-      propertyPath: MainHolderScript
-      value: 
-      objectReference: {fileID: 1399447529}
-    - target: {fileID: 114838929073343750, guid: 4efc64f054453ae48a817c9d2eaf202c,
-        type: 2}
-      propertyPath: ButtonCameraViewScript
-      value: 
-      objectReference: {fileID: 2076944143}
     - target: {fileID: 114382461920262376, guid: 4efc64f054453ae48a817c9d2eaf202c,
         type: 2}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
@@ -3730,6 +3939,21 @@ Prefab:
     - target: {fileID: 114382461920262376, guid: 4efc64f054453ae48a817c9d2eaf202c,
         type: 2}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[6].m_Target
+      value: 
+      objectReference: {fileID: 2076944143}
+    - target: {fileID: 114838929073343750, guid: 4efc64f054453ae48a817c9d2eaf202c,
+        type: 2}
+      propertyPath: TestButtonObject
+      value: 
+      objectReference: {fileID: 1399447530}
+    - target: {fileID: 114838929073343750, guid: 4efc64f054453ae48a817c9d2eaf202c,
+        type: 2}
+      propertyPath: MainHolderScript
+      value: 
+      objectReference: {fileID: 1399447529}
+    - target: {fileID: 114838929073343750, guid: 4efc64f054453ae48a817c9d2eaf202c,
+        type: 2}
+      propertyPath: ButtonCameraViewScript
       value: 
       objectReference: {fileID: 2076944143}
     m_RemovedComponents: []
@@ -3785,22 +4009,22 @@ Prefab:
     - target: {fileID: 224462940966769660, guid: ee82d88f3060d87409d4d8dbb3105367,
         type: 2}
       propertyPath: m_AnchoredPosition.x
-      value: 500
+      value: 476
       objectReference: {fileID: 0}
     - target: {fileID: 224462940966769660, guid: ee82d88f3060d87409d4d8dbb3105367,
         type: 2}
       propertyPath: m_AnchoredPosition.y
-      value: -980
+      value: -965
       objectReference: {fileID: 0}
     - target: {fileID: 224462940966769660, guid: ee82d88f3060d87409d4d8dbb3105367,
         type: 2}
       propertyPath: m_SizeDelta.x
-      value: 238
+      value: 208
       objectReference: {fileID: 0}
     - target: {fileID: 224462940966769660, guid: ee82d88f3060d87409d4d8dbb3105367,
         type: 2}
       propertyPath: m_SizeDelta.y
-      value: 281
+      value: 245
       objectReference: {fileID: 0}
     - target: {fileID: 224462940966769660, guid: ee82d88f3060d87409d4d8dbb3105367,
         type: 2}
@@ -3930,22 +4154,22 @@ Prefab:
     - target: {fileID: 224743069627714678, guid: 829693bd21a86374d9ef482fe6ef0543,
         type: 2}
       propertyPath: m_AnchoredPosition.x
-      value: 527
+      value: 502
       objectReference: {fileID: 0}
     - target: {fileID: 224743069627714678, guid: 829693bd21a86374d9ef482fe6ef0543,
         type: 2}
       propertyPath: m_AnchoredPosition.y
-      value: 561
+      value: 597
       objectReference: {fileID: 0}
     - target: {fileID: 224743069627714678, guid: 829693bd21a86374d9ef482fe6ef0543,
         type: 2}
       propertyPath: m_SizeDelta.x
-      value: 238
+      value: 208
       objectReference: {fileID: 0}
     - target: {fileID: 224743069627714678, guid: 829693bd21a86374d9ef482fe6ef0543,
         type: 2}
       propertyPath: m_SizeDelta.y
-      value: 281
+      value: 245
       objectReference: {fileID: 0}
     - target: {fileID: 224743069627714678, guid: 829693bd21a86374d9ef482fe6ef0543,
         type: 2}
@@ -3977,21 +4201,6 @@ Prefab:
       propertyPath: m_Pivot.y
       value: 0.5
       objectReference: {fileID: 0}
-    - target: {fileID: 114811157409833228, guid: 829693bd21a86374d9ef482fe6ef0543,
-        type: 2}
-      propertyPath: TestButtonObject
-      value: 
-      objectReference: {fileID: 1399447530}
-    - target: {fileID: 114811157409833228, guid: 829693bd21a86374d9ef482fe6ef0543,
-        type: 2}
-      propertyPath: MainHolderScript
-      value: 
-      objectReference: {fileID: 1399447529}
-    - target: {fileID: 114811157409833228, guid: 829693bd21a86374d9ef482fe6ef0543,
-        type: 2}
-      propertyPath: ButtonCameraViewScript
-      value: 
-      objectReference: {fileID: 2076944143}
     - target: {fileID: 114956232476743624, guid: 829693bd21a86374d9ef482fe6ef0543,
         type: 2}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
@@ -4020,6 +4229,21 @@ Prefab:
     - target: {fileID: 114956232476743624, guid: 829693bd21a86374d9ef482fe6ef0543,
         type: 2}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[6].m_Target
+      value: 
+      objectReference: {fileID: 2076944143}
+    - target: {fileID: 114811157409833228, guid: 829693bd21a86374d9ef482fe6ef0543,
+        type: 2}
+      propertyPath: TestButtonObject
+      value: 
+      objectReference: {fileID: 1399447530}
+    - target: {fileID: 114811157409833228, guid: 829693bd21a86374d9ef482fe6ef0543,
+        type: 2}
+      propertyPath: MainHolderScript
+      value: 
+      objectReference: {fileID: 1399447529}
+    - target: {fileID: 114811157409833228, guid: 829693bd21a86374d9ef482fe6ef0543,
+        type: 2}
+      propertyPath: ButtonCameraViewScript
       value: 
       objectReference: {fileID: 2076944143}
     m_RemovedComponents: []
@@ -4075,22 +4299,22 @@ Prefab:
     - target: {fileID: 224318543663857462, guid: ce9361a128a6a7348a92568cd2a1eb86,
         type: 2}
       propertyPath: m_AnchoredPosition.x
-      value: 786
+      value: 817
       objectReference: {fileID: 0}
     - target: {fileID: 224318543663857462, guid: ce9361a128a6a7348a92568cd2a1eb86,
         type: 2}
       propertyPath: m_AnchoredPosition.y
-      value: 174
+      value: 144
       objectReference: {fileID: 0}
     - target: {fileID: 224318543663857462, guid: ce9361a128a6a7348a92568cd2a1eb86,
         type: 2}
       propertyPath: m_SizeDelta.x
-      value: 238
+      value: 208
       objectReference: {fileID: 0}
     - target: {fileID: 224318543663857462, guid: ce9361a128a6a7348a92568cd2a1eb86,
         type: 2}
       propertyPath: m_SizeDelta.y
-      value: 281
+      value: 245
       objectReference: {fileID: 0}
     - target: {fileID: 224318543663857462, guid: ce9361a128a6a7348a92568cd2a1eb86,
         type: 2}
@@ -4122,21 +4346,6 @@ Prefab:
       propertyPath: m_Pivot.y
       value: 0.5
       objectReference: {fileID: 0}
-    - target: {fileID: 114308186219429926, guid: ce9361a128a6a7348a92568cd2a1eb86,
-        type: 2}
-      propertyPath: TestButtonObject
-      value: 
-      objectReference: {fileID: 1399447530}
-    - target: {fileID: 114308186219429926, guid: ce9361a128a6a7348a92568cd2a1eb86,
-        type: 2}
-      propertyPath: MainHolderScript
-      value: 
-      objectReference: {fileID: 1399447529}
-    - target: {fileID: 114308186219429926, guid: ce9361a128a6a7348a92568cd2a1eb86,
-        type: 2}
-      propertyPath: ButtonCameraViewScript
-      value: 
-      objectReference: {fileID: 2076944143}
     - target: {fileID: 114421377834547374, guid: ce9361a128a6a7348a92568cd2a1eb86,
         type: 2}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
@@ -4165,6 +4374,21 @@ Prefab:
     - target: {fileID: 114421377834547374, guid: ce9361a128a6a7348a92568cd2a1eb86,
         type: 2}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[6].m_Target
+      value: 
+      objectReference: {fileID: 2076944143}
+    - target: {fileID: 114308186219429926, guid: ce9361a128a6a7348a92568cd2a1eb86,
+        type: 2}
+      propertyPath: TestButtonObject
+      value: 
+      objectReference: {fileID: 1399447530}
+    - target: {fileID: 114308186219429926, guid: ce9361a128a6a7348a92568cd2a1eb86,
+        type: 2}
+      propertyPath: MainHolderScript
+      value: 
+      objectReference: {fileID: 1399447529}
+    - target: {fileID: 114308186219429926, guid: ce9361a128a6a7348a92568cd2a1eb86,
+        type: 2}
+      propertyPath: ButtonCameraViewScript
       value: 
       objectReference: {fileID: 2076944143}
     m_RemovedComponents: []
@@ -4622,6 +4846,10 @@ MonoBehaviour:
   isActivateTipsPass: 0
   isShakeActivatePass: 0
   CameraColorPass: {r: 0, g: 0, b: 0, a: 0}
+  debriTipsPass: 0
+  starTipsPass: 0
+  boltTipsPass: 0
+  shakeTipsPass: 0
 --- !u!114 &809608058 stripped
 MonoBehaviour:
   m_PrefabParentObject: {fileID: 114076639084672554, guid: 6e3c3592aa8b8f447843281b5e4e56f2,
@@ -4820,6 +5048,10 @@ MonoBehaviour:
   isActivateTipsPass: 1
   isShakeActivatePass: 0
   CameraColorPass: {r: 0, g: 0, b: 0, a: 0}
+  debriTipsPass: 0
+  starTipsPass: 0
+  boltTipsPass: 0
+  shakeTipsPass: 0
 --- !u!114 &812966039 stripped
 MonoBehaviour:
   m_PrefabParentObject: {fileID: 114076639084672554, guid: 6e3c3592aa8b8f447843281b5e4e56f2,
@@ -5060,7 +5292,7 @@ RectTransform:
   - {fileID: 1347750472}
   - {fileID: 1888515702}
   m_Father: {fileID: 0}
-  m_RootOrder: 8
+  m_RootOrder: 9
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
@@ -5338,22 +5570,22 @@ Prefab:
     - target: {fileID: 224069061911261320, guid: c4aab26fc3b31af4b935533cae61679b,
         type: 2}
       propertyPath: m_AnchoredPosition.x
-      value: 727
+      value: 757
       objectReference: {fileID: 0}
     - target: {fileID: 224069061911261320, guid: c4aab26fc3b31af4b935533cae61679b,
         type: 2}
       propertyPath: m_AnchoredPosition.y
-      value: 410
+      value: 385
       objectReference: {fileID: 0}
     - target: {fileID: 224069061911261320, guid: c4aab26fc3b31af4b935533cae61679b,
         type: 2}
       propertyPath: m_SizeDelta.x
-      value: 238
+      value: 208
       objectReference: {fileID: 0}
     - target: {fileID: 224069061911261320, guid: c4aab26fc3b31af4b935533cae61679b,
         type: 2}
       propertyPath: m_SizeDelta.y
-      value: 281
+      value: 245
       objectReference: {fileID: 0}
     - target: {fileID: 224069061911261320, guid: c4aab26fc3b31af4b935533cae61679b,
         type: 2}
@@ -5645,6 +5877,10 @@ MonoBehaviour:
   isActivateTipsPass: 0
   isShakeActivatePass: 1
   CameraColorPass: {r: 0, g: 0, b: 0, a: 0}
+  debriTipsPass: 0
+  starTipsPass: 0
+  boltTipsPass: 0
+  shakeTipsPass: 0
 --- !u!114 &1028494861 stripped
 MonoBehaviour:
   m_PrefabParentObject: {fileID: 114076639084672554, guid: 6e3c3592aa8b8f447843281b5e4e56f2,
@@ -5706,7 +5942,7 @@ MonoBehaviour:
       m_Calls: []
     m_TypeName: UnityEngine.UI.MaskableGraphic+CullStateChangedEvent, UnityEngine.UI,
       Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
-  m_Sprite: {fileID: 21300000, guid: 4fc5aebc7b6f7b34ab58fa33ccbd71ea, type: 3}
+  m_Sprite: {fileID: 21300000, guid: d1a39dd3aa688d64a8d16d02c48973fb, type: 3}
   m_Type: 0
   m_PreserveAspect: 1
   m_FillCenter: 1
@@ -5788,22 +6024,22 @@ Prefab:
     - target: {fileID: 224928806291189842, guid: 939de747e94ac61489ad7e0c51ef378e,
         type: 2}
       propertyPath: m_AnchoredPosition.x
-      value: 1030
+      value: 1015
       objectReference: {fileID: 0}
     - target: {fileID: 224928806291189842, guid: 939de747e94ac61489ad7e0c51ef378e,
         type: 2}
       propertyPath: m_AnchoredPosition.y
-      value: -12
+      value: -262
       objectReference: {fileID: 0}
     - target: {fileID: 224928806291189842, guid: 939de747e94ac61489ad7e0c51ef378e,
         type: 2}
       propertyPath: m_SizeDelta.x
-      value: 238
+      value: 208
       objectReference: {fileID: 0}
     - target: {fileID: 224928806291189842, guid: 939de747e94ac61489ad7e0c51ef378e,
         type: 2}
       propertyPath: m_SizeDelta.y
-      value: 281
+      value: 245
       objectReference: {fileID: 0}
     - target: {fileID: 224928806291189842, guid: 939de747e94ac61489ad7e0c51ef378e,
         type: 2}
@@ -5835,21 +6071,6 @@ Prefab:
       propertyPath: m_Pivot.y
       value: 0.5
       objectReference: {fileID: 0}
-    - target: {fileID: 114238449461460662, guid: 939de747e94ac61489ad7e0c51ef378e,
-        type: 2}
-      propertyPath: TestButtonObject
-      value: 
-      objectReference: {fileID: 1399447530}
-    - target: {fileID: 114238449461460662, guid: 939de747e94ac61489ad7e0c51ef378e,
-        type: 2}
-      propertyPath: MainHolderScript
-      value: 
-      objectReference: {fileID: 1399447529}
-    - target: {fileID: 114238449461460662, guid: 939de747e94ac61489ad7e0c51ef378e,
-        type: 2}
-      propertyPath: ButtonCameraViewScript
-      value: 
-      objectReference: {fileID: 2076944143}
     - target: {fileID: 114076214341372876, guid: 939de747e94ac61489ad7e0c51ef378e,
         type: 2}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
@@ -5878,6 +6099,21 @@ Prefab:
     - target: {fileID: 114076214341372876, guid: 939de747e94ac61489ad7e0c51ef378e,
         type: 2}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[6].m_Target
+      value: 
+      objectReference: {fileID: 2076944143}
+    - target: {fileID: 114238449461460662, guid: 939de747e94ac61489ad7e0c51ef378e,
+        type: 2}
+      propertyPath: TestButtonObject
+      value: 
+      objectReference: {fileID: 1399447530}
+    - target: {fileID: 114238449461460662, guid: 939de747e94ac61489ad7e0c51ef378e,
+        type: 2}
+      propertyPath: MainHolderScript
+      value: 
+      objectReference: {fileID: 1399447529}
+    - target: {fileID: 114238449461460662, guid: 939de747e94ac61489ad7e0c51ef378e,
+        type: 2}
+      propertyPath: ButtonCameraViewScript
       value: 
       objectReference: {fileID: 2076944143}
     m_RemovedComponents: []
@@ -6017,22 +6253,22 @@ Prefab:
     - target: {fileID: 224269061191723810, guid: 9cb8c0e79fa50614a818b88fcbec33b5,
         type: 2}
       propertyPath: m_AnchoredPosition.x
-      value: 955
+      value: 972
       objectReference: {fileID: 0}
     - target: {fileID: 224269061191723810, guid: 9cb8c0e79fa50614a818b88fcbec33b5,
         type: 2}
       propertyPath: m_AnchoredPosition.y
-      value: 815
+      value: 826
       objectReference: {fileID: 0}
     - target: {fileID: 224269061191723810, guid: 9cb8c0e79fa50614a818b88fcbec33b5,
         type: 2}
       propertyPath: m_SizeDelta.x
-      value: 238
+      value: 208
       objectReference: {fileID: 0}
     - target: {fileID: 224269061191723810, guid: 9cb8c0e79fa50614a818b88fcbec33b5,
         type: 2}
       propertyPath: m_SizeDelta.y
-      value: 281
+      value: 245
       objectReference: {fileID: 0}
     - target: {fileID: 224269061191723810, guid: 9cb8c0e79fa50614a818b88fcbec33b5,
         type: 2}
@@ -6064,21 +6300,6 @@ Prefab:
       propertyPath: m_Pivot.y
       value: 0.5
       objectReference: {fileID: 0}
-    - target: {fileID: 114600099744780506, guid: 9cb8c0e79fa50614a818b88fcbec33b5,
-        type: 2}
-      propertyPath: TestButtonObject
-      value: 
-      objectReference: {fileID: 1399447530}
-    - target: {fileID: 114600099744780506, guid: 9cb8c0e79fa50614a818b88fcbec33b5,
-        type: 2}
-      propertyPath: MainHolderScript
-      value: 
-      objectReference: {fileID: 1399447529}
-    - target: {fileID: 114600099744780506, guid: 9cb8c0e79fa50614a818b88fcbec33b5,
-        type: 2}
-      propertyPath: ButtonCameraViewScript
-      value: 
-      objectReference: {fileID: 2076944143}
     - target: {fileID: 114740607045252976, guid: 9cb8c0e79fa50614a818b88fcbec33b5,
         type: 2}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
@@ -6107,6 +6328,21 @@ Prefab:
     - target: {fileID: 114740607045252976, guid: 9cb8c0e79fa50614a818b88fcbec33b5,
         type: 2}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[6].m_Target
+      value: 
+      objectReference: {fileID: 2076944143}
+    - target: {fileID: 114600099744780506, guid: 9cb8c0e79fa50614a818b88fcbec33b5,
+        type: 2}
+      propertyPath: TestButtonObject
+      value: 
+      objectReference: {fileID: 1399447530}
+    - target: {fileID: 114600099744780506, guid: 9cb8c0e79fa50614a818b88fcbec33b5,
+        type: 2}
+      propertyPath: MainHolderScript
+      value: 
+      objectReference: {fileID: 1399447529}
+    - target: {fileID: 114600099744780506, guid: 9cb8c0e79fa50614a818b88fcbec33b5,
+        type: 2}
+      propertyPath: ButtonCameraViewScript
       value: 
       objectReference: {fileID: 2076944143}
     m_RemovedComponents: []
@@ -6251,22 +6487,22 @@ Prefab:
     - target: {fileID: 224774551918201148, guid: f16939ec99862a844b2741b0f3e9aeed,
         type: 2}
       propertyPath: m_AnchoredPosition.x
-      value: 621
+      value: 584
       objectReference: {fileID: 0}
     - target: {fileID: 224774551918201148, guid: f16939ec99862a844b2741b0f3e9aeed,
         type: 2}
       propertyPath: m_AnchoredPosition.y
-      value: 1082
+      value: 969
       objectReference: {fileID: 0}
     - target: {fileID: 224774551918201148, guid: f16939ec99862a844b2741b0f3e9aeed,
         type: 2}
       propertyPath: m_SizeDelta.x
-      value: 238
+      value: 208
       objectReference: {fileID: 0}
     - target: {fileID: 224774551918201148, guid: f16939ec99862a844b2741b0f3e9aeed,
         type: 2}
       propertyPath: m_SizeDelta.y
-      value: 281
+      value: 245
       objectReference: {fileID: 0}
     - target: {fileID: 224774551918201148, guid: f16939ec99862a844b2741b0f3e9aeed,
         type: 2}
@@ -6298,21 +6534,6 @@ Prefab:
       propertyPath: m_Pivot.y
       value: 0.5
       objectReference: {fileID: 0}
-    - target: {fileID: 114852638675246398, guid: f16939ec99862a844b2741b0f3e9aeed,
-        type: 2}
-      propertyPath: TestButtonObject
-      value: 
-      objectReference: {fileID: 1399447530}
-    - target: {fileID: 114852638675246398, guid: f16939ec99862a844b2741b0f3e9aeed,
-        type: 2}
-      propertyPath: MainHolderScript
-      value: 
-      objectReference: {fileID: 1399447529}
-    - target: {fileID: 114852638675246398, guid: f16939ec99862a844b2741b0f3e9aeed,
-        type: 2}
-      propertyPath: ButtonCameraViewScript
-      value: 
-      objectReference: {fileID: 2076944143}
     - target: {fileID: 114107423479318142, guid: f16939ec99862a844b2741b0f3e9aeed,
         type: 2}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
@@ -6341,6 +6562,21 @@ Prefab:
     - target: {fileID: 114107423479318142, guid: f16939ec99862a844b2741b0f3e9aeed,
         type: 2}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[6].m_Target
+      value: 
+      objectReference: {fileID: 2076944143}
+    - target: {fileID: 114852638675246398, guid: f16939ec99862a844b2741b0f3e9aeed,
+        type: 2}
+      propertyPath: TestButtonObject
+      value: 
+      objectReference: {fileID: 1399447530}
+    - target: {fileID: 114852638675246398, guid: f16939ec99862a844b2741b0f3e9aeed,
+        type: 2}
+      propertyPath: MainHolderScript
+      value: 
+      objectReference: {fileID: 1399447529}
+    - target: {fileID: 114852638675246398, guid: f16939ec99862a844b2741b0f3e9aeed,
+        type: 2}
+      propertyPath: ButtonCameraViewScript
       value: 
       objectReference: {fileID: 2076944143}
     m_RemovedComponents: []
@@ -6423,7 +6659,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 57, y: 39}
+  m_AnchoredPosition: {x: 26, y: 39}
   m_SizeDelta: {x: 1478, y: 1478}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1170033509
@@ -6509,22 +6745,22 @@ Prefab:
     - target: {fileID: 224778748299476556, guid: fc8415ec5e03dff45b33b4721224e3c6,
         type: 2}
       propertyPath: m_AnchoredPosition.x
-      value: 732
+      value: 760
       objectReference: {fileID: 0}
     - target: {fileID: 224778748299476556, guid: fc8415ec5e03dff45b33b4721224e3c6,
         type: 2}
       propertyPath: m_AnchoredPosition.y
-      value: 891
+      value: 877
       objectReference: {fileID: 0}
     - target: {fileID: 224778748299476556, guid: fc8415ec5e03dff45b33b4721224e3c6,
         type: 2}
       propertyPath: m_SizeDelta.x
-      value: 238
+      value: 208
       objectReference: {fileID: 0}
     - target: {fileID: 224778748299476556, guid: fc8415ec5e03dff45b33b4721224e3c6,
         type: 2}
       propertyPath: m_SizeDelta.y
-      value: 281
+      value: 245
       objectReference: {fileID: 0}
     - target: {fileID: 224778748299476556, guid: fc8415ec5e03dff45b33b4721224e3c6,
         type: 2}
@@ -6796,6 +7032,10 @@ MonoBehaviour:
   isActivateTipsPass: 0
   isShakeActivatePass: 0
   CameraColorPass: {r: 0, g: 0, b: 0, a: 0}
+  debriTipsPass: 0
+  starTipsPass: 0
+  boltTipsPass: 0
+  shakeTipsPass: 0
 --- !u!114 &1217929206 stripped
 MonoBehaviour:
   m_PrefabParentObject: {fileID: 114076639084672554, guid: 6e3c3592aa8b8f447843281b5e4e56f2,
@@ -6863,22 +7103,22 @@ Prefab:
     - target: {fileID: 224208758099595224, guid: 546ea65f8431bff40a5fe6aa031b1774,
         type: 2}
       propertyPath: m_AnchoredPosition.x
-      value: 824
+      value: 893
       objectReference: {fileID: 0}
     - target: {fileID: 224208758099595224, guid: 546ea65f8431bff40a5fe6aa031b1774,
         type: 2}
       propertyPath: m_AnchoredPosition.y
-      value: 1316
+      value: 1105
       objectReference: {fileID: 0}
     - target: {fileID: 224208758099595224, guid: 546ea65f8431bff40a5fe6aa031b1774,
         type: 2}
       propertyPath: m_SizeDelta.x
-      value: 238
+      value: 208
       objectReference: {fileID: 0}
     - target: {fileID: 224208758099595224, guid: 546ea65f8431bff40a5fe6aa031b1774,
         type: 2}
       propertyPath: m_SizeDelta.y
-      value: 281
+      value: 245
       objectReference: {fileID: 0}
     - target: {fileID: 224208758099595224, guid: 546ea65f8431bff40a5fe6aa031b1774,
         type: 2}
@@ -6910,21 +7150,6 @@ Prefab:
       propertyPath: m_Pivot.y
       value: 0.5
       objectReference: {fileID: 0}
-    - target: {fileID: 114852521222403178, guid: 546ea65f8431bff40a5fe6aa031b1774,
-        type: 2}
-      propertyPath: TestButtonObject
-      value: 
-      objectReference: {fileID: 1399447530}
-    - target: {fileID: 114852521222403178, guid: 546ea65f8431bff40a5fe6aa031b1774,
-        type: 2}
-      propertyPath: MainHolderScript
-      value: 
-      objectReference: {fileID: 1399447529}
-    - target: {fileID: 114852521222403178, guid: 546ea65f8431bff40a5fe6aa031b1774,
-        type: 2}
-      propertyPath: ButtonCameraViewScript
-      value: 
-      objectReference: {fileID: 2076944143}
     - target: {fileID: 114998566901313256, guid: 546ea65f8431bff40a5fe6aa031b1774,
         type: 2}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
@@ -6953,6 +7178,21 @@ Prefab:
     - target: {fileID: 114998566901313256, guid: 546ea65f8431bff40a5fe6aa031b1774,
         type: 2}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[6].m_Target
+      value: 
+      objectReference: {fileID: 2076944143}
+    - target: {fileID: 114852521222403178, guid: 546ea65f8431bff40a5fe6aa031b1774,
+        type: 2}
+      propertyPath: TestButtonObject
+      value: 
+      objectReference: {fileID: 1399447530}
+    - target: {fileID: 114852521222403178, guid: 546ea65f8431bff40a5fe6aa031b1774,
+        type: 2}
+      propertyPath: MainHolderScript
+      value: 
+      objectReference: {fileID: 1399447529}
+    - target: {fileID: 114852521222403178, guid: 546ea65f8431bff40a5fe6aa031b1774,
+        type: 2}
+      propertyPath: ButtonCameraViewScript
       value: 
       objectReference: {fileID: 2076944143}
     m_RemovedComponents: []
@@ -7160,6 +7400,10 @@ MonoBehaviour:
   isActivateTipsPass: 0
   isShakeActivatePass: 0
   CameraColorPass: {r: 0, g: 0, b: 0, a: 0}
+  debriTipsPass: 0
+  starTipsPass: 0
+  boltTipsPass: 0
+  shakeTipsPass: 0
 --- !u!114 &1284325364 stripped
 MonoBehaviour:
   m_PrefabParentObject: {fileID: 114076639084672554, guid: 6e3c3592aa8b8f447843281b5e4e56f2,
@@ -7436,6 +7680,10 @@ MonoBehaviour:
   isActivateTipsPass: 1
   isShakeActivatePass: 0
   CameraColorPass: {r: 0, g: 0, b: 0, a: 0}
+  debriTipsPass: 0
+  starTipsPass: 0
+  boltTipsPass: 0
+  shakeTipsPass: 0
 --- !u!114 &1322083293 stripped
 MonoBehaviour:
   m_PrefabParentObject: {fileID: 114076639084672554, guid: 6e3c3592aa8b8f447843281b5e4e56f2,
@@ -7636,6 +7884,10 @@ MonoBehaviour:
   isActivateTipsPass: 0
   isShakeActivatePass: 1
   CameraColorPass: {r: 0, g: 0, b: 0, a: 0}
+  debriTipsPass: 0
+  starTipsPass: 0
+  boltTipsPass: 0
+  shakeTipsPass: 0
 --- !u!114 &1326422168 stripped
 MonoBehaviour:
   m_PrefabParentObject: {fileID: 114076639084672554, guid: 6e3c3592aa8b8f447843281b5e4e56f2,
@@ -7912,6 +8164,10 @@ MonoBehaviour:
   isActivateTipsPass: 0
   isShakeActivatePass: 0
   CameraColorPass: {r: 0, g: 0, b: 0, a: 0}
+  debriTipsPass: 0
+  starTipsPass: 0
+  boltTipsPass: 0
+  shakeTipsPass: 0
 --- !u!114 &1353281844 stripped
 MonoBehaviour:
   m_PrefabParentObject: {fileID: 114076639084672554, guid: 6e3c3592aa8b8f447843281b5e4e56f2,
@@ -7968,22 +8224,22 @@ Prefab:
     - target: {fileID: 224994704278830718, guid: a30b821fc9d209843b1d21fd4efb1bdf,
         type: 2}
       propertyPath: m_AnchoredPosition.x
-      value: 483
+      value: 464
       objectReference: {fileID: 0}
     - target: {fileID: 224994704278830718, guid: a30b821fc9d209843b1d21fd4efb1bdf,
         type: 2}
       propertyPath: m_AnchoredPosition.y
-      value: 273
+      value: 310
       objectReference: {fileID: 0}
     - target: {fileID: 224994704278830718, guid: a30b821fc9d209843b1d21fd4efb1bdf,
         type: 2}
       propertyPath: m_SizeDelta.x
-      value: 238
+      value: 208
       objectReference: {fileID: 0}
     - target: {fileID: 224994704278830718, guid: a30b821fc9d209843b1d21fd4efb1bdf,
         type: 2}
       propertyPath: m_SizeDelta.y
-      value: 281
+      value: 245
       objectReference: {fileID: 0}
     - target: {fileID: 224994704278830718, guid: a30b821fc9d209843b1d21fd4efb1bdf,
         type: 2}
@@ -8015,21 +8271,6 @@ Prefab:
       propertyPath: m_Pivot.y
       value: 0.5
       objectReference: {fileID: 0}
-    - target: {fileID: 114175037042028414, guid: a30b821fc9d209843b1d21fd4efb1bdf,
-        type: 2}
-      propertyPath: TestButtonObject
-      value: 
-      objectReference: {fileID: 1399447530}
-    - target: {fileID: 114175037042028414, guid: a30b821fc9d209843b1d21fd4efb1bdf,
-        type: 2}
-      propertyPath: MainHolderScript
-      value: 
-      objectReference: {fileID: 1399447529}
-    - target: {fileID: 114175037042028414, guid: a30b821fc9d209843b1d21fd4efb1bdf,
-        type: 2}
-      propertyPath: ButtonCameraViewScript
-      value: 
-      objectReference: {fileID: 2076944143}
     - target: {fileID: 114334304805914326, guid: a30b821fc9d209843b1d21fd4efb1bdf,
         type: 2}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
@@ -8060,9 +8301,30 @@ Prefab:
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[6].m_Target
       value: 
       objectReference: {fileID: 2076944143}
+    - target: {fileID: 114175037042028414, guid: a30b821fc9d209843b1d21fd4efb1bdf,
+        type: 2}
+      propertyPath: TestButtonObject
+      value: 
+      objectReference: {fileID: 1399447530}
+    - target: {fileID: 114175037042028414, guid: a30b821fc9d209843b1d21fd4efb1bdf,
+        type: 2}
+      propertyPath: MainHolderScript
+      value: 
+      objectReference: {fileID: 1399447529}
+    - target: {fileID: 114175037042028414, guid: a30b821fc9d209843b1d21fd4efb1bdf,
+        type: 2}
+      propertyPath: ButtonCameraViewScript
+      value: 
+      objectReference: {fileID: 2076944143}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: a30b821fc9d209843b1d21fd4efb1bdf, type: 2}
   m_IsPrefabParent: 0
+--- !u!114 &1373480750 stripped
+MonoBehaviour:
+  m_PrefabParentObject: {fileID: 114760779066099844, guid: 3888c8ee3a9fa6341b59cf2f3bffa7ce,
+    type: 2}
+  m_PrefabInternal: {fileID: 466669134}
+  m_Script: {fileID: 11500000, guid: 484b3dbe51ac48841b79ab8e21a10ef4, type: 3}
 --- !u!224 &1399447528 stripped
 RectTransform:
   m_PrefabParentObject: {fileID: 224039857257146254, guid: e2a997d54abe8b8448be87f4dd2d4527,
@@ -8272,12 +8534,88 @@ MonoBehaviour:
   isActivateTipsPass: 0
   isShakeActivatePass: 1
   CameraColorPass: {r: 0, g: 0, b: 0, a: 0}
+  debriTipsPass: 0
+  starTipsPass: 0
+  boltTipsPass: 0
+  shakeTipsPass: 0
 --- !u!114 &1448268499 stripped
 MonoBehaviour:
   m_PrefabParentObject: {fileID: 114076639084672554, guid: 6e3c3592aa8b8f447843281b5e4e56f2,
     type: 2}
   m_PrefabInternal: {fileID: 1448268495}
   m_Script: {fileID: 1392445389, guid: f70555f144d8491a825f0804e09c671c, type: 3}
+--- !u!1 &1466636128
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 1342803124577464, guid: 6bcddc3d2771d9e42a090b394517931e,
+    type: 2}
+  m_PrefabInternal: {fileID: 0}
+  serializedVersion: 5
+  m_Component:
+  - component: {fileID: 1466636129}
+  - component: {fileID: 1466636131}
+  - component: {fileID: 1466636130}
+  m_Layer: 5
+  m_Name: menuicon
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!224 &1466636129
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 224553960394988756, guid: 6bcddc3d2771d9e42a090b394517931e,
+    type: 2}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1466636128}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 198606269}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0.5, y: 0.5}
+  m_AnchorMax: {x: 0.5, y: 0.5}
+  m_AnchoredPosition: {x: 1, y: 2}
+  m_SizeDelta: {x: 78, y: 78}
+  m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &1466636130
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 114677620390312526, guid: 6bcddc3d2771d9e42a090b394517931e,
+    type: 2}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1466636128}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: -765806418, guid: f70555f144d8491a825f0804e09c671c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Material: {fileID: 0}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_RaycastTarget: 0
+  m_OnCullStateChanged:
+    m_PersistentCalls:
+      m_Calls: []
+    m_TypeName: UnityEngine.UI.MaskableGraphic+CullStateChangedEvent, UnityEngine.UI,
+      Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
+  m_Sprite: {fileID: 21300000, guid: e5cafc704aaf4074f9f3eac93e49c384, type: 3}
+  m_Type: 0
+  m_PreserveAspect: 1
+  m_FillCenter: 1
+  m_FillMethod: 4
+  m_FillAmount: 1
+  m_FillClockwise: 1
+  m_FillOrigin: 0
+--- !u!222 &1466636131
+CanvasRenderer:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 222790916961527488, guid: 6bcddc3d2771d9e42a090b394517931e,
+    type: 2}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1466636128}
 --- !u!1 &1471170182
 GameObject:
   m_ObjectHideFlags: 0
@@ -8310,7 +8648,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 56.7, y: -1433}
+  m_AnchoredPosition: {x: 29, y: -1433}
   m_SizeDelta: {x: 1478, y: 1478}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1471170184
@@ -8406,7 +8744,7 @@ Prefab:
     - target: {fileID: 224329158835707348, guid: 34977e573a00200409a2edb2aa5d2498,
         type: 2}
       propertyPath: m_AnchoredPosition.x
-      value: 385
+      value: 396
       objectReference: {fileID: 0}
     - target: {fileID: 224329158835707348, guid: 34977e573a00200409a2edb2aa5d2498,
         type: 2}
@@ -8416,12 +8754,12 @@ Prefab:
     - target: {fileID: 224329158835707348, guid: 34977e573a00200409a2edb2aa5d2498,
         type: 2}
       propertyPath: m_SizeDelta.x
-      value: 238
+      value: 208
       objectReference: {fileID: 0}
     - target: {fileID: 224329158835707348, guid: 34977e573a00200409a2edb2aa5d2498,
         type: 2}
       propertyPath: m_SizeDelta.y
-      value: 281
+      value: 245
       objectReference: {fileID: 0}
     - target: {fileID: 224329158835707348, guid: 34977e573a00200409a2edb2aa5d2498,
         type: 2}
@@ -8453,21 +8791,6 @@ Prefab:
       propertyPath: m_Pivot.y
       value: 0.5
       objectReference: {fileID: 0}
-    - target: {fileID: 114954683418211312, guid: 34977e573a00200409a2edb2aa5d2498,
-        type: 2}
-      propertyPath: TestButtonObject
-      value: 
-      objectReference: {fileID: 1399447530}
-    - target: {fileID: 114954683418211312, guid: 34977e573a00200409a2edb2aa5d2498,
-        type: 2}
-      propertyPath: MainHolderScript
-      value: 
-      objectReference: {fileID: 1399447529}
-    - target: {fileID: 114954683418211312, guid: 34977e573a00200409a2edb2aa5d2498,
-        type: 2}
-      propertyPath: ButtonCameraViewScript
-      value: 
-      objectReference: {fileID: 2076944143}
     - target: {fileID: 114744985118617954, guid: 34977e573a00200409a2edb2aa5d2498,
         type: 2}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
@@ -8496,6 +8819,21 @@ Prefab:
     - target: {fileID: 114744985118617954, guid: 34977e573a00200409a2edb2aa5d2498,
         type: 2}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[6].m_Target
+      value: 
+      objectReference: {fileID: 2076944143}
+    - target: {fileID: 114954683418211312, guid: 34977e573a00200409a2edb2aa5d2498,
+        type: 2}
+      propertyPath: TestButtonObject
+      value: 
+      objectReference: {fileID: 1399447530}
+    - target: {fileID: 114954683418211312, guid: 34977e573a00200409a2edb2aa5d2498,
+        type: 2}
+      propertyPath: MainHolderScript
+      value: 
+      objectReference: {fileID: 1399447529}
+    - target: {fileID: 114954683418211312, guid: 34977e573a00200409a2edb2aa5d2498,
+        type: 2}
+      propertyPath: ButtonCameraViewScript
       value: 
       objectReference: {fileID: 2076944143}
     m_RemovedComponents: []
@@ -8751,22 +9089,22 @@ Prefab:
     - target: {fileID: 224287725013480700, guid: bc24bc3f9fc581f48b9b655a61250a6f,
         type: 2}
       propertyPath: m_AnchoredPosition.x
-      value: 583
+      value: 796
       objectReference: {fileID: 0}
     - target: {fileID: 224287725013480700, guid: bc24bc3f9fc581f48b9b655a61250a6f,
         type: 2}
       propertyPath: m_AnchoredPosition.y
-      value: 1330
+      value: 1325
       objectReference: {fileID: 0}
     - target: {fileID: 224287725013480700, guid: bc24bc3f9fc581f48b9b655a61250a6f,
         type: 2}
       propertyPath: m_SizeDelta.x
-      value: 238
+      value: 208
       objectReference: {fileID: 0}
     - target: {fileID: 224287725013480700, guid: bc24bc3f9fc581f48b9b655a61250a6f,
         type: 2}
       propertyPath: m_SizeDelta.y
-      value: 281
+      value: 245
       objectReference: {fileID: 0}
     - target: {fileID: 224287725013480700, guid: bc24bc3f9fc581f48b9b655a61250a6f,
         type: 2}
@@ -8798,21 +9136,6 @@ Prefab:
       propertyPath: m_Pivot.y
       value: 0.5
       objectReference: {fileID: 0}
-    - target: {fileID: 114289522359502486, guid: bc24bc3f9fc581f48b9b655a61250a6f,
-        type: 2}
-      propertyPath: TestButtonObject
-      value: 
-      objectReference: {fileID: 1399447530}
-    - target: {fileID: 114289522359502486, guid: bc24bc3f9fc581f48b9b655a61250a6f,
-        type: 2}
-      propertyPath: MainHolderScript
-      value: 
-      objectReference: {fileID: 1399447529}
-    - target: {fileID: 114289522359502486, guid: bc24bc3f9fc581f48b9b655a61250a6f,
-        type: 2}
-      propertyPath: ButtonCameraViewScript
-      value: 
-      objectReference: {fileID: 2076944143}
     - target: {fileID: 114462510648135170, guid: bc24bc3f9fc581f48b9b655a61250a6f,
         type: 2}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
@@ -8841,6 +9164,21 @@ Prefab:
     - target: {fileID: 114462510648135170, guid: bc24bc3f9fc581f48b9b655a61250a6f,
         type: 2}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[6].m_Target
+      value: 
+      objectReference: {fileID: 2076944143}
+    - target: {fileID: 114289522359502486, guid: bc24bc3f9fc581f48b9b655a61250a6f,
+        type: 2}
+      propertyPath: TestButtonObject
+      value: 
+      objectReference: {fileID: 1399447530}
+    - target: {fileID: 114289522359502486, guid: bc24bc3f9fc581f48b9b655a61250a6f,
+        type: 2}
+      propertyPath: MainHolderScript
+      value: 
+      objectReference: {fileID: 1399447529}
+    - target: {fileID: 114289522359502486, guid: bc24bc3f9fc581f48b9b655a61250a6f,
+        type: 2}
+      propertyPath: ButtonCameraViewScript
       value: 
       objectReference: {fileID: 2076944143}
     m_RemovedComponents: []
@@ -9048,6 +9386,10 @@ MonoBehaviour:
   isActivateTipsPass: 0
   isShakeActivatePass: 1
   CameraColorPass: {r: 0, g: 0, b: 0, a: 0}
+  debriTipsPass: 0
+  starTipsPass: 0
+  boltTipsPass: 0
+  shakeTipsPass: 0
 --- !u!114 &1611698958 stripped
 MonoBehaviour:
   m_PrefabParentObject: {fileID: 114076639084672554, guid: 6e3c3592aa8b8f447843281b5e4e56f2,
@@ -9248,6 +9590,10 @@ MonoBehaviour:
   isActivateTipsPass: 1
   isShakeActivatePass: 0
   CameraColorPass: {r: 0, g: 0, b: 0, a: 0}
+  debriTipsPass: 0
+  starTipsPass: 0
+  boltTipsPass: 0
+  shakeTipsPass: 0
 --- !u!114 &1612589125 stripped
 MonoBehaviour:
   m_PrefabParentObject: {fileID: 114076639084672554, guid: 6e3c3592aa8b8f447843281b5e4e56f2,
@@ -9563,22 +9909,22 @@ Prefab:
     - target: {fileID: 224044428307998950, guid: 8c51acedec7b1ce4b8dc853e2ba1e3f7,
         type: 2}
       propertyPath: m_AnchoredPosition.x
-      value: 354
+      value: 556
       objectReference: {fileID: 0}
     - target: {fileID: 224044428307998950, guid: 8c51acedec7b1ce4b8dc853e2ba1e3f7,
         type: 2}
       propertyPath: m_AnchoredPosition.y
-      value: 1234
+      value: 1307
       objectReference: {fileID: 0}
     - target: {fileID: 224044428307998950, guid: 8c51acedec7b1ce4b8dc853e2ba1e3f7,
         type: 2}
       propertyPath: m_SizeDelta.x
-      value: 238
+      value: 208
       objectReference: {fileID: 0}
     - target: {fileID: 224044428307998950, guid: 8c51acedec7b1ce4b8dc853e2ba1e3f7,
         type: 2}
       propertyPath: m_SizeDelta.y
-      value: 281
+      value: 245
       objectReference: {fileID: 0}
     - target: {fileID: 224044428307998950, guid: 8c51acedec7b1ce4b8dc853e2ba1e3f7,
         type: 2}
@@ -9610,21 +9956,6 @@ Prefab:
       propertyPath: m_Pivot.y
       value: 0.5
       objectReference: {fileID: 0}
-    - target: {fileID: 114544400266067224, guid: 8c51acedec7b1ce4b8dc853e2ba1e3f7,
-        type: 2}
-      propertyPath: TestButtonObject
-      value: 
-      objectReference: {fileID: 1399447530}
-    - target: {fileID: 114544400266067224, guid: 8c51acedec7b1ce4b8dc853e2ba1e3f7,
-        type: 2}
-      propertyPath: MainHolderScript
-      value: 
-      objectReference: {fileID: 1399447529}
-    - target: {fileID: 114544400266067224, guid: 8c51acedec7b1ce4b8dc853e2ba1e3f7,
-        type: 2}
-      propertyPath: ButtonCameraViewScript
-      value: 
-      objectReference: {fileID: 2076944143}
     - target: {fileID: 114989472328365422, guid: 8c51acedec7b1ce4b8dc853e2ba1e3f7,
         type: 2}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
@@ -9653,6 +9984,21 @@ Prefab:
     - target: {fileID: 114989472328365422, guid: 8c51acedec7b1ce4b8dc853e2ba1e3f7,
         type: 2}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[6].m_Target
+      value: 
+      objectReference: {fileID: 2076944143}
+    - target: {fileID: 114544400266067224, guid: 8c51acedec7b1ce4b8dc853e2ba1e3f7,
+        type: 2}
+      propertyPath: TestButtonObject
+      value: 
+      objectReference: {fileID: 1399447530}
+    - target: {fileID: 114544400266067224, guid: 8c51acedec7b1ce4b8dc853e2ba1e3f7,
+        type: 2}
+      propertyPath: MainHolderScript
+      value: 
+      objectReference: {fileID: 1399447529}
+    - target: {fileID: 114544400266067224, guid: 8c51acedec7b1ce4b8dc853e2ba1e3f7,
+        type: 2}
+      propertyPath: ButtonCameraViewScript
       value: 
       objectReference: {fileID: 2076944143}
     m_RemovedComponents: []
@@ -9844,22 +10190,22 @@ Prefab:
     - target: {fileID: 224300599970229214, guid: f0c0e07e867b05a4a9db9a69e193722a,
         type: 2}
       propertyPath: m_AnchoredPosition.x
-      value: 955
+      value: 721
       objectReference: {fileID: 0}
     - target: {fileID: 224300599970229214, guid: f0c0e07e867b05a4a9db9a69e193722a,
         type: 2}
       propertyPath: m_AnchoredPosition.y
-      value: -1019
+      value: -1041
       objectReference: {fileID: 0}
     - target: {fileID: 224300599970229214, guid: f0c0e07e867b05a4a9db9a69e193722a,
         type: 2}
       propertyPath: m_SizeDelta.x
-      value: 238
+      value: 208
       objectReference: {fileID: 0}
     - target: {fileID: 224300599970229214, guid: f0c0e07e867b05a4a9db9a69e193722a,
         type: 2}
       propertyPath: m_SizeDelta.y
-      value: 281
+      value: 245
       objectReference: {fileID: 0}
     - target: {fileID: 224300599970229214, guid: f0c0e07e867b05a4a9db9a69e193722a,
         type: 2}
@@ -10143,6 +10489,10 @@ MonoBehaviour:
   isActivateTipsPass: 1
   isShakeActivatePass: 0
   CameraColorPass: {r: 0, g: 0, b: 0, a: 0}
+  debriTipsPass: 0
+  starTipsPass: 0
+  boltTipsPass: 0
+  shakeTipsPass: 0
 --- !u!114 &1809138574 stripped
 MonoBehaviour:
   m_PrefabParentObject: {fileID: 114076639084672554, guid: 6e3c3592aa8b8f447843281b5e4e56f2,
@@ -10199,22 +10549,22 @@ Prefab:
     - target: {fileID: 224321651367782804, guid: a315b7c7ea7a0034e92db92c0b99b904,
         type: 2}
       propertyPath: m_AnchoredPosition.x
-      value: 636
+      value: 607
       objectReference: {fileID: 0}
     - target: {fileID: 224321651367782804, guid: a315b7c7ea7a0034e92db92c0b99b904,
         type: 2}
       propertyPath: m_AnchoredPosition.y
-      value: -551
+      value: -426
       objectReference: {fileID: 0}
     - target: {fileID: 224321651367782804, guid: a315b7c7ea7a0034e92db92c0b99b904,
         type: 2}
       propertyPath: m_SizeDelta.x
-      value: 238
+      value: 208
       objectReference: {fileID: 0}
     - target: {fileID: 224321651367782804, guid: a315b7c7ea7a0034e92db92c0b99b904,
         type: 2}
       propertyPath: m_SizeDelta.y
-      value: 281
+      value: 245
       objectReference: {fileID: 0}
     - target: {fileID: 224321651367782804, guid: a315b7c7ea7a0034e92db92c0b99b904,
         type: 2}
@@ -10246,21 +10596,6 @@ Prefab:
       propertyPath: m_Pivot.y
       value: 0.5
       objectReference: {fileID: 0}
-    - target: {fileID: 114358392027930128, guid: a315b7c7ea7a0034e92db92c0b99b904,
-        type: 2}
-      propertyPath: TestButtonObject
-      value: 
-      objectReference: {fileID: 1399447530}
-    - target: {fileID: 114358392027930128, guid: a315b7c7ea7a0034e92db92c0b99b904,
-        type: 2}
-      propertyPath: MainHolderScript
-      value: 
-      objectReference: {fileID: 1399447529}
-    - target: {fileID: 114358392027930128, guid: a315b7c7ea7a0034e92db92c0b99b904,
-        type: 2}
-      propertyPath: ButtonCameraViewScript
-      value: 
-      objectReference: {fileID: 2076944143}
     - target: {fileID: 114157163903735532, guid: a315b7c7ea7a0034e92db92c0b99b904,
         type: 2}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
@@ -10289,6 +10624,21 @@ Prefab:
     - target: {fileID: 114157163903735532, guid: a315b7c7ea7a0034e92db92c0b99b904,
         type: 2}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[6].m_Target
+      value: 
+      objectReference: {fileID: 2076944143}
+    - target: {fileID: 114358392027930128, guid: a315b7c7ea7a0034e92db92c0b99b904,
+        type: 2}
+      propertyPath: TestButtonObject
+      value: 
+      objectReference: {fileID: 1399447530}
+    - target: {fileID: 114358392027930128, guid: a315b7c7ea7a0034e92db92c0b99b904,
+        type: 2}
+      propertyPath: MainHolderScript
+      value: 
+      objectReference: {fileID: 1399447529}
+    - target: {fileID: 114358392027930128, guid: a315b7c7ea7a0034e92db92c0b99b904,
+        type: 2}
+      propertyPath: ButtonCameraViewScript
       value: 
       objectReference: {fileID: 2076944143}
     m_RemovedComponents: []
@@ -10424,6 +10774,10 @@ MonoBehaviour:
   isActivateTipsPass: 0
   isShakeActivatePass: 0
   CameraColorPass: {r: 0, g: 0, b: 0, a: 0}
+  debriTipsPass: 0
+  starTipsPass: 0
+  boltTipsPass: 0
+  shakeTipsPass: 0
 --- !u!114 &1901270052 stripped
 MonoBehaviour:
   m_PrefabParentObject: {fileID: 114076639084672554, guid: 6e3c3592aa8b8f447843281b5e4e56f2,
@@ -10480,22 +10834,22 @@ Prefab:
     - target: {fileID: 224818822346328986, guid: bf86333621d2406479b475485a433835,
         type: 2}
       propertyPath: m_AnchoredPosition.x
-      value: 468
+      value: 521
       objectReference: {fileID: 0}
     - target: {fileID: 224818822346328986, guid: bf86333621d2406479b475485a433835,
         type: 2}
       propertyPath: m_AnchoredPosition.y
-      value: -702
+      value: -694
       objectReference: {fileID: 0}
     - target: {fileID: 224818822346328986, guid: bf86333621d2406479b475485a433835,
         type: 2}
       propertyPath: m_SizeDelta.x
-      value: 238
+      value: 208
       objectReference: {fileID: 0}
     - target: {fileID: 224818822346328986, guid: bf86333621d2406479b475485a433835,
         type: 2}
       propertyPath: m_SizeDelta.y
-      value: 281
+      value: 245
       objectReference: {fileID: 0}
     - target: {fileID: 224818822346328986, guid: bf86333621d2406479b475485a433835,
         type: 2}
@@ -10527,21 +10881,6 @@ Prefab:
       propertyPath: m_Pivot.y
       value: 0.5
       objectReference: {fileID: 0}
-    - target: {fileID: 114481637312132936, guid: bf86333621d2406479b475485a433835,
-        type: 2}
-      propertyPath: TestButtonObject
-      value: 
-      objectReference: {fileID: 1399447530}
-    - target: {fileID: 114481637312132936, guid: bf86333621d2406479b475485a433835,
-        type: 2}
-      propertyPath: MainHolderScript
-      value: 
-      objectReference: {fileID: 1399447529}
-    - target: {fileID: 114481637312132936, guid: bf86333621d2406479b475485a433835,
-        type: 2}
-      propertyPath: ButtonCameraViewScript
-      value: 
-      objectReference: {fileID: 2076944143}
     - target: {fileID: 114474733824519198, guid: bf86333621d2406479b475485a433835,
         type: 2}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
@@ -10570,6 +10909,21 @@ Prefab:
     - target: {fileID: 114474733824519198, guid: bf86333621d2406479b475485a433835,
         type: 2}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[6].m_Target
+      value: 
+      objectReference: {fileID: 2076944143}
+    - target: {fileID: 114481637312132936, guid: bf86333621d2406479b475485a433835,
+        type: 2}
+      propertyPath: TestButtonObject
+      value: 
+      objectReference: {fileID: 1399447530}
+    - target: {fileID: 114481637312132936, guid: bf86333621d2406479b475485a433835,
+        type: 2}
+      propertyPath: MainHolderScript
+      value: 
+      objectReference: {fileID: 1399447529}
+    - target: {fileID: 114481637312132936, guid: bf86333621d2406479b475485a433835,
+        type: 2}
+      propertyPath: ButtonCameraViewScript
       value: 
       objectReference: {fileID: 2076944143}
     m_RemovedComponents: []
@@ -10677,8 +11031,8 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
-      - m_Target: {fileID: 0}
-        m_MethodName: 
+      - m_Target: {fileID: 1373480750}
+        m_MethodName: playSfx
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -10770,7 +11124,7 @@ Prefab:
     - target: {fileID: 224193539486137478, guid: 38bfb83049542a242a0b188f2ae06e8c,
         type: 2}
       propertyPath: m_LocalPosition.z
-      value: 0
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 224193539486137478, guid: 38bfb83049542a242a0b188f2ae06e8c,
         type: 2}
@@ -10800,22 +11154,22 @@ Prefab:
     - target: {fileID: 224193539486137478, guid: 38bfb83049542a242a0b188f2ae06e8c,
         type: 2}
       propertyPath: m_AnchoredPosition.x
-      value: 483
+      value: 479
       objectReference: {fileID: 0}
     - target: {fileID: 224193539486137478, guid: 38bfb83049542a242a0b188f2ae06e8c,
         type: 2}
       propertyPath: m_AnchoredPosition.y
-      value: -1287
+      value: -1264
       objectReference: {fileID: 0}
     - target: {fileID: 224193539486137478, guid: 38bfb83049542a242a0b188f2ae06e8c,
         type: 2}
       propertyPath: m_SizeDelta.x
-      value: 240
+      value: 210
       objectReference: {fileID: 0}
     - target: {fileID: 224193539486137478, guid: 38bfb83049542a242a0b188f2ae06e8c,
         type: 2}
       propertyPath: m_SizeDelta.y
-      value: 283
+      value: 247
       objectReference: {fileID: 0}
     - target: {fileID: 224193539486137478, guid: 38bfb83049542a242a0b188f2ae06e8c,
         type: 2}
@@ -11163,6 +11517,10 @@ MonoBehaviour:
   isActivateTipsPass: 0
   isShakeActivatePass: 0
   CameraColorPass: {r: 0, g: 0, b: 0, a: 0}
+  debriTipsPass: 0
+  starTipsPass: 0
+  boltTipsPass: 0
+  shakeTipsPass: 0
 --- !u!114 &1973236909 stripped
 MonoBehaviour:
   m_PrefabParentObject: {fileID: 114076639084672554, guid: 6e3c3592aa8b8f447843281b5e4e56f2,
@@ -11219,22 +11577,22 @@ Prefab:
     - target: {fileID: 224001564852481290, guid: 320971054424f8f459d2e82f0f8dc29f,
         type: 2}
       propertyPath: m_AnchoredPosition.x
-      value: 796
+      value: 853
       objectReference: {fileID: 0}
     - target: {fileID: 224001564852481290, guid: 320971054424f8f459d2e82f0f8dc29f,
         type: 2}
       propertyPath: m_AnchoredPosition.y
-      value: -848
+      value: -832
       objectReference: {fileID: 0}
     - target: {fileID: 224001564852481290, guid: 320971054424f8f459d2e82f0f8dc29f,
         type: 2}
       propertyPath: m_SizeDelta.x
-      value: 238
+      value: 208
       objectReference: {fileID: 0}
     - target: {fileID: 224001564852481290, guid: 320971054424f8f459d2e82f0f8dc29f,
         type: 2}
       propertyPath: m_SizeDelta.y
-      value: 281
+      value: 245
       objectReference: {fileID: 0}
     - target: {fileID: 224001564852481290, guid: 320971054424f8f459d2e82f0f8dc29f,
         type: 2}
@@ -11266,6 +11624,21 @@ Prefab:
       propertyPath: m_Pivot.y
       value: 0.5
       objectReference: {fileID: 0}
+    - target: {fileID: 114160534578189320, guid: 320971054424f8f459d2e82f0f8dc29f,
+        type: 2}
+      propertyPath: TestButtonObject
+      value: 
+      objectReference: {fileID: 1399447530}
+    - target: {fileID: 114160534578189320, guid: 320971054424f8f459d2e82f0f8dc29f,
+        type: 2}
+      propertyPath: MainHolderScript
+      value: 
+      objectReference: {fileID: 1399447529}
+    - target: {fileID: 114160534578189320, guid: 320971054424f8f459d2e82f0f8dc29f,
+        type: 2}
+      propertyPath: ButtonCameraViewScript
+      value: 
+      objectReference: {fileID: 2076944143}
     - target: {fileID: 114848162923441006, guid: 320971054424f8f459d2e82f0f8dc29f,
         type: 2}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
@@ -11294,21 +11667,6 @@ Prefab:
     - target: {fileID: 114848162923441006, guid: 320971054424f8f459d2e82f0f8dc29f,
         type: 2}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[6].m_Target
-      value: 
-      objectReference: {fileID: 2076944143}
-    - target: {fileID: 114160534578189320, guid: 320971054424f8f459d2e82f0f8dc29f,
-        type: 2}
-      propertyPath: TestButtonObject
-      value: 
-      objectReference: {fileID: 1399447530}
-    - target: {fileID: 114160534578189320, guid: 320971054424f8f459d2e82f0f8dc29f,
-        type: 2}
-      propertyPath: MainHolderScript
-      value: 
-      objectReference: {fileID: 1399447529}
-    - target: {fileID: 114160534578189320, guid: 320971054424f8f459d2e82f0f8dc29f,
-        type: 2}
-      propertyPath: ButtonCameraViewScript
       value: 
       objectReference: {fileID: 2076944143}
     m_RemovedComponents: []
@@ -11508,6 +11866,10 @@ MonoBehaviour:
   isActivateTipsPass: 1
   isShakeActivatePass: 0
   CameraColorPass: {r: 0, g: 0, b: 0, a: 0}
+  debriTipsPass: 0
+  starTipsPass: 0
+  boltTipsPass: 0
+  shakeTipsPass: 0
 --- !u!114 &2004434093 stripped
 MonoBehaviour:
   m_PrefabParentObject: {fileID: 114076639084672554, guid: 6e3c3592aa8b8f447843281b5e4e56f2,
@@ -11863,6 +12225,7 @@ MonoBehaviour:
   MainHolderScript: {fileID: 1399447529}
   NumberOfPeopleText: {fileID: 243076353}
   TotalRescueObject: {fileID: 134052917}
+  IsOnLevel: 1
 --- !u!1001 &2081668672
 Prefab:
   m_ObjectHideFlags: 0
@@ -11913,22 +12276,22 @@ Prefab:
     - target: {fileID: 224004623243594506, guid: 7dcdc96f971d86c48acbcf9af4a8b041,
         type: 2}
       propertyPath: m_AnchoredPosition.x
-      value: 823
+      value: 819
       objectReference: {fileID: 0}
     - target: {fileID: 224004623243594506, guid: 7dcdc96f971d86c48acbcf9af4a8b041,
         type: 2}
       propertyPath: m_AnchoredPosition.y
-      value: -1227
+      value: -1253
       objectReference: {fileID: 0}
     - target: {fileID: 224004623243594506, guid: 7dcdc96f971d86c48acbcf9af4a8b041,
         type: 2}
       propertyPath: m_SizeDelta.x
-      value: 238
+      value: 208
       objectReference: {fileID: 0}
     - target: {fileID: 224004623243594506, guid: 7dcdc96f971d86c48acbcf9af4a8b041,
         type: 2}
       propertyPath: m_SizeDelta.y
-      value: 281
+      value: 245
       objectReference: {fileID: 0}
     - target: {fileID: 224004623243594506, guid: 7dcdc96f971d86c48acbcf9af4a8b041,
         type: 2}
@@ -12093,7 +12456,7 @@ MonoBehaviour:
       m_Calls: []
     m_TypeName: UnityEngine.UI.MaskableGraphic+CullStateChangedEvent, UnityEngine.UI,
       Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
-  m_Sprite: {fileID: 21300000, guid: 4fc5aebc7b6f7b34ab58fa33ccbd71ea, type: 3}
+  m_Sprite: {fileID: 21300000, guid: d1a39dd3aa688d64a8d16d02c48973fb, type: 3}
   m_Type: 0
   m_PreserveAspect: 1
   m_FillCenter: 1
@@ -12379,6 +12742,10 @@ MonoBehaviour:
   isActivateTipsPass: 0
   isShakeActivatePass: 0
   CameraColorPass: {r: 0, g: 0, b: 0, a: 0}
+  debriTipsPass: 0
+  starTipsPass: 0
+  boltTipsPass: 0
+  shakeTipsPass: 0
 --- !u!114 &2113061483 stripped
 MonoBehaviour:
   m_PrefabParentObject: {fileID: 114076639084672554, guid: 6e3c3592aa8b8f447843281b5e4e56f2,

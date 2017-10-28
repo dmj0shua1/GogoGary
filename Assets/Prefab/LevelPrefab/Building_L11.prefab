@@ -152,7 +152,7 @@ MonoBehaviour:
       m_Calls: []
     m_TypeName: UnityEngine.UI.MaskableGraphic+CullStateChangedEvent, UnityEngine.UI,
       Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
-  m_Sprite: {fileID: 21300000, guid: 68e99451123a98244a448ef08bb71712, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 14940fdbd18d16a4199b69d0f73f2df5, type: 3}
   m_Type: 0
   m_PreserveAspect: 1
   m_FillCenter: 1
@@ -295,7 +295,7 @@ MonoBehaviour:
   ObjectiveValue: 70
   FloorValue: 68
   StartingValue: 51
-  DebrisValue: 20
+  DebrisValue: 35
   TimeValue: 0
   HalfObjectiveValue: 35
   UnlockedValue: 11
@@ -310,6 +310,10 @@ MonoBehaviour:
   Star1: {fileID: 1266048020837396}
   Star2: {fileID: 1194047522384128}
   Star3: {fileID: 1449332142363304}
+  debriTipsValue: 0
+  starTipsValue: 1
+  boltTipsValue: 0
+  shakeTipsValue: 0
 --- !u!114 &114584398683178560
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -490,6 +494,6 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 743, y: -177}
-  m_SizeDelta: {x: 238, y: 281}
+  m_AnchoredPosition: {x: 685, y: -173}
+  m_SizeDelta: {x: 208, y: 245}
   m_Pivot: {x: 0.5, y: 0.5}

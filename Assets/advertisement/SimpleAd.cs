@@ -11,8 +11,19 @@ public class SimpleAd : MonoBehaviour {
     Text txtFreeCoinAmount;
     AudioSource coinAudio;
     Text txtuigold;
+
+#if UNITY_IOS
+    private string gameId = "1576335";
+#elif UNITY_ANDROID
+private string gameId = "1576334";
+#endif
     void Start()
     {
+        if (Advertisement.isSupported)
+        {
+            Advertisement.Initialize(gameId, true);
+        }
+
         if (SceneManager.GetActiveScene().name == "adtest")
         {
             PlayerPrefs.SetInt("adsCounter",0);

@@ -5,7 +5,7 @@ using UnityEngine;
 public class SlowMovement : MonoBehaviour {
 
     private playercontroller ThePlayer;
-    private Animator MyAnimation;
+    public Animator MyAnimation;
     public bool DestroyBool;
     void Start()
     {
@@ -31,8 +31,8 @@ public class SlowMovement : MonoBehaviour {
            
             if (ThePlayer.addStar == true)
             {
-                MyAnimation.SetBool("DestroyDeb", !DestroyBool);
-                StartCoroutine(debridestrowithstar());
+                MyAnimation.SetBool("DestroyDeb",!DestroyBool);
+                //StartCoroutine(debridestrowithstar());
             }
         }
       

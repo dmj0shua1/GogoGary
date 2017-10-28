@@ -12,6 +12,7 @@ public class LevelPass : MonoBehaviour {
     private LevelValueHolder LevelValueHolderScript;
     public GameObject TargetLevel;
     public Color CameraColorAmt;
+    public bool debriTipsAmt, starTipsAmt, boltTipsAmt, shakeTipsAmt;
     void Start()
     {
      

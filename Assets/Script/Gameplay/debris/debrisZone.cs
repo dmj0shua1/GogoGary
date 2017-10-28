@@ -10,7 +10,7 @@ public class debrisZone : MonoBehaviour {
 	public Rigidbody2D DebrisBodyType;
     [SerializeField]
     private DebriTrigger DebriTriggerScript;
-    
+    public SpriteRenderer debriSpriteRenderer;
     void Awake() 
     {
         

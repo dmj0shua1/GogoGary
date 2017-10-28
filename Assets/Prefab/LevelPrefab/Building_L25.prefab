@@ -166,7 +166,7 @@ MonoBehaviour:
       m_Calls: []
     m_TypeName: UnityEngine.UI.MaskableGraphic+CullStateChangedEvent, UnityEngine.UI,
       Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
-  m_Sprite: {fileID: 21300000, guid: 6cabc36c4539266488088393acc5a8f6, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 70bddb5e5fe4418458e24b8024f58e9b, type: 3}
   m_Type: 0
   m_PreserveAspect: 1
   m_FillCenter: 1
@@ -191,7 +191,7 @@ MonoBehaviour:
   ObjectiveValue: 145
   FloorValue: 143
   StartingValue: 98
-  DebrisValue: 35
+  DebrisValue: 40
   TimeValue: 25
   HalfObjectiveValue: 72
   UnlockedValue: 25
@@ -200,7 +200,7 @@ MonoBehaviour:
   LevelPlaceValue: 24
   RescuePointValue: 3
   RescueHolderPlayerPref: 0
-  isActivateTipsValue: 1
+  isActivateTipsValue: 0
   isShakeActivateValue: 1
   CameraColorValue: {r: 0.8712587, g: 0.9558824, b: 0.6536549, a: 0}
   Star1: {fileID: 1804365518357494}
@@ -469,8 +469,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 824, y: 1316}
-  m_SizeDelta: {x: 238, y: 281}
+  m_AnchoredPosition: {x: 893, y: 1105}
+  m_SizeDelta: {x: 208, y: 245}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!224 &224501248024817770
 RectTransform:

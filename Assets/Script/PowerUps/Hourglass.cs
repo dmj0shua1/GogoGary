@@ -25,6 +25,10 @@ public class Hourglass : MonoBehaviour {
             PlusSpeedManagerScript.Add_speed_time(speedMode,SpeedTimeLength,AddSpeed);
             gameObject.SetActive(false);
 		}
+        else if (other.gameObject.CompareTag("Hitbox"))
+        {
+            gameObject.SetActive(false);
+        }
 		
 	}
 }

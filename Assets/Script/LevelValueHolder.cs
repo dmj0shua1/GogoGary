@@ -15,6 +15,7 @@ public class LevelValueHolder : MonoBehaviour {
     public GameObject Star1;
     public GameObject Star2;
     public GameObject Star3;
+    public bool debriTipsValue, starTipsValue, boltTipsValue,shakeTipsValue;
   
     void Start() 
     {
@@ -47,6 +48,10 @@ public class LevelValueHolder : MonoBehaviour {
         MainHolderScript.CameraColorPass = CameraColorValue;
         MainHolderScript.RescuePointPass = RescuePointValue;
         MainHolderScript.RescueHolderPrefPass = RescueHolderPlayerPref;
+        MainHolderScript.debriTipsPass = debriTipsValue;
+        MainHolderScript.starTipsPass = starTipsValue;
+        MainHolderScript.boltTipsPass = boltTipsValue;
+        MainHolderScript.shakeTipsPass = shakeTipsValue;
 
     }
 }

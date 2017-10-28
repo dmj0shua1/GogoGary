@@ -17,10 +17,16 @@ public class floorcounter : MonoBehaviour {
     public int CountFloorPlus;
     public int CheckCountPlus;
     private DebriTrigger DebriTriggerScript;
+    [Header("NewRescuePointGeneration")]
+    public int MainFloorHolderDivided;
+    public int MainFloorDecreaseDivided;
     void Start() 
     {
         countFloor = MainCount;
-        theText.text = "" + MainCount; 
+        theText.text = "" + MainCount;
+        //MainFloorHolderDivided = MainCount / 7;
+        //MainFloorDecreaseDivided = MainFloorHolderDivided;
+
 
     }
 
@@ -35,6 +41,7 @@ public class floorcounter : MonoBehaviour {
                     isActive = true;
                     countFloor--;
                     CountFloorPlus++;
+                    //MainFloorDecreaseDivided--;
                     theText.text = " " + Mathf.Round(countFloor);
                     DebriTriggerScript = other.gameObject.GetComponent<DebriTrigger>();
                     DebriTriggerScript.IsTrigger = false;

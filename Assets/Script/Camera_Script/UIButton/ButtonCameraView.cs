@@ -24,25 +24,20 @@ public class ButtonCameraView : MonoBehaviour {
     private MainHolder MainHolderScript;
     public Text NumberOfPeopleText;
     public GameObject TotalRescueObject;
+    public bool IsOnLevel;
+    void Awake() 
+    {
+        CurrenLevelZoomIn();
+      
+    }
     void Start() 
     {
         MyAnimation = GetComponent<Animator>();
         MainHolderScript = GameObject.Find("LevelButton1").GetComponent<MainHolder>();
-       
+
        
     }
 
-    /*void Awake() 
-    {
-        for (int num = 1; num < 26; num++)
-        {
-            if (PlayerPrefs.GetInt("UnlockLevels") == PlayerPrefs.GetInt("Building_L" + LevelValueHolderScript.UnlockedValue))
-            {
-                MyAnimation.SetBool("IsZoom", true);
-                MoveTowardsTarget();
-            }
-        }
-    }*/
     public void NumberQue(int BuildingNumber) 
     {
      
@@ -122,9 +117,16 @@ public class ButtonCameraView : MonoBehaviour {
             NumberOfPeopleText.text = "" + PlayerPrefs.GetInt("Building_L" + LevelStatusHolder.ToString());
         }
     }
+    public void CurrenLevelZoomIn() 
+    {
+        if (IsOnLevel)
+        { 
+        }
+    }
     void Update()
     {
-            MoveTowardsTarget();     
+        MoveTowardsTarget();
+ 
     }
     //move towards a target at a set speed.
     private void MoveTowardsTarget()

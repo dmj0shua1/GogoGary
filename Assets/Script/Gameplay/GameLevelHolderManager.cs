@@ -15,6 +15,8 @@ public class GameLevelHolderManager : MonoBehaviour {
     private PowerupGeneration PowerupGenerationScript;
     [SerializeField]
     private LevelPass LevelPassScript;
+    public GameObject debriTipsObject, starTipsObject, boltTipsObject,ShakeTipsObject;
+    public bool debriTipsShow, starTipsShow, boltTipsShow,ShakeTips;
 
     void Awake() 
     {
@@ -34,6 +36,29 @@ public class GameLevelHolderManager : MonoBehaviour {
         PlatFormGeneratorScript.powerupThreshold = LevelPassScript.PowerupAmt;
         debrisGenerationScript.IsActivate = LevelPassScript.isActivateTipsAmt;
         PlatFormGeneratorScript.AmountRescuePoint = LevelPassScript.RescuePointAmt;
+        debriTipsShow = LevelPassScript.debriTipsAmt;
+        starTipsShow = LevelPassScript.starTipsAmt;
+        ShakeTips = LevelPassScript.shakeTipsAmt;
+        boltTipsShow = LevelPassScript.boltTipsAmt;
+
+        if (debriTipsShow)
+        {
+            debriTipsObject.SetActive(true);
+           
+        }
+        else if (starTipsShow)
+        {
+            starTipsObject.SetActive(true);
+        }
+        else if (ShakeTips)
+        {
+            ShakeTipsObject.SetActive(true);
+        }
+         else if (boltTipsShow)
+        {
+            boltTipsObject.SetActive(true); 
+        }
+        
     }
 
 }
