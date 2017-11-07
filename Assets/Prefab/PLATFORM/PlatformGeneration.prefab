@@ -87,6 +87,8 @@ MonoBehaviour:
   prevRescue: 0
   NewHolderOfPlatform: {fileID: 0}
   RescueHolderDivided: 0
+  LevelPassScript: {fileID: 0}
+  isShake: 0
 --- !u!114 &114892087876031430
 MonoBehaviour:
   m_ObjectHideFlags: 1

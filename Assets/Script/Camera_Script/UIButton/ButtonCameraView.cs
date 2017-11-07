@@ -93,21 +93,22 @@ public class ButtonCameraView : MonoBehaviour {
     }
     public void NextButton() 
     {
-        LevelStatusHolder = LevelStatusHolder + 1;
-        LevelNumberText.text = "" + LevelStatusHolder;
-        ButtonNumberHolder = ButtonNumberHolder + 1;
-        target = BuildingButtons[ButtonNumberHolder];
-        MainHolderScript.LevelStatusPass = LevelStatusHolder;
-        LevelValueHolderScript = target.GetComponent<LevelValueHolder>();
-        LevelValueHolderScript.PassValue();
+       
         if (PlayerPrefs.HasKey("Building_L" + LevelStatusHolder.ToString()))
         {
             NumberOfPeopleText.text = "" + PlayerPrefs.GetInt("Building_L" + LevelStatusHolder.ToString());
         }
-        if (ButtonNumberHolder >= 24)
+        if (ButtonNumberHolder <= 23)
         {
-            LevelStatusHolder = LevelStatusHolder - 1;
-            ButtonNumberHolder = ButtonNumberHolder - 1;
+            LevelStatusHolder = LevelStatusHolder + 1;
+            LevelNumberText.text = "" + LevelStatusHolder;
+            ButtonNumberHolder = ButtonNumberHolder + 1;
+            target = BuildingButtons[ButtonNumberHolder];
+            MainHolderScript.LevelStatusPass = LevelStatusHolder;
+            LevelValueHolderScript = target.GetComponent<LevelValueHolder>();
+            LevelValueHolderScript.PassValue();
+            //LevelStatusHolder = LevelStatusHolder - 1;
+            //ButtonNumberHolder = ButtonNumberHolder - 1;
         }
        
     }

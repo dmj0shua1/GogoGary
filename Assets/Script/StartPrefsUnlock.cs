@@ -8,7 +8,7 @@ public class StartPrefsUnlock : MonoBehaviour {
 
 	// Use this for initialization
 	void Start () {
-        for (int num = 1; num < 26; num++)
+        for (int num = 1; num <26; num++)
         {
             LevelValueHolderScript = GameObject.Find("Building_L" + num.ToString()).GetComponent<LevelValueHolder>();
             if (PlayerPrefs.GetInt("Building_L" + LevelValueHolderScript.UnlockedValue) == 0)

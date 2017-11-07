@@ -38,6 +38,7 @@ public class PowerupManager : MonoBehaviour {
 				PlayerScript.DecreaseSpeed = PlayerSpeed;
 				powerupActive = false;
 			}
+           
           
 		}
 	}

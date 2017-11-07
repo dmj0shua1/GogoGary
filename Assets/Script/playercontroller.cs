@@ -114,6 +114,7 @@ public class playercontroller : MonoBehaviour {
 			}
         GaryHop();
         HitOnDebris();
+        BoltToStar();
         }
         GetStarAnimation();
         GetBoltAnimation();
@@ -135,8 +136,7 @@ public class playercontroller : MonoBehaviour {
                 //G1Object.SetActive(false);
                 SwipeAgainText.SetActive(false);
             }*/ 
-        }
-       
+        } 
 	}
     public void GaryHop() 
     {
@@ -147,15 +147,23 @@ public class playercontroller : MonoBehaviour {
             PlusSpeedManagerScript.addSpeedActive = false;
         }
     }
+    public void BoltToStar() 
+    {
+        if (PowerupManagerScript.powerupActive == true)
+        {
+            PlusSpeedManagerScript.addSpeedActive = false;
+        }
+    }
     public void HitOnDebris()
     {
         MyAnimation.SetBool("OnDebris", !OnDebris);
         if (!OnDebris)
         {
             moveSpeed = currentSpeed;
+
             if (PlusSpeedManagerScript.SpeedTimeLength >0)
             {
-             
+                //MyAnimation.SetBool("addspeed", false);
                 PlusSpeedManagerScript.addSpeedActive = true;
             }
            

@@ -43,7 +43,7 @@ public class FBManager : MonoBehaviour
         else
         {
             //default status text
-            txtStatus.text = "share and invite your friends to get free coins!";
+            txtStatus.text = "share and invite your friends";
         }
     }
 

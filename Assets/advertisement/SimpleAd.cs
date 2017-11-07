@@ -26,7 +26,7 @@ void Awake()
     if (!PlayerPrefs.HasKey("rewardClaimed")) PlayerPrefs.SetInt("rewardClaimed", 0);
     if (PlayerPrefs.GetInt("rewardClaimed") == 0)
     {
-        LevelPassScript.FireTriggerAmt = LevelPassScript.FireTriggerAmt - 5;
+        LevelPassScript.FireTriggerAmt = LevelPassScript.FireTriggerAmt - 2;
         PlayerPrefs.SetInt("rewardClaimed", 1);
         print("ok");
     }
@@ -104,7 +104,7 @@ void Awake()
      {
          if (PlayerPrefs.GetInt("rewardClaimed")==0)
          {
-             LevelPassScript.FireTriggerAmt = LevelPassScript.FireTriggerAmt - 5;
+             LevelPassScript.FireTriggerAmt = LevelPassScript.FireTriggerAmt - 2;
              PlayerPrefs.SetInt("rewardClaimed", 1);
              print("ok");
          }
