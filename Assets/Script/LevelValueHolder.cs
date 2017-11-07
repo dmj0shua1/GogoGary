@@ -16,7 +16,7 @@ public class LevelValueHolder : MonoBehaviour {
     public GameObject Star2;
     public GameObject Star3;
     public bool debriTipsValue, starTipsValue, boltTipsValue,shakeTipsValue;
-  
+ 
     void Start() 
     {
         MainHolderScript = GameObject.Find("LevelButton1").GetComponent<MainHolder>();

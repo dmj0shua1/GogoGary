@@ -8,7 +8,7 @@ public class PlatformGenerator : MonoBehaviour {
 	public Transform generationPoint;
 	public float distanceBetween;
 	public ObjectPooler[] theObjectPools;
-
+    [SerializeField]
 	private float platFormHeight;
 	private int floorSelector;
     [Header("FloorLimitAndExit")]
@@ -41,6 +41,11 @@ public class PlatformGenerator : MonoBehaviour {
     private DebriTrigger DebriTriggerScript;
     [Header("RescueNewGenerate")]
     public int RescueHolderDivided;
+    [Header("ShakeGenerate")]
+    public LevelPass LevelPassScript;
+    private testingcamerashake TestingCameraShakeScript;
+    public bool isShake;
+
 	void Start()
 	{
 		platFormHeight = floor.GetComponent<BoxCollider2D>().size.y;
@@ -48,8 +53,16 @@ public class PlatformGenerator : MonoBehaviour {
         floorSelector = Random.Range(0, theObjectPools.Length);
         PrevFloor = floorSelector;
         FloorCounterScript = GameObject.Find("player").GetComponent<floorcounter>();
+        LevelPassScript = GameObject.Find("Holder").GetComponent<LevelPass>();
+        TestingCameraShakeScript = GameObject.Find("camerashaketest").GetComponent<testingcamerashake>();
         RescueSelector = Random.Range(0, RescuePointPooler.Length);
         prevRescue = RescueSelector;
+        if (LevelPassScript.isShakeActivateAmt == true)
+        {
+            isShake = true;
+            //BlackOutObject.SetActive(true);
+
+        }
 	}
     //note 13.7 DistanceBetween
 	void Update()
@@ -74,20 +87,23 @@ public class PlatformGenerator : MonoBehaviour {
                 DebriTriggerScript.IsTrigger = true;
                 //
                 newPlatform.SetActive(true);
-                print(floorSelector);
+                //print(floorSelector);
                 NewHolderOfPlatform = theObjectPools[floorSelector].GetPooledObject();
                 FloorCounter();
                 //hourglassgenerate
 
-                if (Random.Range(0f, 100f) < timeThreshold)
+                //if (Random.Range(0f, 100f) < timeThreshold)
+                //{
+                if (Counts %timeThreshold ==0)
                 {
                     GameObject newTime = timePooler.GetPooledObject();
-                    float debrisXposition = Random.Range(3, 9);
-                    Vector3 debrisPosition = new Vector3(debrisXposition, timeHeight, 0f);
-                    newTime.transform.position = transform.position + debrisPosition;
+                    float BoltXposition = Random.Range(8, 12);
+                    Vector3 BoltPosition = new Vector3(BoltXposition, timeHeight, 0f);
+                    newTime.transform.position = transform.position + BoltPosition;
                     newTime.transform.rotation = transform.rotation;
-                    newTime.SetActive(true);
+                    newTime.SetActive(true);   
                 }
+                //}
                 //powerupgeneration
                 if (FloorCounterScript.countFloor <= FloorCounterScript.halfFloorPoint)
                 {
@@ -110,26 +126,6 @@ public class PlatformGenerator : MonoBehaviour {
                         }
                     }
                 }
-               //
-                /*if (FloorCounterScript.MainFloorDecreaseDivided == 0)
-                {
-                    FloorCounterScript.MainFloorDecreaseDivided = FloorCounterScript.MainFloorHolderDivided;
-                    GameObject newRescue = RescuePointPooler[RescueSelector].GetPooledObject();
-                    float RescueXposition = Random.Range(8, 12);
-                    Vector3 rescuePosition = new Vector3(RescueXposition, RescuePointheight, 0f);
-                    newRescue.transform.position = transform.position + rescuePosition;
-                    newRescue.transform.rotation = transform.rotation;
-                    newRescue.SetActive(true);
-
-                    if (SetRescuePoint == AmountRescuePoint)
-                    {
-                        newRescue.SetActive(false);
-                    }
-                    else
-                    {
-                        SetRescuePoint++;
-                    }
-                }*/
             //newrrescuegeneration----------------------------
                         RescueHolderDivided = EndGenerate / 5;
                         if (Counts % RescueHolderDivided ==0)
@@ -152,6 +148,18 @@ public class PlatformGenerator : MonoBehaviour {
                             }
                         }
             //----------------------------------------------
+                        if (isShake)
+                        {
+                            if (Counts % 10 == 0)
+                            {
+                                TestingCameraShakeScript.IsActiveShake = true;
+                                if (TestingCameraShakeScript.shakeDuration == 0)
+                                {
+                                    TestingCameraShakeScript.shakeDuration = 1f;
+                                }
+                            }  
+                        }
+            //ShakeGenerate
             //end
             }
         }

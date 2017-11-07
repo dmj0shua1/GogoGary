@@ -33,13 +33,24 @@ public class playercontroller : MonoBehaviour {
 
     public AudioSource BoltSfx;
     public AudioSource StarSfx;
-    public AudioSource HopSfx;
+    //public AudioSource HopSfx;
     public AudioSource Debri_destroy;
     public AudioSource Yes_rescue;
-    public AudioSource booSFX;
+    //public AudioSource booSFX;
     [SerializeField]
     private playercontroller PlayerScript;
     public GameObject temp;
+    public GameObject EventBox;
+    public GameObject EventBox4;
+    public GameObject HandLeftIcon;
+    //public GameObject G1Object;
+    public GameObject SwipeAgainText;
+    //public GameObject HandRightIcon;
+    public GameObject Go_Object;
+    public bool isCountDownSwipe;
+    public Rigidbody2D Player_Gary;
+    public bool isCheckBolt;
+    SimpleAd SimpleAdScript;
 	void start()
 	{	
 		ifRight = true;
@@ -47,6 +58,9 @@ public class playercontroller : MonoBehaviour {
 	}
 	private void Awake()
 	{
+        MyAnimation = GetComponent<Animator>();
+        currentSpeed = moveSpeed;
+        isCountDownSwipe = true;
         FloorCounterScript = GetComponent<floorcounter>();
 		mySpriteRenderer = GetComponent<SpriteRenderer>();
 		TimeManagerScript = GameObject.Find ("countDown").GetComponent<TimeManager> ();
@@ -55,15 +69,15 @@ public class playercontroller : MonoBehaviour {
         PowerupManagerScript = GameObject.Find("PowerupManager").GetComponent<PowerupManager>();
         LevelPassScript = GameObject.Find("Holder").GetComponent<LevelPass>();
         SwipeTestScript = GameObject.Find("Swipe").GetComponent<SwipeTest>();
- 
-        MyAnimation = GetComponent<Animator>();
-		currentSpeed = moveSpeed;
+        SimpleAdScript = GameObject.Find("SimpleAd").GetComponent<SimpleAd>();
+       
 	}
 	void Update ()
 	{
         if (isAllMove) { 
-		if (grounded = GetComponent<Rigidbody2D>().IsTouchingLayers (LayerMask.GetMask("Ground"))) 
+		if (grounded = GetComponent<Rigidbody2D>().IsTouchingLayers (LayerMask.GetMask("Ground")))
         {
+            MyAnimation.SetBool("Check1", Check1);
             if (Check1)
             {
 
@@ -71,6 +85,12 @@ public class playercontroller : MonoBehaviour {
                 {
                     GetComponent<Rigidbody2D>().velocity = new Vector2(-moveSpeed, GetComponent<Rigidbody2D>().velocity.y);
                     mySpriteRenderer.flipX = false;
+                    /*
+                    if ( Player_Gary.bodyType == RigidbodyType2D.Static)
+                    {
+                        EventBox.SetActive(false);
+                        Player_Gary.bodyType = RigidbodyType2D.Dynamic; 
+                    }*/
                 }
                 else
                 {
@@ -97,6 +117,26 @@ public class playercontroller : MonoBehaviour {
         }
         GetStarAnimation();
         GetBoltAnimation();
+        if (!isCountDownSwipe)
+        {
+            StartCoroutine(ReadyToSwipe());
+            /*if (isCheckBolt == false)
+            {
+                if (PlusSpeedManagerScript.SpeedTimeLength >=0)
+                {
+                    PlusSpeedManagerScript.addSpeedActive = true;
+                }    
+            }*/
+            /*if (ifRight == true)
+            {
+                MyAnimation.enabled = true;
+                Player_Gary.bodyType = RigidbodyType2D.Dynamic;
+                HandLeftIcon.SetActive(false);
+                //G1Object.SetActive(false);
+                SwipeAgainText.SetActive(false);
+            }*/ 
+        }
+       
 	}
     public void GaryHop() 
     {
@@ -113,9 +153,22 @@ public class playercontroller : MonoBehaviour {
         if (!OnDebris)
         {
             moveSpeed = currentSpeed;
+            if (PlusSpeedManagerScript.SpeedTimeLength >0)
+            {
+             
+                PlusSpeedManagerScript.addSpeedActive = true;
+            }
+           
         }
-        
-    }
+        else
+        {
+            print("true");
+            //PlusSpeedManagerScript.addSpeedActive = true;
+            
+        }
+
+   
+   }
 
     public void GetStarAnimation() 
     {
@@ -151,7 +204,8 @@ public class playercontroller : MonoBehaviour {
             FireAIscript.minSpeed = 50;
             ViewPanel.SetActive(true);
             PauseButton.SetActive(false);
-            booSFX.Play();
+            SimpleAdScript.gameOverAd();
+            //booSFX.Play();
             StartCoroutine(StopFireAnimation());
             PlayerScript.enabled = false;
              if (PlayerPrefs.HasKey("Building_L" + LevelPassScript.UnlockLevelAmt.ToString()))
@@ -171,13 +225,17 @@ public class playercontroller : MonoBehaviour {
         if (other.CompareTag("Man") || other.CompareTag("Woman"))
         {
             Yes_rescue.Play();
-        }
-        if (other.gameObject.CompareTag("Hitbox"))
+        } if (other.gameObject.CompareTag("EventBox"))
         {
-            HopSfx.Play();
+
+            Player_Gary.bodyType = RigidbodyType2D.Static;
+            MyAnimation.enabled = false;
+            HandLeftIcon.SetActive(true);
+            //G1Object.SetActive(true);
+            SwipeAgainText.SetActive(true);
+            isCountDownSwipe = false;
+            StartCoroutine(StopEventBox());
         }
-       
-       
     }
     void OnTriggerStay2D(Collider2D other)
     {
@@ -188,11 +246,43 @@ public class playercontroller : MonoBehaviour {
                 Debri_destroy.Play();
             }
         }
+        if (other.gameObject.CompareTag("EventBox3"))
+        {
+            SwipeTestScript.isSwipe = false;
+        }
+    }
+    void OnTriggerExit2D(Collider2D other) 
+    {
+        //SwipeLeftObject.SetActive(false);
+        SwipeTestScript.isSwipe = true;
     }
     IEnumerator StopFireAnimation()
     {
         yield return new WaitForSeconds(1);
         FireAIscript.StartFire = false;
+    }
+    IEnumerator StopEventBox()
+    {
+        yield return new WaitForSeconds(1);
+        EventBox.SetActive(false);
+    }
+    IEnumerator StopEventBox4()
+    {
+        yield return new WaitForSeconds(3);
+        isAllMove = true;
+        EventBox4.SetActive(false);
+    }
+    IEnumerator ReadyToSwipe()
+    {
+        yield return new WaitForSeconds(1);
+        if (ifRight == true)
+        {
+            MyAnimation.enabled = true;
+            Player_Gary.bodyType = RigidbodyType2D.Dynamic;
+            HandLeftIcon.SetActive(false);
+            //G1Object.SetActive(false);
+            SwipeAgainText.SetActive(false);
+        }
     }
     
 }

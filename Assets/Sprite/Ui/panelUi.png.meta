@@ -1,7 +1,7 @@
 fileFormatVersion: 2
 guid: b3728257f1557f345beac1f8ec3c40ec
-timeCreated: 1506673849
-licenseType: Pro
+timeCreated: 1509170138
+licenseType: Free
 TextureImporter:
   fileIDToRecycleName: {}
   serializedVersion: 4
@@ -39,7 +39,7 @@ TextureImporter:
   spriteMeshType: 1
   alignment: 0
   spritePivot: {x: 0.5, y: 0.5}
-  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteBorder: {x: 134, y: 159, z: 163, w: 142}
   spritePixelsToUnits: 100
   alphaUsage: 1
   alphaIsTransparency: 1
@@ -67,7 +67,7 @@ TextureImporter:
     allowsAlphaSplitting: 0
     overridden: 0
   - buildTarget: iPhone
-    maxTextureSize: 256
+    maxTextureSize: 512
     textureFormat: 33
     textureCompression: 1
     compressionQuality: 100
@@ -75,7 +75,7 @@ TextureImporter:
     allowsAlphaSplitting: 0
     overridden: 1
   - buildTarget: Android
-    maxTextureSize: 256
+    maxTextureSize: 512
     textureFormat: 47
     textureCompression: 1
     compressionQuality: 100

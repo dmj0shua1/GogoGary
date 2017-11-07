@@ -83,7 +83,6 @@ GameObject:
   m_Component:
   - component: {fileID: 224069061911261320}
   - component: {fileID: 222408185062500296}
-  - component: {fileID: 114383005330375652}
   - component: {fileID: 114422974560818404}
   - component: {fileID: 114233009381600432}
   - component: {fileID: 114186002348273572}
@@ -150,7 +149,7 @@ MonoBehaviour:
   ObjectiveValue: 95
   FloorValue: 93
   StartingValue: 68
-  DebrisValue: 35
+  DebrisValue: 40
   TimeValue: 0
   HalfObjectiveValue: 47
   UnlockedValue: 16
@@ -287,20 +286,6 @@ MonoBehaviour:
         m_CallState: 2
     m_TypeName: UnityEngine.UI.Button+ButtonClickedEvent, UnityEngine.UI, Version=1.0.0.0,
       Culture=neutral, PublicKeyToken=null
---- !u!114 &114383005330375652
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1895493840080634}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 1573420865, guid: f70555f144d8491a825f0804e09c671c, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_EffectColor: {r: 0, g: 0, b: 0, a: 0.5}
-  m_EffectDistance: {x: 3, y: -3}
-  m_UseGraphicAlpha: 1
 --- !u!114 &114422974560818404
 MonoBehaviour:
   m_ObjectHideFlags: 1

@@ -20,7 +20,6 @@ GameObject:
   m_Component:
   - component: {fileID: 224208758099595224}
   - component: {fileID: 222940652358687960}
-  - component: {fileID: 114379174624519652}
   - component: {fileID: 114446143156915880}
   - component: {fileID: 114998566901313256}
   - component: {fileID: 114852521222403178}
@@ -133,20 +132,6 @@ Transform:
   m_Father: {fileID: 224501248024817770}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &114379174624519652
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1004671301286524}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 1573420865, guid: f70555f144d8491a825f0804e09c671c, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_EffectColor: {r: 0, g: 0, b: 0, a: 0.5}
-  m_EffectDistance: {x: 3, y: -3}
-  m_UseGraphicAlpha: 1
 --- !u!114 &114446143156915880
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -191,10 +176,10 @@ MonoBehaviour:
   ObjectiveValue: 145
   FloorValue: 143
   StartingValue: 98
-  DebrisValue: 40
-  TimeValue: 25
+  DebrisValue: 50
+  TimeValue: 10
   HalfObjectiveValue: 72
-  UnlockedValue: 25
+  UnlockedValue: 0
   FireTriggerValue: 144
   PowerupValue: 75
   LevelPlaceValue: 24
@@ -206,6 +191,10 @@ MonoBehaviour:
   Star1: {fileID: 1804365518357494}
   Star2: {fileID: 1168234777934332}
   Star3: {fileID: 1597704586201920}
+  debriTipsValue: 0
+  starTipsValue: 0
+  boltTipsValue: 0
+  shakeTipsValue: 0
 --- !u!114 &114998566901313256
 MonoBehaviour:
   m_ObjectHideFlags: 1

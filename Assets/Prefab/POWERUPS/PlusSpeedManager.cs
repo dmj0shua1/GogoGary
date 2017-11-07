@@ -22,18 +22,20 @@ public class PlusSpeedManager : MonoBehaviour {
         if (addSpeedActive)
         {
             SpeedTimeLength -= Time.deltaTime;
-            
 
             if (speedMode)
             {
                 PlayerScript.moveSpeed = PlayerScript.moveSpeed + AddSpeed;
-            }      
-            if (SpeedTimeLength <= 0)
-            {   
+            
+           }
+           if (SpeedTimeLength <= 0)
+            {
+                SpeedTimeLength = 0;
                 addSpeedActive = false;
-            }
+            }  
         }
     }
+ 
     public void Add_speed_time (bool speed, float time, float add)
     {
         AddSpeed = add;

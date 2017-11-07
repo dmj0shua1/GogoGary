@@ -7,10 +7,12 @@ public class GoToLevels : MonoBehaviour {
     [SerializeField]
     private LevelPass LevelPassScript;
     public GameObject MainHolderScript;
+    private RescueManager RescueManagerScript;
     void Start() 
     {
         MainHolderScript = GameObject.Find("Holder");
         LevelPassScript = GameObject.Find("Holder").GetComponent<LevelPass>();
+        RescueManagerScript = GameObject.Find("RescueManager").GetComponent<RescueManager>();
     }
 
     public void select(int SceneName)
@@ -34,28 +36,24 @@ public class GoToLevels : MonoBehaviour {
         if (PlayerPrefs.HasKey("Building_L" + LevelPassScript.UnlockLevelAmt.ToString()))
         {
             LevelPassScript.RescueHolderPlayerPrefAmt = LevelPassScript.RescuePointAmtCopy; 
-            /*if (PlayerPrefs.GetInt("Building_L" + LevelPassScript.UnlockLevelAmt.ToString()) >= LevelPassScript.RescuePointAmt)
+        }
+    }
+    public void LevelUnlockCheckMethod() 
+    {
+        if (RescueManagerScript.RescuePointCount > 1)
+        {
+            if (/*UnlockNow &&*/ PlayerPrefs.GetInt("UnlockLevels") == LevelPassScript.UnlockLevelAmt)
             {
-                PlayerPrefs.SetInt("Building_L" + LevelPassScript.UnlockLevelAmt.ToString(), 0);
+                PlayerPrefs.SetInt("UnlockLevels", PlayerPrefs.GetInt("UnlockLevels") + 1);
+
+                //UnlockNow = false;
+
             }
-            else if (PlayerPrefs.GetInt("Building_L" + LevelPassScript.UnlockLevelAmt.ToString()) == LevelPassScript.RescuePointAmt)
-            {
-                LevelPassScript.RescuePointAmt = 0;
-            }*/
-            /*if (PlayerPrefs.HasKey("Building_L" + LevelPassScript.UnlockLevelAmt.ToString()))
-            {
 
-                if (PlayerPrefs.GetInt("Building_L" + LevelPassScript.UnlockLevelAmt.ToString()) <= LevelPassScript.RescuePointAmt)
-                {
-                    PlayerPrefs.SetInt("Building_L" + LevelPassScript.UnlockLevelAmt.ToString(), 0);
-                }
-
-                else if (PlayerPrefs.GetInt("Building_L" + LevelPassScript.UnlockLevelAmt.ToString()) == LevelPassScript.RescuePointAmt)
-                {
-                    LevelPassScript.RescuePointAmt = 0;
-                }
+            /*else
+            {
+                UnlockNow = false;
             }*/
-           
         }
     }
 }

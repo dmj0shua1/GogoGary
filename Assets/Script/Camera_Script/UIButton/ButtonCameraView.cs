@@ -24,22 +24,22 @@ public class ButtonCameraView : MonoBehaviour {
     private MainHolder MainHolderScript;
     public Text NumberOfPeopleText;
     public GameObject TotalRescueObject;
-    public bool IsOnLevel;
+    public GameObject MainMenuObject;
+    public GameObject BackBtnObject;
     void Awake() 
     {
-        CurrenLevelZoomIn();
-      
     }
+  
     void Start() 
     {
         MyAnimation = GetComponent<Animator>();
         MainHolderScript = GameObject.Find("LevelButton1").GetComponent<MainHolder>();
-
-       
+   
     }
-
+    
     public void NumberQue(int BuildingNumber) 
     {
+      
      
         ButtonNumberHolder = BuildingNumber;
         MyAnimation.SetBool("IsZoom", true);
@@ -47,7 +47,7 @@ public class ButtonCameraView : MonoBehaviour {
 
         StartCoroutine(LoadNewScene());
         TotalRescueObject.SetActive(false);
-        
+        MainMenuObject.SetActive(false);
     }
     public void testCheckerRescue() 
     {
@@ -77,8 +77,11 @@ public class ButtonCameraView : MonoBehaviour {
         LevelPanelObject.SetActive(false);
         PanelDisabled.SetActive(false);
         TotalRescueObject.SetActive(true);
+        MainMenuObject.SetActive(true);
+
 
     }
+   
     public void BackCameraPosition() 
     {
        //diginagamit
@@ -101,13 +104,23 @@ public class ButtonCameraView : MonoBehaviour {
         {
             NumberOfPeopleText.text = "" + PlayerPrefs.GetInt("Building_L" + LevelStatusHolder.ToString());
         }
+        if (ButtonNumberHolder >= 24)
+        {
+            LevelStatusHolder = LevelStatusHolder - 1;
+            ButtonNumberHolder = ButtonNumberHolder - 1;
+        }
        
     }
     public void backButton()
     {
-        LevelStatusHolder = LevelStatusHolder - 1;
+        if (ButtonNumberHolder >=1)
+        {
+            LevelStatusHolder = LevelStatusHolder - 1;
+            ButtonNumberHolder = ButtonNumberHolder - 1;
+        }
+        
         LevelNumberText.text = "" + LevelStatusHolder;
-        ButtonNumberHolder = ButtonNumberHolder - 1;
+
         target = BuildingButtons[ButtonNumberHolder];
         MainHolderScript.LevelStatusPass = LevelStatusHolder;
         LevelValueHolderScript = target.GetComponent<LevelValueHolder>();
@@ -117,15 +130,12 @@ public class ButtonCameraView : MonoBehaviour {
             NumberOfPeopleText.text = "" + PlayerPrefs.GetInt("Building_L" + LevelStatusHolder.ToString());
         }
     }
-    public void CurrenLevelZoomIn() 
-    {
-        if (IsOnLevel)
-        { 
-        }
-    }
+ 
     void Update()
     {
         MoveTowardsTarget();
+        
+      
  
     }
     //move towards a target at a set speed.

@@ -192,12 +192,18 @@ MonoBehaviour:
   addStar: 0
   BoltSfx: {fileID: 0}
   StarSfx: {fileID: 0}
-  HopSfx: {fileID: 0}
   Debri_destroy: {fileID: 0}
   Yes_rescue: {fileID: 0}
-  booSFX: {fileID: 0}
   PlayerScript: {fileID: 114573579975777220}
   temp: {fileID: 0}
+  EventBox: {fileID: 0}
+  EventBox4: {fileID: 0}
+  HandLeftIcon: {fileID: 0}
+  SwipeAgainText: {fileID: 0}
+  Go_Object: {fileID: 0}
+  isCountDownSwipe: 0
+  Player_Gary: {fileID: 50950685199955128}
+  isCheckBolt: 0
 --- !u!114 &114982520368297428
 MonoBehaviour:
   m_ObjectHideFlags: 1

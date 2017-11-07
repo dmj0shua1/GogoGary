@@ -35,7 +35,6 @@ GameObject:
   m_Component:
   - component: {fileID: 224194547328293342}
   - component: {fileID: 222238911615204522}
-  - component: {fileID: 114177502217417476}
   - component: {fileID: 114105109810775976}
   - component: {fileID: 114382461920262376}
   - component: {fileID: 114838929073343750}
@@ -160,20 +159,6 @@ MonoBehaviour:
   m_FillAmount: 1
   m_FillClockwise: 1
   m_FillOrigin: 0
---- !u!114 &114177502217417476
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1149548760755090}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 1573420865, guid: f70555f144d8491a825f0804e09c671c, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_EffectColor: {r: 0, g: 0, b: 0, a: 0.5}
-  m_EffectDistance: {x: 3, y: -3}
-  m_UseGraphicAlpha: 1
 --- !u!114 &114382461920262376
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -309,7 +294,7 @@ MonoBehaviour:
   ObjectiveValue: 105
   FloorValue: 103
   StartingValue: 74
-  DebrisValue: 35
+  DebrisValue: 40
   TimeValue: 0
   HalfObjectiveValue: 52
   UnlockedValue: 18
@@ -324,6 +309,10 @@ MonoBehaviour:
   Star1: {fileID: 1427290063646296}
   Star2: {fileID: 1311520353807538}
   Star3: {fileID: 1263900891373894}
+  debriTipsValue: 0
+  starTipsValue: 0
+  boltTipsValue: 0
+  shakeTipsValue: 0
 --- !u!212 &212225664460041326
 SpriteRenderer:
   m_ObjectHideFlags: 1

@@ -53,6 +53,7 @@ public class mainmenuPlayer : MonoBehaviour {
     {
                 if (grounded = GetComponent<Rigidbody2D>().IsTouchingLayers(LayerMask.GetMask("Ground")))
                 {
+                    MyAnimation.SetBool("Check1", Check1);
                     if (ifRight)
                     {
                         GetComponent<Rigidbody2D>().velocity = new Vector2(moveSpeed, GetComponent<Rigidbody2D>().velocity.y);
@@ -71,6 +72,7 @@ public class mainmenuPlayer : MonoBehaviour {
                 {
                     GetComponent<Rigidbody2D>().constraints = RigidbodyConstraints2D.FreezePositionX | RigidbodyConstraints2D.FreezeRotation;  
                 }
+                MyAnimation.SetBool("Grounded", grounded);
     }
 
     

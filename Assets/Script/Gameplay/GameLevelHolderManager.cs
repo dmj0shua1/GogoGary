@@ -15,8 +15,13 @@ public class GameLevelHolderManager : MonoBehaviour {
     private PowerupGeneration PowerupGenerationScript;
     [SerializeField]
     private LevelPass LevelPassScript;
+    [SerializeField]
+    private OjbectTransformPosition ObjectTransformScript;
     public GameObject debriTipsObject, starTipsObject, boltTipsObject,ShakeTipsObject;
     public bool debriTipsShow, starTipsShow, boltTipsShow,ShakeTips;
+    [Header("Tutorial")]
+    public GameObject SwipeRightObject;
+    public GameObject HandRightObject;
 
     void Awake() 
     {
@@ -58,7 +63,13 @@ public class GameLevelHolderManager : MonoBehaviour {
         {
             boltTipsObject.SetActive(true); 
         }
-        
+        else if (LevelPassScript.UnlockLevelAmt == 1)
+        {
+           ObjectTransformScript.IsActivate = true;
+           SwipeRightObject.SetActive(true);
+           HandRightObject.SetActive(true);
+
+        }
     }
 
 }

@@ -36,7 +36,6 @@ GameObject:
   m_Component:
   - component: {fileID: 224778748299476556}
   - component: {fileID: 222996113182216358}
-  - component: {fileID: 114244144259818100}
   - component: {fileID: 114639973576153282}
   - component: {fileID: 114965904078529446}
   - component: {fileID: 114479071990506700}
@@ -133,20 +132,6 @@ Transform:
   m_Father: {fileID: 224833864258055196}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &114244144259818100
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1574636069899718}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 1573420865, guid: f70555f144d8491a825f0804e09c671c, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_EffectColor: {r: 0, g: 0, b: 0, a: 0.5}
-  m_EffectDistance: {x: 3, y: -3}
-  m_UseGraphicAlpha: 1
 --- !u!114 &114479071990506700
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -164,8 +149,8 @@ MonoBehaviour:
   ObjectiveValue: 125
   FloorValue: 123
   StartingValue: 84
-  DebrisValue: 40
-  TimeValue: 25
+  DebrisValue: 50
+  TimeValue: 10
   HalfObjectiveValue: 62
   UnlockedValue: 21
   FireTriggerValue: 124

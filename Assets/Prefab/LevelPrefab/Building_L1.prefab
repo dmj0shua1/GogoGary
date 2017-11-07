@@ -67,7 +67,6 @@ GameObject:
   m_Component:
   - component: {fileID: 224193539486137478}
   - component: {fileID: 222810342000599788}
-  - component: {fileID: 114685854140677716}
   - component: {fileID: 114726782736875646}
   - component: {fileID: 114202965676640546}
   - component: {fileID: 114900063194736310}
@@ -251,20 +250,6 @@ MonoBehaviour:
         m_CallState: 2
     m_TypeName: UnityEngine.UI.Button+ButtonClickedEvent, UnityEngine.UI, Version=1.0.0.0,
       Culture=neutral, PublicKeyToken=null
---- !u!114 &114685854140677716
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1914593380010792}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 1573420865, guid: f70555f144d8491a825f0804e09c671c, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_EffectColor: {r: 0, g: 0, b: 0, a: 0.5}
-  m_EffectDistance: {x: 3, y: -3}
-  m_UseGraphicAlpha: 1
 --- !u!114 &114726782736875646
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -307,13 +292,13 @@ MonoBehaviour:
   MainHolderScript: {fileID: 0}
   ButtonCameraViewScript: {fileID: 0}
   ObjectiveValue: 20
-  FloorValue: 18
+  FloorValue: 15
   StartingValue: 18
   DebrisValue: 0
   TimeValue: 0
   HalfObjectiveValue: 0
   UnlockedValue: 1
-  FireTriggerValue: 19
+  FireTriggerValue: 13
   PowerupValue: 0
   LevelPlaceValue: 0
   RescuePointValue: 3
@@ -324,6 +309,10 @@ MonoBehaviour:
   Star1: {fileID: 1489541585198774}
   Star2: {fileID: 1529399816289108}
   Star3: {fileID: 1957766666186190}
+  debriTipsValue: 0
+  starTipsValue: 0
+  boltTipsValue: 0
+  shakeTipsValue: 0
 --- !u!212 &212196090877300296
 SpriteRenderer:
   m_ObjectHideFlags: 1

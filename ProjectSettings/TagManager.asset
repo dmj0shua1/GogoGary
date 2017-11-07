@@ -21,6 +21,11 @@ TagManager:
   - Man
   - Woman
   - Hitbox
+  - HitGary
+  - EventBox
+  - EventBox2
+  - EventBox3
+  - EventBox4
   layers:
   - Default
   - TransparentFX

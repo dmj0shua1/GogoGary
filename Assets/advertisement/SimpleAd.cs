@@ -8,20 +8,35 @@ using UnityEngine.UI;
 public class SimpleAd : MonoBehaviour {
 // Use this for initialization
     public GameObject objRewardedAds;
+    public GameObject ImageDeath;
     Text txtFreeCoinAmount;
     AudioSource coinAudio;
     Text txtuigold;
-
+    private LevelPass LevelPassScript;
+    private LevelValueHolder LevelValueHolderScript;
 #if UNITY_IOS
     private string gameId = "1576335";
 #elif UNITY_ANDROID
 private string gameId = "1576334";
 #endif
+void Awake()
+{
+    LevelPassScript = GameObject.Find("Holder").GetComponent<LevelPass>();
+    ImageDeath.SetActive(false);
+    if (!PlayerPrefs.HasKey("rewardClaimed")) PlayerPrefs.SetInt("rewardClaimed", 0);
+    if (PlayerPrefs.GetInt("rewardClaimed") == 0)
+    {
+        LevelPassScript.FireTriggerAmt = LevelPassScript.FireTriggerAmt - 5;
+        PlayerPrefs.SetInt("rewardClaimed", 1);
+        print("ok");
+    }
+    
+}
     void Start()
     {
         if (Advertisement.isSupported)
         {
-            Advertisement.Initialize(gameId, true);
+            Advertisement.Initialize(gameId);
         }
 
         if (SceneManager.GetActiveScene().name == "adtest")
@@ -40,7 +55,7 @@ private string gameId = "1576334";
 
     public void gameOverAd()
     {
-        if (PlayerPrefs.GetInt("adsCounter") <= 3 )
+        if (PlayerPrefs.GetInt("adsCounter") <= 2 )
         {
             PlayerPrefs.SetInt("adsCounter",PlayerPrefs.GetInt("adsCounter") + 1);
             print("ifAds");
@@ -77,14 +92,29 @@ private string gameId = "1576334";
          {
              Advertisement.Show("rewardedVideo");
              print("ifrewardAds");
-        /*     PlayerPrefs.SetInt("rewardedAdCounter", 0);
-             PlayerPrefs.SetInt("rewardClaimed",1);*/
+            // PlayerPrefs.SetInt("rewardedAdCounter", 0);
+             PlayerPrefs.SetInt("rewardClaimed",0);
              objRewardedAds.SetActive(false);
+             ImageDeath.SetActive(true);
              Invoke("displayCoinReceived", 1.5f);
           
          }
      }
-
+     public void AddHeadstart() 
+     {
+         if (PlayerPrefs.GetInt("rewardClaimed")==0)
+         {
+             LevelPassScript.FireTriggerAmt = LevelPassScript.FireTriggerAmt - 5;
+             PlayerPrefs.SetInt("rewardClaimed", 1);
+             print("ok");
+         }
+         else
+         {
+             LevelPassScript.TargetLevel = LevelPassScript.ButtonNextLevel[LevelPassScript.CurrentButtonPassAmt];
+             LevelValueHolderScript = LevelPassScript.TargetLevel.GetComponent<LevelValueHolder>();
+             LevelPassScript.FireTriggerAmt = LevelValueHolderScript.FireTriggerValue;
+         }
+     }
      void displayCoinReceived()
      {
          /*int randomCoin = UnityEngine.Random.Range(10, 15);

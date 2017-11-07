@@ -20,12 +20,16 @@ public class Hourglass : MonoBehaviour {
 
 	void OnTriggerEnter2D(Collider2D other) {
 
-		if (other.name == "player") 
-		{
-            PlusSpeedManagerScript.Add_speed_time(speedMode,SpeedTimeLength,AddSpeed);
+        if (other.name == "player")
+        {
+            PlusSpeedManagerScript.Add_speed_time(speedMode, SpeedTimeLength, AddSpeed);
             gameObject.SetActive(false);
-		}
+        }
         else if (other.gameObject.CompareTag("Hitbox"))
+        {
+            gameObject.SetActive(false);
+        }
+        else if (other.gameObject.CompareTag("Powerup"))
         {
             gameObject.SetActive(false);
         }

@@ -26,6 +26,7 @@ public class PointManager : MonoBehaviour {
     public GameObject Star1;
     public GameObject Star2;
     public GameObject Star3;
+    public GameObject MissionFailedObject;
 	void Start()
 	{
 		FloorCounterScript = GameObject.Find("player").GetComponent<floorcounter>();
@@ -45,10 +46,10 @@ public class PointManager : MonoBehaviour {
 		HalfFloorCount ();
         WarningSignTrigger();
 
-        if (loadScene == true)
+        /*if (loadScene == true)
          {
             loadingText.color = new Color(loadingText.color.r, loadingText.color.g, loadingText.color.b, Mathf.PingPong(Time.time, 1));
-        }  
+        }*/  
 	}
  	
 	private void CheckPointObjective()
@@ -125,19 +126,26 @@ public class PointManager : MonoBehaviour {
     }
     private void NextLevelMethod() 
     {
-        //if (RescueManagerScript.RescuePointCount >= 1)
-        //{
+        if (RescueManagerScript.RescuePointCount >= 1)
+       {
             if (UnlockNow && PlayerPrefs.GetInt("UnlockLevels") == LevelPassScript.UnlockLevelAmt)
             {
                 PlayerPrefs.SetInt("UnlockLevels", PlayerPrefs.GetInt("UnlockLevels") + 1);
-            
+                
                 UnlockNow = false;
+               
             }
+          
             else
             {
                 UnlockNow = false;
             }
-       // }
+       }
+        else if (RescueManagerScript.RescuePointCount == 0)
+        {
+            ViewPanel.SetActive(false);
+            MissionFailedObject.SetActive(true);
+        }
         //else 
         //{
            // print(RescueManagerScript.RescuePointCount);

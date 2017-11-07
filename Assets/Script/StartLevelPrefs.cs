@@ -7,7 +7,6 @@ public class StartLevelPrefs : MonoBehaviour {
     public int PlaceTotalBuilding;
     private LevelValueHolder LevelValueHolderScript;
     public Text NumberOfPeopleText;
-   
     void Start() 
     {
         if (!PlayerPrefs.HasKey("UnlockLevels")) PlayerPrefs.SetInt("UnlockLevels",1);
