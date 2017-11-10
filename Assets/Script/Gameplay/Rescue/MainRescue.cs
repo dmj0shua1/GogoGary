@@ -26,7 +26,7 @@ public class MainRescue : MonoBehaviour {
             gameObject.SetActive(false);
             PlatformGeneratorScript.SetRescuePoint = PlatformGeneratorScript.SetRescuePoint - 1;
         }
-        else if (other.gameObject.CompareTag("StopCamera"))
+        else if (other.gameObject.CompareTag("HitBoxCam"))
         {
            gameObject.SetActive(false);
             //PlatformGeneratorScript.SetRescuePoint = PlatformGeneratorScript.SetRescuePoint - 1;

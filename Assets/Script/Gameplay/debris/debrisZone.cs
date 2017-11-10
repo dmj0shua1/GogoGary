@@ -16,6 +16,9 @@ public class debrisZone : MonoBehaviour {
         
         //DebriTriggerScript = GameObject.FindGameObjectWithTag("floor").GetComponent<DebriTrigger>();
     }
+    void Start() 
+    {
+    }
     
 	void OnTriggerEnter2D(Collider2D other)
     {

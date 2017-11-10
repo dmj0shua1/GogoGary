@@ -21,6 +21,7 @@ public class FireAi : MonoBehaviour {
     private PowerupManager PowerupManagerScript;
     private floorcounter FloorCounterScript;
     private PlatformGenerator PlatformGeneratorScript;
+    AudioSource FireAudioSource;
 
 //[SerializeField]
     //private AudioSource FireSoundEffect;
@@ -31,6 +32,15 @@ public class FireAi : MonoBehaviour {
         PowerupManagerScript = GameObject.Find("PowerupManager").GetComponent<PowerupManager>();
         FloorCounterScript = GameObject.Find("player").GetComponent<floorcounter>();
         PlatformGeneratorScript = GameObject.Find("PlatformGeneration").GetComponent<PlatformGenerator>();
+        FireAudioSource = GameObject.Find("Fire").GetComponent<AudioSource>();
+
+        if (PlayerPrefs.GetInt("SoundChecker")==0)
+        {
+            FireAudioSource.Play();
+
+        }
+        
+
         
 	}
 	void Update()

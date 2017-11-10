@@ -15,9 +15,13 @@ public class CurrentLevelZoomIn : MonoBehaviour {
     void Start() 
     {
         UnlockLevelHolder = PlayerPrefs.GetInt("UnlockLevels");
-
+        if (PlayerPrefs.GetInt("CurrentZoom")==1)
+        {
+            Isactivate = true;
+        }
        
     }
+    public void CurrentZoomOff() { PlayerPrefs.SetInt("CurrentZoom", 0); }
     void Update() 
     {
         if (Isactivate)

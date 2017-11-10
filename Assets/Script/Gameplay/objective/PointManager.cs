@@ -27,6 +27,7 @@ public class PointManager : MonoBehaviour {
     public GameObject Star2;
     public GameObject Star3;
     public GameObject MissionFailedObject;
+    //public Sprite SmileyObject;
 	void Start()
 	{
 		FloorCounterScript = GameObject.Find("player").GetComponent<floorcounter>();
@@ -41,7 +42,7 @@ public class PointManager : MonoBehaviour {
 	}
 	void Update()
 	{
-		FloorObjective ();
+		//FloorObjective ();
 		CheckPointObjective ();
 		HalfFloorCount ();
         WarningSignTrigger();
@@ -68,14 +69,14 @@ public class PointManager : MonoBehaviour {
 	}
 
 
-	private void FloorObjective()
+	public void FloorObjective()
 	{
    
 		if (FloorCounterScript.countFloor == FloorCounterScript.floorObjective ) 
 		{
-        FireAiScript.StartFire = false;
+        //FireAiScript.StartFire = false;
         TimeManagerScript.isStopMainTime = false;
-        PlayerControllerScript.moveSpeed = 0f;
+        //PlayerControllerScript.moveSpeed = 0f;
         PowerupManagerScript.powerupActive = false;
         PlusSpeedManagerScript.addSpeedActive = false;
         ViewPanel.SetActive(true);
@@ -101,24 +102,31 @@ public class PointManager : MonoBehaviour {
     {
         if (RescueManagerScript.RescuePointCount == 0)
         {
-            Star1.gameObject.SetActive(false);
+            /*Star1.gameObject.SetActive(false);
             Star2.gameObject.SetActive(false);
-            Star3.gameObject.SetActive(false);
+            Star3.gameObject.SetActive(false);*/
         }
         else if (LevelPassScript.RescueHolderPlayerPrefAmt == 1)
         {
-             Star1.gameObject.SetActive(true);
+            //Star1.GetComponent<SpriteRenderer>().sprite = SmileyObject;
+            Star1.gameObject.SetActive(true);
             Star2.gameObject.SetActive(false);
-            Star3.gameObject.SetActive(false); 
+            Star3.gameObject.SetActive(false);
         }
         else if (LevelPassScript.RescueHolderPlayerPrefAmt == 2)
         {
+            //Star1.GetComponent<SpriteRenderer>().sprite = SmileyObject;
+            //Star2.GetComponent<SpriteRenderer>().sprite = SmileyObject;
             Star1.gameObject.SetActive(true);
             Star2.gameObject.SetActive(true);
             Star3.gameObject.SetActive(false);
         }
         else if (LevelPassScript.RescueHolderPlayerPrefAmt == 3)
         {
+            //Star1.GetComponent<SpriteRenderer>().sprite = SmileyObject;
+            //Star2.GetComponent<SpriteRenderer>().sprite = SmileyObject;
+            //Star3.GetComponent<SpriteRenderer>().sprite = SmileyObject;
+
             Star1.gameObject.SetActive(true);
             Star2.gameObject.SetActive(true);
             Star3.gameObject.SetActive(true);
@@ -130,10 +138,8 @@ public class PointManager : MonoBehaviour {
        {
             if (UnlockNow && PlayerPrefs.GetInt("UnlockLevels") == LevelPassScript.UnlockLevelAmt)
             {
-                PlayerPrefs.SetInt("UnlockLevels", PlayerPrefs.GetInt("UnlockLevels") + 1);
-                
-                UnlockNow = false;
-               
+                    PlayerPrefs.SetInt("UnlockLevels", PlayerPrefs.GetInt("UnlockLevels") + 1);
+                    UnlockNow = false; 
             }
           
             else

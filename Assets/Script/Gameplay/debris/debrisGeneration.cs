@@ -19,6 +19,7 @@ public class debrisGeneration : MonoBehaviour {
     public floorcounter FloorCounterScript;
     private debrisZone DebriZoneScript;
     private SlowMovement SlowMovementScript;
+    public AudioSource FallingDebri;
 	void Start()
 	{
 		debrisHeight = debris.GetComponent<BoxCollider2D>().size.y;
@@ -44,7 +45,7 @@ public class debrisGeneration : MonoBehaviour {
                 //debrisSelector = Random.Range(0, theObjectPools.Length);
                 transform.position = new Vector3(transform.position.x, transform.position.y + debrisHeight + -distanceBetween, 0);
 
-                if (Random.Range(0f, 100f) < randomDebrisThreshold)
+                if (Random.Range(0f, 100f) < randomDebrisThreshold )
                 {
                     GameObject newDebris = debrisPool.GetPooledObject();
                     float debrisXposition = Random.Range(-10,10);
@@ -54,6 +55,10 @@ public class debrisGeneration : MonoBehaviour {
                     DebriZoneScript = newDebris.gameObject.GetComponent<debrisZone>();
                     DebriZoneScript.MainDebCollider.enabled = false;
                     DebriZoneScript.deb.enabled = true;
+                    if (PlayerPrefs.GetInt("SoundChecker") == 0)
+                    {
+                        FallingDebri.Play();
+                    }
                     //SlowMovementScript = newDebris.gameObject.GetComponent<SlowMovement>();
                     //SlowMovementScript.MyAnimation.SetBool("DestroyDeb", !SlowMovementScript.DestroyBool);
                     

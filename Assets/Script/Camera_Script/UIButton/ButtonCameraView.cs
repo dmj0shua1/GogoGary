@@ -26,6 +26,9 @@ public class ButtonCameraView : MonoBehaviour {
     public GameObject TotalRescueObject;
     public GameObject MainMenuObject;
     public GameObject BackBtnObject;
+    public GameObject btnNextStage;
+    public GameObject btnPrevStage;
+
     void Awake() 
     {
     }
@@ -48,6 +51,8 @@ public class ButtonCameraView : MonoBehaviour {
         StartCoroutine(LoadNewScene());
         TotalRescueObject.SetActive(false);
         MainMenuObject.SetActive(false);
+        btnNextStage.SetActive(false);
+        btnPrevStage.SetActive(false);
     }
     public void testCheckerRescue() 
     {
@@ -78,6 +83,8 @@ public class ButtonCameraView : MonoBehaviour {
         PanelDisabled.SetActive(false);
         TotalRescueObject.SetActive(true);
         MainMenuObject.SetActive(true);
+        btnNextStage.SetActive(true);
+        btnPrevStage.SetActive(true);
 
 
     }
@@ -94,12 +101,10 @@ public class ButtonCameraView : MonoBehaviour {
     public void NextButton() 
     {
        
-        if (PlayerPrefs.HasKey("Building_L" + LevelStatusHolder.ToString()))
-        {
-            NumberOfPeopleText.text = "" + PlayerPrefs.GetInt("Building_L" + LevelStatusHolder.ToString());
-        }
+      
         if (ButtonNumberHolder <= 23)
         {
+           
             LevelStatusHolder = LevelStatusHolder + 1;
             LevelNumberText.text = "" + LevelStatusHolder;
             ButtonNumberHolder = ButtonNumberHolder + 1;
@@ -107,6 +112,10 @@ public class ButtonCameraView : MonoBehaviour {
             MainHolderScript.LevelStatusPass = LevelStatusHolder;
             LevelValueHolderScript = target.GetComponent<LevelValueHolder>();
             LevelValueHolderScript.PassValue();
+            if (PlayerPrefs.HasKey("Building_L" + LevelStatusHolder.ToString()))
+            {
+                NumberOfPeopleText.text = "" + PlayerPrefs.GetInt("Building_L" + LevelStatusHolder.ToString());
+            }
             //LevelStatusHolder = LevelStatusHolder - 1;
             //ButtonNumberHolder = ButtonNumberHolder - 1;
         }

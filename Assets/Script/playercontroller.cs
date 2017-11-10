@@ -51,6 +51,7 @@ public class playercontroller : MonoBehaviour {
     public Rigidbody2D Player_Gary;
     public bool isCheckBolt;
     SimpleAd SimpleAdScript;
+    PointManager PointManagerScript;
 	void start()
 	{	
 		ifRight = true;
@@ -70,6 +71,7 @@ public class playercontroller : MonoBehaviour {
         LevelPassScript = GameObject.Find("Holder").GetComponent<LevelPass>();
         SwipeTestScript = GameObject.Find("Swipe").GetComponent<SwipeTest>();
         SimpleAdScript = GameObject.Find("SimpleAd").GetComponent<SimpleAd>();
+        PointManagerScript = GameObject.Find("PointManager").GetComponent<PointManager>();
        
 	}
 	void Update ()
@@ -115,9 +117,12 @@ public class playercontroller : MonoBehaviour {
         GaryHop();
         HitOnDebris();
         BoltToStar();
+        StarToBolt();
         }
         GetStarAnimation();
         GetBoltAnimation();
+        ContinueBoltAnimation();
+        CotinueBoltEffect();
         if (!isCountDownSwipe)
         {
             StartCoroutine(ReadyToSwipe());
@@ -154,25 +159,37 @@ public class playercontroller : MonoBehaviour {
             PlusSpeedManagerScript.addSpeedActive = false;
         }
     }
+    public void StarToBolt()
+    {
+        if (PlusSpeedManagerScript.addSpeedActive == true)
+        {
+
+            PowerupManagerScript.powerupActive = false;
+        }
+    }
     public void HitOnDebris()
     {
         MyAnimation.SetBool("OnDebris", !OnDebris);
         if (!OnDebris)
         {
             moveSpeed = currentSpeed;
-
+         
             if (PlusSpeedManagerScript.SpeedTimeLength >0)
             {
-                //MyAnimation.SetBool("addspeed", false);
+           
                 PlusSpeedManagerScript.addSpeedActive = true;
+            }
+            else
+            {
+                addSpeed = false; 
             }
            
         }
-        else
+
+        else  
         {
             print("true");
-            //PlusSpeedManagerScript.addSpeedActive = true;
-            
+
         }
 
    
@@ -192,15 +209,29 @@ public class playercontroller : MonoBehaviour {
     }
     public void GetBoltAnimation()
     {
-        MyAnimation.SetBool("addspeed", !addSpeed);
+
         if (PlusSpeedManagerScript.addSpeedActive == true)
         {
             addSpeed = true;
+
         }
-        else
+    }
+    public void ContinueBoltAnimation()
+    {
+        if (addSpeed ==true)
         {
-            addSpeed = false;
+            MyAnimation.SetBool("addspeed", false);
         }
+        else if (addSpeed == false)
+        {
+            MyAnimation.SetBool("addspeed", true);
+        }
+       
+       
+    }
+    public void CotinueBoltEffect() 
+    {
+      
     }
 
     void OnTriggerEnter2D(Collider2D other) 
@@ -221,19 +252,23 @@ public class playercontroller : MonoBehaviour {
                 PlayerPrefs.SetInt("Building_L" + LevelPassScript.UnlockLevelAmt.ToString(), LevelPassScript.RescuePointAmtCopy);
             }
         }
-        if (other.CompareTag("bolt"))
+        if (other.CompareTag("bolt")&& PlayerPrefs.GetInt("SoundChecker")==0)
         {
             BoltSfx.Play();
         }
 
-        if (other.CompareTag("Powerup"))
+        if (other.CompareTag("Powerup") && PlayerPrefs.GetInt("SoundChecker") == 0)
         {
             StarSfx.Play();
         }
-        if (other.CompareTag("Man") || other.CompareTag("Woman"))
+        if (PlayerPrefs.GetInt("SoundChecker") == 0)
         {
-            Yes_rescue.Play();
-        } if (other.gameObject.CompareTag("EventBox"))
+            if (other.CompareTag("Man") || other.CompareTag("Woman"))
+            {
+                Yes_rescue.Play();
+            }   
+        }
+        if (other.gameObject.CompareTag("EventBox"))
         {
 
             Player_Gary.bodyType = RigidbodyType2D.Static;
@@ -244,10 +279,22 @@ public class playercontroller : MonoBehaviour {
             isCountDownSwipe = false;
             StartCoroutine(StopEventBox());
         }
+        if (other.gameObject.CompareTag("StopCamera"))
+        {//runtooverlaydoor
+            FireAIscript.StartFire = false;
+            SwipeTestScript.enabled = false;
+            if (ifRight == true)
+            {
+                ifRight = false;
+            }
+            print("stopcam");
+        }
+       
     }
     void OnTriggerStay2D(Collider2D other)
     {
-        if (other.CompareTag("debris"))
+       
+        if (other.CompareTag("debris") && PlayerPrefs.GetInt("SoundChecker") == 0)
         {
             if (addStar == true)
             {
@@ -257,6 +304,10 @@ public class playercontroller : MonoBehaviour {
         if (other.gameObject.CompareTag("EventBox3"))
         {
             SwipeTestScript.isSwipe = false;
+        }
+        if (other.gameObject.CompareTag("DoorObjective"))
+        {
+            PointManagerScript.FloorObjective();
         }
     }
     void OnTriggerExit2D(Collider2D other) 

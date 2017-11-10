@@ -26,6 +26,8 @@ TagManager:
   - EventBox2
   - EventBox3
   - EventBox4
+  - DoorObjective
+  - HitBoxCam
   layers:
   - Default
   - TransparentFX

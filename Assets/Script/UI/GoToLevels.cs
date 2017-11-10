@@ -56,4 +56,8 @@ public class GoToLevels : MonoBehaviour {
             }*/
         }
     }
+    public void CurrentZoomOn() 
+    {
+        PlayerPrefs.SetInt("CurrentZoom", 1);
+    }
 }
