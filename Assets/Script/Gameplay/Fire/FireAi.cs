@@ -19,7 +19,7 @@ public class FireAi : MonoBehaviour {
 	public float maxSpeed;
 	private playercontroller playerControllerScript;
     private PowerupManager PowerupManagerScript;
-    private floorcounter FloorCounterScript;
+    private floorcounterEl FloorCounterScript;
     private PlatformGenerator PlatformGeneratorScript;
     AudioSource FireAudioSource;
 
@@ -30,7 +30,7 @@ public class FireAi : MonoBehaviour {
 		TimeManagerScript = GameObject.Find ("countDown").GetComponent<TimeManager> ();
 		playerControllerScript = GameObject.Find ("player").GetComponent<playercontroller> ();
         PowerupManagerScript = GameObject.Find("PowerupManager").GetComponent<PowerupManager>();
-        FloorCounterScript = GameObject.Find("player").GetComponent<floorcounter>();
+        FloorCounterScript = GameObject.Find("player").GetComponent<floorcounterEl>();
         PlatformGeneratorScript = GameObject.Find("PlatformGeneration").GetComponent<PlatformGenerator>();
         FireAudioSource = GameObject.Find("Fire").GetComponent<AudioSource>();
 

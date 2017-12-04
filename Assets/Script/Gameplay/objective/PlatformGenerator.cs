@@ -28,7 +28,7 @@ public class PlatformGenerator : MonoBehaviour {
     public float PowerupsHeight;
     public int setPowerups;
     public int amountPowerups;
-    public floorcounter FloorCounterScript;
+    public floorcounterEl FloorCounterScript;
     public int PowerUpdHolderDivided;
     [Header("RescuePointGeneration")]
     public float RescuePointThreshold;
@@ -66,7 +66,7 @@ public class PlatformGenerator : MonoBehaviour {
 		WallGeneratorScript = GameObject.Find ("WallGeneration").GetComponent<WallGenerator> ();
         floorSelector = Random.Range(0, theObjectPools.Length);
         PrevFloor = floorSelector;
-        FloorCounterScript = GameObject.Find("player").GetComponent<floorcounter>();
+        FloorCounterScript = GameObject.Find("player").GetComponent<floorcounterEl>();
         LevelPassScript = GameObject.Find("Holder").GetComponent<LevelPass>();
         TestingCameraShakeScript = GameObject.Find("camerashaketest").GetComponent<testingcamerashake>();
         FireAiScript = GameObject.Find("Fire").GetComponent<FireAi>();
@@ -191,7 +191,7 @@ public class PlatformGenerator : MonoBehaviour {
             //end
                 //      
                         blackOutHolderDivided = EndGenerate / 3;
-                        if (/*Counts % blackOutHolderDivided ==0*/blackOutHolderDivided == FloorCounterScript.countFloor)
+                        if (/*Counts % blackOutHolderDivided ==0*/blackOutHolderDivided == FloorCounterScript.countFloor_el)
                         {
                             blackOutGameObject.SetActive(true);
                             blackOutAnimation.SetBool("IsIdle",true);
@@ -227,7 +227,7 @@ public class PlatformGenerator : MonoBehaviour {
             if (LevelPassScript.LevelStatusAmt >= 15)
             {
                 {
-                    if (FireHolderDivided == FloorCounterScript.countFloor)
+                    if (FireHolderDivided == FloorCounterScript.countFloor_el)
                     {
                         FireAiScript.minSpeed = FireAiScript.minSpeed + 1;
                         FireAiScript.maxSpeed = FireAiScript.maxSpeed + 1;

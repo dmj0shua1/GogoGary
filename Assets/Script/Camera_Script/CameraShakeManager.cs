@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class CameraShakeManager : MonoBehaviour {
 
-    private floorcounter FloorCounterScript;
+    private floorcounterEl FloorCounterScript;
     private CameraShake CameraShakeScript;
    
     public Transform CameraShakePoint;
@@ -17,7 +17,7 @@ public class CameraShakeManager : MonoBehaviour {
     //public GameObject BlackOutObject;
 	void Start () {
 
-        FloorCounterScript = GameObject.Find("player").GetComponent<floorcounter>();
+        FloorCounterScript = GameObject.Find("player").GetComponent<floorcounterEl>();
         TestingCameraShakeScript = GameObject.Find("camerashaketest").GetComponent<testingcamerashake>();
         LevelPassScript = GameObject.Find("Holder").GetComponent<LevelPass>();
         //BlackOutObject = GameObject.Find("blackout").GetComponent<GameObject>();
@@ -44,7 +44,7 @@ public class CameraShakeManager : MonoBehaviour {
                         TestingCameraShakeScript.shakeDuration = 1f;
                     }
                 }
-                if (FloorCounterScript.countFloor == 5)
+                if (FloorCounterScript.countFloor_el == 5)
                 {
                     TestingCameraShakeScript.enabled = false;
                 } 

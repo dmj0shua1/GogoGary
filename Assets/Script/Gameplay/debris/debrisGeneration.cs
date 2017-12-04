@@ -17,7 +17,7 @@ public class debrisGeneration : MonoBehaviour {
 	private float debrisHeight;
 
     private LevelPass MainHolderScript;
-    public floorcounter FloorCounterScript;
+    public floorcounterEl FloorCounterScript;
     private debrisZone DebriZoneScript;
     private SlowMovement SlowMovementScript;
     public AudioSource FallingDebri;
@@ -25,7 +25,7 @@ public class debrisGeneration : MonoBehaviour {
 	{
 		debrisHeight = debris.GetComponent<BoxCollider2D>().size.y;
         MainHolderScript = GameObject.Find("Holder").GetComponent<LevelPass>();
-        FloorCounterScript = GameObject.Find("player").GetComponent<floorcounter>();
+        FloorCounterScript = GameObject.Find("player").GetComponent<floorcounterEl>();
 
         if (MainHolderScript.isActivateTipsAmt == true)
         {
@@ -39,7 +39,7 @@ public class debrisGeneration : MonoBehaviour {
 	}
     private void DebriCheckerMethod() 
     {
-        if (FloorCounterScript.CountFloorPlus == FloorCounterScript.CheckCountPlus)
+        if (FloorCounterScript.CountFloorPlus_el == FloorCounterScript.CheckCountPlus)
         {
             IsDebriActivate = true;
         }

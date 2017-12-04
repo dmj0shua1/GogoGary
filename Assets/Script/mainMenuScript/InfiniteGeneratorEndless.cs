@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class InfiniteGenerator : MonoBehaviour {
+public class InfiniteGeneratorEndless : MonoBehaviour {
 	//floors
 	public GameObject floor;
 	public Transform generationPoint;
@@ -72,8 +72,8 @@ public class InfiniteGenerator : MonoBehaviour {
             
           
               //rescue generator
-                /*RescueHolderDivided = EndGenerate / 5;
-                if (Counts % RescueHolderDivided == 0)
+                //RescueHolderDivided = 30/ 5;
+                if (Counts % 10 == 0)
                 {
                     FloorCounterScript.MainFloorDecreaseDivided = FloorCounterScript.MainFloorHolderDivided;
                     GameObject newRescue = RescuePointPooler[RescueSelector].GetPooledObject();
@@ -83,9 +83,9 @@ public class InfiniteGenerator : MonoBehaviour {
                     newRescue.transform.rotation = transform.rotation;
                     newRescue.SetActive(true);
 
-                }*/
+                }
 
-                //FloorCounter();
+                FloorCounter();
               
                 //
             }
@@ -93,13 +93,14 @@ public class InfiniteGenerator : MonoBehaviour {
 	private void FloorCounter()
 	{
 		//floor limit codes
-		if (Counts == EndGenerate) {
+		/*if (Counts == EndGenerate) {
             IsGenerate = false;
-			WallGeneratorScript.enabled = false;
-			transform.position = new Vector3 (transform.position.x,transform.position.y + platFormHeight+ -distanceBetween,0);
-			Instantiate (EndGameSprite, transform.position, transform.rotation);
+			//WallGeneratorScript.enabled = false;
+			//transform.position = new Vector3 (transform.position.x,transform.position.y + platFormHeight+ -distanceBetween,0);
+			//Instantiate (EndGameSprite, transform.position, transform.rotation);
 		
-		} else {Counts++;}
+		} else {Counts++;}*/
+        Counts++;
 	}
 
 }

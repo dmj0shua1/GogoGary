@@ -22,7 +22,7 @@ public class playercontroller : MonoBehaviour {
 	private TimeManager TimeManagerScript;
     private FireAi FireAIscript;
     private Animator MyAnimation;
-    private floorcounter FloorCounterScript;
+    private floorcounterEl FloorCounterScript;
     private PlusSpeedManager PlusSpeedManagerScript;
     private PowerupManager PowerupManagerScript;
     private SwipeTest SwipeTestScript;
@@ -65,7 +65,7 @@ public class playercontroller : MonoBehaviour {
         MyAnimation = GetComponent<Animator>();
         currentSpeed = moveSpeed;
         isCountDownSwipe = true;
-        FloorCounterScript = GetComponent<floorcounter>();
+        FloorCounterScript = GetComponent<floorcounterEl>();
 		mySpriteRenderer = GetComponent<SpriteRenderer>();
 		TimeManagerScript = GameObject.Find ("countDown").GetComponent<TimeManager> ();
         FireAIscript = GameObject.Find("Fire").GetComponent<FireAi>();
@@ -244,15 +244,16 @@ public class playercontroller : MonoBehaviour {
     {
         if (other.gameObject.CompareTag("FireMain"))
         {
-            FloorCounterScript.isNoFunction = false;
+            FloorCounterScript.isNoFunction_el = false;
             TimeManagerScript.isStopMainTime = false;
             FireAIscript.minSpeed = 50;
             StartCoroutine(GameOverCount());
+            StartCoroutine(StopFireAnimation());
             //ViewPanel.SetActive(true);
             PauseButton.SetActive(false);
             SimpleAdScript.gameOverAd();
             //booSFX.Play();
-            StartCoroutine(StopFireAnimation());
+
             PlayerScript.enabled = false;
              if (PlayerPrefs.HasKey("Building_L" + LevelPassScript.UnlockLevelAmt.ToString()))
             {

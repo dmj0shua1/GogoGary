@@ -23,3 +23,6 @@ EditorBuildSettings:
   - enabled: 0
     path: Assets/Scene/adtest.unity
     guid: dc052eb0b1bb393428e44fdee0f03415
+  - enabled: 1
+    path: Assets/Scene/Endless.unity
+    guid: 00000000000000000000000000000000
