@@ -38,6 +38,7 @@ public class floorcounter : MonoBehaviour {
         {
             if (other.gameObject.CompareTag("floor"))
             {
+                    other.gameObject.tag = "Untagged"; 
                     isActive = true;
                     countFloor--;
                     CountFloorPlus++;

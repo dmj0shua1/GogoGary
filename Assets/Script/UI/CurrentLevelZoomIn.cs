@@ -4,9 +4,11 @@ using UnityEngine;
 using UnityEngine.UI;
 public class CurrentLevelZoomIn : MonoBehaviour {
     public Button SampleButton;
+    public Button PlayButton;
     public int UnlockLevelHolder;
     public RectTransform ScrollRectMap;
     private LevelValueHolder LevelValueHolderScript;
+    private ButtonCameraView ButtonCameraViewScript;
     public bool Isactivate;
     void Awake() 
     {
@@ -14,14 +16,17 @@ public class CurrentLevelZoomIn : MonoBehaviour {
     }
     void Start() 
     {
+        ButtonCameraViewScript = GameObject.Find("Main Camera View").GetComponent<ButtonCameraView>();
         UnlockLevelHolder = PlayerPrefs.GetInt("UnlockLevels");
-        if (PlayerPrefs.GetInt("CurrentZoom")==1)
+        if (PlayerPrefs.GetInt("CurrentZoom")==0 && UnlockLevelHolder ==1)
         {
-            Isactivate = true;
+            StartCoroutine(AutoPlay());
+            //PlayButton.onClick.Invoke();
+            //Isactivate = true;
         }
        
     }
-    public void CurrentZoomOff() { PlayerPrefs.SetInt("CurrentZoom", 0); }
+    public void CurrentZoomOff() { /*PlayerPrefs.SetInt("CurrentZoom", 0);*/ }
     void Update() 
     {
         if (Isactivate)
@@ -30,6 +35,7 @@ public class CurrentLevelZoomIn : MonoBehaviour {
             if (SampleButton.interactable == true && SampleButton.gameObject.activeSelf)
             {
                 SampleButton.onClick.Invoke();
+                ButtonCameraViewScript.RescueCheckerLevelMethod();
                 Isactivate = false;
                 if (UnlockLevelHolder >= 14)
                 {
@@ -38,6 +44,13 @@ public class CurrentLevelZoomIn : MonoBehaviour {
             } 
         }
        
+    }
+
+    IEnumerator AutoPlay()
+    {
+        yield return new WaitForSeconds(1.8f);
+        PlayButton.onClick.Invoke();
+        
     }
  
 }

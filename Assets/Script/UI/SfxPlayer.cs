@@ -20,8 +20,13 @@ public class SfxPlayer : MonoBehaviour {
 
     public void playSfx()
     {
-        
+
+        if (PlayerPrefs.GetInt("SoundChecker") == 0)
+        {
             asSfx = objSoundSource.GetComponent<AudioSource>();
             asSfx.Play();
+        }
+        
+           
     }
 }

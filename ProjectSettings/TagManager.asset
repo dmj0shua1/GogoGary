@@ -28,6 +28,8 @@ TagManager:
   - EventBox4
   - DoorObjective
   - HitBoxCam
+  - LeftWall
+  - RightWall
   layers:
   - Default
   - TransparentFX
@@ -39,7 +41,7 @@ TagManager:
   - 
   - Ground
   - Player
-  - 
+  - Wall
   - 
   - 
   - 

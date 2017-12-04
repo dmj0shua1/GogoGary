@@ -204,6 +204,7 @@ MonoBehaviour:
   isCountDownSwipe: 0
   Player_Gary: {fileID: 50950685199955128}
   isCheckBolt: 0
+  isDebriGround: 0
 --- !u!114 &114982520368297428
 MonoBehaviour:
   m_ObjectHideFlags: 1

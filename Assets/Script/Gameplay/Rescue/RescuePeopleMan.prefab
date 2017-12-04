@@ -40,6 +40,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4875878133878290}
   - component: {fileID: 212434411534371440}
+  - component: {fileID: 114408947805978308}
   m_Layer: 0
   m_Name: help
   m_TagString: Untagged
@@ -67,7 +68,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1055529639688786}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 2.81, y: -59.835014, z: 0}
+  m_LocalPosition: {x: 1765.4011, y: -25.857397, z: 0}
   m_LocalScale: {x: 0.37742403, y: 0.37742403, z: 0.37742403}
   m_Children:
   - {fileID: 4875878133878290}
@@ -136,6 +137,20 @@ Animator:
   m_WarningMessage: 
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
+--- !u!114 &114408947805978308
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1149227703550134}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ea5d380015cc8014d95ef00b46abb5f5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  EnglishImage: {fileID: 212434411534371440}
+  ChineseSprite: {fileID: 21300000, guid: 39290afa7aa861146aa07ead1baef6c0, type: 3}
+  OriginalSprite: {fileID: 21300000, guid: ffe3db0c5d3c0824cbf8828eb19429b3, type: 3}
 --- !u!114 &114911049761790750
 MonoBehaviour:
   m_ObjectHideFlags: 1

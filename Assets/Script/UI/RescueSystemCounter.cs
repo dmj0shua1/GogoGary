@@ -2,11 +2,18 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.SceneManagement;
 public class RescueSystemCounter : MonoBehaviour {
     public Text RescueNumCounterText;
     void Awake() 
     {
-        RescueNumCounterText.text = "" + (PlayerPrefs.GetInt("TotalRescuePoints"));
+       Scene currentScene = SceneManager.GetActiveScene();
+       string sceneName = currentScene.name;
+       if (sceneName == "Stage1")
+       {
+           RescueNumCounterText.text = "" + (PlayerPrefs.GetInt("TotalRescuePoints"));
+       }
+   
     }
 	// Use this for initialization
 	void Start () {

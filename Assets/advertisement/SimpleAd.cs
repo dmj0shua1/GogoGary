@@ -9,11 +9,17 @@ public class SimpleAd : MonoBehaviour {
 // Use this for initialization
     public GameObject objRewardedAds;
     public GameObject ImageDeath;
+    public GameObject RewardsInfo;
     Text txtFreeCoinAmount;
     AudioSource coinAudio;
     Text txtuigold;
     private LevelPass LevelPassScript;
     private LevelValueHolder LevelValueHolderScript;
+    public GameObject GameOverObject;
+    public GameObject internetMessageBox;
+    private internetChecker InternetCheckerScript;
+    public GameObject PanelForAds;
+    //public Animation gameOverFade;
 #if UNITY_IOS
     private string gameId = "1576335";
 #elif UNITY_ANDROID
@@ -34,6 +40,7 @@ void Awake()
 }
     void Start()
     {
+        InternetCheckerScript = GameObject.Find("internetChecker").GetComponent<internetChecker>();
         if (Advertisement.isSupported)
         {
             Advertisement.Initialize(gameId);
@@ -63,7 +70,11 @@ void Awake()
         else
         {
             PlayerPrefs.SetInt("adsCounter", 0);
-            Invoke("showAdInvoked", 1.0f);
+            Invoke("showAdInvoked", /*1.0f*/0.200f);
+            objRewardedAds.SetActive(false);
+            ImageDeath.SetActive(true);
+            //PanelForAds.SetActive(true);
+            //StartCoroutine(PanelAds());
             print("elseAds");
         }
     }
@@ -95,9 +106,18 @@ void Awake()
             // PlayerPrefs.SetInt("rewardedAdCounter", 0);
              PlayerPrefs.SetInt("rewardClaimed",0);
              objRewardedAds.SetActive(false);
+             StartCoroutine(rewardInfoTime());
+             //RewardsInfo.SetActive(true);
              ImageDeath.SetActive(true);
              Invoke("displayCoinReceived", 1.5f);
           
+         }
+     }
+     public void internetmessageBoxMethod() 
+     {
+         if (InternetCheckerScript.internetConnectBool == false)
+         {
+             internetMessageBox.SetActive(true);   
          }
      }
      public void AddHeadstart() 
@@ -124,6 +144,18 @@ void Awake()
 
          int curGold = Convert.ToInt32(txtuigold.text.ToString());
          txtuigold.text = (curGold + randomCoin).ToString();*/
+     }
+     IEnumerator rewardInfoTime()
+     {
+         yield return new WaitForSeconds(1);
+        RewardsInfo.SetActive(true);
+        GameOverObject.SetActive(false);
+        //gameOverFade.enabled = true;
+     }
+     IEnumerator PanelAds()
+     {
+         yield return new WaitForSeconds(2);
+         PanelForAds.SetActive(false);
      }
 }
 

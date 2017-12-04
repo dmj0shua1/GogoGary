@@ -27,9 +27,15 @@ public class PointManager : MonoBehaviour {
     public GameObject Star2;
     public GameObject Star3;
     public GameObject MissionFailedObject;
+    public bool isComplete;
+    public bool isCompleteActivate;
+    //public Text TestDisplay;
     //public Sprite SmileyObject;
+
+
 	void Start()
 	{
+
 		FloorCounterScript = GameObject.Find("player").GetComponent<floorcounter>();
 		CameraFollowScript = GameObject.Find ("Main Camera").GetComponent<CameraFollow>();
 		FireAiScript = GameObject.Find ("Fire").GetComponent<FireAi> ();
@@ -46,7 +52,7 @@ public class PointManager : MonoBehaviour {
 		CheckPointObjective ();
 		HalfFloorCount ();
         WarningSignTrigger();
-
+        //completeLevelCounterMethod();
         /*if (loadScene == true)
          {
             loadingText.color = new Color(loadingText.color.r, loadingText.color.g, loadingText.color.b, Mathf.PingPong(Time.time, 1));
@@ -81,9 +87,11 @@ public class PointManager : MonoBehaviour {
         PlusSpeedManagerScript.addSpeedActive = false;
         ViewPanel.SetActive(true);
         Pause.SetActive(false);
+        //completeLevelCounterMethod();
         NextLevelMethod();
         CheckerUnlock();
         StarRateChecker();
+      
         if (PlayerPrefs.GetInt("Building_L" + LevelPassScript.UnlockLevelAmt.ToString()) < LevelPassScript.RescueHolderPlayerPrefAmt )
         {
             if (PlayerPrefs.HasKey("Building_L" + LevelPassScript.UnlockLevelAmt.ToString()))
@@ -94,10 +102,27 @@ public class PointManager : MonoBehaviour {
             PlayerPrefs.SetInt("TotalRescuePoints", PlayerPrefs.GetInt("TotalRescuePoints") + LevelPassScript.RescueHolderPlayerPrefAmt);
             PlayerPrefs.SetInt("TotalRescuePoints", PlayerPrefs.GetInt("TotalRescuePoints") - LevelPassScript.RescuePointAmtCopy);
         }
-
+      
 		}
+        //completelevelcounter
+      
        
 	}
+    public void completeLevelCounterMethod()
+    {
+        
+        //if (isCompleteActivate)
+        //{
+            if (isComplete && LevelPassScript.LevelStatusAmt >= 15/*&& PlayerPrefs.GetInt("CompleteLevelCounter") <= 9*/)
+            { 
+                PlayerPrefs.SetInt("CompleteLevelCounter", PlayerPrefs.GetInt("CompleteLevelCounter") + 1);
+                /*TestDisplay.text = "" + PlayerPrefs.GetInt("CompleteLevelCounter");*/
+                isComplete = false;
+
+            }
+                
+        //}
+    }
     public void StarRateChecker() 
     {
         if (RescueManagerScript.RescuePointCount == 0)

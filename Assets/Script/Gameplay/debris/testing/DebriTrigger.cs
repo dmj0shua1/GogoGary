@@ -28,6 +28,7 @@ public class DebriTrigger : MonoBehaviour {
 
     void OnTriggerEnter2D(Collider2D other)
     {
+       
         if (other.gameObject.CompareTag("Player"))
         {
             //other.gameObject.GetComponent<Collider2D>().isTrigger = true;

@@ -119,7 +119,7 @@ PlayerSettings:
     16:10: 1
     16:9: 1
     Others: 1
-  bundleVersion: 1.0
+  bundleVersion: 1.0.6
   preloadedAssets: []
   metroInputSource: 0
   m_HolographicPauseOnTrackingLoss: 1
@@ -141,8 +141,8 @@ PlayerSettings:
     iOS: com.loopbook.gogogary
   buildNumber:
     iOS: 1
-  AndroidBundleVersionCode: 1
-  AndroidMinSdkVersion: 18
+  AndroidBundleVersionCode: 19
+  AndroidMinSdkVersion: 19
   AndroidTargetSdkVersion: 0
   AndroidPreferredInstallLocation: 1
   aotOptions: 
@@ -212,7 +212,7 @@ PlayerSettings:
   iOSManualSigningProvisioningProfileID: 
   tvOSManualSigningProvisioningProfileID: 
   appleEnableAutomaticSigning: 0
-  AndroidTargetDevice: 3
+  AndroidTargetDevice: 0
   AndroidSplashScreenScale: 0
   androidSplashScreen: {fileID: 0}
   AndroidKeystoreName: C:/Users/quikflik/Documents/GogoGary/loopbookinc.keystore
@@ -230,7 +230,7 @@ PlayerSettings:
   - m_BuildTarget: Android
     m_Icons:
     - serializedVersion: 2
-      m_Icon: {fileID: 2800000, guid: 31ab41604037ad84bb8011fc54ad5af7, type: 3}
+      m_Icon: {fileID: 2800000, guid: 782395e30cade5b47a69778590908d49, type: 3}
       m_Width: 192
       m_Height: 192
     - serializedVersion: 2
@@ -591,7 +591,7 @@ PlayerSettings:
     4: CROSS_PLATFORM_INPUT;MOBILE_INPUT
   platformArchitecture: {}
   scriptingBackend:
-    Android: 0
+    Android: 1
   incrementalIl2cppBuild: {}
   additionalIl2CppArgs: 
   apiCompatibilityLevelPerPlatform: {}
@@ -684,7 +684,7 @@ PlayerSettings:
   facebookSdkVersion: 7.9.1
   apiCompatibilityLevel: 2
   cloudProjectId: db6f3918-982a-409d-b347-4ee47eead7da
-  projectName: GogoGary
+  projectName: Go Go Gary
   organizationId: loopbookinc
   cloudEnabled: 0
   enableNewInputSystem: 0

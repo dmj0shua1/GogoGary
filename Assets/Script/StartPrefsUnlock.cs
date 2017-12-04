@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class StartPrefsUnlock : MonoBehaviour {
 
@@ -10,41 +11,40 @@ public class StartPrefsUnlock : MonoBehaviour {
 
 	// Use this for initialization
 	void Start () {
-        for (int num = 1; num <26; num++)
+        Scene currentScene = SceneManager.GetActiveScene();
+        string sceneName = currentScene.name;
+        if (sceneName == "Stage1")
         {
-          
-            LevelValueHolderScript = GameObject.Find("Building_L" + num.ToString()).GetComponent<LevelValueHolder>();
-            if (PlayerPrefs.GetInt("Building_L" + LevelValueHolderScript.UnlockedValue) == 0)
+            for (int num = 1; num < 26; num++)
             {
-                /*LevelValueHolderScript.Star1.SetActive(false);
-                LevelValueHolderScript.Star2.SetActive(false);
-                LevelValueHolderScript.Star3.SetActive(false);*/
-            }
-            else if (PlayerPrefs.GetInt("Building_L" + LevelValueHolderScript.UnlockedValue) == 1)
-            {
-                LevelValueHolderScript.Star1.GetComponent<SpriteRenderer>().sprite = SmileSprite;
-                /*LevelValueHolderScript.Star1.SetActive(true);
-                LevelValueHolderScript.Star2.SetActive(false);
-                LevelValueHolderScript.Star3.SetActive(false);*/
-            }
-            else if (PlayerPrefs.GetInt("Building_L" + LevelValueHolderScript.UnlockedValue) == 2)
-            {
-                LevelValueHolderScript.Star1.GetComponent<SpriteRenderer>().sprite = SmileSprite;
-                LevelValueHolderScript.Star2.GetComponent<SpriteRenderer>().sprite = SmileSprite;
-                /*LevelValueHolderScript.Star1.SetActive(true);
-                LevelValueHolderScript.Star2.SetActive(true);
-                LevelValueHolderScript.Star3.SetActive(false);*/
-            }
-            else if (PlayerPrefs.GetInt("Building_L" + LevelValueHolderScript.UnlockedValue) == 3)
-            {
-                LevelValueHolderScript.Star1.GetComponent<SpriteRenderer>().sprite = SmileSprite;
-                LevelValueHolderScript.Star2.GetComponent<SpriteRenderer>().sprite = SmileSprite;
-                LevelValueHolderScript.Star3.GetComponent<SpriteRenderer>().sprite = SmileSprite;
-                /*LevelValueHolderScript.Star1.SetActive(true);
-                LevelValueHolderScript.Star2.SetActive(true);
-                LevelValueHolderScript.Star3.SetActive(true);*/
+
+
+                LevelValueHolderScript = GameObject.Find("Building_L" + num.ToString()).GetComponent<LevelValueHolder>();
+                if (PlayerPrefs.GetInt("Building_L" + LevelValueHolderScript.UnlockedValue) == 0)
+                {
+
+                }
+                else if (PlayerPrefs.GetInt("Building_L" + LevelValueHolderScript.UnlockedValue) == 1)
+                {
+                    LevelValueHolderScript.Star1.GetComponent<SpriteRenderer>().sprite = SmileSprite;
+
+                }
+                else if (PlayerPrefs.GetInt("Building_L" + LevelValueHolderScript.UnlockedValue) == 2)
+                {
+                    LevelValueHolderScript.Star1.GetComponent<SpriteRenderer>().sprite = SmileSprite;
+                    LevelValueHolderScript.Star2.GetComponent<SpriteRenderer>().sprite = SmileSprite;
+
+                }
+                else if (PlayerPrefs.GetInt("Building_L" + LevelValueHolderScript.UnlockedValue) == 3)
+                {
+                    LevelValueHolderScript.Star1.GetComponent<SpriteRenderer>().sprite = SmileSprite;
+                    LevelValueHolderScript.Star2.GetComponent<SpriteRenderer>().sprite = SmileSprite;
+                    LevelValueHolderScript.Star3.GetComponent<SpriteRenderer>().sprite = SmileSprite;
+
+                }
             }
         }
+     
 	}
 	
 	// Update is called once per frame

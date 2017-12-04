@@ -8,9 +8,11 @@ public class Powerups : MonoBehaviour {
 	public float powerupLength;
 	private PowerupManager powerupManagerScript;
     AudioSource AudioSourceComponent;
+    private PlatformGenerator PlatformGeneratorScript;
 
 	void Start () {
 		powerupManagerScript = GameObject.Find ("PowerupManager").GetComponent<PowerupManager> ();
+        PlatformGeneratorScript = GameObject.Find("PlatformGeneration").GetComponent<PlatformGenerator>();
       
 	}
 
@@ -22,8 +24,21 @@ public class Powerups : MonoBehaviour {
 		{
 			powerupManagerScript.ActivatePowerup (safeMode, powerupLength);
             gameObject.SetActive(false);
-            
-		}
+
+        }
+        else if (other.gameObject.CompareTag("Hitbox"))
+        {
+            gameObject.SetActive(false);
+            PlatformGeneratorScript.setPowerups = PlatformGeneratorScript.setPowerups - 1;
+            PlatformGeneratorScript.ExtraPowerUps();
+        }
+        /*else if (other.gameObject.CompareTag("debris"))
+        {
+            gameObject.SetActive(false);
+            PlatformGeneratorScript.setPowerups = PlatformGeneratorScript.setPowerups - 1;
+            PlatformGeneratorScript.ExtraPowerUps();
+        }*/
+
 		
 	}
 }

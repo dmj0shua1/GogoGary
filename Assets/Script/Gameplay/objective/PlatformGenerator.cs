@@ -29,6 +29,7 @@ public class PlatformGenerator : MonoBehaviour {
     public int setPowerups;
     public int amountPowerups;
     public floorcounter FloorCounterScript;
+    public int PowerUpdHolderDivided;
     [Header("RescuePointGeneration")]
     public float RescuePointThreshold;
     public float RescuePointheight;
@@ -45,6 +46,19 @@ public class PlatformGenerator : MonoBehaviour {
     public LevelPass LevelPassScript;
     private testingcamerashake TestingCameraShakeScript;
     public bool isShake;
+    [Header("Blackout")]
+    public GameObject blackOutGameObject;
+    public Animator blackOutAnimation;
+    public int blackOutHolderDivided;
+    [Header("FireHalfFloor")]
+    private FireAi FireAiScript;
+    public int FireHolderDivided;
+    [Header("Mummy")]
+    public MummyController MummyControllerScript;
+    public bool IsGenerateMummy;
+    public ObjectPooler mummyPooler;
+    public float Mummyheight;
+
 
 	void Start()
 	{
@@ -55,6 +69,8 @@ public class PlatformGenerator : MonoBehaviour {
         FloorCounterScript = GameObject.Find("player").GetComponent<floorcounter>();
         LevelPassScript = GameObject.Find("Holder").GetComponent<LevelPass>();
         TestingCameraShakeScript = GameObject.Find("camerashaketest").GetComponent<testingcamerashake>();
+        FireAiScript = GameObject.Find("Fire").GetComponent<FireAi>();
+        blackOutAnimation = blackOutGameObject.GetComponent<Animator>();
         RescueSelector = Random.Range(0, RescuePointPooler.Length);
         prevRescue = RescueSelector;
         if (LevelPassScript.isShakeActivateAmt == true)
@@ -82,6 +98,7 @@ public class PlatformGenerator : MonoBehaviour {
                 GameObject newPlatform = theObjectPools[floorSelector].GetPooledObject();
                 newPlatform.transform.position = transform.position;
                 newPlatform.transform.rotation = transform.rotation;
+                newPlatform.gameObject.tag = "floor";
                 //
                 DebriTriggerScript = newPlatform.gameObject.GetComponent<DebriTrigger>();
                 DebriTriggerScript.IsTrigger = true;
@@ -105,14 +122,21 @@ public class PlatformGenerator : MonoBehaviour {
                 }
                 //}
                 //powerupgeneration
-                if (FloorCounterScript.countFloor <= FloorCounterScript.halfFloorPoint)
+                //if (FloorCounterScript.countFloor <= FloorCounterScript.halfFloorPoint)
+                //{
+                    //if (Random.Range(0f, 100f) < powerupThreshold)
+                   // {
+                if (powerupThreshold == 75)
                 {
-                    if (Random.Range(0f, 100f) < powerupThreshold)
+                    PowerUpdHolderDivided = EndGenerate / 2;
+                    if (Counts % PowerUpdHolderDivided == 0)
                     {
+
+
                         GameObject newPowerup = powerupPooler.GetPooledObject();
-                        float debrisXposition = Random.Range(0, 10);
-                        Vector3 debrisPosition = new Vector3(debrisXposition, PowerupsHeight, 0f);
-                        newPowerup.transform.position = transform.position + debrisPosition;
+                        float PowerUpposition = Random.Range(8, 12);
+                        Vector3 PowerupPos = new Vector3(PowerUpposition, PowerupsHeight, 0f);
+                        newPowerup.transform.position = transform.position + PowerupPos;
                         newPowerup.transform.rotation = transform.rotation;
                         newPowerup.SetActive(true);
                         if (setPowerups == amountPowerups)
@@ -124,8 +148,12 @@ public class PlatformGenerator : MonoBehaviour {
                         {
                             setPowerups++;
                         }
-                    }
+                    }  
                 }
+               
+                    //}
+                //}
+                //
             //newrrescuegeneration----------------------------
                         RescueHolderDivided = EndGenerate / 5;
                         if (Counts % RescueHolderDivided ==0)
@@ -161,9 +189,53 @@ public class PlatformGenerator : MonoBehaviour {
                         }
             //ShakeGenerate
             //end
+                //      
+                        blackOutHolderDivided = EndGenerate / 3;
+                        if (/*Counts % blackOutHolderDivided ==0*/blackOutHolderDivided == FloorCounterScript.countFloor)
+                        {
+                            blackOutGameObject.SetActive(true);
+                            blackOutAnimation.SetBool("IsIdle",true);
+                            
+                        }
+                        //enerate
+                        if (IsGenerateMummy)
+                        {
+                            if (Counts % 3 == 0)
+                            {
+                                GameObject newMummy = mummyPooler.GetPooledObject();
+                                float MummyXposition = Random.Range(1, 12);
+                                Vector3 MummyPosition = new Vector3(MummyXposition, Mummyheight, 0f);
+                                newMummy.transform.position = transform.position + MummyPosition;
+                                newMummy.transform.rotation = transform.rotation;
+                                MummyControllerScript = newMummy.gameObject.GetComponent<MummyController>();
+                                MummyControllerScript.MummyMainCollider.enabled = true;
+                                newMummy.SetActive(true);
+                            }
+                        }
+                        fireHalfFloorMethod();
+                //MummyG
+                      
+                //
             }
         }
 	}
+    public void fireHalfFloorMethod() 
+    {
+        FireHolderDivided = EndGenerate / 2;
+        if (PlayerPrefs.GetInt("CompleteLevelCounter") == 0)
+        {
+            if (LevelPassScript.LevelStatusAmt >= 15)
+            {
+                {
+                    if (FireHolderDivided == FloorCounterScript.countFloor)
+                    {
+                        FireAiScript.minSpeed = FireAiScript.minSpeed + 1;
+                        FireAiScript.maxSpeed = FireAiScript.maxSpeed + 1;
+                    }
+                }
+            }
+        }
+    }
 	private void FloorCounter()
 	{
 		//floor limit codes
@@ -175,5 +247,42 @@ public class PlatformGenerator : MonoBehaviour {
 		
 		} else {Counts++;}
 	}
+    public void ExtraPowerUps() 
+    {
+        GameObject newPowerup = powerupPooler.GetPooledObject();
+        float PowerUpposition = Random.Range(8, 12);
+        Vector3 PowerupPos = new Vector3(PowerUpposition, PowerupsHeight, 0f);
+        newPowerup.transform.position = transform.position + PowerupPos;
+        newPowerup.transform.rotation = transform.rotation;
+        newPowerup.SetActive(true);
+        if (setPowerups == amountPowerups)
+        {
+            powerupThreshold = 0;
+            newPowerup.SetActive(false);
+        }
+        else
+        {
+            setPowerups++;
+        }
+    }
+    public void ExtraRescue() 
+    {
+        FloorCounterScript.MainFloorDecreaseDivided = FloorCounterScript.MainFloorHolderDivided;
+        GameObject newRescue = RescuePointPooler[RescueSelector].GetPooledObject();
+        float RescueXposition = Random.Range(8, 12);
+        Vector3 rescuePosition = new Vector3(RescueXposition, RescuePointheight, 0f);
+        newRescue.transform.position = transform.position + rescuePosition;
+        newRescue.transform.rotation = transform.rotation;
+        newRescue.SetActive(true);
+
+        if (SetRescuePoint == AmountRescuePoint)
+        {
+            newRescue.SetActive(false);
+        }
+        else
+        {
+            SetRescuePoint++;
+        }
+    }
    
 }

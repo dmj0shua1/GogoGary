@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+//using UnityEngine.SceneManagement;
 
 public class ButtonCameraView : MonoBehaviour {
     public Text LevelNumberText;
@@ -28,34 +29,117 @@ public class ButtonCameraView : MonoBehaviour {
     public GameObject BackBtnObject;
     public GameObject btnNextStage;
     public GameObject btnPrevStage;
+    public GameObject stageLabel;
+    public GameObject RescueLevelCheckObject;
+    public Button LevelButtonPlay;
+    public bool isZoomIn;
+    public Animator isInMessage;
+    public GameObject buttonZoomOutScreen;
+    //stage2
+  
+
 
     void Awake() 
     {
+        if (Time.timeScale == 0f)
+        {
+            Time.timeScale = 1f;
+        }
+        /*Scene currentScene = SceneManager.GetActiveScene();
+        string sceneName = currentScene.name;
+        if (sceneName == "Stage1")
+        {
+            testCheckerRescue();
+        }*/
+   
     }
   
     void Start() 
     {
         MyAnimation = GetComponent<Animator>();
         MainHolderScript = GameObject.Find("LevelButton1").GetComponent<MainHolder>();
-   
+          
     }
+ 
+    public void RescueCheckerLevelMethod() 
+    {
+        if (PlayerPrefs.GetInt("UnlockLevels") == 16)
+        {
+            if (LevelStatusHolder >= 16)
+            {
+
+                if (PlayerPrefs.GetInt("TotalRescuePoints") != 45)
+                {
+
+                    isInMessage.SetBool("isIn", true);
+                    RescueLevelCheckObject.SetActive(true);
+                    LevelButtonPlay.interactable = false;
+                }
+                else
+                {
+                    isInMessage.SetBool("isIn", false);
+                }
+            }
+
+            else
+            {
+                isInMessage.SetBool("isIn", false);
+                //RescueLevelCheckObject.SetActive(false);
+            }
+        }
+
+        if (PlayerPrefs.GetInt("UnlockLevels") == 21)
+        {
+            if (LevelStatusHolder >= 21)
+            {
+                if (PlayerPrefs.GetInt("TotalRescuePoints") != 60)
+                {
+                    isInMessage.SetBool("isIn", true);
+                    RescueLevelCheckObject.SetActive(true);
+                    LevelButtonPlay.interactable = false;
+                }
+                else
+                {
+                    isInMessage.SetBool("isIn", false);
+                }
+            }
+
+
+            else
+            {
+                isInMessage.SetBool("isIn", false);
+                //RescueLevelCheckObject.SetActive(false);
+            }
+        }
+       
+        
+ 
+    }
+   
     
     public void NumberQue(int BuildingNumber) 
     {
-      
-     
         ButtonNumberHolder = BuildingNumber;
         MyAnimation.SetBool("IsZoom", true);
         target = BuildingButtons[ButtonNumberHolder];
-
         StartCoroutine(LoadNewScene());
+        StartCoroutine(ButtonZoomOutMethod());
         TotalRescueObject.SetActive(false);
         MainMenuObject.SetActive(false);
         btnNextStage.SetActive(false);
         btnPrevStage.SetActive(false);
+        stageLabel.SetActive(false);
+        isZoomIn = true;
+       
+    }
+    IEnumerator ButtonZoomOutMethod()
+    {
+        yield return new WaitForSeconds(2f);
+        buttonZoomOutScreen.SetActive(true);
     }
     public void testCheckerRescue() 
     {
+       
         if (PlayerPrefs.HasKey("Building_L" + LevelStatusHolder.ToString()))
         {
             NumberOfPeopleText.text = "" + PlayerPrefs.GetInt("Building_L" + LevelStatusHolder.ToString());
@@ -85,6 +169,12 @@ public class ButtonCameraView : MonoBehaviour {
         MainMenuObject.SetActive(true);
         btnNextStage.SetActive(true);
         btnPrevStage.SetActive(true);
+        stageLabel.SetActive(true);
+        isZoomIn = false;
+        LevelStatusHolder = 0;
+        isInMessage.SetBool("isIn", false);
+        buttonZoomOutScreen.SetActive(false);
+        //RescueLevelCheckObject.SetActive(false);
 
 
     }
@@ -121,6 +211,7 @@ public class ButtonCameraView : MonoBehaviour {
         }
        
     }
+
     public void backButton()
     {
         if (ButtonNumberHolder >=1)
@@ -144,9 +235,6 @@ public class ButtonCameraView : MonoBehaviour {
     void Update()
     {
         MoveTowardsTarget();
-        
-      
- 
     }
     //move towards a target at a set speed.
     private void MoveTowardsTarget()
@@ -176,5 +264,6 @@ public class ButtonCameraView : MonoBehaviour {
     {
         yield return new WaitForSeconds(1);
         LevelPanelObject.SetActive(true);
+        RescueCheckerLevelMethod();
     }
 }

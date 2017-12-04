@@ -54,4 +54,24 @@ public class LevelValueHolder : MonoBehaviour {
         MainHolderScript.shakeTipsPass = shakeTipsValue;
 
     }
+
+    public void isAllStar() 
+    {
+        
+    }
+    void Update() 
+    {
+        if (ButtonCameraViewScript.isZoomIn ==true)
+        {
+            Star1.SetActive(false);
+            Star2.SetActive(false);
+            Star3.SetActive(false);
+        }
+        else
+        {
+            Star1.SetActive(true);
+            Star2.SetActive(true);
+            Star3.SetActive(true);
+        }
+    }
 }

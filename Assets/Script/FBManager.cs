@@ -10,6 +10,10 @@ public class FBManager : MonoBehaviour
 {
 
     public Text txtStatus;
+    public GameObject internetMessageBox;
+    public GameObject leaderBoard;
+    public GameObject backBtn;
+    private internetChecker InternetCheckerScript;
 
     List<string> perms = new List<string>() { "public_profile", "email", "user_friends" };
 
@@ -17,6 +21,10 @@ public class FBManager : MonoBehaviour
 
     AudioSource sfxCoins;
     // Awake function from Unity's MonoBehavior
+    void Start() 
+    {
+        InternetCheckerScript = GameObject.Find("internetChecker").GetComponent<internetChecker>();
+    }
     void Awake()
     {
         if (!FB.IsInitialized)
@@ -123,10 +131,10 @@ public class FBManager : MonoBehaviour
 
 #elif UNITY_IPHONE
         FB.ShareLink(
-            contentTitle: "Gary G message", 
-            contentURL: new System.Uri("http://itunes.apple.com/app/id1191424692"), 
-            contentDescription: "Link to the App Store", 
-            photoURL:new System.Uri("https://i.ytimg.com/vi/Yj7ja6BANLM/maxresdefault.jpg"), 
+            contentTitle: "Gary G message",
+            contentURL: new System.Uri("https://itunes.apple.com/us/app/go-go-gary/id1301914670"), 
+            contentDescription: "Link to the App Store",
+            photoURL: new System.Uri("http://is5.mzstatic.com/image/thumb/Purple128/v4/c8/80/2f/c8802f09-49b2-56b5-a353-f7c4091b7055/source/392x696bb.jpg"), 
             callback: OnShare);
 #endif
     }
@@ -168,12 +176,21 @@ public class FBManager : MonoBehaviour
 
     public void AppInvite()
     {
-
+#if UNITY_ANDROID
         FB.Mobile.AppInvite(
- new Uri("https://fb.me/451400678577994"),
- new Uri("https://lh3.googleusercontent.com/wyADZ0MzZmKpq1Q8U_YiG0vrQXahc-_BUIieXyhvCoJezP0Af8IE6XwrBE-NsY-hp5E=h900"),
+ new Uri("https://play.google.com/store/apps/details?id=com.LoopBook.GogoGary"),
+ new Uri("http://is5.mzstatic.com/image/thumb/Purple128/v4/c8/80/2f/c8802f09-49b2-56b5-a353-f7c4091b7055/source/392x696bb.jpg"),
     OnAppInvite
     );
+#elif UNITY_IPHONE
+        FB.Mobile.AppInvite(
+new Uri("https://itunes.apple.com/app/id1301914670"),
+new Uri("http://is5.mzstatic.com/image/thumb/Purple128/v4/c8/80/2f/c8802f09-49b2-56b5-a353-f7c4091b7055/source/392x696bb.jpg"),
+  OnAppInvite
+  );
+#endif
+
+
     }
 
     private void OnAppInvite(IAppInviteResult result)
@@ -218,4 +235,13 @@ public class FBManager : MonoBehaviour
   );
     }
 
+    public void internetMessageBoxMethod() 
+    {
+        if (InternetCheckerScript.internetConnectBool == false)
+        {
+            internetMessageBox.SetActive(true);
+            leaderBoard.SetActive(false);
+            backBtn.SetActive(false);
+        }
+    }
 }

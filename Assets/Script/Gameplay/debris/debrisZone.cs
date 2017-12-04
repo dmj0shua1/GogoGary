@@ -18,8 +18,11 @@ public class debrisZone : MonoBehaviour {
     }
     void Start() 
     {
+
     }
-    
+    void Update() 
+    {
+    }
 	void OnTriggerEnter2D(Collider2D other)
     {
         DebriTriggerScript = other.gameObject.GetComponent<DebriTrigger>();
@@ -35,19 +38,8 @@ public class debrisZone : MonoBehaviour {
             }
 
         }
-      
-        //backuup
-		/*if (other.CompareTag("Zone")) 
-		{ 
-			GetComponent<BoxCollider2D>().enabled = true;
-			deb.enabled = false;
-        }*/
-        
-            //if (other.gameObject.CompareTag("floor")/*&&DebriTriggerScript.IsTrigger ==false*/)
-            //{
-                //MainDebCollider.enabled = true;
-                //deb.enabled = false;
-            //}  
+
+       
 	}
   
     void OnTriggerExit2D(Collider2D other) 

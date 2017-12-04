@@ -52,6 +52,9 @@ public class playercontroller : MonoBehaviour {
     public bool isCheckBolt;
     SimpleAd SimpleAdScript;
     PointManager PointManagerScript;
+    public bool isDebriGround;
+    private LevelValueHolder LevelValueHolderScript;
+    private GameLevelHolderManager GameLevelHolderManagerScript;
 	void start()
 	{	
 		ifRight = true;
@@ -72,6 +75,7 @@ public class playercontroller : MonoBehaviour {
         SwipeTestScript = GameObject.Find("Swipe").GetComponent<SwipeTest>();
         SimpleAdScript = GameObject.Find("SimpleAd").GetComponent<SimpleAd>();
         PointManagerScript = GameObject.Find("PointManager").GetComponent<PointManager>();
+        GameLevelHolderManagerScript = GameObject.Find("GameLevelManager").GetComponent<GameLevelHolderManager>();
        
 	}
 	void Update ()
@@ -157,6 +161,7 @@ public class playercontroller : MonoBehaviour {
         if (PowerupManagerScript.powerupActive == true)
         {
             PlusSpeedManagerScript.addSpeedActive = false;
+            addSpeed = false;
         }
     }
     public void StarToBolt()
@@ -165,6 +170,7 @@ public class playercontroller : MonoBehaviour {
         {
 
             PowerupManagerScript.powerupActive = false;
+            
         }
     }
     public void HitOnDebris()
@@ -241,7 +247,8 @@ public class playercontroller : MonoBehaviour {
             FloorCounterScript.isNoFunction = false;
             TimeManagerScript.isStopMainTime = false;
             FireAIscript.minSpeed = 50;
-            ViewPanel.SetActive(true);
+            StartCoroutine(GameOverCount());
+            //ViewPanel.SetActive(true);
             PauseButton.SetActive(false);
             SimpleAdScript.gameOverAd();
             //booSFX.Play();
@@ -251,6 +258,17 @@ public class playercontroller : MonoBehaviour {
             {
                 PlayerPrefs.SetInt("Building_L" + LevelPassScript.UnlockLevelAmt.ToString(), LevelPassScript.RescuePointAmtCopy);
             }
+            //completelevel
+             if (PlayerPrefs.GetInt("CompleteLevelCounter") >=1)
+             {
+                 PlayerPrefs.SetInt("CompleteLevelCounter", PlayerPrefs.GetInt("CompleteLevelCounter") - 1);
+             }
+             
+            //
+             LevelPassScript.TargetLevel = LevelPassScript.ButtonNextLevel[LevelPassScript.CurrentButtonPassAmt];
+             LevelValueHolderScript = LevelPassScript.TargetLevel.GetComponent<LevelValueHolder>();
+             LevelPassScript.FireTriggerAmt = LevelValueHolderScript.FireTriggerValue;
+ 
         }
         if (other.CompareTag("bolt")&& PlayerPrefs.GetInt("SoundChecker")==0)
         {
@@ -283,12 +301,15 @@ public class playercontroller : MonoBehaviour {
         {//runtooverlaydoor
             FireAIscript.StartFire = false;
             SwipeTestScript.enabled = false;
+            PointManagerScript.completeLevelCounterMethod();
             if (ifRight == true)
             {
                 ifRight = false;
             }
             print("stopcam");
         }
+        
+      
        
     }
     void OnTriggerStay2D(Collider2D other)
@@ -308,7 +329,10 @@ public class playercontroller : MonoBehaviour {
         if (other.gameObject.CompareTag("DoorObjective"))
         {
             PointManagerScript.FloorObjective();
+            GameLevelHolderManagerScript.RescueUnlockChecker();
+            mySpriteRenderer.enabled = false;
         }
+        
     }
     void OnTriggerExit2D(Collider2D other) 
     {
@@ -343,5 +367,12 @@ public class playercontroller : MonoBehaviour {
             SwipeAgainText.SetActive(false);
         }
     }
+       IEnumerator GameOverCount()
+    {
+        yield return new WaitForSeconds(1);
+            ViewPanel.SetActive(true);
+        
+    }
+
     
 }

@@ -46,26 +46,13 @@ public class TimeManager : MonoBehaviour {
 			if (isStopMainTime) 
 			{ 
                 countingTime -= Time.deltaTime;
-				//theText.text = " " + Mathf.Round(countingTime);
-				/*if (countingTime <= 0) {
-                   
-                    FireAiScript.minSpeed = 50;
-                    FireAiScript.maxSpeed = 50;
-                    isStopMainTime = false;
-                    PlayerControllerScript.isAllMove = false;
-
-				} else*/ if (countingTime <= WarningCount) {
-                    //AlarmSound.Play();
-                    
-                    //theText.color = Color.red;
-                    BlackoutObject.SetActive(true);
-                    MyAnimation.SetBool("IsIdle",true);
+				 if (countingTime <= WarningCount) {
+                 
+                   // BlackoutObject.SetActive(true);
+                   // MyAnimation.SetBool("IsIdle",true);
                 }
              
-                /*if (FloorCounterScript.floorObjective == FloorCounterScript.countFloor)
-                {
-                  MyAnimation.SetBool("IsFade",true); 
-                }*/
+             
 			}
 	}
 }
