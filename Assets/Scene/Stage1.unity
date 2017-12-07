@@ -1681,7 +1681,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   TextHolder: {fileID: 224140128}
-  Chinese: "\u95DC\u5361"
+  Chinese: "\u95DC\u5361 1"
   English: STAGE 1
 --- !u!1 &231876117
 GameObject:
@@ -4716,6 +4716,7 @@ GameObject:
   - component: {fileID: 698584567}
   - component: {fileID: 698584566}
   - component: {fileID: 698584569}
+  - component: {fileID: 698584570}
   m_Layer: 5
   m_Name: Text
   m_TagString: Untagged
@@ -4808,6 +4809,20 @@ MonoBehaviour:
   m_EffectColor: {r: 0, g: 0, b: 0, a: 0.5}
   m_EffectDistance: {x: 0, y: 1}
   m_UseGraphicAlpha: 1
+--- !u!114 &698584570
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 698584564}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5db73abf8efb142408567a45f23da42c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  TextHolder: {fileID: 698584567}
+  Chinese: "\u62EF\u6551\u66F4\u591A\u7684\u5E73\u6C11\u89E3\u9501\u4E0B\u4E00\u4E2A\u7EA7\u522B"
+  English: RESCUE MORE CIVILIANS TO UNLOCK NEXT lEVEL
 --- !u!1 &705157442
 GameObject:
   m_ObjectHideFlags: 0

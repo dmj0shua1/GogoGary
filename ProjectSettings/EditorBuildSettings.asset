@@ -24,5 +24,8 @@ EditorBuildSettings:
     path: Assets/Scene/adtest.unity
     guid: dc052eb0b1bb393428e44fdee0f03415
   - enabled: 1
+    path: Assets/Scene/GGGPYRAMID.unity
+    guid: f6747446702308f4ab0a4a298c8833f5
+  - enabled: 1
     path: Assets/Scene/Endless.unity
-    guid: 00000000000000000000000000000000
+    guid: bceb2377b5ab7764ca43c9bfb131cd99

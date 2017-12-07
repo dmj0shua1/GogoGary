@@ -45,13 +45,16 @@ public class LevelChangeStatus : MonoBehaviour {
     }
 
     public void RescuePointAmtChange() 
-    {
-        if (PlayerPrefs.HasKey("Building_L" + LevelPassScript.UnlockLevelAmt.ToString()))
-	    {
+    { 
+                if (PlayerPrefs.HasKey("Building_L" + LevelPassScript.UnlockLevelAmt.ToString()))
+                {
 
-            LevelPassScript.RescueHolderPlayerPrefAmt = PlayerPrefs.GetInt("Building_L" + LevelPassScript.UnlockLevelAmt.ToString());
-            LevelPassScript.RescuePointAmtCopy = LevelPassScript.RescueHolderPlayerPrefAmt;
-	    }
+                    LevelPassScript.RescueHolderPlayerPrefAmt = PlayerPrefs.GetInt("Building_L" + LevelPassScript.UnlockLevelAmt.ToString());
+                    LevelPassScript.RescuePointAmtCopy = LevelPassScript.RescueHolderPlayerPrefAmt;
+                }
+            
+        //
+           
      
     }
 

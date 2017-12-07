@@ -9,7 +9,7 @@ public class debrisGeneration : MonoBehaviour {
 	public float distanceBetween;
 	public ObjectPooler[] theObjectPools;
 
-	public int randomDebrisThreshold;
+	public float randomDebrisThreshold;
 	public ObjectPooler debrisPool;
     public bool IsActivate;
     public bool IsDebriActivate;
@@ -17,7 +17,7 @@ public class debrisGeneration : MonoBehaviour {
 	private float debrisHeight;
 
     private LevelPass MainHolderScript;
-    public floorcounterEl FloorCounterScript;
+    public floorcounter FloorCounterScript;
     private debrisZone DebriZoneScript;
     private SlowMovement SlowMovementScript;
     public AudioSource FallingDebri;
@@ -25,7 +25,7 @@ public class debrisGeneration : MonoBehaviour {
 	{
 		debrisHeight = debris.GetComponent<BoxCollider2D>().size.y;
         MainHolderScript = GameObject.Find("Holder").GetComponent<LevelPass>();
-        FloorCounterScript = GameObject.Find("player").GetComponent<floorcounterEl>();
+        FloorCounterScript = GameObject.Find("player").GetComponent<floorcounter>();
 
         if (MainHolderScript.isActivateTipsAmt == true)
         {
@@ -39,7 +39,7 @@ public class debrisGeneration : MonoBehaviour {
 	}
     private void DebriCheckerMethod() 
     {
-        if (FloorCounterScript.CountFloorPlus_el == FloorCounterScript.CheckCountPlus)
+        if (FloorCounterScript.CountFloorPlus == FloorCounterScript.CheckCountPlus)
         {
             IsDebriActivate = true;
         }
@@ -56,7 +56,7 @@ public class debrisGeneration : MonoBehaviour {
                 //debrisSelector = Random.Range(0, theObjectPools.Length);
                 transform.position = new Vector3(transform.position.x, transform.position.y + debrisHeight + -distanceBetween, 0);
 
-                if (Random.Range(0, 100) < randomDebrisThreshold)
+                if (Random.Range(0f, 100f) < randomDebrisThreshold)
                 {
                     GameObject newDebris = debrisPool.GetPooledObject();
                     float debrisXposition = Random.Range(-10, 10);

@@ -7,7 +7,7 @@ public class GameLevelHolderManager : MonoBehaviour {
     [SerializeField]
     private PlatformGenerator PlatFormGeneratorScript;
     [SerializeField]
-    private floorcounterEl FloorCounterScript;
+    private floorcounter FloorCounterScript;
     [SerializeField]
     private TimeManager TimeManagerScript;
     [SerializeField]
@@ -36,7 +36,7 @@ public class GameLevelHolderManager : MonoBehaviour {
     void Awake() 
     {
         PlatFormGeneratorScript = GameObject.Find("PlatformGeneration").GetComponent<PlatformGenerator>();
-        FloorCounterScript = GameObject.Find("player").GetComponent<floorcounterEl>();
+        FloorCounterScript = GameObject.Find("player").GetComponent<floorcounter>();
         TimeManagerScript = GameObject.Find("countDown").GetComponent<TimeManager>();
         debrisGenerationScript = GameObject.Find("DebrisGeneration").GetComponent<debrisGeneration>();
         PowerupGenerationScript = GameObject.Find("PowerupGeneration").GetComponent<PowerupGeneration>();
@@ -47,7 +47,7 @@ public class GameLevelHolderManager : MonoBehaviour {
         PointManagerScript = GameObject.Find("PointManager").GetComponent<PointManager>();
 
         PlatFormGeneratorScript.EndGenerate =LevelPassScript.FloorAmt;
-        FloorCounterScript.MainCount_el = LevelPassScript.ObjectiveAmt;
+        FloorCounterScript.MainCount = LevelPassScript.ObjectiveAmt;
         TimeManagerScript.startingTime = LevelPassScript.StartingAmt;
         debrisGenerationScript.randomDebrisThreshold = LevelPassScript.DebrisAmt;
         PlatFormGeneratorScript.timeThreshold = LevelPassScript.TimeAmt;

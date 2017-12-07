@@ -28,7 +28,7 @@ public class InfiniteGenerator : MonoBehaviour {
     public float PowerupsHeight;
     public int setPowerups;
     public int amountPowerups;
-    public floorcounterEl FloorCounterScript;
+    public floorcounter FloorCounterScript;
     [Header("RescuePointGeneration")]
     public float RescuePointThreshold;
     public float RescuePointheight;
@@ -37,7 +37,7 @@ public class InfiniteGenerator : MonoBehaviour {
     public ObjectPooler[] RescuePointPooler;
     public int RescueSelector;
     public int prevRescue;
-    public int RescueHolderDivided;
+
 
 
 	void Start()
@@ -46,7 +46,7 @@ public class InfiniteGenerator : MonoBehaviour {
 		WallGeneratorScript = GameObject.Find ("WallGeneration").GetComponent<WallGenerator> ();
         floorSelector = Random.Range(0, theObjectPools.Length);
         PrevFloor = floorSelector;
-        FloorCounterScript = GameObject.Find("player").GetComponent<floorcounterEl>();
+        FloorCounterScript = GameObject.Find("player").GetComponent<floorcounter>();
         RescueSelector = Random.Range(0, RescuePointPooler.Length);
         prevRescue = RescueSelector;
 	}
@@ -61,31 +61,15 @@ public class InfiniteGenerator : MonoBehaviour {
                 {
                     floorSelector = Random.Range(0, theObjectPools.Length);
                 }
-               
+
                 PrevFloor = floorSelector;
                 transform.position = new Vector3(transform.position.x, transform.position.y + platFormHeight + -distanceBetween, 0);
                 GameObject newPlatform = theObjectPools[floorSelector].GetPooledObject();
                 newPlatform.transform.position = transform.position;
                 newPlatform.transform.rotation = transform.rotation;
-                newPlatform.gameObject.tag = "floor";
                 newPlatform.SetActive(true);
-            
-          
-              //rescue generator
-                /*RescueHolderDivided = EndGenerate / 5;
-                if (Counts % RescueHolderDivided == 0)
-                {
-                    FloorCounterScript.MainFloorDecreaseDivided = FloorCounterScript.MainFloorHolderDivided;
-                    GameObject newRescue = RescuePointPooler[RescueSelector].GetPooledObject();
-                    float RescueXposition = Random.Range(8, 12);
-                    Vector3 rescuePosition = new Vector3(RescueXposition, RescuePointheight, 0f);
-                    newRescue.transform.position = transform.position + rescuePosition;
-                    newRescue.transform.rotation = transform.rotation;
-                    newRescue.SetActive(true);
-
-                }*/
-
-                //FloorCounter();
+              
+              
               
                 //
             }

@@ -41,7 +41,7 @@ public class DebriTrigger : MonoBehaviour {
     }
     IEnumerator LoadEnabled()
     {
-        yield return new WaitForSeconds(1f);
+        yield return new WaitForSeconds(0.300f);
         Col1.enabled = true;
         Col2.enabled = true;
         Col3.enabled = true;

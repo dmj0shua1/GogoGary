@@ -176,21 +176,12 @@ public class FBManager : MonoBehaviour
 
     public void AppInvite()
     {
-#if UNITY_ANDROID
+
         FB.Mobile.AppInvite(
- new Uri("https://play.google.com/store/apps/details?id=com.LoopBook.GogoGary"),
+ new Uri("https://www.facebook.com/Go-Go-Gary-1489943204431325"),
  new Uri("http://is5.mzstatic.com/image/thumb/Purple128/v4/c8/80/2f/c8802f09-49b2-56b5-a353-f7c4091b7055/source/392x696bb.jpg"),
     OnAppInvite
     );
-#elif UNITY_IPHONE
-        FB.Mobile.AppInvite(
-new Uri("https://itunes.apple.com/app/id1301914670"),
-new Uri("http://is5.mzstatic.com/image/thumb/Purple128/v4/c8/80/2f/c8802f09-49b2-56b5-a353-f7c4091b7055/source/392x696bb.jpg"),
-  OnAppInvite
-  );
-#endif
-
-
     }
 
     private void OnAppInvite(IAppInviteResult result)

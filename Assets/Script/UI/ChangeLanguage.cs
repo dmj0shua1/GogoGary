@@ -13,14 +13,14 @@ public class ChangeLanguage : MonoBehaviour {
     //private SpriteRenderer sprite;
     void awake()
     {
-        if (!PlayerPrefs.HasKey("LanguageNumber")) PlayerPrefs.SetInt("LanguageNumber", 0);
+       
         if (!PlayerPrefs.HasKey("LanguageStartup")) PlayerPrefs.SetInt("LanguageStartup", 0);
       
     }
 	void Start () {
         //sprite = GetComponent<SpriteRenderer>();
-        startupLanguageMethod();
-    
+        //startupLanguageMethod();
+        if (!PlayerPrefs.HasKey("LanguageNumber")) PlayerPrefs.SetInt("LanguageNumber", 1);
         
 	}
 	

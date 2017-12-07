@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class LevelPass : MonoBehaviour {
 
@@ -13,9 +14,21 @@ public class LevelPass : MonoBehaviour {
     public GameObject TargetLevel;
     public Color CameraColorAmt;
     public bool debriTipsAmt, starTipsAmt, boltTipsAmt, shakeTipsAmt;
+    private int StageNumCounter;
     void Start()
     {
-     
+        StageNumCounter = 25;
+        Scene currentScene = SceneManager.GetActiveScene();
+        string sceneName = currentScene.name;
+        if (sceneName == "Stage2")
+        {
+            
+            for (int num = 0; num < 25; num++)
+            {
+                StageNumCounter++;
+                ButtonNextLevel[num] = (GameObject)Resources.Load("Stage2/pyBuilding_L" + StageNumCounter, typeof(GameObject));
+            }
+        }
     }
     public void TargetMethod()
     { 

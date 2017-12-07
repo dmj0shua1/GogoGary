@@ -23,7 +23,7 @@ public class mainmenuPlayer : MonoBehaviour {
 	private TimeManager TimeManagerScript;
     private FireAi FireAIscript;
     private Animator MyAnimation;
-    private floorcounterEl FloorCounterScript;
+    private floorcounter FloorCounterScript;
     private PlusSpeedManager PlusSpeedManagerScript;
     private PowerupManager PowerupManagerScript;
     [SerializeField]

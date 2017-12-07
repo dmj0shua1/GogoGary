@@ -8,7 +8,7 @@ public class PowerupGeneration : MonoBehaviour {
 	public Transform powerupPoint;
 	public float distanceBetween;
 	public float PowerupsHeight;
-	public floorcounterEl FloorCounterScript;
+	public floorcounter FloorCounterScript;
 	public float powerupThreshold;
 	public ObjectPooler powerupPooler;
 	//
@@ -18,7 +18,7 @@ public class PowerupGeneration : MonoBehaviour {
 	void Start()
 	{
 		PowerupsHeight = /*0.34f;*/powerupsObject.GetComponent<BoxCollider2D>().size.y;
-		FloorCounterScript = GameObject.Find("player").GetComponent<floorcounterEl>();
+		FloorCounterScript = GameObject.Find("player").GetComponent<floorcounter>();
 
 	}
 
@@ -27,7 +27,7 @@ public class PowerupGeneration : MonoBehaviour {
 		//powerupGeneration
 		if (transform.position.y > powerupPoint.position.y) {  
 		transform.position = new Vector3 (transform.position.x, transform.position.y + PowerupsHeight + -distanceBetween, 0);
-		if (FloorCounterScript.countFloor_el <= FloorCounterScript.halfFloorPoint) {
+		if (FloorCounterScript.countFloor <= FloorCounterScript.halfFloorPoint) {
 		    if (Random.Range (0f, 100f) < powerupThreshold) {
 		        GameObject newTime = powerupPooler.GetPooledObject ();
 		            float debrisXposition = Random.Range (0, 10);

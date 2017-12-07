@@ -4,16 +4,16 @@ using UnityEngine;
 
 public class StopCameraCollider : MonoBehaviour {
     public BoxCollider2D Col1;
-    private floorcounterEl FloorCounterScript;
+    private floorcounter FloorCounterScript;
  
 	// Use this for initialization
 	void Start () {
-        FloorCounterScript = GameObject.Find("player").GetComponent<floorcounterEl>();
+        FloorCounterScript = GameObject.Find("player").GetComponent<floorcounter>();
 	}
 	
 	// Update is called once per frame
 	void Update () {
-        if (FloorCounterScript.countFloor_el ==2)
+        if (FloorCounterScript.countFloor ==2)
         {
             Col1.enabled = false;  
         }

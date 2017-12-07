@@ -18,6 +18,12 @@ public class Levelselector : MonoBehaviour {
 
       
     }
+    public void selectstring(string levelname)
+    {
+        SceneManager.LoadScene(levelname);
+
+
+    }
 
 
    

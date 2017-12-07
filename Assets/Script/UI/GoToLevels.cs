@@ -15,7 +15,7 @@ public class GoToLevels : MonoBehaviour {
         RescueManagerScript = GameObject.Find("RescueManager").GetComponent<RescueManager>();
     }
 
-    public void select(string SceneName)
+    public void select(int SceneName)
     {
         Time.timeScale = 1f;
         Destroy(MainHolderScript);

@@ -28,7 +28,7 @@ public class PlatformGenerator : MonoBehaviour {
     public float PowerupsHeight;
     public int setPowerups;
     public int amountPowerups;
-    public floorcounterEl FloorCounterScript;
+    public floorcounter FloorCounterScript;
     public int PowerUpdHolderDivided;
     [Header("RescuePointGeneration")]
     public float RescuePointThreshold;
@@ -44,6 +44,7 @@ public class PlatformGenerator : MonoBehaviour {
     public int RescueHolderDivided;
     [Header("ShakeGenerate")]
     public LevelPass LevelPassScript;
+    [SerializeField]
     private testingcamerashake TestingCameraShakeScript;
     public bool isShake;
     [Header("Blackout")]
@@ -66,7 +67,7 @@ public class PlatformGenerator : MonoBehaviour {
 		WallGeneratorScript = GameObject.Find ("WallGeneration").GetComponent<WallGenerator> ();
         floorSelector = Random.Range(0, theObjectPools.Length);
         PrevFloor = floorSelector;
-        FloorCounterScript = GameObject.Find("player").GetComponent<floorcounterEl>();
+        FloorCounterScript = GameObject.Find("player").GetComponent<floorcounter>();
         LevelPassScript = GameObject.Find("Holder").GetComponent<LevelPass>();
         TestingCameraShakeScript = GameObject.Find("camerashaketest").GetComponent<testingcamerashake>();
         FireAiScript = GameObject.Find("Fire").GetComponent<FireAi>();
@@ -191,7 +192,7 @@ public class PlatformGenerator : MonoBehaviour {
             //end
                 //      
                         blackOutHolderDivided = EndGenerate / 3;
-                        if (/*Counts % blackOutHolderDivided ==0*/blackOutHolderDivided == FloorCounterScript.countFloor_el)
+                        if (/*Counts % blackOutHolderDivided ==0*/blackOutHolderDivided == FloorCounterScript.countFloor)
                         {
                             blackOutGameObject.SetActive(true);
                             blackOutAnimation.SetBool("IsIdle",true);
@@ -227,7 +228,7 @@ public class PlatformGenerator : MonoBehaviour {
             if (LevelPassScript.LevelStatusAmt >= 15)
             {
                 {
-                    if (FireHolderDivided == FloorCounterScript.countFloor_el)
+                    if (FireHolderDivided == FloorCounterScript.countFloor)
                     {
                         FireAiScript.minSpeed = FireAiScript.minSpeed + 1;
                         FireAiScript.maxSpeed = FireAiScript.maxSpeed + 1;

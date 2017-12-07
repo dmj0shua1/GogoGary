@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.SceneManagement;
 
 public class PointManager : MonoBehaviour {
 
@@ -11,7 +12,7 @@ public class PointManager : MonoBehaviour {
     public Text loadingText;
     public bool IsActivate;
     private bool loadScene = true;
-	private floorcounterEl FloorCounterScript;
+	private floorcounter FloorCounterScript;
 	private CameraFollow CameraFollowScript;
 	private FireAi FireAiScript;
 	private TimeManager TimeManagerScript;
@@ -36,7 +37,7 @@ public class PointManager : MonoBehaviour {
 	void Start()
 	{
 
-		FloorCounterScript = GameObject.Find("player").GetComponent<floorcounterEl>();
+		FloorCounterScript = GameObject.Find("player").GetComponent<floorcounter>();
 		CameraFollowScript = GameObject.Find ("Main Camera").GetComponent<CameraFollow>();
 		FireAiScript = GameObject.Find ("Fire").GetComponent<FireAi> ();
 		TimeManagerScript = GameObject.Find ("countDown").GetComponent<TimeManager> ();
@@ -45,6 +46,7 @@ public class PointManager : MonoBehaviour {
         LevelPassScript = GameObject.Find("Holder").GetComponent<LevelPass>();
         PlusSpeedManagerScript = GameObject.Find("plusspeedManager").GetComponent<PlusSpeedManager>();
         RescueManagerScript = GameObject.Find("RescueManager").GetComponent<RescueManager>();
+       
 	}
 	void Update()
 	{
@@ -61,7 +63,7 @@ public class PointManager : MonoBehaviour {
  	
 	private void CheckPointObjective()
 	{
-		if (FloorCounterScript.countFloor_el == FloorCounterScript.CameraStopPoint) 
+		if (FloorCounterScript.countFloor == FloorCounterScript.CameraStopPoint) 
 		{
             CameraFollowScript.enabled = false;
         }
@@ -69,7 +71,7 @@ public class PointManager : MonoBehaviour {
 
 	public void HalfFloorCount()
 	{
-		if(FloorCounterScript.countFloor_el == FloorCounterScript.halfFloorPoint)
+		if(FloorCounterScript.countFloor == FloorCounterScript.halfFloorPoint)
 		{
         }
 	}
@@ -77,35 +79,54 @@ public class PointManager : MonoBehaviour {
 
 	public void FloorObjective()
 	{
-   
-		if (FloorCounterScript.countFloor_el == FloorCounterScript.floorObjective ) 
-		{
-        //FireAiScript.StartFire = false;
-        TimeManagerScript.isStopMainTime = false;
-        //PlayerControllerScript.moveSpeed = 0f;
-        PowerupManagerScript.powerupActive = false;
-        PlusSpeedManagerScript.addSpeedActive = false;
-        ViewPanel.SetActive(true);
-        Pause.SetActive(false);
-        //completeLevelCounterMethod();
-        NextLevelMethod();
-        CheckerUnlock();
-        StarRateChecker();
-      
-        if (PlayerPrefs.GetInt("Building_L" + LevelPassScript.UnlockLevelAmt.ToString()) < LevelPassScript.RescueHolderPlayerPrefAmt )
+
+        if (FloorCounterScript.countFloor == FloorCounterScript.floorObjective)
         {
-            if (PlayerPrefs.HasKey("Building_L" + LevelPassScript.UnlockLevelAmt.ToString()))
+            //FireAiScript.StartFire = false;
+            TimeManagerScript.isStopMainTime = false;
+            //PlayerControllerScript.moveSpeed = 0f;
+            PowerupManagerScript.powerupActive = false;
+            PlusSpeedManagerScript.addSpeedActive = false;
+            ViewPanel.SetActive(true);
+            Pause.SetActive(false);
+            //completeLevelCounterMethod();
+            NextLevelMethod();
+            CheckerUnlock();
+            StarRateChecker();
+            Scene currentScene1 = SceneManager.GetActiveScene();
+            string sceneName1 = currentScene1.name;
+            if (sceneName1 == "GGG")
             {
-                PlayerPrefs.SetInt("Building_L" + LevelPassScript.UnlockLevelAmt.ToString(), LevelPassScript.RescueHolderPlayerPrefAmt);
-                
+                if (PlayerPrefs.GetInt("Building_L" + LevelPassScript.UnlockLevelAmt.ToString()) < LevelPassScript.RescueHolderPlayerPrefAmt)
+                {
+                    if (PlayerPrefs.HasKey("Building_L" + LevelPassScript.UnlockLevelAmt.ToString()))
+                    {
+                        PlayerPrefs.SetInt("Building_L" + LevelPassScript.UnlockLevelAmt.ToString(), LevelPassScript.RescueHolderPlayerPrefAmt);
+
+                    }
+                    PlayerPrefs.SetInt("TotalRescuePoints", PlayerPrefs.GetInt("TotalRescuePoints") + LevelPassScript.RescueHolderPlayerPrefAmt);
+                    PlayerPrefs.SetInt("TotalRescuePoints", PlayerPrefs.GetInt("TotalRescuePoints") - LevelPassScript.RescuePointAmtCopy);
+                }
+
             }
-            PlayerPrefs.SetInt("TotalRescuePoints", PlayerPrefs.GetInt("TotalRescuePoints") + LevelPassScript.RescueHolderPlayerPrefAmt);
-            PlayerPrefs.SetInt("TotalRescuePoints", PlayerPrefs.GetInt("TotalRescuePoints") - LevelPassScript.RescuePointAmtCopy);
         }
-      
-		}
         //completelevelcounter
-      
+      //
+        Scene currentScene2 = SceneManager.GetActiveScene();
+        string sceneName2 = currentScene2.name;
+        if (sceneName2 == "GGGPYRAMID")
+        {
+            if (PlayerPrefs.GetInt("pyBuilding_L" + LevelPassScript.UnlockLevelAmt.ToString()) < LevelPassScript.RescueHolderPlayerPrefAmt)
+            {
+                if (PlayerPrefs.HasKey("pyBuilding_L" + LevelPassScript.UnlockLevelAmt.ToString()))
+                {
+                    PlayerPrefs.SetInt("pyBuilding_L" + LevelPassScript.UnlockLevelAmt.ToString(), LevelPassScript.RescueHolderPlayerPrefAmt);
+
+                }
+                PlayerPrefs.SetInt("pyTotalRescuePoints", PlayerPrefs.GetInt("pyTotalRescuePoints") + LevelPassScript.RescueHolderPlayerPrefAmt);
+                PlayerPrefs.SetInt("pyTotalRescuePoints", PlayerPrefs.GetInt("pyTotalRescuePoints") - LevelPassScript.RescuePointAmtCopy);
+            }
+        }
        
 	}
     public void completeLevelCounterMethod()
@@ -191,7 +212,7 @@ public class PointManager : MonoBehaviour {
 
     private void WarningSignTrigger() 
     {
-        if (FloorCounterScript.countFloor_el == LevelPassScript.FireTriggerAmt && IsActivate)
+        if (FloorCounterScript.countFloor == LevelPassScript.FireTriggerAmt && IsActivate)
         {
             
             FireAiScript.StartFire = true;
