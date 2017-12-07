@@ -17,9 +17,9 @@ public class InfiniteGeneratorEndless : MonoBehaviour {
 	public int EndGenerate;
 	private WallGenerator WallGeneratorScript;
     [Header("BoltGeneration")]
-	public ObjectPooler timePooler;
-	public float timeThreshold;
-	public float timeHeight;
+	public ObjectPooler boltPooler;
+	public int boltThreshold;
+	public float boltHeight;
     public int PrevFloor;
     public bool IsGenerate;
     [Header("PowerUpGeneration")]
@@ -38,7 +38,9 @@ public class InfiniteGeneratorEndless : MonoBehaviour {
     public int RescueSelector;
     public int prevRescue;
     public int RescueHolderDivided;
+    public int rescueThreshold;
 
+    private DebriTrigger DebriTriggerScript;
 
 	void Start()
 	{
@@ -69,15 +71,16 @@ public class InfiniteGeneratorEndless : MonoBehaviour {
                 newPlatform.transform.rotation = transform.rotation;
                 newPlatform.gameObject.tag = "floor";
                 newPlatform.SetActive(true);
-            
-          
+                DebriTriggerScript = newPlatform.gameObject.GetComponent<DebriTrigger>();
+                DebriTriggerScript.IsTrigger = true;
+                FloorCounter();
               //rescue generator
                 //RescueHolderDivided = 30/ 5;
-                if (Counts % 10 == 0)
+                if (Counts % rescueThreshold == 0)
                 {
                     FloorCounterScript.MainFloorDecreaseDivided = FloorCounterScript.MainFloorHolderDivided;
                     GameObject newRescue = RescuePointPooler[RescueSelector].GetPooledObject();
-                    float RescueXposition = Random.Range(8, 12);
+                    float RescueXposition = Random.Range(1, 12);
                     Vector3 rescuePosition = new Vector3(RescueXposition, RescuePointheight, 0f);
                     newRescue.transform.position = transform.position + rescuePosition;
                     newRescue.transform.rotation = transform.rotation;
@@ -85,7 +88,17 @@ public class InfiniteGeneratorEndless : MonoBehaviour {
 
                 }
 
-                FloorCounter();
+                if (Counts % boltThreshold == 0)
+                {
+                    GameObject newTime = boltPooler.GetPooledObject();
+                    float BoltXposition = Random.Range(8, 12);
+                    Vector3 BoltPosition = new Vector3(BoltXposition, boltHeight, 0f);
+                    newTime.transform.position = transform.position + BoltPosition;
+                    newTime.transform.rotation = transform.rotation;
+                    newTime.SetActive(true);
+                }
+
+              
               
                 //
             }

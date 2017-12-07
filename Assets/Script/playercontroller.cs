@@ -18,6 +18,7 @@ public class playercontroller : MonoBehaviour {
     public bool isAllMove;
     public GameObject ViewPanel;
     public GameObject PauseButton;
+    public GameObject FloorSystemPanel;
 
 	private TimeManager TimeManagerScript;
     private FireAi FireAIscript;
@@ -372,6 +373,7 @@ public class playercontroller : MonoBehaviour {
     {
         yield return new WaitForSeconds(1);
             ViewPanel.SetActive(true);
+            FloorSystemPanel.SetActive(false);
         
     }
 

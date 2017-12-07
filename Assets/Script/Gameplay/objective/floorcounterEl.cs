@@ -21,11 +21,14 @@ public class floorcounterEl : MonoBehaviour {
     public int MainFloorHolderDivided;
     public int MainFloorDecreaseDivided;
     private FireAi fireAiScript;
+    private DifficultyManager diffManagerScript;
+
     void Start() 
     {
         countFloor_el = MainCount_el;
         theText_el.text = "" + MainCount_el;
         fireAiScript = GameObject.Find("Fire").GetComponent<FireAi>();
+        diffManagerScript = GameObject.Find("DifficultyManager").GetComponent<DifficultyManager>();
         //MainFloorHolderDivided = MainCount / 7;
         //MainFloorDecreaseDivided = MainFloorHolderDivided;
 
@@ -54,6 +57,7 @@ public class floorcounterEl : MonoBehaviour {
                     theText_el.text = Mathf.Round(countFloor_el).ToString();
                     DebriTriggerScript_el = other.gameObject.GetComponent<DebriTrigger>();
                     DebriTriggerScript_el.IsTrigger = false;
+                    diffManagerScript.checkScore();
                 }
             }
         }

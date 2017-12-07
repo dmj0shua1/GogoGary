@@ -1634,6 +1634,8 @@ MonoBehaviour:
   EnglishImage: {fileID: 196815899}
   ChineseSprite: {fileID: 21300000, guid: 0cb646122c8d8d0468d6cc885a439e1e, type: 3}
   OriginalSprite: {fileID: 21300000, guid: 999c9eb1377d6bc4180a1481385bbee4, type: 3}
+  StartupObject: {fileID: 0}
+  StartupButton: {fileID: 0}
 --- !u!4 &204699558 stripped
 Transform:
   m_PrefabParentObject: {fileID: 4278074781158532, guid: ec09a1e05ada8374395c5d3512e229b1,
@@ -2255,6 +2257,8 @@ MonoBehaviour:
   EnglishImage: {fileID: 272272152}
   ChineseSprite: {fileID: 21300000, guid: 88f74deba38e6b04db7109fc5ba18026, type: 3}
   OriginalSprite: {fileID: 21300000, guid: a763b8b5ac60318408187bf9b6c2a29c, type: 3}
+  StartupObject: {fileID: 0}
+  StartupButton: {fileID: 0}
 --- !u!1 &281626046
 GameObject:
   m_ObjectHideFlags: 0
@@ -2453,6 +2457,8 @@ MonoBehaviour:
   EnglishImage: {fileID: 286889560}
   ChineseSprite: {fileID: 21300000, guid: ab65288cd21223440bcc7a92be07730e, type: 3}
   OriginalSprite: {fileID: 21300000, guid: 5f416c8e5f59c2b4d8368ac98f555d07, type: 3}
+  StartupObject: {fileID: 0}
+  StartupButton: {fileID: 0}
 --- !u!1 &292228098
 GameObject:
   m_ObjectHideFlags: 0
@@ -3595,13 +3601,13 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 1018124990}
         m_MethodName: select
-        m_Mode: 3
+        m_Mode: 5
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
           m_IntArgument: 3
           m_FloatArgument: 0
-          m_StringArgument: 
+          m_StringArgument: Stage1
           m_BoolArgument: 0
         m_CallState: 2
       - m_Target: {fileID: 1018124990}
@@ -3715,6 +3721,8 @@ MonoBehaviour:
   EnglishImage: {fileID: 424673863}
   ChineseSprite: {fileID: 21300000, guid: 02f717f0f23b30145af8281b90d88961, type: 3}
   OriginalSprite: {fileID: 21300000, guid: 6acb47cacf4d27b44b3ebd402966b804, type: 3}
+  StartupObject: {fileID: 0}
+  StartupButton: {fileID: 0}
 --- !u!1 &425730045
 GameObject:
   m_ObjectHideFlags: 0
@@ -4667,7 +4675,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   PlatFormGeneratorScript: {fileID: 735819171}
-  FloorCounterScript: {fileID: 216304236}
+  FloorCounterScript: {fileID: 0}
   TimeManagerScript: {fileID: 0}
   debrisGenerationScript: {fileID: 1560825831}
   PowerupGenerationScript: {fileID: 840169208}
@@ -5848,6 +5856,8 @@ MonoBehaviour:
   EnglishImage: {fileID: 617410390}
   ChineseSprite: {fileID: 21300000, guid: cfac18dd6ef4e924c80fda2c83de334a, type: 3}
   OriginalSprite: {fileID: 21300000, guid: 994b9355b22b11e45921b494711d6da4, type: 3}
+  StartupObject: {fileID: 0}
+  StartupButton: {fileID: 0}
 --- !u!1 &638916351
 GameObject:
   m_ObjectHideFlags: 0
@@ -8662,7 +8672,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 0}
-  m_AnchoredPosition: {x: -9, y: 903.0001}
+  m_AnchoredPosition: {x: -9, y: 903.0002}
   m_SizeDelta: {x: -726, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!1001 &840169207
@@ -9847,6 +9857,8 @@ MonoBehaviour:
   EnglishImage: {fileID: 954587767}
   ChineseSprite: {fileID: 21300000, guid: e861b6711aa3ea54cbe30a37e19fb675, type: 3}
   OriginalSprite: {fileID: 21300000, guid: e65d4c517b1a51445af5e366591a6063, type: 3}
+  StartupObject: {fileID: 0}
+  StartupButton: {fileID: 0}
 --- !u!1 &958148483
 GameObject:
   m_ObjectHideFlags: 0
@@ -10445,6 +10457,8 @@ MonoBehaviour:
   EnglishImage: {fileID: 357630694}
   ChineseSprite: {fileID: 21300000, guid: 63c3af418f0d9e64b836c66dad300553, type: 3}
   OriginalSprite: {fileID: 21300000, guid: ae3b2a17416c1a643be3c446cf91f19f, type: 3}
+  StartupObject: {fileID: 0}
+  StartupButton: {fileID: 0}
 --- !u!1 &1037555453
 GameObject:
   m_ObjectHideFlags: 0
@@ -10542,6 +10556,8 @@ MonoBehaviour:
   EnglishImage: {fileID: 1115636921}
   ChineseSprite: {fileID: 21300000, guid: 4ca1195fab50af24887fa700b5a3195c, type: 3}
   OriginalSprite: {fileID: 21300000, guid: e5025e6f895b6c24295682cdcb5da3c0, type: 3}
+  StartupObject: {fileID: 0}
+  StartupButton: {fileID: 0}
 --- !u!1 &1046855647
 GameObject:
   m_ObjectHideFlags: 0
@@ -11342,6 +11358,8 @@ MonoBehaviour:
   EnglishImage: {fileID: 741005590}
   ChineseSprite: {fileID: 21300000, guid: 319c646c0f7e3ce449756a7483d4aaf3, type: 3}
   OriginalSprite: {fileID: 21300000, guid: d23b7c36e63ad9842807f2d7427b6466, type: 3}
+  StartupObject: {fileID: 0}
+  StartupButton: {fileID: 0}
 --- !u!1 &1100180233 stripped
 GameObject:
   m_PrefabParentObject: {fileID: 1493345822825002, guid: 148ca55bcf0a99e43ba2c2d796d81100,
@@ -14148,6 +14166,8 @@ MonoBehaviour:
   EnglishImage: {fileID: 1350633133}
   ChineseSprite: {fileID: 21300000, guid: 29aae2429d3711949b0bcf812cb8260a, type: 3}
   OriginalSprite: {fileID: 21300000, guid: 9be1ffb5938a2fc40b256d18c6453848, type: 3}
+  StartupObject: {fileID: 0}
+  StartupButton: {fileID: 0}
 --- !u!1 &1352061437
 GameObject:
   m_ObjectHideFlags: 0
@@ -18958,6 +18978,8 @@ MonoBehaviour:
   EnglishImage: {fileID: 1778417068}
   ChineseSprite: {fileID: 21300000, guid: ff59927987717eb418a8edeffa885411, type: 3}
   OriginalSprite: {fileID: 21300000, guid: a929dd27e71e02d4daa00ad6941b3021, type: 3}
+  StartupObject: {fileID: 0}
+  StartupButton: {fileID: 0}
 --- !u!1 &1796522086
 GameObject:
   m_ObjectHideFlags: 0
@@ -23930,6 +23952,8 @@ MonoBehaviour:
   EnglishImage: {fileID: 1918816853}
   ChineseSprite: {fileID: 21300000, guid: e0697472fecff1341a3de62ed110b64c, type: 3}
   OriginalSprite: {fileID: 21300000, guid: 5df72b1567134e54fa7bc30a65b15f4c, type: 3}
+  StartupObject: {fileID: 0}
+  StartupButton: {fileID: 0}
 --- !u!1 &1923577430
 GameObject:
   m_ObjectHideFlags: 0
@@ -25879,6 +25903,8 @@ MonoBehaviour:
   EnglishImage: {fileID: 1392653437}
   ChineseSprite: {fileID: 21300000, guid: f6e5ac2e3d3091e438829dc2bbc64997, type: 3}
   OriginalSprite: {fileID: 21300000, guid: 470dc5cb8a190b54b9405e67cbad491a, type: 3}
+  StartupObject: {fileID: 0}
+  StartupButton: {fileID: 0}
 --- !u!1 &2099048554
 GameObject:
   m_ObjectHideFlags: 0

@@ -9,7 +9,7 @@ public class debrisGeneration : MonoBehaviour {
 	public float distanceBetween;
 	public ObjectPooler[] theObjectPools;
 
-	public float randomDebrisThreshold;
+	public int randomDebrisThreshold;
 	public ObjectPooler debrisPool;
     public bool IsActivate;
     public bool IsDebriActivate;
@@ -56,7 +56,7 @@ public class debrisGeneration : MonoBehaviour {
                 //debrisSelector = Random.Range(0, theObjectPools.Length);
                 transform.position = new Vector3(transform.position.x, transform.position.y + debrisHeight + -distanceBetween, 0);
 
-                if (Random.Range(0f, 100f) < randomDebrisThreshold)
+                if (Random.Range(0, 100) < randomDebrisThreshold)
                 {
                     GameObject newDebris = debrisPool.GetPooledObject();
                     float debrisXposition = Random.Range(-10, 10);
