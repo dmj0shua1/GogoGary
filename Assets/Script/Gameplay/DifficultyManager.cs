@@ -36,6 +36,21 @@ public class DifficultyManager : MonoBehaviour
     [SerializeField]
     private int boltDiffCounter;
     [Space]
+    [Header("Powerup")]
+    [SerializeField]
+    private int powerupInitialAmt;
+    [SerializeField]
+    private int powerupStartAt;
+    [Space]
+    [SerializeField]
+    private int powerupDiffFrequency;
+    [SerializeField]
+    private int powerupIncreaseAmt;
+    [SerializeField]
+    private int powerupAmountLimit;
+    [SerializeField]
+    private int powerupDiffCounter;
+    [Space]
     [Header("Rescue")]
     [SerializeField]
     private int rescueInitialAmt;
@@ -90,7 +105,8 @@ public class DifficultyManager : MonoBehaviour
     [SerializeField]
     private int playerDiffCounter;
 
-    bool debrisActivate, boltActivate, rescueActivate, playerActivate, fireActivate;
+
+    bool debrisActivate, boltActivate, rescueActivate, playerActivate, fireActivate, powerupActivate;
 
     debrisGeneration debrisGenScript;
     InfiniteGeneratorEndless infGenElScript;
@@ -109,6 +125,7 @@ public class DifficultyManager : MonoBehaviour
         //set Initial Amounts
         debrisGenScript.randomDebrisThreshold = debrisInitialAmt;
         infGenElScript.boltThreshold = boltInitialAmt;
+        infGenElScript.powerupThreshold = powerupInitialAmt;
         infGenElScript.rescueThreshold = rescueInitialAmt;
         playerControllerScript.moveSpeed = playerInitialAmt;
         fireAiScript.minSpeed = fireInitialAmtMin;
@@ -128,6 +145,7 @@ public class DifficultyManager : MonoBehaviour
         rescueDifficulty();
         playerDifficulty();
         fireDifficulty();
+        powerupDifficulty();
     }
 
     private void debrisDifficulty()
@@ -283,6 +301,35 @@ public class DifficultyManager : MonoBehaviour
 
                 //reset counter
                 fireDiffCounter = 0;
+            }
+        }
+    }
+
+    private void powerupDifficulty()
+    {
+        if (flrCounterScript.countFloor_el >= powerupStartAt && !powerupActivate)
+        {
+            infGenElScript.powerupThreshold += powerupIncreaseAmt;
+            powerupActivate = true;
+        }
+        if (powerupActivate)
+        {
+            //is the counter and frequency same?
+            if (powerupDiffCounter < powerupDiffFrequency)
+            {
+                //Not the same
+                powerupDiffCounter++;
+            }
+            else
+            {
+                //Yes but Is it below limit
+                if (infGenElScript.powerupThreshold < powerupAmountLimit)
+                {
+                    //Yes, make it harder
+                     infGenElScript.powerupThreshold += powerupIncreaseAmt;
+                }
+                //reset counter
+                powerupDiffCounter = 0;
             }
         }
     }

@@ -15423,10 +15423,8 @@ MonoBehaviour:
   PrevFloor: 0
   IsGenerate: 1
   powerupThreshold: 0
-  powerupPooler: {fileID: 0}
-  PowerupsHeight: 0
-  setPowerups: 0
-  amountPowerups: 0
+  powerupPooler: {fileID: 1824169604}
+  PowerupsHeight: 1.3
   FloorCounterScript: {fileID: 0}
   RescuePointThreshold: 0
   RescuePointheight: 2.7
@@ -19582,6 +19580,12 @@ MonoBehaviour:
   boltIncreaseAmt: 20
   boltAmountLimit: 100
   boltDiffCounter: 0
+  powerupInitialAmt: 0
+  powerupStartAt: 30
+  powerupDiffFrequency: 50
+  powerupIncreaseAmt: 30
+  powerupAmountLimit: 120
+  powerupDiffCounter: 0
   rescueInitialAmt: 3
   rescueStartAt: 40
   rescueDiffFrequency: 30
