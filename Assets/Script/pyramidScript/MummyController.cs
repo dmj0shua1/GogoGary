@@ -75,6 +75,12 @@ public class MummyController : MonoBehaviour {
             _moveSpeed = 0;
 
         }
+
+        if (other.gameObject.CompareTag("StopCamera"))
+        {
+
+            gameObject.SetActive(false);
+        }
       
     }
 

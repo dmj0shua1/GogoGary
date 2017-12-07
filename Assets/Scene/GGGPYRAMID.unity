@@ -7942,6 +7942,7 @@ MonoBehaviour:
   isAllMove: 1
   ViewPanel: {fileID: 15051947}
   PauseButton: {fileID: 1555042899}
+  FloorSystemPanel: {fileID: 0}
   LevelPassScript: {fileID: 0}
   addSpeed: 0
   addStar: 0
@@ -8879,7 +8880,7 @@ MonoBehaviour:
   - {fileID: 1363667836}
   - {fileID: 1044045262}
   platFormHeight: 0
-  EndGameSprite: {fileID: 1656823044527016, guid: e25dbb0495c1527489c5b8762912fb2e,
+  EndGameSprite: {fileID: 1506105899826480, guid: 2f349e9d0e97f3d43a67eeba110fab92,
     type: 2}
   Counts: 0
   EndGenerate: 0
