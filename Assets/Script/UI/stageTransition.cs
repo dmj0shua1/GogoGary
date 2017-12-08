@@ -7,9 +7,10 @@ public class stageTransition : MonoBehaviour {
 
     public string SceneToGo;
     public float animDelay;
+    public GameObject MainHolderScript;
 	// Use this for initialization
 	void Start () {
-		
+        MainHolderScript = GameObject.Find("Holder");
 	}
 	
 	// Update is called once per frame
@@ -24,6 +25,7 @@ public class stageTransition : MonoBehaviour {
 
     private void changeScene()
     {
+        Destroy(MainHolderScript);
         SceneManager.LoadScene(SceneToGo);
     }
 }

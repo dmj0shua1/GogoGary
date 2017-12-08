@@ -17,7 +17,7 @@ public class textLevelStatus : MonoBehaviour {
     }
    void Update()
     {
-       LevelStatusNumber.text = "" + NumberOfLevel;
+        LevelStatusNumber.text = "" + NumberOfLevel;
         NumberOfLevel = LevelPassScript.LevelStatusAmt;
     }
 }

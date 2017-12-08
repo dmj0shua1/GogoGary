@@ -22,6 +22,7 @@ public class floorcounterEl : MonoBehaviour {
     public int MainFloorDecreaseDivided;
     private FireAi fireAiScript;
     private DifficultyManager diffManagerScript;
+    public bool IsStopFire;
 
     void Start() 
     {
@@ -37,9 +38,10 @@ public class floorcounterEl : MonoBehaviour {
 
     void Update()
     {
-        if (countFloor_el == 2)
+        if (countFloor_el == 2 && !IsStopFire)
         {
             fireAiScript.StartFire = true;
+            IsStopFire = true;
         }
     }
 

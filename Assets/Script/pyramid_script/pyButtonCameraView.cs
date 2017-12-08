@@ -20,6 +20,7 @@ public class pyButtonCameraView : MonoBehaviour {
     public bool IsActivate;
     private pyLevelValueHolder LevelValueHolderScript;
     public int LevelStatusHolder;
+    public int LevelDisplayHolder;
     public RectTransform ScrollRectMap;
     [SerializeField]
     private MainHolder MainHolderScript;
@@ -65,7 +66,7 @@ public class pyButtonCameraView : MonoBehaviour {
     {
         if (PlayerPrefs.GetInt("UnlockLevels") == 41)
         {
-            if (LevelStatusHolder >= 16)
+            if (LevelStatusHolder >= 41)
             {
 
                 if (PlayerPrefs.GetInt("pyTotalRescuePoints") != 45)
@@ -90,7 +91,7 @@ public class pyButtonCameraView : MonoBehaviour {
 
         if (PlayerPrefs.GetInt("UnlockLevels") == 46)
         {
-            if (LevelStatusHolder >= 21)
+            if (LevelStatusHolder >= 41)
             {
                 if (PlayerPrefs.GetInt("pyTotalRescuePoints") != 60)
                 {
@@ -139,7 +140,7 @@ public class pyButtonCameraView : MonoBehaviour {
     }
     public void testCheckerRescue() 
     {
-       
+        
         if (PlayerPrefs.HasKey("pyBuilding_L" + LevelStatusHolder.ToString()))
         {
             NumberOfPeopleText.text = "" + PlayerPrefs.GetInt("pyBuilding_L" + LevelStatusHolder.ToString());
@@ -151,9 +152,11 @@ public class pyButtonCameraView : MonoBehaviour {
     }
     public void LevelStatusPass(int StatusNumber) 
     {
-        LevelStatusHolder = StatusNumber-25;
-        LevelNumberText.text = "" + LevelStatusHolder;
-
+        LevelStatusHolder = StatusNumber;
+        //LevelNumberText.text = "" + LevelStatusHolder;
+       //DisplayLevelHolder 
+       LevelDisplayHolder = StatusNumber-25;
+       LevelNumberText.text = "" + LevelDisplayHolder;
 
     }
     public void BackButtonCamera(int CanvasNumber) 
@@ -196,9 +199,12 @@ public class pyButtonCameraView : MonoBehaviour {
       
         if (ButtonNumberHolder <= 23)
         {
-           
+           //displayLevel
+            LevelDisplayHolder = LevelDisplayHolder + 1;
+            LevelNumberText.text = "" + LevelDisplayHolder;
+            //
             LevelStatusHolder = LevelStatusHolder + 1;
-            LevelNumberText.text = "" + LevelStatusHolder;
+            //LevelNumberText.text = "" + LevelStatusHolder;
             ButtonNumberHolder = ButtonNumberHolder + 1;
             target = BuildingButtons[ButtonNumberHolder];
             MainHolderScript.LevelStatusPass = LevelStatusHolder;
@@ -218,11 +224,15 @@ public class pyButtonCameraView : MonoBehaviour {
     {
         if (ButtonNumberHolder >=1)
         {
+            //displayLevel
+            LevelDisplayHolder = LevelDisplayHolder - 1;
             LevelStatusHolder = LevelStatusHolder - 1;
             ButtonNumberHolder = ButtonNumberHolder - 1;
         }
-        
-        LevelNumberText.text = "" + LevelStatusHolder;
+     
+        LevelNumberText.text = "" + LevelDisplayHolder;
+        //
+        //LevelNumberText.text = "" + LevelStatusHolder;
 
         target = BuildingButtons[ButtonNumberHolder];
         MainHolderScript.LevelStatusPass = LevelStatusHolder;

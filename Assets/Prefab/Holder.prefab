@@ -62,31 +62,31 @@ MonoBehaviour:
   isActivateTipsAmt: 0
   isShakeActivateAmt: 0
   ButtonNextLevel:
-  - {fileID: 1914593380010792, guid: 38bfb83049542a242a0b188f2ae06e8c, type: 2}
-  - {fileID: 1735781962717194, guid: 7dcdc96f971d86c48acbcf9af4a8b041, type: 2}
-  - {fileID: 1804998199192532, guid: ee82d88f3060d87409d4d8dbb3105367, type: 2}
-  - {fileID: 1615413170028396, guid: f0c0e07e867b05a4a9db9a69e193722a, type: 2}
-  - {fileID: 1208394308276410, guid: 320971054424f8f459d2e82f0f8dc29f, type: 2}
-  - {fileID: 1520039029216042, guid: 1e421df19cc389b46af03b7a4c488b11, type: 2}
-  - {fileID: 1290086920818812, guid: a315b7c7ea7a0034e92db92c0b99b904, type: 2}
-  - {fileID: 1216033764480330, guid: bf86333621d2406479b475485a433835, type: 2}
-  - {fileID: 1737288686059544, guid: acdc738566f75c04893c565710c41b4f, type: 2}
-  - {fileID: 1626142722116798, guid: c7c8c02e139848f40847dfd1f7568b24, type: 2}
-  - {fileID: 1939735227970564, guid: 9d6f9c057dce9804395b6f9bef9082ba, type: 2}
-  - {fileID: 1240442210087482, guid: 939de747e94ac61489ad7e0c51ef378e, type: 2}
-  - {fileID: 1705645945277010, guid: 2fc4057b1275aa944a09ca5512747947, type: 2}
-  - {fileID: 1778722058359358, guid: ce9361a128a6a7348a92568cd2a1eb86, type: 2}
-  - {fileID: 1674816149960046, guid: a30b821fc9d209843b1d21fd4efb1bdf, type: 2}
-  - {fileID: 1895493840080634, guid: c4aab26fc3b31af4b935533cae61679b, type: 2}
-  - {fileID: 1257460032131952, guid: 829693bd21a86374d9ef482fe6ef0543, type: 2}
-  - {fileID: 1149548760755090, guid: 4efc64f054453ae48a817c9d2eaf202c, type: 2}
-  - {fileID: 1886776091400024, guid: 9cb8c0e79fa50614a818b88fcbec33b5, type: 2}
-  - {fileID: 1552096654977792, guid: 34977e573a00200409a2edb2aa5d2498, type: 2}
-  - {fileID: 1574636069899718, guid: fc8415ec5e03dff45b33b4721224e3c6, type: 2}
-  - {fileID: 1063347938550566, guid: f16939ec99862a844b2741b0f3e9aeed, type: 2}
-  - {fileID: 1247015728548132, guid: 8c51acedec7b1ce4b8dc853e2ba1e3f7, type: 2}
-  - {fileID: 1812755989539446, guid: bc24bc3f9fc581f48b9b655a61250a6f, type: 2}
-  - {fileID: 1004671301286524, guid: 546ea65f8431bff40a5fe6aa031b1774, type: 2}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
   CurrentButtonPassAmt: 0
   TargetLevel: {fileID: 0}
   CameraColorAmt: {r: 0, g: 0, b: 0, a: 0}

@@ -17173,6 +17173,12 @@ Prefab:
       propertyPath: m_Pivot.y
       value: 0.5
       objectReference: {fileID: 0}
+    - target: {fileID: 114382897039449290, guid: 4f4754d304b5d144a82bed76642a4511,
+        type: 2}
+      propertyPath: MainHolderScript
+      value: 
+      objectReference: {fileID: 1556951551684486, guid: 28963584d30397049aa76bf19cd256ed,
+        type: 2}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 4f4754d304b5d144a82bed76642a4511, type: 2}
   m_IsPrefabParent: 0

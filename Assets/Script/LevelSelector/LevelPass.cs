@@ -17,18 +17,28 @@ public class LevelPass : MonoBehaviour {
     private int StageNumCounter;
     void Start()
     {
-        StageNumCounter = 25;
+        
         Scene currentScene = SceneManager.GetActiveScene();
         string sceneName = currentScene.name;
-        if (sceneName == "Stage2")
+        if (sceneName == "Stage1")
         {
-            
+            StageNumCounter = 0;
+            for (int num = 0; num < 25; num++)
+            {
+                StageNumCounter++;
+                ButtonNextLevel[num] = (GameObject)Resources.Load("Stage1/Building_L" + StageNumCounter, typeof(GameObject));
+            }
+        }
+        else if (sceneName == "Stage2")
+        {
+            StageNumCounter = 25;
             for (int num = 0; num < 25; num++)
             {
                 StageNumCounter++;
                 ButtonNextLevel[num] = (GameObject)Resources.Load("Stage2/pyBuilding_L" + StageNumCounter, typeof(GameObject));
             }
         }
+      
     }
     public void TargetMethod()
     { 
@@ -44,6 +54,6 @@ public class LevelPass : MonoBehaviour {
 
     void Update()
     {
-       
+      
     }
 }
