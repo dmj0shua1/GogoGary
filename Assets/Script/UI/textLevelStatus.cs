@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.SceneManagement;
 public class textLevelStatus : MonoBehaviour {
 
     public Text LevelStatusNumber;
@@ -16,8 +17,18 @@ public class textLevelStatus : MonoBehaviour {
         LevelPassScript = GameObject.Find("Holder").GetComponent<LevelPass>();
     }
    void Update()
-    {
-        LevelStatusNumber.text = "" + NumberOfLevel;
-        NumberOfLevel = LevelPassScript.LevelStatusAmt;
+    { 
+        Scene currentScene = SceneManager.GetActiveScene();
+        string sceneName = currentScene.name;
+        if (sceneName == "GGG")
+        {
+            LevelStatusNumber.text = "" + NumberOfLevel;
+            NumberOfLevel = LevelPassScript.LevelStatusAmt;
+        }
+        else if (sceneName == "GGGPYRAMID")
+        {
+             LevelStatusNumber.text = "" + NumberOfLevel;
+            NumberOfLevel = LevelPassScript.LevelStatusAmt-25;
+        }
     }
 }

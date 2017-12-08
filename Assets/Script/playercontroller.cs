@@ -247,7 +247,7 @@ public class playercontroller : MonoBehaviour {
         if (other.gameObject.CompareTag("FireMain"))
         {
 
-            //if (SceneManager.GetActiveScene().name == "Endless") FloorCounterScript.isNoFunction_el = false;
+            if (SceneManager.GetActiveScene().name == "Endless") FloorCounterScript.isNoFunction_el = false;
             TimeManagerScript.isStopMainTime = false;
             FireAIscript.minSpeed = 50;
             StartCoroutine(StopFireAnimation());

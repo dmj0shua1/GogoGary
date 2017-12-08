@@ -147,7 +147,7 @@ MonoBehaviour:
   MainHolderScript: {fileID: 0}
   ButtonCameraViewScript: {fileID: 0}
   ObjectiveValue: 40
-  FloorValue: 39
+  FloorValue: 38
   StartingValue: 0
   DebrisValue: 0
   TimeValue: 0
