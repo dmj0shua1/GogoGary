@@ -1,7 +1,6 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.SceneManagement;
 
 public class playercontroller : MonoBehaviour {
 
@@ -246,8 +245,7 @@ public class playercontroller : MonoBehaviour {
     {
         if (other.gameObject.CompareTag("FireMain"))
         {
-
-            if (SceneManager.GetActiveScene().name == "Endless") FloorCounterScript.isNoFunction_el = false;
+            //FloorCounterScript.isNoFunction_el = false;
             TimeManagerScript.isStopMainTime = false;
             FireAIscript.minSpeed = 50;
             StartCoroutine(GameOverCount());
