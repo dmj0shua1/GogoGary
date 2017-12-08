@@ -63,12 +63,12 @@ public class pyButtonCameraView : MonoBehaviour {
  
     public void RescueCheckerLevelMethod() 
     {
-        if (PlayerPrefs.GetInt("UnlockLevels") == 16)
+        if (PlayerPrefs.GetInt("UnlockLevels") == 41)
         {
             if (LevelStatusHolder >= 16)
             {
 
-                if (PlayerPrefs.GetInt("TotalRescuePoints") != 45)
+                if (PlayerPrefs.GetInt("pyTotalRescuePoints") != 45)
                 {
 
                     isInMessage.SetBool("isIn", true);
@@ -88,11 +88,11 @@ public class pyButtonCameraView : MonoBehaviour {
             }
         }
 
-        if (PlayerPrefs.GetInt("UnlockLevels") == 21)
+        if (PlayerPrefs.GetInt("UnlockLevels") == 46)
         {
             if (LevelStatusHolder >= 21)
             {
-                if (PlayerPrefs.GetInt("TotalRescuePoints") != 60)
+                if (PlayerPrefs.GetInt("pyTotalRescuePoints") != 60)
                 {
                     isInMessage.SetBool("isIn", true);
                     RescueLevelCheckObject.SetActive(true);
@@ -151,8 +151,10 @@ public class pyButtonCameraView : MonoBehaviour {
     }
     public void LevelStatusPass(int StatusNumber) 
     {
-        LevelStatusHolder = StatusNumber;
+        LevelStatusHolder = StatusNumber-25;
         LevelNumberText.text = "" + LevelStatusHolder;
+
+
     }
     public void BackButtonCamera(int CanvasNumber) 
     {
