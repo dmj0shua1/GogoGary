@@ -10,12 +10,16 @@ public class MummyManager : MonoBehaviour {
     public bool effectMode;
     public playercontroller PlayerControllerScript;
     public MummyController MummyControllerScript;
+    [SerializeField]
+    private LevelPass LevelPassScript;
+    [SerializeField]
+    private PlatformGenerator PlatformGeneratorScript;
 
-    void Start() 
+    void Start()
     {
         PlayerControllerScript = GameObject.Find("Player").GetComponent<playercontroller>();
         MummyControllerScript = GameObject.Find("Mummy").GetComponent<MummyController>();
-    }
+    }  
     void Update()
     {
        
@@ -40,5 +44,14 @@ public class MummyManager : MonoBehaviour {
         EffectLengthCounter = time;
         //Playerspeed = PlayerControllerScript.moveSpeed;
         MummyEffectActive = true;
+    }
+
+    public void MummyActivation() 
+    {
+        LevelPassScript = GameObject.Find("Holder").GetComponent<LevelPass>();
+        if (LevelPassScript.LevelStatusAmt >= 31)
+            {
+                PlatformGeneratorScript.IsGenerateMummy = true;
+            }
     }
 }

@@ -1,6 +1,7 @@
 ﻿ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class PlatformGenerator : MonoBehaviour {
 	//floors
@@ -198,7 +199,14 @@ public class PlatformGenerator : MonoBehaviour {
                             blackOutAnimation.SetBool("IsIdle",true);
                             
                         }
-                        //enerate
+                        //Mummy  
+                Scene currentScene = SceneManager.GetActiveScene();
+                string sceneName = currentScene.name;
+                    if (sceneName == "GGGPYRAMID")
+                {
+                    if (LevelPassScript.LevelStatusAmt >= 31)
+                    {
+                        IsGenerateMummy = true;
                         if (IsGenerateMummy)
                         {
                             if (Counts % 3 == 0)
@@ -213,6 +221,10 @@ public class PlatformGenerator : MonoBehaviour {
                                 newMummy.SetActive(true);
                             }
                         }
+                    }
+                }
+                      
+                      
                         fireHalfFloorMethod();
                 //MummyG
                       

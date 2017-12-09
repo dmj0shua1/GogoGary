@@ -4856,6 +4856,11 @@ Prefab:
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[6].m_Target
       value: 
       objectReference: {fileID: 2076944143}
+    - target: {fileID: 114501904194166728, guid: ee82d88f3060d87409d4d8dbb3105367,
+        type: 2}
+      propertyPath: CameraColorValue.a
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: ee82d88f3060d87409d4d8dbb3105367, type: 2}
   m_IsPrefabParent: 0

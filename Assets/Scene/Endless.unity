@@ -8710,6 +8710,7 @@ MonoBehaviour:
   CheckCountPlus: 1
   MainFloorHolderDivided: 0
   MainFloorDecreaseDivided: 0
+  IsStopFire: 0
 --- !u!1001 &840169207
 Prefab:
   m_ObjectHideFlags: 0
@@ -13735,6 +13736,21 @@ Prefab:
     - target: {fileID: 114573579975777220, guid: 1f0fd2438b70898409c1aeccf88f8dd8,
         type: 2}
       propertyPath: m_Enabled
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 212380500106434590, guid: 1f0fd2438b70898409c1aeccf88f8dd8,
+        type: 2}
+      propertyPath: m_Color.r
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 212380500106434590, guid: 1f0fd2438b70898409c1aeccf88f8dd8,
+        type: 2}
+      propertyPath: m_Color.g
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 212380500106434590, guid: 1f0fd2438b70898409c1aeccf88f8dd8,
+        type: 2}
+      propertyPath: m_Color.b
       value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents:

@@ -76,7 +76,7 @@ public class MummyController : MonoBehaviour {
 
         }
 
-        if (other.gameObject.CompareTag("StopCamera"))
+        if (other.gameObject.CompareTag("HitBoxCam"))
         {
 
             gameObject.SetActive(false);
