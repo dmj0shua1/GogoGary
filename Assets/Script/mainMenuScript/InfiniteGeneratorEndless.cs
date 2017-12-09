@@ -42,6 +42,10 @@ public class InfiniteGeneratorEndless : MonoBehaviour
     public int rescueThreshold;
 
     private DebriTrigger DebriTriggerScript;
+    private bgColorChange bgColorChangeScript;
+    [Space]
+    [Header("Floor bg colors")]
+    public byte ColorR,ColorG,ColorB;
 
     void Start()
     {
@@ -52,6 +56,7 @@ public class InfiniteGeneratorEndless : MonoBehaviour
         FloorCounterScript = GameObject.Find("player").GetComponent<floorcounterEl>();
         RescueSelector = Random.Range(0, RescuePointPooler.Length);
         prevRescue = RescueSelector;
+        
     }
     //note 13.7 DistanceBetween
     void Update()
@@ -70,6 +75,8 @@ public class InfiniteGeneratorEndless : MonoBehaviour
             GameObject newPlatform = theObjectPools[floorSelector].GetPooledObject();
             newPlatform.transform.position = transform.position;
             newPlatform.transform.rotation = transform.rotation;
+            bgColorChangeScript = newPlatform.gameObject.GetComponent<bgColorChange>();
+            bgColorChangeScript.sprRenderer.color = new Color32(ColorR,ColorG,ColorB,255);
             newPlatform.gameObject.tag = "floor";
             newPlatform.SetActive(true);
             DebriTriggerScript = newPlatform.gameObject.GetComponent<DebriTrigger>();
