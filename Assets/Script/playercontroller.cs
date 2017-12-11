@@ -58,6 +58,7 @@ public class playercontroller : MonoBehaviour {
     private LevelValueHolder LevelValueHolderScript;
     private GameLevelHolderManager GameLevelHolderManagerScript;
     private floorcounter MainFloorCounterScript;
+    ScoreManager scoreManagerScript;
 	void start()
 	{	
 		ifRight = true;
@@ -80,6 +81,7 @@ public class playercontroller : MonoBehaviour {
         SimpleAdScript = GameObject.Find("SimpleAd").GetComponent<SimpleAd>();
         PointManagerScript = GameObject.Find("PointManager").GetComponent<PointManager>();
         GameLevelHolderManagerScript = GameObject.Find("GameLevelManager").GetComponent<GameLevelHolderManager>();
+        scoreManagerScript = GameObject.Find("ScoreManager").GetComponent<ScoreManager>();
        
 	}
 	void Update ()
@@ -248,13 +250,14 @@ public class playercontroller : MonoBehaviour {
     {
         if (other.gameObject.CompareTag("FireMain"))
         {
+
             if (SceneManager.GetActiveScene().name == "Endless") FloorCounterScript.isNoFunction_el = false;
             TimeManagerScript.isStopMainTime = false;
             FireAIscript.minSpeed = 50;
-            StartCoroutine(StopFireAnimation());
+            StartCoroutine(StopFireAnimation());         
             StartCoroutine(GameOverCount());
-            MainFloorCounterScript.isNoFunction = false;
-            //ViewPanel.SetActive(true);
+            ViewPanel.SetActive(true);
+            MainFloorCounterScript.isNoFunction = false; 
             PauseButton.SetActive(false);
             SimpleAdScript.gameOverAd();
             //booSFX.Play();
@@ -375,9 +378,16 @@ public class playercontroller : MonoBehaviour {
     }
        IEnumerator GameOverCount()
     {
-        yield return new WaitForSeconds(1);
+
+        if (SceneManager.GetActiveScene().name == "Endless")
+        {
+            scoreManagerScript.saveHighscore();
+        }
+       
+            yield return new WaitForSeconds(0.3f);
             ViewPanel.SetActive(true);
             FloorSystemPanel.SetActive(false);
+            scoreManagerScript.animateScore();
         
     }
 

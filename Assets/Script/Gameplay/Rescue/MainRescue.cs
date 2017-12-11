@@ -12,25 +12,31 @@ public class MainRescue : MonoBehaviour {
     private floorcounterEl flrCounterScript;
     Text floorDown;
 
+    ScoreManager scoreManagerScript;
+
     void Start() 
     {
         RescueManagerScript = GameObject.Find("RescueManager").GetComponent<RescueManager>();
         PlatformGeneratorScript = GameObject.Find("PlatformGeneration").GetComponent<PlatformGenerator>();
         flrCounterScript = GameObject.Find("player").GetComponent<floorcounterEl>();
         floorDown = GameObject.Find("FloorDown").GetComponent<Text>();
+        scoreManagerScript = GameObject.Find("ScoreManager").GetComponent<ScoreManager>();
     }
     void OnTriggerEnter2D(Collider2D other)
     {
 
         if (other.name == "player")
         {
+            gameObject.SetActive(false);
+            RescueManagerScript.AddRescuePoint(RescuePointToGive);
             if (SceneManager.GetActiveScene().name == "Endless")
             {
                 flrCounterScript.countFloor_el++;
                 floorDown.text = flrCounterScript.countFloor_el.ToString();
+                scoreManagerScript.rescueCounter++;
             }
-            RescueManagerScript.AddRescuePoint(RescuePointToGive);
-            gameObject.SetActive(false);
+            
+            
         }
         else if (other.gameObject.CompareTag("Hitbox"))
         {
