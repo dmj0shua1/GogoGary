@@ -91,7 +91,7 @@ public class pyButtonCameraView : MonoBehaviour {
 
         if (PlayerPrefs.GetInt("UnlockLevels") == 46)
         {
-            if (LevelStatusHolder >= 41)
+            if (LevelStatusHolder >= 46)
             {
                 if (PlayerPrefs.GetInt("pyTotalRescuePoints") != 60)
                 {

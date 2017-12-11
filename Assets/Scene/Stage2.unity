@@ -20095,7 +20095,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   TextHolder: {fileID: 2120046021}
-  Chinese: "\u62EF\u6551\u66F4\u591A\u7684\u5E73\u6C11\u89E3\u9501\u4E0B\u4E00\u4E2A\u7EA7\u522B"
+  Chinese: "\u6551\u66F4\u591A\u4EBA  \u89E3\u9396\u66F4\u591A\u95DC\u5361"
   English: RESCUE MORE CIVILIANS TO UNLOCK NEXT lEVEL
 --- !u!114 &2120046019
 MonoBehaviour:

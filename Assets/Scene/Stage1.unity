@@ -13144,6 +13144,11 @@ Prefab:
       propertyPath: m_Pivot.y
       value: 0.5
       objectReference: {fileID: 0}
+    - target: {fileID: 114669898010983594, guid: ea973787fa99f3b4990db0a9e10ced8a,
+        type: 2}
+      propertyPath: Chinese
+      value: "\u6551\u66F4\u591A\u4EBA  \u89E3\u9396\u66F4\u591A\u95DC\u5361"
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: ea973787fa99f3b4990db0a9e10ced8a, type: 2}
   m_IsPrefabParent: 0

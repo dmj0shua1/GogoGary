@@ -57,6 +57,7 @@ public class playercontroller : MonoBehaviour {
     public bool isDebriGround;
     private LevelValueHolder LevelValueHolderScript;
     private GameLevelHolderManager GameLevelHolderManagerScript;
+    private floorcounter MainFloorCounterScript;
 	void start()
 	{	
 		ifRight = true;
@@ -68,6 +69,7 @@ public class playercontroller : MonoBehaviour {
         currentSpeed = moveSpeed;
         isCountDownSwipe = true;
         FloorCounterScript = GetComponent<floorcounterEl>();
+        MainFloorCounterScript = GetComponent<floorcounter>();
 		mySpriteRenderer = GetComponent<SpriteRenderer>();
 		TimeManagerScript = GameObject.Find ("countDown").GetComponent<TimeManager> ();
         FireAIscript = GameObject.Find("Fire").GetComponent<FireAi>();
@@ -252,6 +254,7 @@ public class playercontroller : MonoBehaviour {
             FireAIscript.minSpeed = 50;
             StartCoroutine(StopFireAnimation());
             StartCoroutine(GameOverCount());
+            MainFloorCounterScript.isNoFunction = false;
             //ViewPanel.SetActive(true);
             PauseButton.SetActive(false);
             SimpleAdScript.gameOverAd();

@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.SceneManagement;
 
 public class GameLevelHolderManager : MonoBehaviour {
     [SerializeField]
@@ -140,58 +141,113 @@ public class GameLevelHolderManager : MonoBehaviour {
     }
     //rescuechecker
     public void RescueUnlockChecker() 
-    {
-        if (PlayerPrefs.GetInt("UnlockLevels") == 16 || PlayerPrefs.GetInt("UnlockLevels") == 15)
+    {   
+        Scene currentScene = SceneManager.GetActiveScene();
+        string sceneName = currentScene.name;
+        if (sceneName == "GGG")
         {
-            if (LevelPassScript.LevelStatusAmt >= 15)
+            if (PlayerPrefs.GetInt("UnlockLevels") == 16 || PlayerPrefs.GetInt("UnlockLevels") == 15)
             {
-
-                if (PlayerPrefs.GetInt("TotalRescuePoints") != 45)
+                if (LevelPassScript.LevelStatusAmt >= 15)
                 {
-                    ImageWin.SetActive(false);
-                    ImageNote.SetActive(true);
-                    NextButton.interactable = false;
+
+                    if (PlayerPrefs.GetInt("TotalRescuePoints") != 45)
+                    {
+                        ImageWin.SetActive(false);
+                        ImageNote.SetActive(true);
+                        NextButton.interactable = false;
+                    }
+                    else
+                    {
+                        ImageWin.SetActive(true);
+                        ImageNote.SetActive(false);
+                    }
                 }
+
                 else
                 {
                     ImageWin.SetActive(true);
                     ImageNote.SetActive(false);
                 }
             }
-
-            else
+            if (PlayerPrefs.GetInt("UnlockLevels") == 21 || PlayerPrefs.GetInt("UnlockLevels") == 20)
             {
-                ImageWin.SetActive(true);
-                ImageNote.SetActive(false);
-            }
-        }
-        if (PlayerPrefs.GetInt("UnlockLevels") == 21 || PlayerPrefs.GetInt("UnlockLevels") == 20)
-        {
-            if (LevelPassScript.LevelStatusAmt >= 20)
-            {
-
-                if (PlayerPrefs.GetInt("TotalRescuePoints") != 60)
+                if (LevelPassScript.LevelStatusAmt >= 20)
                 {
-                    ImageWin.SetActive(false);
-                    ImageNote.SetActive(true);
-                    NextButton.interactable = false;
+
+                    if (PlayerPrefs.GetInt("TotalRescuePoints") != 60)
+                    {
+                        ImageWin.SetActive(false);
+                        ImageNote.SetActive(true);
+                        NextButton.interactable = false;
+                    }
+                    else
+                    {
+                        ImageWin.SetActive(true);
+                        ImageNote.SetActive(false);
+                    }
                 }
+
                 else
                 {
                     ImageWin.SetActive(true);
                     ImageNote.SetActive(false);
                 }
             }
-
-            else
+        }
+        else if (sceneName == "GGGPYRAMID")
+        {
+            if (PlayerPrefs.GetInt("UnlockLevels") == 40 || PlayerPrefs.GetInt("UnlockLevels") == 41)
             {
-                ImageWin.SetActive(true);
-                ImageNote.SetActive(false);
+                if (LevelPassScript.LevelStatusAmt >= 40)
+                {
+
+                    if (PlayerPrefs.GetInt("pyTotalRescuePoints") != 45)
+                    {
+                        ImageWin.SetActive(false);
+                        ImageNote.SetActive(true);
+                        NextButton.interactable = false;
+                    }
+                    else
+                    {
+                        ImageWin.SetActive(true);
+                        ImageNote.SetActive(false);
+                    }
+                }
+
+                else
+                {
+                    ImageWin.SetActive(true);
+                    ImageNote.SetActive(false);
+                }
+            }
+            if (PlayerPrefs.GetInt("UnlockLevels") == 46 || PlayerPrefs.GetInt("UnlockLevels") == 47)
+            {
+                if (LevelPassScript.LevelStatusAmt >= 46)
+                {
+
+                    if (PlayerPrefs.GetInt("pyTotalRescuePoints") != 60)
+                    {
+                        ImageWin.SetActive(false);
+                        ImageNote.SetActive(true);
+                        NextButton.interactable = false;
+                    }
+                    else
+                    {
+                        ImageWin.SetActive(true);
+                        ImageNote.SetActive(false);
+                    }
+                }
+
+                else
+                {
+                    ImageWin.SetActive(true);
+                    ImageNote.SetActive(false);
+                }
             }
         }
+        
+        //stage2
     }
     //
- 
-
-  
 }
