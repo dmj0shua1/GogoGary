@@ -221,9 +221,9 @@ public class GameLevelHolderManager : MonoBehaviour {
                     ImageNote.SetActive(false);
                 }
             }
-            if (PlayerPrefs.GetInt("UnlockLevels") == 46 || PlayerPrefs.GetInt("UnlockLevels") == 47)
+            if (PlayerPrefs.GetInt("UnlockLevels") == 45 || PlayerPrefs.GetInt("UnlockLevels") == 46)
             {
-                if (LevelPassScript.LevelStatusAmt >= 46)
+                if (LevelPassScript.LevelStatusAmt >= 45)
                 {
 
                     if (PlayerPrefs.GetInt("pyTotalRescuePoints") != 60)

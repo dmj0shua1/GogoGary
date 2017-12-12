@@ -19,6 +19,7 @@ public class MummyManager : MonoBehaviour {
     {
         PlayerControllerScript = GameObject.Find("Player").GetComponent<playercontroller>();
         MummyControllerScript = GameObject.Find("Mummy").GetComponent<MummyController>();
+        PlatformGeneratorScript = GameObject.Find("PlatformGeneration").GetComponent<PlatformGenerator>();
     }  
     void Update()
     {
@@ -46,12 +47,17 @@ public class MummyManager : MonoBehaviour {
         MummyEffectActive = true;
     }
 
-    public void MummyActivation() 
+    /*public void MummyActivation() 
     {
         LevelPassScript = GameObject.Find("Holder").GetComponent<LevelPass>();
         if (LevelPassScript.LevelStatusAmt >= 31)
             {
                 PlatformGeneratorScript.IsGenerateMummy = true;
             }
+    }*/
+
+    public void MummyThreshold() 
+    {
+ 
     }
 }

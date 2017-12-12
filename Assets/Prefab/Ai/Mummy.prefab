@@ -110,7 +110,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1129774652816160}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -3987.0786, y: 543.66406, z: 0}
+  m_LocalPosition: {x: -3.8229775, y: -8.154352, z: 0}
   m_LocalScale: {x: 24.716993, y: 30.683575, z: 0}
   m_Children:
   - {fileID: 4714371049549844}
@@ -242,6 +242,10 @@ MonoBehaviour:
   MummyManagerScript: {fileID: 0}
   EffectLengthCounter: 0.5
   effectMode: 1
+  posX1: -24
+  posY1: 30
+  posX2: 24
+  posY2: 30
 --- !u!212 &212030420054814104
 SpriteRenderer:
   m_ObjectHideFlags: 1

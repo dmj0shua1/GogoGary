@@ -60,6 +60,7 @@ public class PlatformGenerator : MonoBehaviour {
     public bool IsGenerateMummy;
     public ObjectPooler mummyPooler;
     public float Mummyheight;
+    public int MummyThreshold;
 
 
 	void Start()
@@ -209,7 +210,7 @@ public class PlatformGenerator : MonoBehaviour {
                         IsGenerateMummy = true;
                         if (IsGenerateMummy)
                         {
-                            if (Counts % 3 == 0)
+                            if (Counts % MummyThreshold == 0)
                             {
                                 GameObject newMummy = mummyPooler.GetPooledObject();
                                 float MummyXposition = Random.Range(1, 12);

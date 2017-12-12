@@ -28,6 +28,10 @@ public class MummyController : MonoBehaviour {
     public MummyManager MummyManagerScript;
     public float EffectLengthCounter;
     public bool effectMode;
+    public float posX1;
+    public float posY1;
+    public float posX2;
+    public float posY2;
 
     void Start() 
     {
@@ -47,13 +51,15 @@ public class MummyController : MonoBehaviour {
 
             if (moveRight)
             {
-                transform.localScale = new Vector3(-24f, 30f, 0);
+                //transform.localScale = new Vector3(-24f, 30f, 0);
+                transform.localScale = new Vector3(posX1, posY1, 0);
                 GetComponent<Rigidbody2D>().velocity = new Vector2(_moveSpeed, GetComponent<Rigidbody2D>().velocity.y);
 
             }
             else if (!moveRight)
             {
-                transform.localScale = new Vector3(24f, 30f, 0);
+                //transform.localScale = new Vector3(24f, 30f, 0);
+                transform.localScale = new Vector3(posX2, posY2, 0);
                 GetComponent<Rigidbody2D>().velocity = new Vector2(-_moveSpeed, GetComponent<Rigidbody2D>().velocity.y);
 
             }     
