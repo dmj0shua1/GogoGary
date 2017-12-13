@@ -3538,7 +3538,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0.17819326}
   m_AnchorMax: {x: 1, y: 0.3564747}
-  m_AnchoredPosition: {x: -14.875, y: 203.99998}
+  m_AnchoredPosition: {x: -14.875, y: 203.99997}
   m_SizeDelta: {x: -223.75, y: -32}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &397360090
@@ -4888,6 +4888,7 @@ GameObject:
   - component: {fileID: 493866487}
   - component: {fileID: 493866489}
   - component: {fileID: 493866488}
+  - component: {fileID: 493866490}
   m_Layer: 5
   m_Name: Text
   m_TagString: Untagged
@@ -4952,6 +4953,20 @@ CanvasRenderer:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 493866486}
+--- !u!114 &493866490
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 493866486}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5db73abf8efb142408567a45f23da42c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  TextHolder: {fileID: 493866488}
+  Chinese: "\u7121\u9650"
+  English: endless
 --- !u!1 &494597750
 GameObject:
   m_ObjectHideFlags: 0
@@ -12992,6 +13007,7 @@ GameObject:
   - component: {fileID: 1258955534}
   - component: {fileID: 1258955536}
   - component: {fileID: 1258955535}
+  - component: {fileID: 1258955537}
   m_Layer: 5
   m_Name: Text
   m_TagString: Untagged
@@ -13056,6 +13072,20 @@ CanvasRenderer:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1258955533}
+--- !u!114 &1258955537
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1258955533}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5db73abf8efb142408567a45f23da42c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  TextHolder: {fileID: 1258955535}
+  Chinese: "\u6D3B\u52D5"
+  English: Campaign
 --- !u!1 &1259019510
 GameObject:
   m_ObjectHideFlags: 0
@@ -14756,6 +14786,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   levelButtons: []
+  MainHolderScript: {fileID: 0}
 --- !u!4 &1492147571
 Transform:
   m_ObjectHideFlags: 0

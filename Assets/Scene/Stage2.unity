@@ -1262,6 +1262,7 @@ GameObject:
   - component: {fileID: 516}
   - component: {fileID: 961}
   - component: {fileID: 962}
+  - component: {fileID: 134}
   m_Layer: 5
   m_Name: Text
   m_TagString: Untagged
@@ -1342,6 +1343,20 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
+--- !u!114 &134
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 128}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5db73abf8efb142408567a45f23da42c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  TextHolder: {fileID: 961}
+  Chinese: "\u6C11\u773E\u5DF2\u7372\u6551"
+  English: 'People rescued:'
 --- !u!1 &135 stripped
 GameObject:
   m_PrefabParentObject: {fileID: 1955393520761822, guid: b8dd5dbf5c52e104f8d2ff5fe82f7c61,
@@ -2616,6 +2631,7 @@ GameObject:
   - component: {fileID: 589}
   - component: {fileID: 1110}
   - component: {fileID: 1111}
+  - component: {fileID: 298}
   m_Layer: 5
   m_Name: Text
   m_TagString: Untagged
@@ -2634,6 +2650,7 @@ GameObject:
   - component: {fileID: 787}
   - component: {fileID: 590}
   - component: {fileID: 1112}
+  - component: {fileID: 259}
   m_Layer: 5
   m_Name: Text
   m_TagString: Untagged
@@ -2682,6 +2699,20 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
+--- !u!114 &259
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 256}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5db73abf8efb142408567a45f23da42c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  TextHolder: {fileID: 1112}
+  Chinese: "\u958B\u59CB\u73A9"
+  English: Play
 --- !u!1 &260
 GameObject:
   m_ObjectHideFlags: 0
@@ -2822,6 +2853,7 @@ GameObject:
   - component: {fileID: 599}
   - component: {fileID: 1133}
   - component: {fileID: 1134}
+  - component: {fileID: 297}
   m_Layer: 5
   m_Name: RescueText
   m_TagString: Untagged
@@ -2973,6 +3005,34 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &297
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 270}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5db73abf8efb142408567a45f23da42c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  TextHolder: {fileID: 1133}
+  Chinese: "\u5DF2\u7372\u6551:"
+  English: 'Rescued:'
+--- !u!114 &298
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 254}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5db73abf8efb142408567a45f23da42c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  TextHolder: {fileID: 1110}
+  Chinese: "\u96E3\u6613\u5EA6"
+  English: LEVEL
 --- !u!4 &301
 Transform:
   m_ObjectHideFlags: 0
