@@ -16,6 +16,8 @@ public class StartLevelPrefs : MonoBehaviour {
         if (!PlayerPrefs.HasKey("pyTotalRescuePoints")) PlayerPrefs.SetInt("pyTotalRescuePoints", 0);
         if (!PlayerPrefs.HasKey("CurrentZoom")) PlayerPrefs.SetInt("CurrentZoom", 0);
         if (!PlayerPrefs.HasKey("CompleteLevelCounter")) PlayerPrefs.SetInt("CompleteLevelCounter", 0);
+        if (!PlayerPrefs.HasKey("OpenStagePyramid")) PlayerPrefs.SetInt("OpenStagePyramid", 0);
+        
 
      
         for (int num = 1; num < PlaceTotalBuilding; num++)

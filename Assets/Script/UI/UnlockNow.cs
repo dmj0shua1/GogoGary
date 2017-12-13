@@ -13,13 +13,21 @@ public class UnlockNow : MonoBehaviour {
 
     void Awake()
     {
-        CurrentHolder = 75 -PlayerPrefs.GetInt("TotalRescuePoints");
+       
       
     }
 
     void Start() 
     {
         pyCurrentLevelZoomInScript = GameObject.Find("CurrenLevelZoomOut").GetComponent<pyCurrentLevelZoomIn>();
+        CurrentHolder = 75 - PlayerPrefs.GetInt("TotalRescuePoints");
+        if (PlayerPrefs.GetInt("OpenStagePyramid") == 1)
+        {
+            OpenStage.SetActive(false);
+            pyCurrentLevelZoomInScript.Isactivate = true;
+
+
+        }
     }
     
     public void _checkTotalPoints() 
@@ -28,6 +36,7 @@ public class UnlockNow : MonoBehaviour {
         {
             UnlockMessageBoxObject.SetActive(true);
             pyCurrentLevelZoomInScript.Isactivate = true;
+            PlayerPrefs.SetInt("OpenStagePyramid", 1);
         }
         else
         {
@@ -41,4 +50,6 @@ public class UnlockNow : MonoBehaviour {
     {
         OpenStage.SetActive(false);
     }
+
+  
 }
