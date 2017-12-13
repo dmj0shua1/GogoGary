@@ -5,7 +5,7 @@ using UnityEngine;
 public class EnergyManager : MonoBehaviour {
 
 	// Use this for initialization
-    public int energyLeft;
+    public int energyLeft,energyMaxValue;
     [SerializeField]
     GameObject[] energyDrinks;
     [Space]
@@ -13,9 +13,13 @@ public class EnergyManager : MonoBehaviour {
     Sprite energySpriteColored;
     [SerializeField]
     Sprite energySpriteFaded;
+
+    
 	void Start () {
         if (!PlayerPrefs.HasKey("energyLeft")) PlayerPrefs.SetInt("energyLeft", 5);
         energyLeft = PlayerPrefs.GetInt("energyLeft");
+
+        
 	}
 	
 	// Update is called once per frame
@@ -25,7 +29,12 @@ public class EnergyManager : MonoBehaviour {
 
     public void decreaseEnergy()
     {
+        int energyCheck;
+        
         energyLeft--;
+
+        while (energyCheck )
+
         energyDrinks[energyLeft].GetComponent<SpriteRenderer>().sprite = energySpriteFaded;
     }
 }
