@@ -764,7 +764,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 150.8, y: -157.4}
+  m_AnchoredPosition: {x: 150.8, y: -157.40002}
   m_SizeDelta: {x: 283.3, y: 127.9}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &133764286
@@ -4401,17 +4401,17 @@ Prefab:
         type: 2}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_Target
       value: 
-      objectReference: {fileID: 1755987155}
+      objectReference: {fileID: 841575425}
     - target: {fileID: 114377759577320066, guid: e2a997d54abe8b8448be87f4dd2d4527,
         type: 2}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[2].m_Target
       value: 
-      objectReference: {fileID: 841575425}
+      objectReference: {fileID: 1399447529}
     - target: {fileID: 114377759577320066, guid: e2a997d54abe8b8448be87f4dd2d4527,
         type: 2}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[4].m_Target
       value: 
-      objectReference: {fileID: 1373480750}
+      objectReference: {fileID: 1018137910}
     - target: {fileID: 114377759577320066, guid: e2a997d54abe8b8448be87f4dd2d4527,
         type: 2}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[5].m_Target
@@ -4440,17 +4440,57 @@ Prefab:
     - target: {fileID: 114377759577320066, guid: e2a997d54abe8b8448be87f4dd2d4527,
         type: 2}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_MethodName
-      value: selectstring
+      value: TargetMethod
       objectReference: {fileID: 0}
     - target: {fileID: 114377759577320066, guid: e2a997d54abe8b8448be87f4dd2d4527,
         type: 2}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_Mode
-      value: 5
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 114377759577320066, guid: e2a997d54abe8b8448be87f4dd2d4527,
         type: 2}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_Arguments.m_StringArgument
-      value: GGG
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 114377759577320066, guid: e2a997d54abe8b8448be87f4dd2d4527,
+        type: 2}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_Arguments.m_IntArgument
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 114377759577320066, guid: e2a997d54abe8b8448be87f4dd2d4527,
+        type: 2}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[2].m_MethodName
+      value: RescuePointZero
+      objectReference: {fileID: 0}
+    - target: {fileID: 114377759577320066, guid: e2a997d54abe8b8448be87f4dd2d4527,
+        type: 2}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[3].m_Target
+      value: 
+      objectReference: {fileID: 1373480750}
+    - target: {fileID: 114377759577320066, guid: e2a997d54abe8b8448be87f4dd2d4527,
+        type: 2}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[3].m_MethodName
+      value: playSfx
+      objectReference: {fileID: 0}
+    - target: {fileID: 114377759577320066, guid: e2a997d54abe8b8448be87f4dd2d4527,
+        type: 2}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[4].m_MethodName
+      value: playGame
+      objectReference: {fileID: 0}
+    - target: {fileID: 114377759577320066, guid: e2a997d54abe8b8448be87f4dd2d4527,
+        type: 2}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[4].m_Mode
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 114377759577320066, guid: e2a997d54abe8b8448be87f4dd2d4527,
+        type: 2}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[4].m_Arguments.m_ObjectArgumentAssemblyTypeName
+      value: UnityEngine.Object, UnityEngine
+      objectReference: {fileID: 0}
+    - target: {fileID: 114377759577320066, guid: e2a997d54abe8b8448be87f4dd2d4527,
+        type: 2}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[4].m_CallState
+      value: 2
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: e2a997d54abe8b8448be87f4dd2d4527, type: 2}
@@ -7354,16 +7394,17 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   energyLeft: 5
-  energyMaxValue: 0
+  energyMaxValue: 5
   energyDrinks:
   - {fileID: 246814486}
   - {fileID: 1092986746}
   - {fileID: 848287958}
   - {fileID: 1913202055}
   - {fileID: 756799565}
-  energySpriteColored: {fileID: 21300000, guid: 62b2184e24f96054a8e7f336a7b59a82,
+  energySpriteColored: {fileID: 21300000, guid: 4a03d91f42708414daa88d6708f22b0a,
     type: 3}
-  energySpriteFaded: {fileID: 21300000, guid: ec4b3893920c6e34b8bc4531845e2796, type: 3}
+  energySpriteFaded: {fileID: 21300000, guid: 24d699d323c579f45b9634eda354c3b0, type: 3}
+  sceneToGo: GGG
 --- !u!114 &1018137911
 MonoBehaviour:
   m_ObjectHideFlags: 0

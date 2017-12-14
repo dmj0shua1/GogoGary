@@ -14,9 +14,13 @@ public class EnergyManager : MonoBehaviour {
     Sprite energySpriteColored;
     [SerializeField]
     Sprite energySpriteFaded;
-
-    
+    Levelselector lvlSelectorScript;
+    [Space]
+    [SerializeField]
+    string sceneToGo;
 	void Start () {
+        lvlSelectorScript = GameObject.Find("LevelSelect").GetComponent<Levelselector>();
+
         if (!PlayerPrefs.HasKey("energyLeft")) PlayerPrefs.SetInt("energyLeft", 5);
         energyLeft = PlayerPrefs.GetInt("energyLeft");
 
@@ -44,6 +48,21 @@ public class EnergyManager : MonoBehaviour {
         {
             energyCheck--;
             energyDrinks[energyCheck].GetComponent<Image>().sprite = energySpriteFaded;
+        }
+    }
+
+    public void playGame()
+    {
+        energyLeft = PlayerPrefs.GetInt("energyLeft");
+        if (energyLeft > 0)
+        {
+            //play
+            decreaseEnergy();
+            lvlSelectorScript.selectstring(sceneToGo);
+        }
+        else
+        {
+            //note that you cant play
         }
     }
 }
