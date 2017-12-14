@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class EnergyManager : MonoBehaviour {
 
@@ -19,7 +20,7 @@ public class EnergyManager : MonoBehaviour {
         if (!PlayerPrefs.HasKey("energyLeft")) PlayerPrefs.SetInt("energyLeft", 5);
         energyLeft = PlayerPrefs.GetInt("energyLeft");
 
-        
+        energyInitialize();
 	}
 	
 	// Update is called once per frame
@@ -29,12 +30,20 @@ public class EnergyManager : MonoBehaviour {
 
     public void decreaseEnergy()
     {
-        int energyCheck;
-        
         energyLeft--;
+        PlayerPrefs.SetInt("energyLeft", energyLeft);
+        energyInitialize();
+    }
 
-        while (energyCheck )
+    private void energyInitialize()
+    {
+        energyLeft = PlayerPrefs.GetInt("energyLeft");
+        int energyCheck = energyMaxValue;
 
-        energyDrinks[energyLeft].GetComponent<SpriteRenderer>().sprite = energySpriteFaded;
+        while (energyCheck > energyLeft)
+        {
+            energyCheck--;
+            energyDrinks[energyCheck].GetComponent<Image>().sprite = energySpriteFaded;
+        }
     }
 }
