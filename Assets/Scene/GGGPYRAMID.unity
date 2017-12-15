@@ -7933,7 +7933,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 98b7413823a51de479683c6ee17e0a85, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  moveSpeed: 22
+  moveSpeed: 21
   ifRight: 0
   Check1: 0
   grounded: 0

@@ -10,7 +10,7 @@ public class TemporaryWall : MonoBehaviour {
     void Awake() 
     {
         LevelPassScript = GameObject.Find("Holder").GetComponent<LevelPass>();
-        if (LevelPassScript.LevelStatusAmt >= 31)
+        if (LevelPassScript.LevelStatusAmt >= 36)
         {
             isActivate = false;
         }
