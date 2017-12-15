@@ -37,7 +37,8 @@ public class pyButtonCameraView : MonoBehaviour {
     public Animator isInMessage;
     public GameObject buttonZoomOutScreen;
     //stage2
-  
+    public Button isBackButton;
+    public Button isNextButton;
 
 
     void Awake() 
@@ -131,6 +132,14 @@ public class pyButtonCameraView : MonoBehaviour {
         btnPrevStage.SetActive(false);
         stageLabel.SetActive(false);
         isZoomIn = true;
+        if (ButtonNumberHolder == 0)
+        {
+            isBackButton.interactable = false;
+        }
+        else if (ButtonNumberHolder ==24)
+        {
+            isNextButton.interactable = false;
+        }
        
     }
     IEnumerator ButtonZoomOutMethod()
@@ -180,8 +189,9 @@ public class pyButtonCameraView : MonoBehaviour {
         isInMessage.SetBool("isIn", false);
         buttonZoomOutScreen.SetActive(false);
         //RescueLevelCheckObject.SetActive(false);
-
-
+        isBackButton.interactable = true;
+        isNextButton.interactable = true;
+      
     }
    
     public void BackCameraPosition() 
@@ -217,6 +227,15 @@ public class pyButtonCameraView : MonoBehaviour {
             //LevelStatusHolder = LevelStatusHolder - 1;
             //ButtonNumberHolder = ButtonNumberHolder - 1;
         }
+        if (ButtonNumberHolder ==24)
+        {
+            isNextButton.interactable = false;
+        }
+        if (isBackButton.interactable == false)
+        {
+           isBackButton.interactable =true; 
+        }
+
        
     }
 
@@ -228,6 +247,15 @@ public class pyButtonCameraView : MonoBehaviour {
             LevelDisplayHolder = LevelDisplayHolder - 1;
             LevelStatusHolder = LevelStatusHolder - 1;
             ButtonNumberHolder = ButtonNumberHolder - 1;
+            
+        }
+        if(ButtonNumberHolder ==0)
+        {
+            isBackButton.interactable = false;
+        }
+        if (isNextButton.interactable == false)
+        {
+            isNextButton.interactable = true;
         }
      
         LevelNumberText.text = "" + LevelDisplayHolder;

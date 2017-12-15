@@ -15563,6 +15563,8 @@ MonoBehaviour:
   isZoomIn: 0
   isInMessage: {fileID: 647698624}
   buttonZoomOutScreen: {fileID: 267802115}
+  isBackButton: {fileID: 835}
+  isNextButton: {fileID: 1104}
 --- !u!1001 &20745170
 Prefab:
   m_ObjectHideFlags: 0
