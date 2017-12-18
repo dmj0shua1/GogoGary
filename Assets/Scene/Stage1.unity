@@ -1920,7 +1920,7 @@ GameObject:
   m_Layer: 5
   m_Name: timerEnergy
   m_TagString: Untagged
-  m_Icon: {fileID: 0}
+  m_Icon: {fileID: -6488666005112524639, guid: 0000000000000000d000000000000000, type: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
@@ -1956,7 +1956,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: time
+  m_Text: ' '
 --- !u!114 &241730202
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2095,6 +2095,7 @@ GameObject:
   - component: {fileID: 246814489}
   - component: {fileID: 246814488}
   - component: {fileID: 246814490}
+  - component: {fileID: 246814491}
   m_Layer: 5
   m_Name: ed1
   m_TagString: Untagged
@@ -2167,6 +2168,20 @@ MonoBehaviour:
   m_EffectColor: {r: 0, g: 0, b: 0, a: 0.209}
   m_EffectDistance: {x: -0.01, y: -5.47}
   m_UseGraphicAlpha: 1
+--- !u!114 &246814491
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 246814486}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: da23bf79d8200db46aba069984492b57, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  itmTime: 1
+  egManagerObj: {fileID: 1018137909}
+  timerActive: 0
 --- !u!1001 &250872195
 Prefab:
   m_ObjectHideFlags: 0
@@ -5586,6 +5601,7 @@ GameObject:
   - component: {fileID: 756799567}
   - component: {fileID: 756799566}
   - component: {fileID: 756799569}
+  - component: {fileID: 756799570}
   m_Layer: 5
   m_Name: ed5
   m_TagString: Untagged
@@ -5658,6 +5674,20 @@ MonoBehaviour:
   m_EffectColor: {r: 0, g: 0, b: 0, a: 0.209}
   m_EffectDistance: {x: -0.01, y: -5.47}
   m_UseGraphicAlpha: 1
+--- !u!114 &756799570
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 756799565}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: da23bf79d8200db46aba069984492b57, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  itmTime: 1
+  egManagerObj: {fileID: 1018137909}
+  timerActive: 0
 --- !u!1001 &780944484
 Prefab:
   m_ObjectHideFlags: 0
@@ -6569,6 +6599,7 @@ GameObject:
   - component: {fileID: 848287961}
   - component: {fileID: 848287960}
   - component: {fileID: 848287962}
+  - component: {fileID: 848287963}
   m_Layer: 5
   m_Name: ed3
   m_TagString: Untagged
@@ -6641,6 +6672,20 @@ MonoBehaviour:
   m_EffectColor: {r: 0, g: 0, b: 0, a: 0.209}
   m_EffectDistance: {x: -0.01, y: -5.47}
   m_UseGraphicAlpha: 1
+--- !u!114 &848287963
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 848287958}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: da23bf79d8200db46aba069984492b57, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  itmTime: 1
+  egManagerObj: {fileID: 1018137909}
+  timerActive: 0
 --- !u!1 &857007174
 GameObject:
   m_ObjectHideFlags: 0
@@ -7484,7 +7529,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 50d51872ac76ec944bddf9b80ab27759, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  energyLeft: 5
+  energyLeft: 0
   energyMaxValue: 5
   energyDrinks:
   - {fileID: 246814486}
@@ -7585,9 +7630,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c5bbd7f18f744b44abed3451920e59e0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  itmTime: 10
+  itmTime: 0
   timerEnergy: {fileID: 241730200}
-  egName: Energy
+  egManagerScript: {fileID: 0}
 --- !u!114 &1018137916
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -8383,6 +8428,7 @@ GameObject:
   - component: {fileID: 1092986749}
   - component: {fileID: 1092986748}
   - component: {fileID: 1092986750}
+  - component: {fileID: 1092986751}
   m_Layer: 5
   m_Name: ed2
   m_TagString: Untagged
@@ -8455,6 +8501,20 @@ MonoBehaviour:
   m_EffectColor: {r: 0, g: 0, b: 0, a: 0.209}
   m_EffectDistance: {x: -0.01, y: -5.47}
   m_UseGraphicAlpha: 1
+--- !u!114 &1092986751
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1092986746}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: da23bf79d8200db46aba069984492b57, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  itmTime: 1
+  egManagerObj: {fileID: 1018137909}
+  timerActive: 0
 --- !u!1 &1103159546
 GameObject:
   m_ObjectHideFlags: 0
@@ -14509,6 +14569,7 @@ GameObject:
   - component: {fileID: 1913202058}
   - component: {fileID: 1913202057}
   - component: {fileID: 1913202059}
+  - component: {fileID: 1913202060}
   m_Layer: 5
   m_Name: ed4
   m_TagString: Untagged
@@ -14581,6 +14642,20 @@ MonoBehaviour:
   m_EffectColor: {r: 0, g: 0, b: 0, a: 0.209}
   m_EffectDistance: {x: -0.01, y: -5.47}
   m_UseGraphicAlpha: 1
+--- !u!114 &1913202060
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1913202055}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: da23bf79d8200db46aba069984492b57, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  itmTime: 1
+  egManagerObj: {fileID: 1018137909}
+  timerActive: 0
 --- !u!1001 &1946008275
 Prefab:
   m_ObjectHideFlags: 0
@@ -16071,8 +16146,8 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1018137915}
-        m_MethodName: saveEnergyTime
+      - m_Target: {fileID: 1018137910}
+        m_MethodName: decreaseEnergy
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}

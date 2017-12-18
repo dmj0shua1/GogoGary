@@ -18,8 +18,10 @@ public class EnergyManager : MonoBehaviour {
     [Space]
     [SerializeField]
     string sceneToGo;
+    EnergyTimeManager egTimeManager;
 	void Start () {
         lvlSelectorScript = GameObject.Find("LevelSelect").GetComponent<Levelselector>();
+        egTimeManager = gameObject.GetComponent<EnergyTimeManager>();
 
         if (!PlayerPrefs.HasKey("energyLeft")) PlayerPrefs.SetInt("energyLeft", 5);
         energyLeft = PlayerPrefs.GetInt("energyLeft");
@@ -34,22 +36,59 @@ public class EnergyManager : MonoBehaviour {
 
     public void decreaseEnergy()
     {
-        energyLeft--;
-        PlayerPrefs.SetInt("energyLeft", energyLeft);
-        energyInitialize();
+        if (energyLeft > 0)
+        {
+            energyLeft--;
+            PlayerPrefs.SetInt("energyLeft", energyLeft);
+            redisplayTime();
+            triggerATimer();
+
+        }
+    }
+
+    public void redisplayTime() {
+        if (energyLeft <= energyMaxValue)
+        {
+            energyLeft = PlayerPrefs.GetInt("energyLeft");
+            int energyCheck = 0;
+
+            while (energyCheck < energyMaxValue)
+            {
+                energyDrinks[energyCheck].GetComponent<Image>().sprite = energySpriteColored;
+                energyCheck++;
+            }
+
+            while (energyCheck > energyLeft)
+            {
+                energyCheck--;
+                energyDrinks[energyCheck].GetComponent<Image>().sprite = energySpriteFaded;
+            }
+        }
     }
 
     private void energyInitialize()
     {
-        energyLeft = PlayerPrefs.GetInt("energyLeft");
-        int energyCheck = energyMaxValue;
-
-        while (energyCheck > energyLeft)
+        if (energyLeft <= energyMaxValue)
         {
-            energyCheck--;
-            energyDrinks[energyCheck].GetComponent<Image>().sprite = energySpriteFaded;
+
+            redisplayTime();
+            egTimeManager.saveEnergyTime();
+            
+
+        }
+        
+    }
+
+    public void increaseEnergy()
+    {
+        if (energyLeft < energyMaxValue)
+        {
+            energyLeft++;
+            PlayerPrefs.SetInt("energyLeft", energyLeft);
+            energyInitialize();
         }
     }
+
 
     public void playGame()
     {
@@ -65,4 +104,27 @@ public class EnergyManager : MonoBehaviour {
             //note that you cant play
         }
     }
+
+    public void triggerATimer()
+    {
+        for (int i = 0; i < (energyMaxValue-energyLeft) ;i++ )
+        {
+           
+            EnergyTimer egTimer = energyDrinks[i].GetComponent<EnergyTimer>();
+
+            if (!egTimer.timerActive)
+            {
+                egTimer.timerActive = true;
+             //   egTimeManager.saveEnergyTime();
+                egTimer.startTimer();
+                break;
+            }
+            
+        }
+    }
+
+    
+
+
+   
 }

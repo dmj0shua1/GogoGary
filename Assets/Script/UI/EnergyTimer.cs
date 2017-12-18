@@ -5,7 +5,7 @@ using UnityEngine;
 using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 
-public class EnergyTimeManager : MonoBehaviour
+public class EnergyTimer : MonoBehaviour
 {
 
     // Use this for initialization
@@ -16,18 +16,19 @@ public class EnergyTimeManager : MonoBehaviour
     DateTime currentDate;
     DateTime endTime, curTime;
     TimeSpan timeLeft;
-    public Text timerEnergy;
     private string egName;
     private IEnumerator coroutine;
     DateChecker dateCheckerScript;
-    public EnergyManager egManagerScript;
-    bool isFirstTimer;
+    EnergyManager egManagerScript;
+    public GameObject egManagerObj;
+    public bool timerActive;
 
+    public System.DateTime datevalue1;
     void Start()
     {
 
         dateCheckerScript = gameObject.GetComponent<DateChecker>();
-        egManagerScript = gameObject.GetComponent<EnergyManager>();       //Store the current time when it starts
+        egManagerScript = egManagerObj.GetComponent<EnergyManager>();       //Store the current time when it starts
         currentDate = System.DateTime.Now;
         egName = gameObject.name;
         refreshTime();
@@ -35,8 +36,7 @@ public class EnergyTimeManager : MonoBehaviour
         coroutine = WaitAndUpdate(1.0f);
         StartCoroutine(coroutine);
 
-        
-
+      
     }
 
     // Update is called once per frame
@@ -80,38 +80,20 @@ public class EnergyTimeManager : MonoBehaviour
         oldDate = DateTime.FromBinary(temp);
         print("oldDate: " + oldDate);
 
-
-
         //Use the Subtract method and store the result as a timespan variable
         TimeSpan difference = currentDate.Subtract(oldDate);
         //    print("Difference: " + difference);
         //check if timeleft is present
-        /*   if (PlayerPrefs.HasKey("timeLeft"))
-           {
-               //do nothing
-           }
-           else
-           {
-               //PlayerPrefs.SetString("")
-           } */
-
         if (PlayerPrefs.HasKey("endTime" + egName))
         {
             string dT = PlayerPrefs.GetString("endTime" + egName);
             endTime = Convert.ToDateTime(dT);
             print("ENDTIME: " + endTime);
-            regenerationTimeChecker();
+            timerActive = true;
+            expiryCheck();
         }
-
-
     }
 
-    void regenerationTimeChecker()
-    {
-        dateCheckerScript.datevalue1 = endTime;
-        dateCheckerScript.itemName = egName;
-        dateCheckerScript.expiryCheck();
-    }
 
     private IEnumerator WaitAndUpdate(float waitTime)
     {
@@ -123,46 +105,47 @@ public class EnergyTimeManager : MonoBehaviour
             timeLeft = endTime - curTime;
             var secsLeftEnergy = timeLeft.TotalSeconds;
 
-
-
-            // print("Total Hours: " + secsLeftBoost.ToString());
-
-            string output = String.Format("{0:D2}:{1:D2}:{2:D2}", timeLeft.Hours, timeLeft.Minutes, timeLeft.Seconds);
-
-
-
-            if (secsLeftEnergy <= 0)
+            if (secsLeftEnergy <= 0 && PlayerPrefs.HasKey("endTime" + egName))
             {
-                if (SceneManager.GetActiveScene().name == "Stage1") timerEnergy.text = "";
                 PlayerPrefs.DeleteKey("endTime" + egName);
-                if (PlayerPrefs.GetInt("energyLeft") < egManagerScript.energyMaxValue)
-                {
-
-                    if (timerEnergy.text == "") saveEnergyTime();
-
-
-
-                }
-
+                timerActive = false;
+                egManagerScript.increaseEnergy();
+                egManagerScript.triggerATimer();
             }
-            else if (secsLeftEnergy <= 60)
-            {
-                string secsLeftEnergyStr = secsLeftEnergy.ToString().Substring(0, 2);
-                if (secsLeftEnergy >= 10 && SceneManager.GetActiveScene().name == "Stage1") timerEnergy.text = "00:" + secsLeftEnergyStr;
-                else
-                {
-                    secsLeftEnergyStr = secsLeftEnergy.ToString().Substring(0, 1);
-                    timerEnergy.text = "00:0" + secsLeftEnergyStr;
-                }
-            }
-            else
-            {
-                if (SceneManager.GetActiveScene().name == "Stage1") timerEnergy.text = output;
-                print("");
-            }
-
-
         }
 
     }
+
+    private void expiryCheck()
+    {
+        System.DateTime datevalue2 = System.DateTime.Now;
+        double hours = (endTime - datevalue2).TotalHours;
+
+        if (hours <= 0)
+        {
+
+         //   PlayerPrefs.DeleteKey("endTime" + egName);
+            print(egName + " is Expired!!");
+            print("HOURS: " + hours);
+
+            if (egManagerScript.energyLeft < egManagerScript.energyMaxValue)
+            {
+                timerActive = false;
+                egManagerScript.energyLeft++;
+                egManagerScript.redisplayTime();
+            }
+
+        }
+
+
+    }
+
+    public void startTimer()
+    {
+     
+            saveEnergyTime();
+         
+    }
+
+
 }
