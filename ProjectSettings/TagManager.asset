@@ -30,6 +30,7 @@ TagManager:
   - HitBoxCam
   - LeftWall
   - RightWall
+  - fireadjust
   layers:
   - Default
   - TransparentFX
@@ -42,8 +43,8 @@ TagManager:
   - Ground
   - Player
   - Wall
-  - 
-  - 
+  - CameraLayer
+  - FireLayer
   - 
   - 
   - 
