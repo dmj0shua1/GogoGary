@@ -110,11 +110,15 @@ public class EnergyTimer : MonoBehaviour
             secsLeftEnergy = timeLeft.TotalSeconds;
 
             if (secsLeftEnergy <= 0 && PlayerPrefs.HasKey("endTime" + egName) && egManagerScript.energyLeft < egManagerScript.energyMaxValue)
-            {
+            {  
+                egManagerScript.timerCount--;
+                PlayerPrefs.SetInt("timerCount", egManagerScript.timerCount);
                 PlayerPrefs.DeleteKey("endTime" + egName);
                 timerActive = false;
                 egManagerScript.increaseEnergy();
-                egManagerScript.triggerATimer();
+
+
+                if (egManagerScript.energyLeft < egManagerScript.energyMaxValue) egManagerScript.triggerATimer();
 
             }
         }
@@ -135,6 +139,7 @@ public class EnergyTimer : MonoBehaviour
 
             if (egManagerScript.energyLeft < egManagerScript.energyMaxValue)
             {
+              
                 timerActive = false;
                 egManagerScript.energyLeft++;
                 egManagerScript.redisplayTime();

@@ -20,15 +20,23 @@ public class EnergyManager : MonoBehaviour
     [SerializeField]
     string sceneToGo;
     EnergyTimeManager egTimeManager;
+    public int timerCount;
     void Start()
     {
+        timerCount = PlayerPrefs.GetInt("timerCount");
+        energyLeft = PlayerPrefs.GetInt("energyLeft");
         lvlSelectorScript = GameObject.Find("LevelSelect").GetComponent<Levelselector>();
         egTimeManager = gameObject.GetComponent<EnergyTimeManager>();
 
         if (!PlayerPrefs.HasKey("energyLeft")) PlayerPrefs.SetInt("energyLeft", 5);
-        energyLeft = PlayerPrefs.GetInt("energyLeft");
+        
 
         energyInitialize();
+
+        if (!PlayerPrefs.HasKey("timerCount")) PlayerPrefs.SetInt("timerCount", 0);
+        
+
+        
 
     }
 
@@ -119,11 +127,13 @@ public class EnergyManager : MonoBehaviour
 
                 EnergyTimer egTimer = energyDrinks[i].GetComponent<EnergyTimer>();
 
-                if (!egTimer.timerActive)
+                if (!egTimer.timerActive && timerCount < (energyMaxValue-energyLeft))
                 {
                     egTimer.timerActive = true;
                     //   egTimeManager.saveEnergyTime();
                     egTimer.startTimer();
+                    timerCount++;
+                    PlayerPrefs.SetInt("timerCount", (PlayerPrefs.GetInt("timerCount")+1));
                     break;
                 }
             }
