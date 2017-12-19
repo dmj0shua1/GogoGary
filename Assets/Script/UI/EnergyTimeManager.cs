@@ -22,7 +22,7 @@ public class EnergyTimeManager : MonoBehaviour
     DateChecker dateCheckerScript;
     public EnergyManager egManagerScript;
     bool isFirstTimer;
-
+    public double secsLeftEnergy;
     void Start()
     {
 
@@ -51,7 +51,7 @@ public class EnergyTimeManager : MonoBehaviour
         {
             // Get current time in minutes 
             System.DateTime today = System.DateTime.Now;
-            System.TimeSpan duration = new System.TimeSpan(0, 0, Convert.ToInt32(itmTime), 0);
+            System.TimeSpan duration = new System.TimeSpan(0, 0, 0, Convert.ToInt32(itmTime));
             System.DateTime result = today.Add(duration);
 
             //Save the expiration [itmTime] minutes from now
@@ -113,16 +113,30 @@ public class EnergyTimeManager : MonoBehaviour
         dateCheckerScript.expiryCheck();
     }
 
+    private void findLatestTimer()
+    {
+        for (int i = 0; i < egManagerScript.energyMaxValue; i++)
+        {
+            EnergyTimer latestTimer = egManagerScript.energyDrinks[i].GetComponent<EnergyTimer>();
+            if (latestTimer.timerActive)
+            {
+
+                secsLeftEnergy = latestTimer.secsLeftEnergy;
+                break;
+            }
+        }
+    }
+
     private IEnumerator WaitAndUpdate(float waitTime)
     {
         while (true)
         {
             yield return new WaitForSeconds(waitTime);
-
             curTime = System.DateTime.Now;
             timeLeft = endTime - curTime;
-            var secsLeftEnergy = timeLeft.TotalSeconds;
-
+            findLatestTimer();
+          //  secsLeftEnergy = timeLeft.TotalSeconds;
+            
 
 
             // print("Total Hours: " + secsLeftBoost.ToString());
@@ -138,7 +152,7 @@ public class EnergyTimeManager : MonoBehaviour
                 if (PlayerPrefs.GetInt("energyLeft") < egManagerScript.energyMaxValue)
                 {
 
-                    if (timerEnergy.text == "") saveEnergyTime();
+                  //  if (PlayerPrefs.GetInt("energyLeft") < egManagerScript.energyMaxValue) saveEnergyTime();
 
 
 

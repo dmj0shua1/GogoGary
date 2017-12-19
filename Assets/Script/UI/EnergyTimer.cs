@@ -22,13 +22,15 @@ public class EnergyTimer : MonoBehaviour
     EnergyManager egManagerScript;
     public GameObject egManagerObj;
     public bool timerActive;
-
+    EnergyTimeManager egTimeManager;
     public System.DateTime datevalue1;
+    public double secsLeftEnergy;
     void Start()
     {
 
         dateCheckerScript = gameObject.GetComponent<DateChecker>();
         egManagerScript = egManagerObj.GetComponent<EnergyManager>();       //Store the current time when it starts
+        egTimeManager = GameObject.Find("Energy").GetComponent<EnergyTimeManager>();
         currentDate = System.DateTime.Now;
         egName = gameObject.name;
         refreshTime();
@@ -36,7 +38,7 @@ public class EnergyTimer : MonoBehaviour
         coroutine = WaitAndUpdate(1.0f);
         StartCoroutine(coroutine);
 
-      
+
     }
 
     // Update is called once per frame
@@ -47,11 +49,13 @@ public class EnergyTimer : MonoBehaviour
 
     public void saveEnergyTime()
     {
+
+
         if (egManagerScript.energyLeft < egManagerScript.energyMaxValue)
         {
             // Get current time in minutes 
             System.DateTime today = System.DateTime.Now;
-            System.TimeSpan duration = new System.TimeSpan(0, 0, Convert.ToInt32(itmTime), 0);
+            System.TimeSpan duration = new System.TimeSpan(0, 0, 0, Convert.ToInt32(itmTime) + Convert.ToInt32(egTimeManager.secsLeftEnergy));
             System.DateTime result = today.Add(duration);
 
             //Save the expiration [itmTime] minutes from now
@@ -103,14 +107,15 @@ public class EnergyTimer : MonoBehaviour
 
             curTime = System.DateTime.Now;
             timeLeft = endTime - curTime;
-            var secsLeftEnergy = timeLeft.TotalSeconds;
+            secsLeftEnergy = timeLeft.TotalSeconds;
 
-            if (secsLeftEnergy <= 0 && PlayerPrefs.HasKey("endTime" + egName))
+            if (secsLeftEnergy <= 0 && PlayerPrefs.HasKey("endTime" + egName) && egManagerScript.energyLeft < egManagerScript.energyMaxValue)
             {
                 PlayerPrefs.DeleteKey("endTime" + egName);
                 timerActive = false;
                 egManagerScript.increaseEnergy();
                 egManagerScript.triggerATimer();
+
             }
         }
 
@@ -124,7 +129,7 @@ public class EnergyTimer : MonoBehaviour
         if (hours <= 0)
         {
 
-         //   PlayerPrefs.DeleteKey("endTime" + egName);
+            //   PlayerPrefs.DeleteKey("endTime" + egName);
             print(egName + " is Expired!!");
             print("HOURS: " + hours);
 
@@ -142,10 +147,11 @@ public class EnergyTimer : MonoBehaviour
 
     public void startTimer()
     {
-     
-            saveEnergyTime();
-         
+        if (PlayerPrefs.GetInt("energyLeft") < egManagerScript.energyMaxValue) saveEnergyTime();
+
     }
+
+
 
 
 }

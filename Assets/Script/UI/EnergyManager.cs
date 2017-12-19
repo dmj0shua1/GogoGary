@@ -3,12 +3,13 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
-public class EnergyManager : MonoBehaviour {
+public class EnergyManager : MonoBehaviour
+{
 
-	// Use this for initialization
-    public int energyLeft,energyMaxValue;
+    // Use this for initialization
+    public int energyLeft, energyMaxValue;
     [SerializeField]
-    GameObject[] energyDrinks;
+    public GameObject[] energyDrinks;
     [Space]
     [SerializeField]
     Sprite energySpriteColored;
@@ -19,7 +20,8 @@ public class EnergyManager : MonoBehaviour {
     [SerializeField]
     string sceneToGo;
     EnergyTimeManager egTimeManager;
-	void Start () {
+    void Start()
+    {
         lvlSelectorScript = GameObject.Find("LevelSelect").GetComponent<Levelselector>();
         egTimeManager = gameObject.GetComponent<EnergyTimeManager>();
 
@@ -27,12 +29,14 @@ public class EnergyManager : MonoBehaviour {
         energyLeft = PlayerPrefs.GetInt("energyLeft");
 
         energyInitialize();
-	}
-	
-	// Update is called once per frame
-	void Update () {
-		
-	}
+
+    }
+
+    // Update is called once per frame
+    void Update()
+    {
+
+    }
 
     public void decreaseEnergy()
     {
@@ -46,7 +50,8 @@ public class EnergyManager : MonoBehaviour {
         }
     }
 
-    public void redisplayTime() {
+    public void redisplayTime()
+    {
         if (energyLeft <= energyMaxValue)
         {
             energyLeft = PlayerPrefs.GetInt("energyLeft");
@@ -73,10 +78,10 @@ public class EnergyManager : MonoBehaviour {
 
             redisplayTime();
             egTimeManager.saveEnergyTime();
-            
+
 
         }
-        
+
     }
 
     public void increaseEnergy()
@@ -107,24 +112,27 @@ public class EnergyManager : MonoBehaviour {
 
     public void triggerATimer()
     {
-        for (int i = 0; i < (energyMaxValue-energyLeft) ;i++ )
+        if (energyLeft < energyMaxValue)
         {
-           
-            EnergyTimer egTimer = energyDrinks[i].GetComponent<EnergyTimer>();
-
-            if (!egTimer.timerActive)
+            for (int i = 0; i < (energyMaxValue - energyLeft); i++)
             {
-                egTimer.timerActive = true;
-             //   egTimeManager.saveEnergyTime();
-                egTimer.startTimer();
-                break;
+
+                EnergyTimer egTimer = energyDrinks[i].GetComponent<EnergyTimer>();
+
+                if (!egTimer.timerActive)
+                {
+                    egTimer.timerActive = true;
+                    //   egTimeManager.saveEnergyTime();
+                    egTimer.startTimer();
+                    break;
+                }
             }
-            
+
         }
     }
 
-    
 
 
-   
+
+
 }

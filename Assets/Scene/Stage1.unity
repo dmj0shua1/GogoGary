@@ -2179,9 +2179,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: da23bf79d8200db46aba069984492b57, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  itmTime: 1
+  itmTime: 10
   egManagerObj: {fileID: 1018137909}
   timerActive: 0
+  secsLeftEnergy: 0
 --- !u!1001 &250872195
 Prefab:
   m_ObjectHideFlags: 0
@@ -5685,9 +5686,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: da23bf79d8200db46aba069984492b57, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  itmTime: 1
+  itmTime: 10
   egManagerObj: {fileID: 1018137909}
   timerActive: 0
+  secsLeftEnergy: 0
 --- !u!1001 &780944484
 Prefab:
   m_ObjectHideFlags: 0
@@ -6683,9 +6685,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: da23bf79d8200db46aba069984492b57, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  itmTime: 1
+  itmTime: 10
   egManagerObj: {fileID: 1018137909}
   timerActive: 0
+  secsLeftEnergy: 0
 --- !u!1 &857007174
 GameObject:
   m_ObjectHideFlags: 0
@@ -7630,9 +7633,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c5bbd7f18f744b44abed3451920e59e0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  itmTime: 0
+  itmTime: 10
   timerEnergy: {fileID: 241730200}
   egManagerScript: {fileID: 0}
+  secsLeftEnergy: 0
 --- !u!114 &1018137916
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -8512,9 +8516,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: da23bf79d8200db46aba069984492b57, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  itmTime: 1
+  itmTime: 10
   egManagerObj: {fileID: 1018137909}
   timerActive: 0
+  secsLeftEnergy: 0
 --- !u!1 &1103159546
 GameObject:
   m_ObjectHideFlags: 0
@@ -14653,9 +14658,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: da23bf79d8200db46aba069984492b57, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  itmTime: 1
+  itmTime: 10
   egManagerObj: {fileID: 1018137909}
   timerActive: 0
+  secsLeftEnergy: 0
 --- !u!1001 &1946008275
 Prefab:
   m_ObjectHideFlags: 0
