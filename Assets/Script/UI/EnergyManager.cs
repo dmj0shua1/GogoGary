@@ -130,7 +130,7 @@ public class EnergyManager : MonoBehaviour
                 if (!egTimer.timerActive && timerCount < (energyMaxValue-energyLeft))
                 {
                     egTimer.timerActive = true;
-                    //   egTimeManager.saveEnergyTime();
+                       egTimeManager.saveEnergyTime();
                     egTimer.startTimer();
                     timerCount++;
                     PlayerPrefs.SetInt("timerCount", (PlayerPrefs.GetInt("timerCount")+1));

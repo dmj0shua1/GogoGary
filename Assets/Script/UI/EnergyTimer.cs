@@ -55,7 +55,7 @@ public class EnergyTimer : MonoBehaviour
         {
             // Get current time in minutes 
             System.DateTime today = System.DateTime.Now;
-            System.TimeSpan duration = new System.TimeSpan(0, 0, 0, Convert.ToInt32(itmTime) + Convert.ToInt32(egTimeManager.secsLeftEnergy));
+            System.TimeSpan duration = new System.TimeSpan(0, 0, Convert.ToInt32(itmTime),0);
             System.DateTime result = today.Add(duration);
 
             //Save the expiration [itmTime] minutes from now

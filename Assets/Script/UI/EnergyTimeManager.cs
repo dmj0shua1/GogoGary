@@ -51,7 +51,7 @@ public class EnergyTimeManager : MonoBehaviour
         {
             // Get current time in minutes 
             System.DateTime today = System.DateTime.Now;
-            System.TimeSpan duration = new System.TimeSpan(0, 0, 0, Convert.ToInt32(itmTime));
+            System.TimeSpan duration = new System.TimeSpan(0, 0, Convert.ToInt32(itmTime), 0);
             System.DateTime result = today.Add(duration);
 
             //Save the expiration [itmTime] minutes from now
@@ -141,7 +141,7 @@ public class EnergyTimeManager : MonoBehaviour
 
             // print("Total Hours: " + secsLeftBoost.ToString());
 
-            string output = String.Format("{0:D2}:{1:D2}:{2:D2}", timeLeft.Hours, timeLeft.Minutes, timeLeft.Seconds);
+            string output = String.Format("{0:D2}:{1:D2}",timeLeft.Minutes, timeLeft.Seconds);
 
 
 
@@ -152,7 +152,7 @@ public class EnergyTimeManager : MonoBehaviour
                 if (PlayerPrefs.GetInt("energyLeft") < egManagerScript.energyMaxValue)
                 {
 
-                  //  if (PlayerPrefs.GetInt("energyLeft") < egManagerScript.energyMaxValue) saveEnergyTime();
+                    if (PlayerPrefs.GetInt("energyLeft") < egManagerScript.energyMaxValue) saveEnergyTime();
 
 
 
