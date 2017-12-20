@@ -64,6 +64,21 @@ public class FireAi : MonoBehaviour {
 		}
 
 	}
+
+    void OnTriggerEnter2D(Collider2D other)
+    {
+        if (other.gameObject.CompareTag("fireadjust"))
+        {
+            maxSpeed = 15;
+        }
+    }
+    void OnTriggerExit2D(Collider2D other)
+    {
+        if (other.gameObject.CompareTag("fireadjust"))
+        {
+            maxSpeed = 10;
+        }
+    }
     
 }
 		

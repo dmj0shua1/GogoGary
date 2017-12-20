@@ -205,7 +205,7 @@ public class PlatformGenerator : MonoBehaviour {
                 string sceneName = currentScene.name;
                     if (sceneName == "GGGPYRAMID")
                 {
-                    if (LevelPassScript.LevelStatusAmt >= 31)
+                    if (LevelPassScript.LevelStatusAmt >= 28)
                     {
                         IsGenerateMummy = true;
                         if (IsGenerateMummy)
