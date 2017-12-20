@@ -104,20 +104,6 @@ public class DifficultyManager : MonoBehaviour
     private int playerAmountLimit;
     [SerializeField]
     private int playerDiffCounter;
-    [Space]
-    [Header("Floor bg colors")]
-    [SerializeField]
-    private byte[] colorR;
-    [SerializeField]
-    private byte[] colorG;
-    [SerializeField]
-    private byte[] colorB;
-    [Space]
-    [SerializeField]
-    private int colorChangeFrequency;
-    [SerializeField]
-    private int colorChangeCounter;
-    Camera MainCamera;
 
 
     bool debrisActivate, boltActivate, rescueActivate, playerActivate, fireActivate, powerupActivate;
@@ -135,7 +121,6 @@ public class DifficultyManager : MonoBehaviour
         playerControllerScript = GameObject.Find("player").GetComponent<playercontroller>();
         fireAiScript = GameObject.Find("Fire").GetComponent<FireAi>();
         flrCounterScript = GameObject.Find("player").GetComponent<floorcounterEl>();
-        MainCamera = GameObject.Find("Main Camera").GetComponent<Camera>();
 
         //set Initial Amounts
         debrisGenScript.randomDebrisThreshold = debrisInitialAmt;
@@ -145,12 +130,6 @@ public class DifficultyManager : MonoBehaviour
         playerControllerScript.moveSpeed = playerInitialAmt;
         fireAiScript.minSpeed = fireInitialAmtMin;
         fireAiScript.maxSpeed = fireInitialAmtMax;
-
-        int chosenColor = Random.Range(0, colorR.Length);
-        infGenElScript.ColorR = colorR[chosenColor];
-        infGenElScript.ColorG = colorG[chosenColor];
-        infGenElScript.ColorB = colorB[chosenColor];
-        MainCamera.backgroundColor = new Color32(colorR[chosenColor], colorG[chosenColor], colorB[chosenColor],255);
     }
 
     // Update is called once per frame
@@ -167,7 +146,6 @@ public class DifficultyManager : MonoBehaviour
         playerDifficulty();
         fireDifficulty();
         powerupDifficulty();
-        colorChange();
     }
 
     private void debrisDifficulty()
@@ -321,8 +299,6 @@ public class DifficultyManager : MonoBehaviour
                     fireAiScript.maxSpeed += fireMaxIncreaseAmt;
                 }
 
-
-
                 //reset counter
                 fireDiffCounter = 0;
             }
@@ -350,27 +326,11 @@ public class DifficultyManager : MonoBehaviour
                 if (infGenElScript.powerupThreshold < powerupAmountLimit)
                 {
                     //Yes, make it harder
-                    infGenElScript.powerupThreshold += powerupIncreaseAmt;
+                     infGenElScript.powerupThreshold += powerupIncreaseAmt;
                 }
                 //reset counter
                 powerupDiffCounter = 0;
             }
-        }
-    }
-
-    private void colorChange()
-    {
-        if (colorChangeCounter < colorChangeFrequency)
-        {
-            colorChangeCounter++;
-        }
-        else
-        {
-            int chosenColor = Random.Range(0, colorR.Length);
-            infGenElScript.ColorR = colorR[chosenColor];
-            infGenElScript.ColorG = colorG[chosenColor];
-            infGenElScript.ColorB = colorB[chosenColor];
-            colorChangeCounter = 0;
         }
     }
 

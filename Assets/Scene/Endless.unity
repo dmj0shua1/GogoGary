@@ -2668,7 +2668,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e524fbb4ebe30ce4dad9bdb033e45157, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  PooledObject: {fileID: 1296793802502814, guid: 02a9b74166f27c64380e6bc1c4bf5810,
+  PooledObject: {fileID: 1161627473160284, guid: 2eadd7fbf5d35b74fa8c1f2c5ebf484f,
     type: 2}
   pooledAmount: 5
 --- !u!1 &312540881
@@ -3282,7 +3282,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e524fbb4ebe30ce4dad9bdb033e45157, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  PooledObject: {fileID: 1597748442088222, guid: 5bcbe15a14caa214d9e8c422114d704e,
+  PooledObject: {fileID: 1296793802502814, guid: 22a4fe2c051ffe74a919b49564950604,
     type: 2}
   pooledAmount: 5
 --- !u!1 &383934771
@@ -4387,6 +4387,17 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
+      - m_Target: {fileID: 1018124990}
+        m_MethodName: ChangezeroRescuePoint
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
       - m_Target: {fileID: 114920356465714086, guid: ec8fe6a1b860e784da818670ca40c963,
           type: 2}
         m_MethodName: selectstring
@@ -4394,7 +4405,7 @@ MonoBehaviour:
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 6
+          m_IntArgument: 2
           m_FloatArgument: 0
           m_StringArgument: Endless
           m_BoolArgument: 0
@@ -4923,7 +4934,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e524fbb4ebe30ce4dad9bdb033e45157, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  PooledObject: {fileID: 1884780198715818, guid: 69e8dedc26450914dbfa5f5e47600d26,
+  PooledObject: {fileID: 1225554306889930, guid: c8a3ce89494c37c4bbe3078a9a4fc8ba,
     type: 2}
   pooledAmount: 5
 --- !u!1 &550855764
@@ -5357,7 +5368,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e524fbb4ebe30ce4dad9bdb033e45157, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  PooledObject: {fileID: 1884780198715818, guid: 69e8dedc26450914dbfa5f5e47600d26,
+  PooledObject: {fileID: 1884780198715818, guid: 5904beafc26938c42a6c750aa79f0cb0,
     type: 2}
   pooledAmount: 5
 --- !u!1 &587484788
@@ -14416,7 +14427,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e524fbb4ebe30ce4dad9bdb033e45157, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  PooledObject: {fileID: 1161627473160284, guid: 1a73f1d5972d7e1409a135302f915fb5,
+  PooledObject: {fileID: 1597748442088222, guid: 0429001685b850245a14236c74128f38,
     type: 2}
   pooledAmount: 5
 --- !u!1 &1374188303
@@ -15404,9 +15415,6 @@ MonoBehaviour:
   prevRescue: 0
   RescueHolderDivided: 0
   rescueThreshold: 0
-  ColorR: 111
-  ColorG: 182
-  ColorB: 180
 --- !u!1 &1480452913
 GameObject:
   m_ObjectHideFlags: 0
@@ -19577,11 +19585,6 @@ MonoBehaviour:
   playerIncreaseAmt: 1
   playerAmountLimit: 28
   playerDiffCounter: 0
-  colorR: ee6fc5dbf89ecf
-  colorG: a7b694f6959cd4
-  colorB: 79b4189aa87cfb
-  colorChangeFrequency: 50
-  colorChangeCounter: 0
 --- !u!1 &1826701691
 GameObject:
   m_ObjectHideFlags: 0
@@ -21106,7 +21109,7 @@ ParticleSystem:
   moveWithTransform: 0
   moveWithCustomTransform: {fileID: 0}
   scalingMode: 1
-  randomSeed: -1526933062
+  randomSeed: -1416750983
   InitialModule:
     serializedVersion: 3
     enabled: 1
@@ -26444,7 +26447,7 @@ Camera:
   m_Enabled: 1
   serializedVersion: 2
   m_ClearFlags: 1
-  m_BackGroundColor: {r: 0.4896555, g: 0, b: 1, a: 0}
+  m_BackGroundColor: {r: 0.5586073, g: 0.8808048, b: 0.9264706, a: 0}
   m_NormalizedViewPortRect:
     serializedVersion: 2
     x: 0
@@ -26525,7 +26528,7 @@ MonoBehaviour:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 2099921568}
-  m_Enabled: 0
+  m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 1769a64869b0ec647a59b2c26847c15d, type: 3}
   m_Name: 
