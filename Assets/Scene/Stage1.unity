@@ -885,8 +885,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7d2c3d8dedc24974e9e5cbdb8b3e1371, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  objAnim: {fileID: 1018137909}
-  triggerName: showEnergyTimer
+  objAnim: {fileID: 133764284}
+  triggerName: showTimers
 --- !u!222 &133764287
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -931,18 +931,7 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 0}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 133764286}
-        m_MethodName: setTrigger
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
+      m_Calls: []
     m_TypeName: UnityEngine.UI.Button+ButtonClickedEvent, UnityEngine.UI, Version=1.0.0.0,
       Culture=neutral, PublicKeyToken=null
 --- !u!95 &133764289
@@ -2133,7 +2122,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 1, g: 1, b: 1, a: 0}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_RaycastTarget: 1
   m_OnCullStateChanged:
     m_PersistentCalls:
@@ -2153,7 +2142,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: 00
+  m_Text: 
 --- !u!114 &241730202
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2165,7 +2154,7 @@ MonoBehaviour:
   m_Script: {fileID: -900027084, guid: f70555f144d8491a825f0804e09c671c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_EffectColor: {r: 0, g: 0, b: 0, a: 0}
+  m_EffectColor: {r: 0, g: 0, b: 0, a: 1}
   m_EffectDistance: {x: 1, y: -1}
   m_UseGraphicAlpha: 1
 --- !u!222 &241730203
@@ -2189,7 +2178,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 119.8, y: -170.7}
+  m_AnchoredPosition: {x: 119.8, y: -170.70001}
   m_SizeDelta: {x: 204, y: 62.4}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!1 &243076351
@@ -14040,7 +14029,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 1440394152257382, guid: 7ff27294e29011c42bb7d3cfebc01a41, type: 2}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 114401565382257372, guid: 7ff27294e29011c42bb7d3cfebc01a41,
         type: 2}
