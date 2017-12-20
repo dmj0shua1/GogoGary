@@ -19573,8 +19573,8 @@ MonoBehaviour:
   debrisInitialAmt: 0
   debrisStartAt: 30
   debrisDiffFrequency: 30
-  debrisIncreaseAmt: 20
-  debrisAmountLimit: 100
+  debrisIncreaseAmt: 5
+  debrisAmountLimit: 60
   debrisDiffCounter: 0
   boltInitialAmt: 0
   boltStartAt: 30
