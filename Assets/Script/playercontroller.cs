@@ -81,7 +81,7 @@ public class playercontroller : MonoBehaviour {
         SimpleAdScript = GameObject.Find("SimpleAd").GetComponent<SimpleAd>();
         PointManagerScript = GameObject.Find("PointManager").GetComponent<PointManager>();
         GameLevelHolderManagerScript = GameObject.Find("GameLevelManager").GetComponent<GameLevelHolderManager>();
-        scoreManagerScript = GameObject.Find("ScoreManager").GetComponent<ScoreManager>();
+      if (SceneManager.GetActiveScene().name == "Endless")  scoreManagerScript = GameObject.Find("ScoreManager").GetComponent<ScoreManager>();
        
 	}
 	void Update ()
