@@ -160,6 +160,24 @@ public class EnergyManager : MonoBehaviour
 
     }
 
+    public void refillAmount()
+    {
+
+        PlayerPrefs.SetInt("energyLeft", 3);
+        PlayerPrefs.SetInt("timerCount", 2);
+        energyLeft = 3;
+        timerCount = 2;
+        egTimeManager.secsLeftEnergy = 0;
+        PlayerPrefs.DeleteKey("endTimeEnergy");
+        for (int i = energyMaxValue; i >= 3; i--)
+        {
+            PlayerPrefs.DeleteKey("endTimeed" + i.ToString());
+            energyDrinks[i - 1].GetComponent<EnergyTimer>().timerActive = false;
+        }
+        triggerATimer();
+        redisplayTime();
+    }
+
 
 
 

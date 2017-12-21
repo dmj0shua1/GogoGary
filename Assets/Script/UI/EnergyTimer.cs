@@ -128,7 +128,10 @@ public class EnergyTimer : MonoBehaviour
                 egManagerScript.increaseEnergy();
 
 
-                if (egManagerScript.energyLeft < egManagerScript.energyMaxValue) egManagerScript.triggerATimer();
+                if (egManagerScript.energyLeft < egManagerScript.energyMaxValue)
+                {
+                    egManagerScript.triggerATimer();
+                }
 
             }
         }
