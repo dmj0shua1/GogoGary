@@ -14,7 +14,7 @@ public class ChangeLanguage : MonoBehaviour {
     void awake()
     {
        
-        if (!PlayerPrefs.HasKey("LanguageStartup")) PlayerPrefs.SetInt("LanguageStartup", 0);
+        //if (!PlayerPrefs.HasKey("LanguageStartup")) PlayerPrefs.SetInt("LanguageStartup", 0);
       
     }
 	void Start () {
@@ -40,10 +40,10 @@ public class ChangeLanguage : MonoBehaviour {
           
         }
 
-        if (PlayerPrefs.GetInt("LanguageStartup") == 1)
+        /*if (PlayerPrefs.GetInt("LanguageStartup") == 1)
         {
             StartupButton.SetActive(false);  
-        }
+        }*/
 
         
 	}
@@ -53,7 +53,7 @@ public class ChangeLanguage : MonoBehaviour {
         PlayerPrefs.SetInt("LanguageNumber", num);
     }
 
-    public void startupLanguageMethod() 
+   /* public void startupLanguageMethod() 
     {
         if (PlayerPrefs.GetInt("LanguageStartup") == 0)
         {
@@ -72,5 +72,5 @@ public class ChangeLanguage : MonoBehaviour {
        
             //StartupObject.SetActive(false);
         }
-    }
+    }*/
 }
