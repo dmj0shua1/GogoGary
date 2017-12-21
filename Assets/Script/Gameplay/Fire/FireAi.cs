@@ -23,6 +23,9 @@ public class FireAi : MonoBehaviour {
     private PlatformGenerator PlatformGeneratorScript;
     AudioSource FireAudioSource;
 
+    public int ChangeMaxSpeed;
+    public int ChangeMinSpeed;
+
 //[SerializeField]
     //private AudioSource FireSoundEffect;
 	void Start()
@@ -69,14 +72,14 @@ public class FireAi : MonoBehaviour {
     {
         if (other.gameObject.CompareTag("fireadjust"))
         {
-            maxSpeed = 15;
+            maxSpeed = ChangeMaxSpeed;
         }
     }
     void OnTriggerExit2D(Collider2D other)
     {
         if (other.gameObject.CompareTag("fireadjust"))
         {
-            maxSpeed = 10;
+            maxSpeed = ChangeMinSpeed;
         }
     }
     

@@ -153,7 +153,7 @@ MonoBehaviour:
   TimeValue: 0
   HalfObjectiveValue: 0
   UnlockedValue: 28
-  FireTriggerValue: 29
+  FireTriggerValue: 25
   PowerupValue: 0
   LevelPlaceValue: 2
   RescuePointValue: 3

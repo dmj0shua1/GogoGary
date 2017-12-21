@@ -41,6 +41,7 @@ GameObject:
   - component: {fileID: 114105281530548586}
   - component: {fileID: 95726721503101874}
   - component: {fileID: 50782682805404340}
+  - component: {fileID: 114585329508755414}
   m_Layer: 0
   m_Name: RescuePeopleWoman
   m_TagString: Woman
@@ -68,7 +69,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1579066233854820}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 1763.7251, y: -26.627636, z: 0}
+  m_LocalPosition: {x: -381.59393, y: -144.9087, z: 0}
   m_LocalScale: {x: 0.32478407, y: 0.32478407, z: 0.32478407}
   m_Children:
   - {fileID: 4136972154758684}
@@ -149,6 +150,18 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   RescuePointToGive: 1
+--- !u!114 &114585329508755414
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1579066233854820}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 66b5cd132826d6b42bc407485601a6b0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  platformDestructionPoint: {fileID: 0}
 --- !u!114 &114871086173819314
 MonoBehaviour:
   m_ObjectHideFlags: 1
