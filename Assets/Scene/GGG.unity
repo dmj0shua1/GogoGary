@@ -4214,6 +4214,8 @@ MonoBehaviour:
     m_Bits: 512
   minSpeed: 10
   maxSpeed: 10
+  ChangeMaxSpeed: 0
+  ChangeMinSpeed: 0
 --- !u!50 &441492725
 Rigidbody2D:
   serializedVersion: 4

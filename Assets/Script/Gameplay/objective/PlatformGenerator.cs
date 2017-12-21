@@ -213,7 +213,7 @@ public class PlatformGenerator : MonoBehaviour {
                             if (Counts % MummyThreshold == 0)
                             {
                                 GameObject newMummy = mummyPooler.GetPooledObject();
-                                float MummyXposition = Random.Range(1, 12);
+                                float MummyXposition = Random.Range(1, 16);
                                 Vector3 MummyPosition = new Vector3(MummyXposition, Mummyheight, 0f);
                                 newMummy.transform.position = transform.position + MummyPosition;
                                 newMummy.transform.rotation = transform.rotation;

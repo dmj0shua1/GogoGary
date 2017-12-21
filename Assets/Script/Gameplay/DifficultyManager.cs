@@ -165,7 +165,7 @@ public class DifficultyManager : MonoBehaviour
         boltDifficulty();
         rescueDifficulty();
         playerDifficulty();
-        fireDifficulty();
+        //fireDifficulty();
         powerupDifficulty();
         colorChange();
     }
@@ -290,7 +290,7 @@ public class DifficultyManager : MonoBehaviour
     }
 
 
-    private void fireDifficulty()
+    /*private void fireDifficulty()
     {
         if (flrCounterScript.countFloor_el >= fireStartAt && !fireActivate)
         {
@@ -327,7 +327,7 @@ public class DifficultyManager : MonoBehaviour
                 fireDiffCounter = 0;
             }
         }
-    }
+    }*/
 
     private void powerupDifficulty()
     {
