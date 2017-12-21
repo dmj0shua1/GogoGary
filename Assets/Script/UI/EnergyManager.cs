@@ -22,12 +22,14 @@ public class EnergyManager : MonoBehaviour
     EnergyTimeManager egTimeManager;
     public int timerCount;
     int lastTimerTrigged;
+    SimpleAd simpleAdScript;
     void Start()
     {
         timerCount = PlayerPrefs.GetInt("timerCount");
         energyLeft = PlayerPrefs.GetInt("energyLeft");
         lvlSelectorScript = GameObject.Find("LevelSelect").GetComponent<Levelselector>();
         egTimeManager = gameObject.GetComponent<EnergyTimeManager>();
+        simpleAdScript = GameObject.Find("SimpleAd").GetComponent<SimpleAd>();
 
         if (!PlayerPrefs.HasKey("energyLeft")) PlayerPrefs.SetInt("energyLeft", 5);
         
@@ -162,6 +164,7 @@ public class EnergyManager : MonoBehaviour
 
     public void refillAmount()
     {
+        simpleAdScript.rewardedAdLvlSelector();
 
         PlayerPrefs.SetInt("energyLeft", 3);
         PlayerPrefs.SetInt("timerCount", 2);

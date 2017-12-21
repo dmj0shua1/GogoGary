@@ -27,16 +27,19 @@ private string gameId = "1576334";
 #endif
 void Awake()
 {
-    LevelPassScript = GameObject.Find("Holder").GetComponent<LevelPass>();
-    ImageDeath.SetActive(false);
-    if (!PlayerPrefs.HasKey("rewardClaimed")) PlayerPrefs.SetInt("rewardClaimed", 0);
-    if (PlayerPrefs.GetInt("rewardClaimed") == 0)
+    if (SceneManager.GetActiveScene().name == "GGG" || SceneManager.GetActiveScene().name == "GGGPYRAMID")
     {
-        LevelPassScript.FireTriggerAmt = LevelPassScript.FireTriggerAmt - 2;
-        PlayerPrefs.SetInt("rewardClaimed", 1);
-        print("ok");
+        LevelPassScript = GameObject.Find("Holder").GetComponent<LevelPass>();
+        ImageDeath.SetActive(false);
+        if (!PlayerPrefs.HasKey("rewardClaimed")) PlayerPrefs.SetInt("rewardClaimed", 0);
+        if (PlayerPrefs.GetInt("rewardClaimed") == 0)
+        {
+            LevelPassScript.FireTriggerAmt = LevelPassScript.FireTriggerAmt - 2;
+            PlayerPrefs.SetInt("rewardClaimed", 1);
+            print("ok");
+        }
+
     }
-    
 }
     void Start()
     {
@@ -111,6 +114,22 @@ void Awake()
              ImageDeath.SetActive(true);
              Invoke("displayCoinReceived", 1.5f);
           
+         }
+     }
+
+     public void rewardedAdLvlSelector()
+     {
+         if (Advertisement.IsReady("rewardedVideo"))
+         {
+             Advertisement.Show("rewardedVideo");
+             print("ifrewardAds");
+             PlayerPrefs.SetInt("rewardClaimed", 0);
+             objRewardedAds.SetActive(false);
+             //StartCoroutine(rewardInfoTime());
+             //RewardsInfo.SetActive(true);
+            // ImageDeath.SetActive(true);
+            // Invoke("displayCoinReceived", 1.5f);
+
          }
      }
      public void internetmessageBoxMethod() 
