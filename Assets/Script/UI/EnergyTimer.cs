@@ -26,12 +26,15 @@ public class EnergyTimer : MonoBehaviour
     public System.DateTime datevalue1;
     public double secsLeftEnergy;
     double addTimeNewTimer;
+    [SerializeField]
+  
     void Start()
     {
 
         dateCheckerScript = gameObject.GetComponent<DateChecker>();
         egManagerScript = egManagerObj.GetComponent<EnergyManager>();       //Store the current time when it starts
         egTimeManager = GameObject.Find("Energy").GetComponent<EnergyTimeManager>();
+      
         currentDate = System.DateTime.Now;
         egName = gameObject.name;
         refreshTime();
@@ -134,6 +137,8 @@ public class EnergyTimer : MonoBehaviour
                 }
 
             }
+
+            
         }
 
     }

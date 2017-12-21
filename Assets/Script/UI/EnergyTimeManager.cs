@@ -24,6 +24,8 @@ public class EnergyTimeManager : MonoBehaviour
     bool isFirstTimer;
     public double secsLeftEnergy;
     EnergyTimer latestTimer;
+    [SerializeField]
+    GameObject refillAmountObj;
     void Start()
     {
 
@@ -177,6 +179,14 @@ public class EnergyTimeManager : MonoBehaviour
                 print("");
             }
 
+            if (PlayerPrefs.GetInt("energyLeft") <= 0)
+            {
+                refillAmountObj.SetActive(true);
+            }
+            else
+            {
+                refillAmountObj.SetActive(false);
+            }
 
         }
 
