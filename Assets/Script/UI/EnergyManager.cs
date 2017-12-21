@@ -21,6 +21,7 @@ public class EnergyManager : MonoBehaviour
     string sceneToGo;
     EnergyTimeManager egTimeManager;
     public int timerCount;
+    int lastTimerTrigged;
     void Start()
     {
         timerCount = PlayerPrefs.GetInt("timerCount");
@@ -128,17 +129,35 @@ public class EnergyManager : MonoBehaviour
                 EnergyTimer egTimer = energyDrinks[i].GetComponent<EnergyTimer>();
 
                 if (!egTimer.timerActive && timerCount < (energyMaxValue-energyLeft))
-                {
+                { 
                     egTimer.timerActive = true;
-                       egTimeManager.saveEnergyTime();
+                    egTimeManager.saveEnergyTime();
                     egTimer.startTimer();
                     timerCount++;
+                    
                     PlayerPrefs.SetInt("timerCount", (PlayerPrefs.GetInt("timerCount")+1));
                     break;
                 }
             }
 
         }
+    }
+
+    public void refillAll()
+    {
+        PlayerPrefs.SetInt("energyLeft", 5);
+        PlayerPrefs.SetInt("timerCount", 0);
+        energyLeft = energyMaxValue;
+        timerCount = 0;
+        egTimeManager.secsLeftEnergy = 0;
+        PlayerPrefs.DeleteKey("endTimeEnergy");
+        for (int i = 1; i <= energyMaxValue; i++)
+        {
+            PlayerPrefs.DeleteKey("endTimeed" + i.ToString());
+            energyDrinks[i - 1].GetComponent<EnergyTimer>().timerActive = false;
+        }
+        redisplayTime();
+
     }
 
 
