@@ -23,6 +23,7 @@ public class EnergyTimeManager : MonoBehaviour
     public EnergyManager egManagerScript;
     bool isFirstTimer;
     public double secsLeftEnergy;
+    EnergyTimer latestTimer;
     void Start()
     {
 
@@ -117,11 +118,12 @@ public class EnergyTimeManager : MonoBehaviour
     {
         for (int i = 0; i < egManagerScript.energyMaxValue; i++)
         {
-            EnergyTimer latestTimer = egManagerScript.energyDrinks[i].GetComponent<EnergyTimer>();
+            latestTimer = egManagerScript.energyDrinks[i].GetComponent<EnergyTimer>();
             if (latestTimer.timerActive)
             {
 
                 secsLeftEnergy = latestTimer.secsLeftEnergy;
+                
                 break;
             }
         }
@@ -141,7 +143,7 @@ public class EnergyTimeManager : MonoBehaviour
 
             // print("Total Hours: " + secsLeftBoost.ToString());
 
-            string output = String.Format("{0:D2}:{1:D2}",timeLeft.Minutes, timeLeft.Seconds);
+            string output = String.Format("{0:D2}:{1:D2}", latestTimer.timeLeft.Minutes, latestTimer.timeLeft.Seconds);
 
 
 

@@ -15,7 +15,7 @@ public class EnergyTimer : MonoBehaviour
     DateTime oldDate;
     DateTime currentDate;
     DateTime endTime, curTime;
-    TimeSpan timeLeft;
+    public TimeSpan timeLeft;
     private string egName;
     private IEnumerator coroutine;
     DateChecker dateCheckerScript;
@@ -66,6 +66,8 @@ public class EnergyTimer : MonoBehaviour
         }
 
     }
+
+
 
     public void refreshTime()
     {
