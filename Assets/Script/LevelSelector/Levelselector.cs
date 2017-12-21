@@ -8,11 +8,12 @@ public class Levelselector : MonoBehaviour {
 
     public Button[] levelButtons;
     public GameObject MainHolderScript;
+    EnergyManager egManagerScript;
     //public int levelReached;
-
     void Start() 
     {
         MainHolderScript = GameObject.Find("Holder");
+        egManagerScript = GameObject.Find("Energy").GetComponent<EnergyManager>();
     }
     public void select(int levelname)
     {
@@ -23,8 +24,22 @@ public class Levelselector : MonoBehaviour {
     public void selectstring(string levelname)
     {
         SceneManager.LoadScene(levelname);
+    }
 
+    public void GoToSceneEnergyReq(string levelname)
+    {
+        if (PlayerPrefs.GetInt("energyLeft") <= 0)
+        {
+            SceneManager.LoadScene(levelname);
+            Destroy(MainHolderScript);
+        }
+        else
+        {
+            egManagerScript.decreaseEnergy();
+            SceneManager.LoadScene(SceneManager.GetActiveScene().name);
+        }
 
+        
     }
 
 
