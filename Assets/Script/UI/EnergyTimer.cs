@@ -25,6 +25,7 @@ public class EnergyTimer : MonoBehaviour
     EnergyTimeManager egTimeManager;
     public System.DateTime datevalue1;
     public double secsLeftEnergy;
+    double addTimeNewTimer;
     void Start()
     {
 
@@ -49,13 +50,20 @@ public class EnergyTimer : MonoBehaviour
 
     public void saveEnergyTime()
     {
-
+        if (egManagerScript.timerCount >= 2)
+        {
+            addTimeNewTimer = egManagerScript.energyDrinks[egManagerScript.timerCount - 1].GetComponent<EnergyTimer>().secsLeftEnergy;
+        }
+        else
+        {
+            addTimeNewTimer = egTimeManager.secsLeftEnergy;
+        }
 
         if (egManagerScript.energyLeft < egManagerScript.energyMaxValue)
         {
             // Get current time in minutes 
             System.DateTime today = System.DateTime.Now;
-            System.TimeSpan duration = new System.TimeSpan(0, 0, Convert.ToInt32(itmTime),0);
+            System.TimeSpan duration = new System.TimeSpan(0, 0, Convert.ToInt32(itmTime), 0 + Convert.ToInt32(addTimeNewTimer));
             System.DateTime result = today.Add(duration);
 
             //Save the expiration [itmTime] minutes from now
@@ -112,7 +120,7 @@ public class EnergyTimer : MonoBehaviour
             secsLeftEnergy = timeLeft.TotalSeconds;
 
             if (secsLeftEnergy <= 0 && PlayerPrefs.HasKey("endTime" + egName) && egManagerScript.energyLeft < egManagerScript.energyMaxValue)
-            {  
+            {
                 egManagerScript.timerCount--;
                 PlayerPrefs.SetInt("timerCount", egManagerScript.timerCount);
                 PlayerPrefs.DeleteKey("endTime" + egName);
@@ -141,7 +149,7 @@ public class EnergyTimer : MonoBehaviour
 
             if (egManagerScript.energyLeft < egManagerScript.energyMaxValue)
             {
-              
+
                 timerActive = false;
                 egManagerScript.energyLeft++;
                 egManagerScript.redisplayTime();

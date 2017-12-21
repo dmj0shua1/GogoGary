@@ -149,7 +149,7 @@ public class EnergyTimeManager : MonoBehaviour
 
             if (secsLeftEnergy <= 0)
             {
-                if (SceneManager.GetActiveScene().name == "Stage1") timerEnergy.text = "";
+                timerEnergy.text = "";
                 PlayerPrefs.DeleteKey("endTime" + egName);
                 if (PlayerPrefs.GetInt("energyLeft") < egManagerScript.energyMaxValue)
                 {
@@ -164,7 +164,7 @@ public class EnergyTimeManager : MonoBehaviour
             else if (secsLeftEnergy <= 60)
             {
                 string secsLeftEnergyStr = secsLeftEnergy.ToString().Substring(0, 2);
-                if (secsLeftEnergy >= 10 && SceneManager.GetActiveScene().name == "Stage1") timerEnergy.text = "00:" + secsLeftEnergyStr;
+                if (secsLeftEnergy >= 10) timerEnergy.text = "00:" + secsLeftEnergyStr;
                 else
                 {
                     secsLeftEnergyStr = secsLeftEnergy.ToString().Substring(0, 1);
@@ -173,7 +173,7 @@ public class EnergyTimeManager : MonoBehaviour
             }
             else
             {
-                if (SceneManager.GetActiveScene().name == "Stage1") timerEnergy.text = output;
+                timerEnergy.text = output;
                 print("");
             }
 
