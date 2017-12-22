@@ -17867,6 +17867,11 @@ Prefab:
       propertyPath: refillAmountObj
       value: 
       objectReference: {fileID: 738844843}
+    - target: {fileID: 223727422422227992, guid: a3893ec4a9149c34abf4c4153229a107,
+        type: 2}
+      propertyPath: m_SortingOrder
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: a3893ec4a9149c34abf4c4153229a107, type: 2}
   m_IsPrefabParent: 0

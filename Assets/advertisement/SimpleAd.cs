@@ -122,8 +122,6 @@ void Awake()
          if (Advertisement.IsReady("rewardedVideo"))
          {
              Advertisement.Show("rewardedVideo");
-             print("ifrewardAds");
-             PlayerPrefs.SetInt("rewardClaimed", 0);
              objRewardedAds.SetActive(false);
              //StartCoroutine(rewardInfoTime());
              //RewardsInfo.SetActive(true);
