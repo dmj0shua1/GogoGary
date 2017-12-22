@@ -15060,7 +15060,8 @@ Prefab:
       propertyPath: m_FontData.m_FontSize
       value: 45
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 114669898010983594, guid: ea973787fa99f3b4990db0a9e10ced8a, type: 2}
   m_ParentPrefab: {fileID: 100100000, guid: ea973787fa99f3b4990db0a9e10ced8a, type: 2}
   m_IsPrefabParent: 0
 --- !u!1 &1901270050 stripped
