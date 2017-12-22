@@ -129,7 +129,7 @@ void Awake()
             // Invoke("displayCoinReceived", 1.5f);
 
          }
-         S
+         
      }
      public void internetmessageBoxMethod() 
      {
