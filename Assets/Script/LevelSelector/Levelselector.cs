@@ -10,11 +10,16 @@ public class Levelselector : MonoBehaviour {
     public GameObject MainHolderScript;
     EnergyManager egManagerScript;
     public GameObject NoteToUnlock;
+    [SerializeField]
+    private GameObject watchAds;
     //public int levelReached;
     void Start() 
     {
         MainHolderScript = GameObject.Find("Holder");
         egManagerScript = GameObject.Find("Energy").GetComponent<EnergyManager>();
+        if (!PlayerPrefs.HasKey("watchAdsNote")) PlayerPrefs.SetInt("watchAdsNote", 0);
+        if (PlayerPrefs.GetInt("watchAdsNote") == 1) watchAds.SetActive(true);
+
     }
     public void select(int levelname)
     {
@@ -31,6 +36,7 @@ public class Levelselector : MonoBehaviour {
     {
         if (PlayerPrefs.GetInt("energyLeft") <= 0)
         {
+            if (PlayerPrefs.GetInt("watchAdsNote") == 0) PlayerPrefs.SetInt("watchAdsNote", 1);
             SceneManager.LoadScene(levelname);
             Destroy(MainHolderScript);
         }
@@ -58,6 +64,12 @@ public class Levelselector : MonoBehaviour {
     public void closeNote() 
     {
         NoteToUnlock.SetActive(false);
+    }
+
+    public void disableWatchAdsNote()
+    {
+        PlayerPrefs.SetInt("watchAdsNote", 2);
+        watchAds.SetActive(false);
     }
 
 

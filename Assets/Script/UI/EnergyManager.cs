@@ -23,6 +23,7 @@ public class EnergyManager : MonoBehaviour
     public int timerCount;
     int lastTimerTrigged;
     SimpleAd simpleAdScript;
+  
     void Start()
     {
         timerCount = PlayerPrefs.GetInt("timerCount");
@@ -37,8 +38,8 @@ public class EnergyManager : MonoBehaviour
         energyInitialize();
 
         if (!PlayerPrefs.HasKey("timerCount")) PlayerPrefs.SetInt("timerCount", 0);
-        
 
+   
         
 
     }
