@@ -35,6 +35,10 @@ public class ButtonCameraView : MonoBehaviour {
     public bool isZoomIn;
     public Animator isInMessage;
     public GameObject buttonZoomOutScreen;
+    public GameObject text16Object;
+    public GameObject text21Object;
+    public GameObject NoticeObject;
+    public GameObject CloseButtonObject;
     //stage2
   
 
@@ -74,16 +78,25 @@ public class ButtonCameraView : MonoBehaviour {
                     isInMessage.SetBool("isIn", true);
                     RescueLevelCheckObject.SetActive(true);
                     LevelButtonPlay.interactable = false;
+                    text16Object.SetActive(true);
+                    if (PlayerPrefs.GetInt("isNotice") !=2)
+                    {
+                       PlayerPrefs.SetInt("isNotice", 1); 
+                    }
+                   
                 }
                 else
                 {
                     isInMessage.SetBool("isIn", false);
+                    PlayerPrefs.SetInt("isNotice", 0);
+                    NoticeObject.SetActive(false);
                 }
             }
 
             else
             {
                 isInMessage.SetBool("isIn", false);
+               
                 //RescueLevelCheckObject.SetActive(false);
             }
         }
@@ -97,10 +110,18 @@ public class ButtonCameraView : MonoBehaviour {
                     isInMessage.SetBool("isIn", true);
                     RescueLevelCheckObject.SetActive(true);
                     LevelButtonPlay.interactable = false;
+                    text21Object.SetActive(true);
+                    if (PlayerPrefs.GetInt("isNotice") != 2)
+                    {
+                        PlayerPrefs.SetInt("isNotice", 1);
+
+                    }
                 }
                 else
                 {
                     isInMessage.SetBool("isIn", false);
+                    PlayerPrefs.SetInt("isNotice", 0);
+                    NoticeObject.SetActive(false);
                 }
             }
 
@@ -174,8 +195,14 @@ public class ButtonCameraView : MonoBehaviour {
         LevelStatusHolder = 0;
         isInMessage.SetBool("isIn", false);
         buttonZoomOutScreen.SetActive(false);
-        //RescueLevelCheckObject.SetActive(false);
 
+        if (PlayerPrefs.GetInt("isNotice")==1)
+        {
+              PlayerPrefs.SetInt("isNotice", 2);
+              RescueLevelCheckObject.SetActive(false);
+        }
+       
+       
 
     }
    
@@ -235,7 +262,34 @@ public class ButtonCameraView : MonoBehaviour {
     void Update()
     {
         MoveTowardsTarget();
+        NoticeSignOn();
     }
+    //noticesign flow
+    public void NoticeSignOn() 
+    {
+        if (PlayerPrefs.GetInt("isNotice") == 2)
+        {
+          
+            if (!isZoomIn)
+            {
+                NoticeObject.SetActive(true);
+                CloseButtonObject.SetActive(true);
+            }
+            else
+            {
+               
+                NoticeObject.SetActive(false);
+                RescueLevelCheckObject.SetActive(false);
+            }
+           
+        }
+    }
+    public void NoticeEnabled() 
+    {
+        RescueLevelCheckObject.SetActive(true);
+    }
+
+    //
     //move towards a target at a set speed.
     private void MoveTowardsTarget()
     {
