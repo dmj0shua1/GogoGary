@@ -60,4 +60,14 @@ public class GoToLevels : MonoBehaviour {
     {
         PlayerPrefs.SetInt("CurrentZoom", 1);
     }
+
+    public void RescueCopyMethod() 
+    {
+        if (PlayerPrefs.HasKey("Building_L" + LevelPassScript.UnlockLevelAmt.ToString()))
+        {
+
+            LevelPassScript.RescueHolderPlayerPrefAmt = PlayerPrefs.GetInt("Building_L" + LevelPassScript.UnlockLevelAmt.ToString());
+            LevelPassScript.RescuePointAmtCopy = LevelPassScript.RescueHolderPlayerPrefAmt;
+        }
+    }
 }
