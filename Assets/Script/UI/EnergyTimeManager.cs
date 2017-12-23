@@ -123,12 +123,22 @@ public class EnergyTimeManager : MonoBehaviour
             latestTimer = egManagerScript.energyDrinks[i].GetComponent<EnergyTimer>();
             if (latestTimer.timerActive)
             {
-
-                secsLeftEnergy = latestTimer.secsLeftEnergy;
-                
+                if (latestTimer.secsLeftEnergy >= 0)
+                {
+                    secsLeftEnergy = latestTimer.secsLeftEnergy;
+                }
+                else
+                {
+                    secsLeftEnergy = 0;
+                }
                 break;
             }
+
+
+           
         }
+
+
     }
 
     private IEnumerator WaitAndUpdate(float waitTime)
