@@ -113,8 +113,8 @@ public class EnergyManager : MonoBehaviour
         if (energyLeft > 0)
         {
             //play
-            decreaseEnergy();
             lvlSelectorScript.selectstring(sceneToGo);
+            decreaseEnergy();
         }
         else
         {
