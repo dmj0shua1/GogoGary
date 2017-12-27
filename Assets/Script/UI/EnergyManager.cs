@@ -11,6 +11,7 @@ public class EnergyManager : MonoBehaviour
     public int energyLeft, energyMaxValue;
     [SerializeField]
     public GameObject[] energyDrinks;
+    public GameObject[] energyBars;
     [Space]
     [SerializeField]
     Sprite energySpriteColored;
@@ -72,14 +73,14 @@ public class EnergyManager : MonoBehaviour
 
             while (energyCheck < energyMaxValue)
             {
-                energyDrinks[energyCheck].GetComponent<Image>().sprite = energySpriteColored;
+                energyBars[energyCheck].GetComponent<Image>().sprite = energySpriteColored;
                 energyCheck++;
             }
 
             while (energyCheck > energyLeft)
             {
                 energyCheck--;
-                energyDrinks[energyCheck].GetComponent<Image>().sprite = energySpriteFaded;
+                energyBars[energyCheck].GetComponent<Image>().sprite = energySpriteFaded;
             }
         }
     }
