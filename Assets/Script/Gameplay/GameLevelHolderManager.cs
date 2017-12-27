@@ -89,7 +89,7 @@ public class GameLevelHolderManager : MonoBehaviour {
            HandRightObject.SetActive(true);
 
         }
-        completeLevelMethod();
+        //completeLevelMethod();
         //TestDisplay.text = "" + PlayerPrefs.GetInt("CompleteLevelCounter");
     }
 
