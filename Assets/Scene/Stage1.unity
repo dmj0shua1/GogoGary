@@ -17509,6 +17509,8 @@ MonoBehaviour:
   text21Object: {fileID: 1898886281}
   NoticeObject: {fileID: 290789950}
   CloseButtonObject: {fileID: 1445454450}
+  isBackButton: {fileID: 207244874}
+  isNextButton: {fileID: 1954408363}
 --- !u!1001 &2081668672
 Prefab:
   m_ObjectHideFlags: 0

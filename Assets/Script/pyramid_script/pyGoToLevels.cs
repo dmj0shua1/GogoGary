@@ -60,4 +60,14 @@ public class pyGoToLevels : MonoBehaviour {
     {
         PlayerPrefs.SetInt("CurrentZoom", 1);
     }
+
+    public void RescueCopyMethod()
+    {
+        if (PlayerPrefs.HasKey("pyBuilding_L" + LevelPassScript.UnlockLevelAmt.ToString()))
+        {
+
+            LevelPassScript.RescueHolderPlayerPrefAmt = PlayerPrefs.GetInt("pyBuilding_L" + LevelPassScript.UnlockLevelAmt.ToString());
+            LevelPassScript.RescuePointAmtCopy = LevelPassScript.RescueHolderPlayerPrefAmt;
+        }
+    }
 }

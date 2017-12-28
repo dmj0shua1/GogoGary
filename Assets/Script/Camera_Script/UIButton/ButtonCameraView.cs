@@ -39,6 +39,8 @@ public class ButtonCameraView : MonoBehaviour {
     public GameObject text21Object;
     public GameObject NoticeObject;
     public GameObject CloseButtonObject;
+    public Button isBackButton;
+    public Button isNextButton;
     //stage2
   
 
@@ -151,6 +153,14 @@ public class ButtonCameraView : MonoBehaviour {
         btnPrevStage.SetActive(false);
         stageLabel.SetActive(false);
         isZoomIn = true;
+        if (ButtonNumberHolder == 0)
+        {
+            isBackButton.interactable = false;
+        }
+        else if (ButtonNumberHolder == 24)
+        {
+            isNextButton.interactable = false;
+        }
        
     }
     IEnumerator ButtonZoomOutMethod()
@@ -201,7 +211,8 @@ public class ButtonCameraView : MonoBehaviour {
               PlayerPrefs.SetInt("isNotice", 2);
               RescueLevelCheckObject.SetActive(false);
         }
-       
+        isBackButton.interactable = true;
+        isNextButton.interactable = true;
        
 
     }
@@ -236,6 +247,14 @@ public class ButtonCameraView : MonoBehaviour {
             //LevelStatusHolder = LevelStatusHolder - 1;
             //ButtonNumberHolder = ButtonNumberHolder - 1;
         }
+        if (ButtonNumberHolder == 24)
+        {
+            isNextButton.interactable = false;
+        }
+        if (isBackButton.interactable == false)
+        {
+            isBackButton.interactable = true;
+        }
        
     }
 
@@ -246,7 +265,14 @@ public class ButtonCameraView : MonoBehaviour {
             LevelStatusHolder = LevelStatusHolder - 1;
             ButtonNumberHolder = ButtonNumberHolder - 1;
         }
-        
+        if (ButtonNumberHolder == 0)
+        {
+            isBackButton.interactable = false;
+        }
+        if (isNextButton.interactable == false)
+        {
+            isNextButton.interactable = true;
+        }
         LevelNumberText.text = "" + LevelStatusHolder;
 
         target = BuildingButtons[ButtonNumberHolder];
