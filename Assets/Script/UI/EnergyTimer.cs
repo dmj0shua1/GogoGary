@@ -27,19 +27,29 @@ public class EnergyTimer : MonoBehaviour
     public double secsLeftEnergy;
     double addTimeNewTimer;
     [SerializeField]
-  
+
     void Start()
     {
+
 
         dateCheckerScript = gameObject.GetComponent<DateChecker>();
         egManagerScript = egManagerObj.GetComponent<EnergyManager>();       //Store the current time when it starts
         egTimeManager = GameObject.Find("Energy").GetComponent<EnergyTimeManager>();
-      
+
         currentDate = System.DateTime.Now;
         egName = gameObject.name;
-        refreshTime();
+        if (!PlayerPrefs.HasKey("egIndex" + egName))
+        {
+            saveIndex();
+        }
+        else
+        {
+            loadIndex();
+        }
 
+        refreshTime();
         coroutine = WaitAndUpdate(1.0f);
+
         StartCoroutine(coroutine);
 
 
@@ -137,8 +147,8 @@ public class EnergyTimer : MonoBehaviour
                 }
 
             }
+            saveIndex();
 
-            
         }
 
     }
@@ -162,11 +172,12 @@ public class EnergyTimer : MonoBehaviour
                 egManagerScript.energyLeft++;
                 egManagerScript.redisplayTime();
                 egManagerScript.sortTimers();
-                
+
+
             }
 
         }
-
+        saveIndex();
 
     }
 
@@ -177,6 +188,19 @@ public class EnergyTimer : MonoBehaviour
     }
 
 
+    public void saveIndex()
+    {
+        int egIndex = System.Array.IndexOf(egManagerScript.energyDrinks, gameObject);
+        // print("Index of " + egName + " is " + egIndex.ToString());
+        PlayerPrefs.SetInt("egIndex" + egName, egIndex);
+    }
+
+    public void loadIndex()
+    {
+
+        int egIndex = PlayerPrefs.GetInt("egIndex" + egName);
+        egManagerScript.energyDrinks[egIndex] = gameObject;
+    }
 
 
 }
