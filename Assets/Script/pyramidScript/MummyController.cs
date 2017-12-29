@@ -32,9 +32,12 @@ public class MummyController : MonoBehaviour {
     public float posY1;
     public float posX2;
     public float posY2;
+    private Animator MyAnimation;
+
 
     void Start() 
     {
+        MyAnimation = GetComponent<Animator>();
         PlayerRigid = GameObject.Find("player").GetComponent<Rigidbody2D>();
         PlayerControllerScript = GameObject.Find("player").GetComponent<playercontroller>();
         MummyManagerScript = GameObject.Find("MummyManager").GetComponent<MummyManager>();
@@ -62,7 +65,8 @@ public class MummyController : MonoBehaviour {
                 transform.localScale = new Vector3(posX2, posY2, 0);
                 GetComponent<Rigidbody2D>().velocity = new Vector2(-_moveSpeed, GetComponent<Rigidbody2D>().velocity.y);
 
-            }     
+            }
+          
     }
 
     void OnTriggerEnter2D(Collider2D other)
@@ -76,11 +80,22 @@ public class MummyController : MonoBehaviour {
 
         if (other.gameObject.CompareTag("Player"))
         {
-            MummyMainCollider.enabled = false;
-            MummyManagerScript.ActivateMummyeffect(effectMode,EffectLengthCounter);
-            _moveSpeed = 0;
-
+           
+                MummyMainCollider.enabled = false;
+                MummyManagerScript.ActivateMummyeffect(effectMode, EffectLengthCounter);
+                _moveSpeed = 0;
+                MyAnimation.SetBool("isAttack", false);
+                /*if (IsMove && !PlayerControllerScript.ifRight)
+                {
+                    IsMove = false;
+                }
+                else if (!IsMove && PlayerControllerScript.ifRight)
+                {
+                    IsMove = true;
+                }*/
+               
         }
+        
 
         if (other.gameObject.CompareTag("HitBoxCam"))
         {
@@ -95,6 +110,7 @@ public class MummyController : MonoBehaviour {
     void OnTriggerExit2D(Collider2D other)
     {
         _moveSpeed = 3;
+        MyAnimation.SetBool("isAttack", true);
     }
    
 
