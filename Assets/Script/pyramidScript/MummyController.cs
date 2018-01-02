@@ -34,9 +34,12 @@ public class MummyController : MonoBehaviour {
     public float posY2;
     private Animator MyAnimation;
 
+    private SpriteRenderer mySpriteRenderer;
+
 
     void Start() 
     {
+        mySpriteRenderer = GetComponent<SpriteRenderer>();
         MyAnimation = GetComponent<Animator>();
         PlayerRigid = GameObject.Find("player").GetComponent<Rigidbody2D>();
         PlayerControllerScript = GameObject.Find("player").GetComponent<playercontroller>();
@@ -85,15 +88,18 @@ public class MummyController : MonoBehaviour {
                 MummyManagerScript.ActivateMummyeffect(effectMode, EffectLengthCounter);
                 _moveSpeed = 0;
                 MyAnimation.SetBool("isAttack", false);
-                /*if (IsMove && !PlayerControllerScript.ifRight)
+                if (PlayerControllerScript.ifRight == false)
                 {
-                    IsMove = false;
+                    //mySpriteRenderer.flipX = true;
+                    moveRight = false;
                 }
-                else if (!IsMove && PlayerControllerScript.ifRight)
+                else if (PlayerControllerScript.ifRight == true)
                 {
-                    IsMove = true;
-                }*/
+                     moveRight = true;
+                }
                
+              
+              
         }
         
 
@@ -111,6 +117,7 @@ public class MummyController : MonoBehaviour {
     {
         _moveSpeed = 3;
         MyAnimation.SetBool("isAttack", true);
+        mySpriteRenderer.flipX = false;
     }
    
 

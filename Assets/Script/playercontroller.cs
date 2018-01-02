@@ -59,6 +59,8 @@ public class playercontroller : MonoBehaviour {
     private GameLevelHolderManager GameLevelHolderManagerScript;
     private floorcounter MainFloorCounterScript;
     ScoreManager scoreManagerScript;
+
+    //public bool MummyCollide;
 	void start()
 	{	
 		ifRight = true;
@@ -245,7 +247,10 @@ public class playercontroller : MonoBehaviour {
     {
       
     }
-
+    public void GaryDefend() 
+    {
+ 
+    }
     void OnTriggerEnter2D(Collider2D other) 
     {
         if (other.gameObject.CompareTag("FireMain"))
@@ -295,6 +300,11 @@ public class playercontroller : MonoBehaviour {
                 Yes_rescue.Play();
             }   
         }
+        /*if (other.gameObject.CompareTag("pyMummy"))
+        {
+            //MyAnimation.SetBool("isDefend", false);
+            MummyCollide = true;
+        }*/
         if (other.gameObject.CompareTag("EventBox"))
         {
 
@@ -347,6 +357,8 @@ public class playercontroller : MonoBehaviour {
     {
         //SwipeLeftObject.SetActive(false);
         SwipeTestScript.isSwipe = true;
+        //MummyCollide = false;
+       
     }
     IEnumerator StopFireAnimation()
     {
