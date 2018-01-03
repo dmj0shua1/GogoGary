@@ -63,9 +63,9 @@ public class EnergyTimer : MonoBehaviour
 
     public void saveEnergyTime()
     {
-        if (egManagerScript.timerCountStack >= 2)
+        if (egManagerScript.timerCount >= 2)
         {
-            addTimeNewTimer = egManagerScript.energyDrinks[egManagerScript.timerCountStack - 1].GetComponent<EnergyTimer>().secsLeftEnergy;
+            addTimeNewTimer = egManagerScript.energyDrinks[egManagerScript.timerCount - 1].GetComponent<EnergyTimer>().secsLeftEnergy;
         }
         else
         {
@@ -134,8 +134,8 @@ public class EnergyTimer : MonoBehaviour
 
             if (secsLeftEnergy <= 0 && PlayerPrefs.HasKey("endTime" + egName) && egManagerScript.energyLeft < egManagerScript.energyMaxValue)
             {
-                egManagerScript.timerCountStack--;
-                PlayerPrefs.SetInt("timerCount", egManagerScript.timerCountStack);
+                egManagerScript.timerCount--;
+                PlayerPrefs.SetInt("timerCount", egManagerScript.timerCount);
                 PlayerPrefs.DeleteKey("endTime" + egName);
                 timerActive = false;
                 egManagerScript.increaseEnergy();

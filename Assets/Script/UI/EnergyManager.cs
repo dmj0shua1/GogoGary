@@ -22,13 +22,13 @@ public class EnergyManager : MonoBehaviour
     [SerializeField]
     string sceneToGo;
     EnergyTimeManager egTimeManager;
-    public int timerCountStack;
+    public int timerCount;
     int lastTimerTrigged;
     SimpleAd simpleAdScript;
 
     void Start()
     {
-        timerCountStack = PlayerPrefs.GetInt("timerCount");
+        timerCount = PlayerPrefs.GetInt("timerCount");
         energyLeft = PlayerPrefs.GetInt("energyLeft");
         lvlSelectorScript = GameObject.Find("LevelSelect").GetComponent<Levelselector>();
         egTimeManager = gameObject.GetComponent<EnergyTimeManager>();
@@ -133,12 +133,12 @@ public class EnergyManager : MonoBehaviour
 
                 EnergyTimer egTimer = energyDrinks[i].GetComponent<EnergyTimer>();
 
-                if (!egTimer.timerActive && timerCountStack < (energyMaxValue - energyLeft))
+                if (!egTimer.timerActive && timerCount < (energyMaxValue - energyLeft))
                 {
                     egTimer.timerActive = true;
                     egTimeManager.saveEnergyTime();
                     egTimer.startTimer();
-                    timerCountStack++;
+                    timerCount++;
 
                     PlayerPrefs.SetInt("timerCount", (PlayerPrefs.GetInt("timerCount") + 1));
                     break;
@@ -153,7 +153,7 @@ public class EnergyManager : MonoBehaviour
         PlayerPrefs.SetInt("energyLeft", 5);
         PlayerPrefs.SetInt("timerCount", 0);
         energyLeft = energyMaxValue;
-        timerCountStack = 0;
+        timerCount = 0;
         egTimeManager.secsLeftEnergy = 0;
         PlayerPrefs.DeleteKey("endTimeEnergy");
         for (int i = 1; i <= energyMaxValue; i++)
@@ -172,12 +172,13 @@ public class EnergyManager : MonoBehaviour
         PlayerPrefs.SetInt("energyLeft", 3);
         PlayerPrefs.SetInt("timerCount", 2);
         energyLeft = 3;
-        timerCountStack = 2;
+        timerCount = 2;
         egTimeManager.secsLeftEnergy = 0;
         PlayerPrefs.DeleteKey("endTimeEnergy");
         for (int i = energyMaxValue; i >= 3; i--)
         {
-            PlayerPrefs.DeleteKey("endTimeed" + i.ToString());
+            string egStr = energyDrinks[i - 1].name;
+            PlayerPrefs.DeleteKey("endTime" + egStr);
             energyDrinks[i - 1].GetComponent<EnergyTimer>().timerActive = false;
         }
         triggerATimer();
@@ -188,7 +189,7 @@ public class EnergyManager : MonoBehaviour
     {
         for (int i = 0; i <= 3; i++)
         {
-            if (timerCountStack < energyMaxValue)
+            if (timerCount < energyMaxValue)
             {
                 if (!energyDrinks[i].GetComponent<EnergyTimer>().timerActive && energyDrinks[i + 1].GetComponent<EnergyTimer>().timerActive)
                 {
