@@ -60,7 +60,7 @@ public class playercontroller : MonoBehaviour {
     private floorcounter MainFloorCounterScript;
     ScoreManager scoreManagerScript;
 
-    //public bool MummyCollide;
+    public bool MummyCollide;
 	void start()
 	{	
 		ifRight = true;
@@ -130,6 +130,7 @@ public class playercontroller : MonoBehaviour {
         HitOnDebris();
         BoltToStar();
         StarToBolt();
+        GaryDefend();
         }
         GetStarAnimation();
         GetBoltAnimation();
@@ -249,7 +250,11 @@ public class playercontroller : MonoBehaviour {
     }
     public void GaryDefend() 
     {
- 
+        if (SceneManager.GetActiveScene().name == "GGGPYRAMID") 
+        {
+            MyAnimation.SetBool("isDefend", MummyCollide);
+        }
+     
     }
     void OnTriggerEnter2D(Collider2D other) 
     {
@@ -300,11 +305,7 @@ public class playercontroller : MonoBehaviour {
                 Yes_rescue.Play();
             }   
         }
-        /*if (other.gameObject.CompareTag("pyMummy"))
-        {
-            //MyAnimation.SetBool("isDefend", false);
-            MummyCollide = true;
-        }*/
+       
         if (other.gameObject.CompareTag("EventBox"))
         {
 
@@ -327,9 +328,10 @@ public class playercontroller : MonoBehaviour {
             }
             print("stopcam");
         }
-        
-      
-       
+        /*if (other.gameObject.CompareTag("pyMummy"))
+        {
+            MummyCollide = false;
+        }*/ 
     }
     void OnTriggerStay2D(Collider2D other)
     {

@@ -97,7 +97,7 @@ public class MummyController : MonoBehaviour {
                 {
                      moveRight = true;
                 }
-               
+                PlayerControllerScript.MummyCollide = false;
               
               
         }
@@ -118,6 +118,7 @@ public class MummyController : MonoBehaviour {
         _moveSpeed = 3;
         MyAnimation.SetBool("isAttack", true);
         mySpriteRenderer.flipX = false;
+        PlayerControllerScript.MummyCollide = true;
     }
    
 
