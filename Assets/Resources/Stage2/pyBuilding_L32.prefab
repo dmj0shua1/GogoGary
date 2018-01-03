@@ -176,7 +176,7 @@ MonoBehaviour:
   ObjectiveValue: 50
   FloorValue: 48
   StartingValue: 0
-  DebrisValue: 0
+  DebrisValue: 35
   TimeValue: 0
   HalfObjectiveValue: 0
   UnlockedValue: 32
