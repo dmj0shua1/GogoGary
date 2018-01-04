@@ -20,7 +20,7 @@ public class ChangeLanguage : MonoBehaviour {
 	void Start () {
         //sprite = GetComponent<SpriteRenderer>();
         //startupLanguageMethod();
-        if (!PlayerPrefs.HasKey("LanguageNumber")) PlayerPrefs.SetInt("LanguageNumber", 1);
+        if (!PlayerPrefs.HasKey("LanguageNumber")) PlayerPrefs.SetInt("LanguageNumber", 0);
         
 	}
 	
