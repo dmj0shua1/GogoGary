@@ -266,7 +266,8 @@ public class playercontroller : MonoBehaviour {
             FireAIscript.minSpeed = 50;
             StartCoroutine(StopFireAnimation());         
             StartCoroutine(GameOverCount());
-            ViewPanel.SetActive(true);
+            StartCoroutine(GameOverDelay());
+            //ViewPanel.SetActive(true);
             MainFloorCounterScript.isNoFunction = false; 
             PauseButton.SetActive(false);
             SimpleAdScript.gameOverAd();
@@ -396,14 +397,22 @@ public class playercontroller : MonoBehaviour {
         if (SceneManager.GetActiveScene().name == "Endless")
         {
             scoreManagerScript.saveHighscore();
-        }
-       
             yield return new WaitForSeconds(0.3f);
             ViewPanel.SetActive(true);
             FloorSystemPanel.SetActive(false);
             scoreManagerScript.animateScore();
-        
+        } 
     }
+
+       IEnumerator GameOverDelay()
+       {
+
+           if (SceneManager.GetActiveScene().name == "GGG" || SceneManager.GetActiveScene().name == "GGGPYRAMID")
+           { 
+               yield return new WaitForSeconds(0.7f);
+               ViewPanel.SetActive(true); 
+           }
+       }
 
     
 }

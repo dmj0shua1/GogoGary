@@ -216,7 +216,7 @@ PlayerSettings:
   AndroidSplashScreenScale: 0
   androidSplashScreen: {fileID: 0}
   AndroidKeystoreName: C:/Users/Loopbook/Documents/Gary-Gravity-release/Assets/loopbookinc.keystore
-  AndroidKeyaliasName: gg
+  AndroidKeyaliasName: 
   AndroidTVCompatibility: 0
   AndroidIsGame: 1
   androidEnableBanner: 0
