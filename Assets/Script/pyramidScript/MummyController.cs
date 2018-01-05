@@ -97,6 +97,18 @@ public class MummyController : MonoBehaviour {
                 {
                      moveRight = true;
                 }
+                else if (PlayerControllerScript.ifRight == true && moveRight == true)
+                {
+                    moveRight = false;
+                }
+                else if (PlayerControllerScript.ifRight == true && moveRight == false)
+                {
+                    moveRight = true;
+                }
+                else if (PlayerControllerScript.ifRight ==false && moveRight == false)
+                {
+                    moveRight = true;
+                }
                 PlayerControllerScript.MummyCollide = false;
               
               
