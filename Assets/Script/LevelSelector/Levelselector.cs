@@ -23,6 +23,7 @@ public class Levelselector : MonoBehaviour {
     }
     public void select(int levelname)
     {
+        SceneManager.UnloadSceneAsync(SceneManager.GetActiveScene());
         SceneManager.LoadScene(levelname);
         Destroy(MainHolderScript);
       
