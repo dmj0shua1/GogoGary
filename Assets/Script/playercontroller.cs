@@ -61,6 +61,7 @@ public class playercontroller : MonoBehaviour {
     ScoreManager scoreManagerScript;
 
     public bool MummyCollide;
+    private CameraFollow CameraFollowScript;
 	void start()
 	{	
 		ifRight = true;
@@ -83,6 +84,8 @@ public class playercontroller : MonoBehaviour {
         SimpleAdScript = GameObject.Find("SimpleAd").GetComponent<SimpleAd>();
         PointManagerScript = GameObject.Find("PointManager").GetComponent<PointManager>();
         GameLevelHolderManagerScript = GameObject.Find("GameLevelManager").GetComponent<GameLevelHolderManager>();
+        CameraFollowScript = GameObject.Find("Main Camera").GetComponent<CameraFollow>();
+
       if (SceneManager.GetActiveScene().name == "Endless")  scoreManagerScript = GameObject.Find("ScoreManager").GetComponent<ScoreManager>();
        
 	}
@@ -272,17 +275,19 @@ public class playercontroller : MonoBehaviour {
             PauseButton.SetActive(false);
             SimpleAdScript.gameOverAd();
             //booSFX.Play();
-
-            PlayerScript.enabled = false;
+            CameraFollowScript.isFollow = false;
+            grounded = false;
+            isAllMove = false;
+            //PlayerScript.enabled = false;
              if (PlayerPrefs.HasKey("Building_L" + LevelPassScript.UnlockLevelAmt.ToString()))
             {
                 PlayerPrefs.SetInt("Building_L" + LevelPassScript.UnlockLevelAmt.ToString(), LevelPassScript.RescuePointAmtCopy);
             }
             //completelevel
-             if (PlayerPrefs.GetInt("CompleteLevelCounter") >=1)
+             /*if (PlayerPrefs.GetInt("CompleteLevelCounter") >=1)
              {
                  PlayerPrefs.SetInt("CompleteLevelCounter", PlayerPrefs.GetInt("CompleteLevelCounter") - 1);
-             }
+             }*/
              
             //
              LevelPassScript.TargetLevel = LevelPassScript.ButtonNextLevel[LevelPassScript.CurrentButtonPassAmt];

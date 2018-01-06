@@ -219,6 +219,7 @@ public class PlatformGenerator : MonoBehaviour {
                                 newMummy.transform.rotation = transform.rotation;
                                 MummyControllerScript = newMummy.gameObject.GetComponent<MummyController>();
                                 MummyControllerScript.MummyMainCollider.enabled = true;
+                                MummyControllerScript.IsMove = true;
                                 newMummy.SetActive(true);
                             }
                         }
