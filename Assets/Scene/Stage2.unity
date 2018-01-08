@@ -4533,7 +4533,7 @@ RectTransform:
   m_Children:
   - {fileID: 742}
   m_Father: {fileID: 682}
-  m_RootOrder: 5
+  m_RootOrder: 6
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 1, y: 1}
   m_AnchorMax: {x: 1, y: 1}
@@ -5355,6 +5355,7 @@ RectTransform:
   - {fileID: 730}
   - {fileID: 778}
   - {fileID: 619}
+  - {fileID: 975907630}
   - {fileID: 807}
   - {fileID: 624}
   - {fileID: 760}
@@ -5936,7 +5937,7 @@ RectTransform:
   m_Children:
   - {fileID: 791}
   m_Father: {fileID: 682}
-  m_RootOrder: 8
+  m_RootOrder: 9
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0}
   m_AnchorMax: {x: 0.5, y: 0}
@@ -6577,7 +6578,7 @@ RectTransform:
   - {fileID: 722}
   - {fileID: 693}
   m_Father: {fileID: 682}
-  m_RootOrder: 6
+  m_RootOrder: 7
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0}
   m_AnchorMax: {x: 0.5, y: 0}
@@ -7047,7 +7048,7 @@ RectTransform:
   - {fileID: 795}
   - {fileID: 627}
   m_Father: {fileID: 682}
-  m_RootOrder: 7
+  m_RootOrder: 8
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0}
   m_AnchorMax: {x: 0.5, y: 0}
@@ -7329,7 +7330,7 @@ RectTransform:
   - {fileID: 636}
   - {fileID: 1716293326}
   m_Father: {fileID: 682}
-  m_RootOrder: 4
+  m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
@@ -15565,6 +15566,10 @@ MonoBehaviour:
   isZoomIn: 0
   isInMessage: {fileID: 647698624}
   buttonZoomOutScreen: {fileID: 267802115}
+  text16Object: {fileID: 2120046016}
+  text21Object: {fileID: 1673044056}
+  NoticeObject: {fileID: 975907629}
+  CloseButtonObject: {fileID: 191186296}
   isBackButton: {fileID: 835}
   isNextButton: {fileID: 1104}
 --- !u!1001 &20745170
@@ -15844,7 +15849,7 @@ RectTransform:
   m_Children:
   - {fileID: 854880712}
   m_Father: {fileID: 647698627}
-  m_RootOrder: 2
+  m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
@@ -15891,7 +15896,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
+      - m_Target: {fileID: 647698623}
         m_MethodName: SetActive
         m_Mode: 6
         m_Arguments:
@@ -16552,7 +16557,7 @@ MonoBehaviour:
       m_Calls: []
     m_TypeName: UnityEngine.UI.MaskableGraphic+CullStateChangedEvent, UnityEngine.UI,
       Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
-  m_Sprite: {fileID: 21300000, guid: 80ffc82edd6bdfa45917fd442102e3fe, type: 3}
+  m_Sprite: {fileID: 21300000, guid: c155f03f17ec67c4583047e3902c8653, type: 3}
   m_Type: 0
   m_PreserveAspect: 1
   m_FillCenter: 1
@@ -17087,6 +17092,7 @@ RectTransform:
   m_Children:
   - {fileID: 422491868}
   - {fileID: 2120046017}
+  - {fileID: 1673044057}
   - {fileID: 191186297}
   m_Father: {fileID: 682}
   m_RootOrder: 0
@@ -18106,6 +18112,135 @@ Prefab:
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: f6fc044f71749524a8c790390f8f002b, type: 2}
   m_IsPrefabParent: 0
+--- !u!1001 &975907628
+Prefab:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 682}
+    m_Modifications:
+    - target: {fileID: 224437656003297326, guid: e1eb343ba017e5041a67800952967c3e,
+        type: 2}
+      propertyPath: m_LocalPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 224437656003297326, guid: e1eb343ba017e5041a67800952967c3e,
+        type: 2}
+      propertyPath: m_LocalPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 224437656003297326, guid: e1eb343ba017e5041a67800952967c3e,
+        type: 2}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 224437656003297326, guid: e1eb343ba017e5041a67800952967c3e,
+        type: 2}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 224437656003297326, guid: e1eb343ba017e5041a67800952967c3e,
+        type: 2}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 224437656003297326, guid: e1eb343ba017e5041a67800952967c3e,
+        type: 2}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 224437656003297326, guid: e1eb343ba017e5041a67800952967c3e,
+        type: 2}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 224437656003297326, guid: e1eb343ba017e5041a67800952967c3e,
+        type: 2}
+      propertyPath: m_RootOrder
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 224437656003297326, guid: e1eb343ba017e5041a67800952967c3e,
+        type: 2}
+      propertyPath: m_AnchoredPosition.x
+      value: 104.49997
+      objectReference: {fileID: 0}
+    - target: {fileID: 224437656003297326, guid: e1eb343ba017e5041a67800952967c3e,
+        type: 2}
+      propertyPath: m_AnchoredPosition.y
+      value: 645
+      objectReference: {fileID: 0}
+    - target: {fileID: 224437656003297326, guid: e1eb343ba017e5041a67800952967c3e,
+        type: 2}
+      propertyPath: m_SizeDelta.x
+      value: 91
+      objectReference: {fileID: 0}
+    - target: {fileID: 224437656003297326, guid: e1eb343ba017e5041a67800952967c3e,
+        type: 2}
+      propertyPath: m_SizeDelta.y
+      value: 75
+      objectReference: {fileID: 0}
+    - target: {fileID: 224437656003297326, guid: e1eb343ba017e5041a67800952967c3e,
+        type: 2}
+      propertyPath: m_AnchorMin.x
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 224437656003297326, guid: e1eb343ba017e5041a67800952967c3e,
+        type: 2}
+      propertyPath: m_AnchorMin.y
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 224437656003297326, guid: e1eb343ba017e5041a67800952967c3e,
+        type: 2}
+      propertyPath: m_AnchorMax.x
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 224437656003297326, guid: e1eb343ba017e5041a67800952967c3e,
+        type: 2}
+      propertyPath: m_AnchorMax.y
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 224437656003297326, guid: e1eb343ba017e5041a67800952967c3e,
+        type: 2}
+      propertyPath: m_Pivot.x
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 224437656003297326, guid: e1eb343ba017e5041a67800952967c3e,
+        type: 2}
+      propertyPath: m_Pivot.y
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 1823981120972218, guid: e1eb343ba017e5041a67800952967c3e, type: 2}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 114909288816867864, guid: e1eb343ba017e5041a67800952967c3e,
+        type: 2}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 1152}
+    - target: {fileID: 114909288816867864, guid: e1eb343ba017e5041a67800952967c3e,
+        type: 2}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: NoticeEnabled
+      objectReference: {fileID: 0}
+    - target: {fileID: 114909288816867864, guid: e1eb343ba017e5041a67800952967c3e,
+        type: 2}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Mode
+      value: 1
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_ParentPrefab: {fileID: 100100000, guid: e1eb343ba017e5041a67800952967c3e, type: 2}
+  m_IsPrefabParent: 0
+--- !u!1 &975907629 stripped
+GameObject:
+  m_PrefabParentObject: {fileID: 1823981120972218, guid: e1eb343ba017e5041a67800952967c3e,
+    type: 2}
+  m_PrefabInternal: {fileID: 975907628}
+--- !u!224 &975907630 stripped
+RectTransform:
+  m_PrefabParentObject: {fileID: 224437656003297326, guid: e1eb343ba017e5041a67800952967c3e,
+    type: 2}
+  m_PrefabInternal: {fileID: 975907628}
 --- !u!1 &1041555772
 GameObject:
   m_ObjectHideFlags: 0
@@ -19638,6 +19773,132 @@ CanvasRenderer:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1632889965}
+--- !u!1 &1673044056
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 1577169547726542, guid: ea973787fa99f3b4990db0a9e10ced8a,
+    type: 2}
+  m_PrefabInternal: {fileID: 0}
+  serializedVersion: 5
+  m_Component:
+  - component: {fileID: 1673044057}
+  - component: {fileID: 1673044062}
+  - component: {fileID: 1673044061}
+  - component: {fileID: 1673044060}
+  - component: {fileID: 1673044059}
+  - component: {fileID: 1673044058}
+  m_Layer: 5
+  m_Name: Text6021
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 0
+--- !u!224 &1673044057
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 224221662068846946, guid: ea973787fa99f3b4990db0a9e10ced8a,
+    type: 2}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1673044056}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 647698627}
+  m_RootOrder: 2
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0.5, y: 0.5}
+  m_AnchorMax: {x: 0.5, y: 0.5}
+  m_AnchoredPosition: {x: 0.00018310547, y: -84.00018}
+  m_SizeDelta: {x: 649, y: 359}
+  m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &1673044058
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 114669898010983594, guid: ea973787fa99f3b4990db0a9e10ced8a,
+    type: 2}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1673044056}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5db73abf8efb142408567a45f23da42c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  TextHolder: {fileID: 1673044061}
+  Chinese: "\u6551\u66F4\u591A\u4EBA  \u89E3\u9396\u66F4\u591A\u95DC\u5361"
+  English: ' "Rescue 60 Civilians to unlock Level 21"'
+--- !u!114 &1673044059
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 114741546990404044, guid: ea973787fa99f3b4990db0a9e10ced8a,
+    type: 2}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1673044056}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 1573420865, guid: f70555f144d8491a825f0804e09c671c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_EffectColor: {r: 0, g: 0, b: 0, a: 0.5}
+  m_EffectDistance: {x: 0, y: 1}
+  m_UseGraphicAlpha: 1
+--- !u!114 &1673044060
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 114457938392415358, guid: ea973787fa99f3b4990db0a9e10ced8a,
+    type: 2}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1673044056}
+  m_Enabled: 0
+  m_EditorHideFlags: 0
+  m_Script: {fileID: -900027084, guid: f70555f144d8491a825f0804e09c671c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_EffectColor: {r: 0, g: 0, b: 0, a: 0.5}
+  m_EffectDistance: {x: 0, y: -3}
+  m_UseGraphicAlpha: 1
+--- !u!114 &1673044061
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 114099708839899382, guid: ea973787fa99f3b4990db0a9e10ced8a,
+    type: 2}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1673044056}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 708705254, guid: f70555f144d8491a825f0804e09c671c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Material: {fileID: 0}
+  m_Color: {r: 0.76470596, g: 0.7607844, b: 0.6392157, a: 1}
+  m_RaycastTarget: 1
+  m_OnCullStateChanged:
+    m_PersistentCalls:
+      m_Calls: []
+    m_TypeName: UnityEngine.UI.MaskableGraphic+CullStateChangedEvent, UnityEngine.UI,
+      Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
+  m_FontData:
+    m_Font: {fileID: 12800000, guid: 2b160f3ec8a6f574ba63d5b44b091255, type: 3}
+    m_FontSize: 35
+    m_FontStyle: 0
+    m_BestFit: 0
+    m_MinSize: 3
+    m_MaxSize: 126
+    m_Alignment: 1
+    m_AlignByGeometry: 0
+    m_RichText: 1
+    m_HorizontalOverflow: 0
+    m_VerticalOverflow: 0
+    m_LineSpacing: 1
+  m_Text: ' "Rescue 60 Civilians to unlock Level 21"'
+--- !u!222 &1673044062
+CanvasRenderer:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 222387810918025934, guid: ea973787fa99f3b4990db0a9e10ced8a,
+    type: 2}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1673044056}
 --- !u!1 &1716293325
 GameObject:
   m_ObjectHideFlags: 0
@@ -20336,7 +20597,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &2120046017
 RectTransform:
   m_ObjectHideFlags: 0
@@ -20353,7 +20614,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -0.00001806, y: -31}
+  m_AnchoredPosition: {x: -0.00001806, y: -84}
   m_SizeDelta: {x: 649, y: 359}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &2120046018
@@ -20370,7 +20631,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   TextHolder: {fileID: 2120046021}
   Chinese: "\u6551\u66F4\u591A\u4EBA  \u89E3\u9396\u66F4\u591A\u95DC\u5361"
-  English: RESCUE MORE CIVILIANS TO UNLOCK NEXT lEVEL
+  English: ' "Rescue 45 Civilians to unlock Level 16"'
 --- !u!114 &2120046019
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -20414,7 +20675,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 0.47794116, g: 0.46388406, b: 0.46388406, a: 1}
+  m_Color: {r: 0.76470596, g: 0.7607844, b: 0.6392157, a: 1}
   m_RaycastTarget: 1
   m_OnCullStateChanged:
     m_PersistentCalls:
@@ -20422,11 +20683,11 @@ MonoBehaviour:
     m_TypeName: UnityEngine.UI.MaskableGraphic+CullStateChangedEvent, UnityEngine.UI,
       Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
   m_FontData:
-    m_Font: {fileID: 12800000, guid: 785fa12ed581c8c4eaf53057f006e692, type: 3}
-    m_FontSize: 95
+    m_Font: {fileID: 12800000, guid: 2b160f3ec8a6f574ba63d5b44b091255, type: 3}
+    m_FontSize: 35
     m_FontStyle: 0
     m_BestFit: 0
-    m_MinSize: 9
+    m_MinSize: 3
     m_MaxSize: 126
     m_Alignment: 1
     m_AlignByGeometry: 0
@@ -20434,7 +20695,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: RESCUE MORE CIVILIANS TO UNLOCK NEXT lEVEL
+  m_Text: ' "Rescue 45 Civilians to unlock Level 16"'
 --- !u!222 &2120046022
 CanvasRenderer:
   m_ObjectHideFlags: 0
