@@ -101,54 +101,63 @@ public class MummyController : MonoBehaviour {
 
         if (other.gameObject.CompareTag("Player"))
         {
-           
                 /*MummyMainCollider.enabled = false;
                 MummyManagerScript.ActivateMummyeffect(effectMode, EffectLengthCounter);
                 _moveSpeed = 0;
                 MyAnimation.SetBool("isAttack", false);*/
             //
-                if (PlayerControllerScript.ifRight == false && moveRight == true)
-                {
-                    MummyAttackMethod();
-                    moveRight = false;
-                   
-                }
-                else if (PlayerControllerScript.ifRight == true && moveRight == false)
-                {
-                    MummyAttackMethod();
-                    moveRight = true;
+            if (PlayerControllerScript.ifRight == true && moveRight == true && PlayerControllerScript.grounded == true || PlayerControllerScript.grounded == false)
+            {
+                //moveRight = false;
+                MummyAttackMethod();
+            }
+           if (PlayerControllerScript.ifRight == false && moveRight == false && PlayerControllerScript.grounded == true || PlayerControllerScript.grounded == false)
+            {
+                //moveRight = true;
+                MummyAttackMethod();
+            }
+         
+            if (PlayerControllerScript.ifRight == false && moveRight == true && PlayerControllerScript.grounded == true || PlayerControllerScript.grounded == false)
+            {
+                moveRight = false;
+                MummyAttackMethod();
 
-                }
-                else if (PlayerControllerScript.ifRight == false && moveRight == false)
-                {
-                    MummyAttackMethod();
-                }
-                else if (PlayerControllerScript.ifRight == true && moveRight == true)
-                {
-                    MummyAttackMethod();
-                }
+            }
+            if (PlayerControllerScript.ifRight == true && moveRight == false && PlayerControllerScript.grounded == true || PlayerControllerScript.grounded == false)
+            {
+                moveRight = true;
+                MummyAttackMethod();
+
+            }
+            /*if (PlayerControllerScript.ifRight == true && moveRight == true && PlayerControllerScript.grounded == false)
+            {
+                moveRight = false;
+                MummyAttackMethod();
+            }
+            if (PlayerControllerScript.ifRight == false && moveRight == false && PlayerControllerScript.grounded == false)
+            {
+                moveRight = true;
+                MummyAttackMethod();
+            }
+             
+            if (PlayerControllerScript.ifRight == false && moveRight == true && PlayerControllerScript.grounded == false)
+            {
+                //moveRight = false;
+                MummyAttackMethod();
+
+            }
+            if (PlayerControllerScript.ifRight == true && moveRight == false && PlayerControllerScript.grounded == false)
+            {
+                //moveRight = true;
+                MummyAttackMethod();
+
+            }*/
             //
-                /*if (PlayerControllerScript.ifRight == false)
-                {
-                    moveRight = false;
-                }
-                else if (PlayerControllerScript.ifRight == true)
-                {
-                     moveRight = true;
-                }
-                else if (PlayerControllerScript.ifRight == true && moveRight == true)
-                {
-                    moveRight = false;
-                }
-                else if (PlayerControllerScript.ifRight == true && moveRight == false)
-                {
-                    moveRight = true;
-                }
-                else if (PlayerControllerScript.ifRight ==false && moveRight == false)
-                {
-                    moveRight = true;
-                }*/
+            if (PlayerControllerScript.grounded == true)
+            {
                 PlayerControllerScript.MummyCollide = false;
+            }
+               
               
               
         }
