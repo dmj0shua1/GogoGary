@@ -126,6 +126,8 @@ public class EnergyManager : MonoBehaviour
 
     public void triggerATimer()
     {
+   
+
         if (energyLeft < energyMaxValue)
         {
             for (int i = 0; i < (energyMaxValue - energyLeft); i++)

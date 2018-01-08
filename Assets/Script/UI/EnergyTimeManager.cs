@@ -138,7 +138,6 @@ public class EnergyTimeManager : MonoBehaviour
            
         }
 
-
     }
 
     private IEnumerator WaitAndUpdate(float waitTime)
@@ -159,7 +158,7 @@ public class EnergyTimeManager : MonoBehaviour
 
 
 
-            if (secsLeftEnergy <= 0)
+            if (secsLeftEnergy <= 0 || egManagerScript.timerCount <= 0 || egManagerScript.energyLeft >= egManagerScript.energyMaxValue)
             {
                 timerEnergy.text = "";
                 PlayerPrefs.DeleteKey("endTime" + egName);
