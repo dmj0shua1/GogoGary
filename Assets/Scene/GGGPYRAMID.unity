@@ -9248,7 +9248,7 @@ MonoBehaviour:
   IsGenerateMummy: 0
   mummyPooler: {fileID: 1242431607}
   Mummyheight: 1
-  MummyThreshold: 5
+  MummyThreshold: 0
 --- !u!1 &759920893
 GameObject:
   m_ObjectHideFlags: 0
@@ -27728,8 +27728,6 @@ MonoBehaviour:
   effectMode: 0
   PlayerControllerScript: {fileID: 711469304}
   MummyControllerScript: {fileID: 0}
-  LevelPassScript: {fileID: 0}
-  PlatformGeneratorScript: {fileID: 0}
 --- !u!1 &2019760824
 GameObject:
   m_ObjectHideFlags: 0
