@@ -37,7 +37,6 @@ public class MummyController : MonoBehaviour {
 
     private SpriteRenderer mySpriteRenderer;
 
-
     void Start() 
     {
         IsMove = true;
@@ -88,6 +87,33 @@ public class MummyController : MonoBehaviour {
         MummyMainCollider.enabled = false;
         MummyManagerScript.ActivateMummyeffect(effectMode, EffectLengthCounter);
         _moveSpeed = 0;
+       //
+        /*if (PlayerControllerScript.ifRight == false && moveRight == true && PlayerControllerScript.grounded == true)
+        {
+            moveRight = false;
+        }
+        else if (PlayerControllerScript.ifRight == false && moveRight == true && PlayerControllerScript.grounded == false)
+        {
+            moveRight = false;
+        }
+        else if (PlayerControllerScript.ifRight == true && moveRight == false && PlayerControllerScript.grounded == true)
+        {
+            moveRight = true;
+        }
+        else if (PlayerControllerScript.ifRight == true && moveRight == false && PlayerControllerScript.grounded == false)
+        {
+            moveRight = true;
+        }
+        else if (PlayerControllerScript.ifRight == true && moveRight == true && PlayerControllerScript.grounded == false)
+        {
+            moveRight = false;
+        }
+        else if (PlayerControllerScript.ifRight == false && moveRight == false && PlayerControllerScript.grounded == false)
+        {
+            moveRight = true;
+        }*/
+        
+        //
         MyAnimation.SetBool("isAttack", false);
     }
     void OnTriggerEnter2D(Collider2D other)
@@ -101,89 +127,32 @@ public class MummyController : MonoBehaviour {
 
         if (other.gameObject.CompareTag("Player"))
         {
-                /*MummyMainCollider.enabled = false;
-                MummyManagerScript.ActivateMummyeffect(effectMode, EffectLengthCounter);
-                _moveSpeed = 0;
-                MyAnimation.SetBool("isAttack", false);*/
-            //
-            /*if (PlayerControllerScript.ifRight == true && moveRight == true && PlayerControllerScript.grounded == true || PlayerControllerScript.grounded == false)
-            {
-                //moveRight = false;
-                MummyAttackMethod();
-            }
-           if (PlayerControllerScript.ifRight == false && moveRight == false && PlayerControllerScript.grounded == true || PlayerControllerScript.grounded == false)
-            {
-                //moveRight = true;
-                MummyAttackMethod();
-            }
-            //end
-           if (PlayerControllerScript.ifRight == false && moveRight == true && PlayerControllerScript.grounded == true || PlayerControllerScript.grounded == false)
-           {
-               moveRight = false;
-               MummyAttackMethod();
-
-           }
-           if (PlayerControllerScript.ifRight == true && moveRight == false && PlayerControllerScript.grounded == true || PlayerControllerScript.grounded == false)
-           {
-               moveRight = true;
-               MummyAttackMethod();
-
-           }
-            if (PlayerControllerScript.ifRight == false && moveRight == true && PlayerControllerScript.grounded == true || PlayerControllerScript.grounded == false)
-            {
-                moveRight = false;
-                MummyAttackMethod();
-
-            }
-            if (PlayerControllerScript.ifRight == true && moveRight == false && PlayerControllerScript.grounded == true || PlayerControllerScript.grounded == false)
-            {
-                moveRight = true;
-                MummyAttackMethod();
-
-            }*/
-            //p
-            if (PlayerControllerScript.ifRight == true && moveRight == true && PlayerControllerScript.grounded == true)
-            {
-                //moveRight = false;
-                MummyAttackMethod();
-            }
-            if (PlayerControllerScript.ifRight == false && moveRight == false && PlayerControllerScript.grounded == true)
-            {
-                //moveRight = true;
-                MummyAttackMethod();
-            }
-            if (PlayerControllerScript.ifRight == false && moveRight == true && PlayerControllerScript.grounded == true)
-            {
-                moveRight = false;
-                MummyAttackMethod();
-
-            }
-            else if (PlayerControllerScript.ifRight == false && moveRight == true && PlayerControllerScript.grounded == false)
-            {
-                moveRight = false;
-                MummyAttackMethod();
-            }
-            if (PlayerControllerScript.ifRight == true && moveRight == false && PlayerControllerScript.grounded == true)
-            {
-                moveRight = true;
-                MummyAttackMethod();
-
-            }
-            else if (PlayerControllerScript.ifRight == true && moveRight == false && PlayerControllerScript.grounded == false)
-            {
-                moveRight = true;
-                MummyAttackMethod();
-            }
-          
-          
-            //p
-            if (PlayerControllerScript.grounded == true)
+            if (PlayerControllerScript.grounded)
             {
                 PlayerControllerScript.MummyCollide = false;
-            }
-               
-              
-              
+            }    
+            if (!PlayerControllerScript.ifRight && moveRight && PlayerControllerScript.grounded||!PlayerControllerScript.grounded)
+                {
+                    moveRight = false;
+                    MummyAttackMethod();
+                }
+            else if (PlayerControllerScript.ifRight && !moveRight && PlayerControllerScript.grounded || !PlayerControllerScript.grounded)
+                {
+                    moveRight = true;
+                    MummyAttackMethod();
+                }
+            else if (PlayerControllerScript.ifRight && moveRight && PlayerControllerScript.grounded || !PlayerControllerScript.grounded)
+                {
+                    //moveRight = false;
+                    MummyAttackMethod();
+                }
+            else if (!PlayerControllerScript.ifRight && !moveRight && PlayerControllerScript.grounded || !PlayerControllerScript.grounded)
+                {
+                    MummyAttackMethod();
+                    //moveRight = true;
+                }
+          
+            
         }
         
 
@@ -195,8 +164,12 @@ public class MummyController : MonoBehaviour {
         }
       
     }
+ 
 
-
+    public void MummyDirectionAttack() 
+    {
+       
+    }
 
     void OnTriggerExit2D(Collider2D other)
     {
