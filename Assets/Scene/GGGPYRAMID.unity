@@ -5931,7 +5931,7 @@ Prefab:
     m_Modifications:
     - target: {fileID: 4830491377717554, guid: 21737ee99ea10e040a4737b62094dbc6, type: 2}
       propertyPath: m_LocalPosition.x
-      value: -404.09195
+      value: -402.1
       objectReference: {fileID: 0}
     - target: {fileID: 4830491377717554, guid: 21737ee99ea10e040a4737b62094dbc6, type: 2}
       propertyPath: m_LocalPosition.y
@@ -8370,7 +8370,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 12
-  m_Sprite: {fileID: 21300000, guid: 349e6ad97735e7146b9d41ef0b4a6836, type: 3}
+  m_Sprite: {fileID: 21300000, guid: cdf6ac06d9ba2604d8458434d08bb713, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -9216,7 +9216,7 @@ MonoBehaviour:
   EndGenerate: 0
   timePooler: {fileID: 796918371}
   timeThreshold: 0
-  timeHeight: 1.3
+  timeHeight: 1.5
   PrevFloor: 0
   IsGenerate: 1
   powerupThreshold: 0

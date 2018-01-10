@@ -12497,6 +12497,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   target: {fileID: 2010224444}
   Y: 20
+  isFollow: 0
 --- !u!4 &1145073507
 Transform:
   m_ObjectHideFlags: 0
@@ -26390,6 +26391,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   target: {fileID: 2010224444}
   Y: -5
+  isFollow: 0
 --- !u!114 &2099921575
 MonoBehaviour:
   m_ObjectHideFlags: 0

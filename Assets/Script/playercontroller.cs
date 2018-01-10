@@ -129,11 +129,12 @@ public class playercontroller : MonoBehaviour {
             //SwipeTestScript.isSwipe = false;
 			GetComponent<Rigidbody2D> ().constraints = RigidbodyConstraints2D.FreezePositionX | RigidbodyConstraints2D.FreezeRotation;
 			}
+        GaryDefend();
         GaryHop();
         HitOnDebris();
         BoltToStar();
         StarToBolt();
-        GaryDefend();
+   
         }
         GetStarAnimation();
         GetBoltAnimation();

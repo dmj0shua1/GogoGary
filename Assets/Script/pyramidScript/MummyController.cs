@@ -37,6 +37,11 @@ public class MummyController : MonoBehaviour {
 
     private SpriteRenderer mySpriteRenderer;
 
+    //transformplanb
+
+
+    
+
     void Start() 
     {
         IsMove = true;
@@ -64,14 +69,14 @@ public class MummyController : MonoBehaviour {
 
             }
          
-            if (moveRight)
+            if (!moveRight)
             {
                 //transform.localScale = new Vector3(-24f, 30f, 0);
                 transform.localScale = new Vector3(posX1, posY1, 0);
                 GetComponent<Rigidbody2D>().velocity = new Vector2(_moveSpeed, GetComponent<Rigidbody2D>().velocity.y);
 
             }
-            else if (!moveRight)
+            else if (moveRight)
             {
                 //transform.localScale = new Vector3(24f, 30f, 0);
                 transform.localScale = new Vector3(posX2, posY2, 0);
@@ -87,33 +92,6 @@ public class MummyController : MonoBehaviour {
         MummyMainCollider.enabled = false;
         MummyManagerScript.ActivateMummyeffect(effectMode, EffectLengthCounter);
         _moveSpeed = 0;
-       //
-        /*if (PlayerControllerScript.ifRight == false && moveRight == true && PlayerControllerScript.grounded == true)
-        {
-            moveRight = false;
-        }
-        else if (PlayerControllerScript.ifRight == false && moveRight == true && PlayerControllerScript.grounded == false)
-        {
-            moveRight = false;
-        }
-        else if (PlayerControllerScript.ifRight == true && moveRight == false && PlayerControllerScript.grounded == true)
-        {
-            moveRight = true;
-        }
-        else if (PlayerControllerScript.ifRight == true && moveRight == false && PlayerControllerScript.grounded == false)
-        {
-            moveRight = true;
-        }
-        else if (PlayerControllerScript.ifRight == true && moveRight == true && PlayerControllerScript.grounded == false)
-        {
-            moveRight = false;
-        }
-        else if (PlayerControllerScript.ifRight == false && moveRight == false && PlayerControllerScript.grounded == false)
-        {
-            moveRight = true;
-        }*/
-        
-        //
         MyAnimation.SetBool("isAttack", false);
     }
     void OnTriggerEnter2D(Collider2D other)
@@ -127,32 +105,28 @@ public class MummyController : MonoBehaviour {
 
         if (other.gameObject.CompareTag("Player"))
         {
-            if (PlayerControllerScript.grounded)
+
+            float PlayerTransform = other.gameObject.transform.position.x;
+            float MummyTransform = gameObject.transform.position.x;
+
+            if (PlayerTransform > MummyTransform)
+            {
+                //rightmummy
+                moveRight = false;
+                MummyAttackMethod();
+
+            }
+            else
+            {
+                //leftMummy
+                moveRight = true;
+                MummyAttackMethod();
+            }
+
+            if (PlayerControllerScript.grounded || !PlayerControllerScript.grounded)
             {
                 PlayerControllerScript.MummyCollide = false;
-            }    
-            if (!PlayerControllerScript.ifRight && moveRight && PlayerControllerScript.grounded||!PlayerControllerScript.grounded)
-                {
-                    moveRight = false;
-                    MummyAttackMethod();
-                }
-            else if (PlayerControllerScript.ifRight && !moveRight && PlayerControllerScript.grounded || !PlayerControllerScript.grounded)
-                {
-                    moveRight = true;
-                    MummyAttackMethod();
-                }
-            else if (PlayerControllerScript.ifRight && moveRight && PlayerControllerScript.grounded || !PlayerControllerScript.grounded)
-                {
-                    //moveRight = false;
-                    MummyAttackMethod();
-                }
-            else if (!PlayerControllerScript.ifRight && !moveRight && PlayerControllerScript.grounded || !PlayerControllerScript.grounded)
-                {
-                    MummyAttackMethod();
-                    //moveRight = true;
-                }
-          
-            
+            }
         }
         
 

@@ -277,6 +277,7 @@ public class PlatformGenerator : MonoBehaviour {
             {
                 MummyThreshold = 3;
                 DebriGenerationScript.randomDebrisThreshold = 20;
+                timeThreshold = 10;
             }
         }
         for (int set6 = 48; set6 <= 50; set6++)
@@ -285,6 +286,7 @@ public class PlatformGenerator : MonoBehaviour {
             {
                 MummyThreshold = 3;
                 DebriGenerationScript.randomDebrisThreshold = 25;
+                timeThreshold = 10;
             }
         }
      
