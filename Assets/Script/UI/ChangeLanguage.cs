@@ -21,7 +21,7 @@ public class ChangeLanguage : MonoBehaviour {
         //sprite = GetComponent<SpriteRenderer>();
         //startupLanguageMethod();
         //china numba 1
-        if (!PlayerPrefs.HasKey("LanguageNumber")) PlayerPrefs.SetInt("LanguageNumber", 1);
+        if (!PlayerPrefs.HasKey("LanguageNumber")) PlayerPrefs.SetInt("LanguageNumber", 0);
         
 	}
 	

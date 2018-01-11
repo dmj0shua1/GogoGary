@@ -15,7 +15,7 @@
       <intent-filter>
         <action android:name="android.intent.action.VIEW" />
         <category android:name="android.intent.category.DEFAULT" />
-        <data android:scheme="com.loopbook.gogogarych" />
+        <data android:scheme="com.loopbook.gogogary" />
       </intent-filter>
     </activity>
     <activity android:name="com.facebook.unity.FBUnityDeepLinkingActivity" android:exported="true" />
@@ -23,7 +23,7 @@
     <activity android:name="com.facebook.unity.FBUnityCreateGameGroupActivity" />
     <activity android:name="com.facebook.unity.FBUnityJoinGameGroupActivity" />
     <activity android:name="com.facebook.unity.AppInviteDialogActivity" />
-    <meta-data android:name="com.facebook.sdk.ApplicationId" android:value="fb536818890026215" />
-    <provider android:name="com.facebook.FacebookContentProvider" android:authorities="com.facebook.app.FacebookContentProvider536818890026215" android:exported="true" />
+    <meta-data android:name="com.facebook.sdk.ApplicationId" android:value="fb1311027655687272" />
+    <provider android:name="com.facebook.FacebookContentProvider" android:authorities="com.facebook.app.FacebookContentProvider1311027655687272" android:exported="true" />
   </application>
 </manifest>

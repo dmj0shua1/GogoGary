@@ -15,7 +15,7 @@ MonoBehaviour:
   clientTokens:
   - 
   appIds:
-  - 536818890026215
+  - 1311027655687272
   appLabels:
   - Gogo Gary
   cookie: 1
@@ -23,7 +23,7 @@ MonoBehaviour:
   status: 1
   xfbml: 0
   frictionlessRequests: 1
-  iosURLSuffix: lbgggch
+  iosURLSuffix: lbggg
   appLinkSchemes:
   - list:
-    - com.loopbook.gogogarych
+    - com.loopbook.gogogary

@@ -11,7 +11,7 @@ PlayerSettings:
   useOnDemandResources: 0
   accelerometerFrequency: 0
   companyName: Loopbook
-  productName: "\u885D\u885D\u885D Gary - \u8DD1, \u8DF3, \u751F\u5B58"
+  productName: Go Go Gary
   defaultCursor: {fileID: 0}
   cursorHotspot: {x: 0, y: 0}
   m_SplashScreenBackgroundColor: {r: 0.13333334, g: 0.17254902, b: 0.21176471, a: 1}
@@ -138,7 +138,7 @@ PlayerSettings:
   useHDRDisplay: 0
   applicationIdentifier:
     Android: com.loopbook.gogogarych
-    iOS: com.loopbook.gogogarych
+    iOS: com.loopbook.gogogary
   buildNumber:
     iOS: 1
   AndroidBundleVersionCode: 23
@@ -215,7 +215,7 @@ PlayerSettings:
   AndroidTargetDevice: 0
   AndroidSplashScreenScale: 0
   androidSplashScreen: {fileID: 0}
-  AndroidKeystoreName: C:/Users/Loopbook/Documents/Gary-Gravity-release/Assets/loopbookinc.keystore
+  AndroidKeystoreName: C:/Users/Loopbook/Documents/GogoGary/loopbookinc.keystore
   AndroidKeyaliasName: 
   AndroidTVCompatibility: 0
   AndroidIsGame: 1
