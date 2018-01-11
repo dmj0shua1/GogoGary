@@ -20,14 +20,13 @@ public class floorcounter : MonoBehaviour {
     [Header("NewRescuePointGeneration")]
     public int MainFloorHolderDivided;
     public int MainFloorDecreaseDivided;
+  
     void Start() 
     {
         countFloor = MainCount;
         theText.text = "" + MainCount;
         //MainFloorHolderDivided = MainCount / 7;
         //MainFloorDecreaseDivided = MainFloorHolderDivided;
-
-
     }
 
 
@@ -46,6 +45,7 @@ public class floorcounter : MonoBehaviour {
                     theText.text = " " + Mathf.Round(countFloor);
                     DebriTriggerScript = other.gameObject.GetComponent<DebriTrigger>();
                     DebriTriggerScript.IsTrigger = false;
+                    //WalkThroughWallsScript.isChange = true;
                 }
             }
         }

@@ -62,6 +62,8 @@ public class playercontroller : MonoBehaviour {
 
     public bool MummyCollide;
     private CameraFollow CameraFollowScript;
+    [Header("WalkThroughwalls")]
+    private WalkThroughWalls WalkThroughWallsScript;
 	void start()
 	{	
 		ifRight = true;
@@ -85,6 +87,7 @@ public class playercontroller : MonoBehaviour {
         PointManagerScript = GameObject.Find("PointManager").GetComponent<PointManager>();
         GameLevelHolderManagerScript = GameObject.Find("GameLevelManager").GetComponent<GameLevelHolderManager>();
         CameraFollowScript = GameObject.Find("Main Camera").GetComponent<CameraFollow>();
+        WalkThroughWallsScript = GameObject.Find("player").GetComponent<WalkThroughWalls>();
 
       if (SceneManager.GetActiveScene().name == "Endless")  scoreManagerScript = GameObject.Find("ScoreManager").GetComponent<ScoreManager>();
        
@@ -338,7 +341,19 @@ public class playercontroller : MonoBehaviour {
         /*if (other.gameObject.CompareTag("pyMummy"))
         {
             MummyCollide = false;
-        }*/ 
+        }*/
+        if (SceneManager.GetActiveScene().name == "GGGPYRAMID") 
+        {
+            if (other.gameObject.CompareTag("Hitbox"))
+            {
+                if (!WalkThroughWallsScript.isChange)
+                {
+                    WalkThroughWallsScript.isChange = true;
+                }
+
+            }
+        }
+       
     }
     void OnTriggerStay2D(Collider2D other)
     {

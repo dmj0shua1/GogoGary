@@ -63,6 +63,9 @@ public class PlatformGenerator : MonoBehaviour {
     public int MummyThreshold;
     [SerializeField]
     private debrisGeneration DebriGenerationScript;
+    [Header("WalkThrougwalls")]
+    private WalkThroughWalls WalkThroughWallsScript;
+    public bool isEnabledWalkThrougwall;
 
 
 	void Start()
@@ -77,6 +80,7 @@ public class PlatformGenerator : MonoBehaviour {
         FireAiScript = GameObject.Find("Fire").GetComponent<FireAi>();
         blackOutAnimation = blackOutGameObject.GetComponent<Animator>();
         DebriGenerationScript = GameObject.Find("DebrisGeneration").GetComponent<debrisGeneration>();
+        WalkThroughWallsScript = GameObject.Find("player").GetComponent<WalkThroughWalls>();
         RescueSelector = Random.Range(0, RescuePointPooler.Length);
         prevRescue = RescueSelector;
         if (LevelPassScript.isShakeActivateAmt == true)
@@ -233,8 +237,19 @@ public class PlatformGenerator : MonoBehaviour {
                       
                       
                         fireHalfFloorMethod();
-                //MummyG
-                      
+                //random gobackagain walk throughwalls
+                        if (sceneName == "GGGPYRAMID")
+                        {
+                            if (isEnabledWalkThrougwall)
+                            {
+                                float WalkthroughWallThreshold = Random.Range(3, 5);
+                                if (Counts % WalkthroughWallThreshold == 0)
+                                {
+                                    WalkThroughWallsScript.isChange = false;
+                                } 
+                            }
+                            
+                        }
                 //
             }
         }
@@ -269,6 +284,7 @@ public class PlatformGenerator : MonoBehaviour {
             {
                 MummyThreshold = 4;
                 DebriGenerationScript.randomDebrisThreshold = 15;
+                isEnabledWalkThrougwall = true;
             }
         }
         for (int set5 = 43; set5 <= 47; set5++)
@@ -278,6 +294,7 @@ public class PlatformGenerator : MonoBehaviour {
                 MummyThreshold = 3;
                 DebriGenerationScript.randomDebrisThreshold = 20;
                 timeThreshold = 10;
+                isEnabledWalkThrougwall = true;
             }
         }
         for (int set6 = 48; set6 <= 50; set6++)
@@ -287,6 +304,7 @@ public class PlatformGenerator : MonoBehaviour {
                 MummyThreshold = 3;
                 DebriGenerationScript.randomDebrisThreshold = 25;
                 timeThreshold = 10;
+                isEnabledWalkThrougwall = true;
             }
         }
      

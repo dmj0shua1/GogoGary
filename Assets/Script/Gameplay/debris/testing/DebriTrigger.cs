@@ -16,7 +16,6 @@ public class DebriTrigger : MonoBehaviour {
     void Start() 
     {
         playerControllerScript = GameObject.Find("player").GetComponent<playercontroller>();
-       
     }
     void Update() 
     {
