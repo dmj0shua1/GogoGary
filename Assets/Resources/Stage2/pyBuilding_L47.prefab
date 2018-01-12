@@ -154,7 +154,7 @@ MonoBehaviour:
   HalfObjectiveValue: 0
   UnlockedValue: 47
   FireTriggerValue: 124
-  PowerupValue: 0
+  PowerupValue: 75
   LevelPlaceValue: 21
   RescuePointValue: 3
   RescueHolderPlayerPref: 0

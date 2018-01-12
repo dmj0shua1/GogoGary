@@ -30,13 +30,18 @@ public class PointManager : MonoBehaviour {
     public GameObject MissionFailedObject;
     public bool isComplete;
     public bool isCompleteActivate;
+    private Animator MyAnimation;
+
+    public GameObject wallofdeathparticle1;
+    public GameObject wallofdeathparticle2;
+    public AudioSource FireSfx;
     //public Text TestDisplay;
     //public Sprite SmileyObject;
 
 
 	void Start()
 	{
-
+        if (SceneManager.GetActiveScene().name == "GGGPYRAMID") MyAnimation = GameObject.Find("WallOfDeath").GetComponent<Animator>();
 		FloorCounterScript = GameObject.Find("player").GetComponent<floorcounter>();
 		CameraFollowScript = GameObject.Find ("Main Camera").GetComponent<CameraFollow>();
 		FireAiScript = GameObject.Find ("Fire").GetComponent<FireAi> ();
@@ -214,13 +219,24 @@ public class PointManager : MonoBehaviour {
     {
         if (FloorCounterScript.countFloor == LevelPassScript.FireTriggerAmt && IsActivate)
         {
-            
+         
+           
             FireAiScript.StartFire = true;
             WarningSign.SetActive(true);
             StartCoroutine(LoadNewScene());
             IsActivate = false;
             TimeManagerScript.isStopMainTime = true;
-            
+            //
+            Scene currentScenewd = SceneManager.GetActiveScene();
+            string sceneNamewd = currentScenewd.name;
+            if (sceneNamewd == "GGGPYRAMID")
+            {
+                FireSfx.enabled = true;
+                wallofdeathparticle1.SetActive(true);
+                wallofdeathparticle2.SetActive(true);
+                MyAnimation.SetBool("isIdle", false); 
+            }
+         
         }    
     }
     

@@ -31,6 +31,7 @@ TagManager:
   - LeftWall
   - RightWall
   - fireadjust
+  - pyMummy
   layers:
   - Default
   - TransparentFX

@@ -32,6 +32,7 @@ public class playercontroller : MonoBehaviour {
     private LevelPass LevelPassScript;
     public bool addSpeed;
     public bool addStar;
+    public bool addStar2;
 
     public AudioSource BoltSfx;
     public AudioSource StarSfx;
@@ -59,6 +60,13 @@ public class playercontroller : MonoBehaviour {
     private GameLevelHolderManager GameLevelHolderManagerScript;
     private floorcounter MainFloorCounterScript;
     ScoreManager scoreManagerScript;
+
+    public bool MummyCollide;
+    private CameraFollow CameraFollowScript;
+    [Header("WalkThroughwalls")]
+    private WalkThroughWalls WalkThroughWallsScript;
+    private PlatformGenerator PlatformGeneratorScript;
+    private Animator MyAnimationWallofDeath;
 	void start()
 	{	
 		ifRight = true;
@@ -66,12 +74,14 @@ public class playercontroller : MonoBehaviour {
 	}
 	private void Awake()
 	{
+        addStar2 = true;
         MyAnimation = GetComponent<Animator>();
         currentSpeed = moveSpeed;
         isCountDownSwipe = true;
         FloorCounterScript = GetComponent<floorcounterEl>();
         MainFloorCounterScript = GetComponent<floorcounter>();
 		mySpriteRenderer = GetComponent<SpriteRenderer>();
+      
 		TimeManagerScript = GameObject.Find ("countDown").GetComponent<TimeManager> ();
         FireAIscript = GameObject.Find("Fire").GetComponent<FireAi>();
         PlusSpeedManagerScript = GameObject.Find("plusspeedManager").GetComponent<PlusSpeedManager>();
@@ -81,6 +91,11 @@ public class playercontroller : MonoBehaviour {
         SimpleAdScript = GameObject.Find("SimpleAd").GetComponent<SimpleAd>();
         PointManagerScript = GameObject.Find("PointManager").GetComponent<PointManager>();
         GameLevelHolderManagerScript = GameObject.Find("GameLevelManager").GetComponent<GameLevelHolderManager>();
+        CameraFollowScript = GameObject.Find("Main Camera").GetComponent<CameraFollow>();
+        WalkThroughWallsScript = GameObject.Find("player").GetComponent<WalkThroughWalls>();
+        PlatformGeneratorScript = GameObject.Find("PlatformGeneration").GetComponent<PlatformGenerator>();
+        if (SceneManager.GetActiveScene().name == "GGGPYRAMID") MyAnimationWallofDeath = GameObject.Find("WallOfDeath").GetComponent<Animator>();
+
       if (SceneManager.GetActiveScene().name == "Endless")  scoreManagerScript = GameObject.Find("ScoreManager").GetComponent<ScoreManager>();
        
 	}
@@ -124,10 +139,12 @@ public class playercontroller : MonoBehaviour {
             //SwipeTestScript.isSwipe = false;
 			GetComponent<Rigidbody2D> ().constraints = RigidbodyConstraints2D.FreezePositionX | RigidbodyConstraints2D.FreezeRotation;
 			}
+        GaryDefend();
         GaryHop();
         HitOnDebris();
         BoltToStar();
         StarToBolt();
+   
         }
         GetStarAnimation();
         GetBoltAnimation();
@@ -245,7 +262,14 @@ public class playercontroller : MonoBehaviour {
     {
       
     }
-
+    public void GaryDefend() 
+    {
+        if (SceneManager.GetActiveScene().name == "GGGPYRAMID") 
+        {
+            MyAnimation.SetBool("isDefend", MummyCollide);
+        }
+     
+    }
     void OnTriggerEnter2D(Collider2D other) 
     {
         if (other.gameObject.CompareTag("FireMain"))
@@ -256,28 +280,39 @@ public class playercontroller : MonoBehaviour {
             FireAIscript.minSpeed = 50;
             StartCoroutine(StopFireAnimation());         
             StartCoroutine(GameOverCount());
-            ViewPanel.SetActive(true);
+            StartCoroutine(GameOverDelay());
+            //ViewPanel.SetActive(true);
             MainFloorCounterScript.isNoFunction = false; 
             PauseButton.SetActive(false);
             SimpleAdScript.gameOverAd();
             //booSFX.Play();
-
-            PlayerScript.enabled = false;
+            CameraFollowScript.isFollow = false;
+            grounded = false;
+            isAllMove = false;
+            /*if (SceneManager.GetActiveScene().name == "GGGPYRAMID") 
+            {
+                MyAnimationWallofDeath.SetBool("isIdle", true);
+                PointManagerScript.wallofdeathparticle1.SetActive(false);
+                PointManagerScript.wallofdeathparticle2.SetActive(false);
+            }*/
+              
+          
+            //PlayerScript.enabled = false;
              if (PlayerPrefs.HasKey("Building_L" + LevelPassScript.UnlockLevelAmt.ToString()))
             {
                 PlayerPrefs.SetInt("Building_L" + LevelPassScript.UnlockLevelAmt.ToString(), LevelPassScript.RescuePointAmtCopy);
             }
             //completelevel
-             if (PlayerPrefs.GetInt("CompleteLevelCounter") >=1)
+             /*if (PlayerPrefs.GetInt("CompleteLevelCounter") >=1)
              {
                  PlayerPrefs.SetInt("CompleteLevelCounter", PlayerPrefs.GetInt("CompleteLevelCounter") - 1);
-             }
+             }*/
              
             //
              LevelPassScript.TargetLevel = LevelPassScript.ButtonNextLevel[LevelPassScript.CurrentButtonPassAmt];
              LevelValueHolderScript = LevelPassScript.TargetLevel.GetComponent<LevelValueHolder>();
              LevelPassScript.FireTriggerAmt = LevelValueHolderScript.FireTriggerValue;
- 
+            
         }
         if (other.CompareTag("bolt")&& PlayerPrefs.GetInt("SoundChecker")==0)
         {
@@ -295,6 +330,7 @@ public class playercontroller : MonoBehaviour {
                 Yes_rescue.Play();
             }   
         }
+       
         if (other.gameObject.CompareTag("EventBox"))
         {
 
@@ -307,7 +343,8 @@ public class playercontroller : MonoBehaviour {
             StartCoroutine(StopEventBox());
         }
         if (other.gameObject.CompareTag("StopCamera"))
-        {//runtooverlaydoor
+        {   //runtooverlaydoor
+            if (SceneManager.GetActiveScene().name == "GGGPYRAMID") MyAnimationWallofDeath.SetBool("isIdle", true);
             FireAIscript.StartFire = false;
             SwipeTestScript.enabled = false;
             PointManagerScript.completeLevelCounterMethod();
@@ -315,22 +352,54 @@ public class playercontroller : MonoBehaviour {
             {
                 ifRight = false;
             }
+            if (SceneManager.GetActiveScene().name == "GGGPYRAMID")
+            {
+                MyAnimationWallofDeath.SetBool("isIdle", true);
+                PointManagerScript.wallofdeathparticle1.SetActive(false);
+                PointManagerScript.wallofdeathparticle2.SetActive(false);
+                PointManagerScript.FireSfx.enabled = false;
+            }
             print("stopcam");
         }
-        
-      
+        /*if (other.gameObject.CompareTag("pyMummy"))
+        {
+            MummyCollide = false;
+        }*/
+        if (SceneManager.GetActiveScene().name == "GGGPYRAMID") 
+        {
+            if (other.gameObject.CompareTag("Hitbox"))
+            {
+                if (!WalkThroughWallsScript.isChange)
+                {
+                    WalkThroughWallsScript.isChange = true;
+                 
+                    
+                }
+                
+                //PlatformGeneratorScript.SecondFloorNumber = PlatformGeneratorScript.FirstFloorNumber;
+
+            }
+        }
+        if (other.CompareTag("debris") && PlayerPrefs.GetInt("SoundChecker") == 0)
+        {
+            if (addStar && addStar2)
+            {
+                Debri_destroy.Play();
+                addStar2 = false;
+            }
+        }
        
     }
     void OnTriggerStay2D(Collider2D other)
     {
        
-        if (other.CompareTag("debris") && PlayerPrefs.GetInt("SoundChecker") == 0)
+        /*if (other.CompareTag("debris") && PlayerPrefs.GetInt("SoundChecker") == 0)
         {
             if (addStar == true)
             {
                 Debri_destroy.Play();
             }
-        }
+        }*/
         if (other.gameObject.CompareTag("EventBox3"))
         {
             SwipeTestScript.isSwipe = false;
@@ -347,6 +416,8 @@ public class playercontroller : MonoBehaviour {
     {
         //SwipeLeftObject.SetActive(false);
         SwipeTestScript.isSwipe = true;
+        //MummyCollide = false;
+       
     }
     IEnumerator StopFireAnimation()
     {
@@ -382,14 +453,29 @@ public class playercontroller : MonoBehaviour {
         if (SceneManager.GetActiveScene().name == "Endless")
         {
             scoreManagerScript.saveHighscore();
-        }
-       
             yield return new WaitForSeconds(0.3f);
             ViewPanel.SetActive(true);
             FloorSystemPanel.SetActive(false);
             scoreManagerScript.animateScore();
-        
+        } 
     }
+
+       IEnumerator GameOverDelay()
+       {
+
+           if (SceneManager.GetActiveScene().name == "GGG" || SceneManager.GetActiveScene().name == "GGGPYRAMID")
+           { 
+               yield return new WaitForSeconds(0.7f);
+               ViewPanel.SetActive(true); 
+           }
+           if (SceneManager.GetActiveScene().name == "GGGPYRAMID")
+           {
+               MyAnimationWallofDeath.SetBool("isIdle", true);
+               PointManagerScript.wallofdeathparticle1.SetActive(false);
+               PointManagerScript.wallofdeathparticle2.SetActive(false);
+               PointManagerScript.FireSfx.enabled = false;
+           }
+       }
 
     
 }

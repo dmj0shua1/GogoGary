@@ -61,6 +61,17 @@ public class PlatformGenerator : MonoBehaviour {
     public ObjectPooler mummyPooler;
     public float Mummyheight;
     public int MummyThreshold;
+    [SerializeField]
+    private debrisGeneration DebriGenerationScript;
+    [Header("WalkThrougwalls")]
+    private WalkThroughWalls WalkThroughWallsScript;
+    public bool isEnabledWalkThrougwall;
+    [Header("FloorCompare")]
+    public int FirstFloorNumber;
+    public int SecondFloorNumber;
+    public bool isFloorNumberCount;
+
+
 
 
 	void Start()
@@ -74,6 +85,8 @@ public class PlatformGenerator : MonoBehaviour {
         TestingCameraShakeScript = GameObject.Find("camerashaketest").GetComponent<testingcamerashake>();
         FireAiScript = GameObject.Find("Fire").GetComponent<FireAi>();
         blackOutAnimation = blackOutGameObject.GetComponent<Animator>();
+        DebriGenerationScript = GameObject.Find("DebrisGeneration").GetComponent<debrisGeneration>();
+        WalkThroughWallsScript = GameObject.Find("player").GetComponent<WalkThroughWalls>();
         RescueSelector = Random.Range(0, RescuePointPooler.Length);
         prevRescue = RescueSelector;
         if (LevelPassScript.isShakeActivateAmt == true)
@@ -97,6 +110,8 @@ public class PlatformGenerator : MonoBehaviour {
                 }
 
                 PrevFloor = floorSelector;
+                //FloorCompareMethod();
+                //FloorCompareChecker();
                 transform.position = new Vector3(transform.position.x, transform.position.y + platFormHeight + -distanceBetween, 0);
                 GameObject newPlatform = theObjectPools[floorSelector].GetPooledObject();
                 newPlatform.transform.position = transform.position;
@@ -204,12 +219,14 @@ public class PlatformGenerator : MonoBehaviour {
                 Scene currentScene = SceneManager.GetActiveScene();
                 string sceneName = currentScene.name;
                     if (sceneName == "GGGPYRAMID")
-                {
+                    {
+                        MummyThresholdAdjust();
                     if (LevelPassScript.LevelStatusAmt >= 28)
                     {
                         IsGenerateMummy = true;
                         if (IsGenerateMummy)
                         {
+                           
                             if (Counts % MummyThreshold == 0)
                             {
                                 GameObject newMummy = mummyPooler.GetPooledObject();
@@ -219,6 +236,7 @@ public class PlatformGenerator : MonoBehaviour {
                                 newMummy.transform.rotation = transform.rotation;
                                 MummyControllerScript = newMummy.gameObject.GetComponent<MummyController>();
                                 MummyControllerScript.MummyMainCollider.enabled = true;
+                                MummyControllerScript.IsMove = true;
                                 newMummy.SetActive(true);
                             }
                         }
@@ -227,12 +245,98 @@ public class PlatformGenerator : MonoBehaviour {
                       
                       
                         fireHalfFloorMethod();
-                //MummyG
-                      
+                //random gobackagain walk throughwalls
+                        if (sceneName == "GGGPYRAMID")
+                        {
+                            if (isEnabledWalkThrougwall)
+                            {
+                                float WalkthroughWallThreshold = Random.Range(3, 5);
+                                if (Counts % WalkthroughWallThreshold == 0)
+                                {
+                                    WalkThroughWallsScript.isChange = false;
+                                } 
+                            }
+                            
+                        }
                 //
             }
         }
 	}
+
+    public void FloorCompareMethod() 
+    {
+        if (isFloorNumberCount)
+        {
+            FirstFloorNumber = PrevFloor;
+        }
+    }
+
+    public void FloorCompareChecker() 
+    {
+        if (SecondFloorNumber == 1 && FirstFloorNumber == 2)
+        {
+            print("gumana");
+        }
+        else
+        {
+
+        }
+    }
+    public void MummyThresholdAdjust() 
+    {
+
+        for (int set1 = 26; set1 <= 27; set1++)
+        {
+            if (LevelPassScript.LevelStatusAmt == set1)
+            {
+              MummyThreshold = 0;   
+            }
+        }
+        for (int set2 = 28; set2 <= 32; set2++)
+        {
+            if (LevelPassScript.LevelStatusAmt == set2)
+            {
+                MummyThreshold = 5;
+            }
+        }
+        for (int set3 = 33; set3 <= 37; set3++)
+        {
+            if (LevelPassScript.LevelStatusAmt == set3)
+            {
+                MummyThreshold = 5;    
+            }
+        }
+        for (int set4 = 38; set4 <= 42; set4++)
+        {
+            if (LevelPassScript.LevelStatusAmt == set4)
+            {
+                MummyThreshold = 4;
+                DebriGenerationScript.randomDebrisThreshold = 15;
+                isEnabledWalkThrougwall = true;
+            }
+        }
+        for (int set5 = 43; set5 <= 47; set5++)
+        {
+            if (LevelPassScript.LevelStatusAmt == set5)
+            {
+                MummyThreshold = 3;
+                DebriGenerationScript.randomDebrisThreshold = 20;
+                timeThreshold = 10;
+                isEnabledWalkThrougwall = true;
+            }
+        }
+        for (int set6 = 48; set6 <= 50; set6++)
+        {
+            if (LevelPassScript.LevelStatusAmt == set6)
+            {
+                MummyThreshold = 3;
+                DebriGenerationScript.randomDebrisThreshold = 25;
+                timeThreshold = 10;
+                isEnabledWalkThrougwall = true;
+            }
+        }
+     
+    }
     public void fireHalfFloorMethod() 
     {
         FireHolderDivided = EndGenerate / 2;

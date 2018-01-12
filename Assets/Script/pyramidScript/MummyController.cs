@@ -11,8 +11,9 @@ public class MummyController : MonoBehaviour {
     public Transform WallChecker;
     public float wallCheckRadius;
     public LayerMask WhatisWall;
+    [SerializeField]
     private bool HittingWall;
-
+    [SerializeField]
     private bool HittingEdge;
     public Transform EdgeChecker;
 
@@ -32,9 +33,20 @@ public class MummyController : MonoBehaviour {
     public float posY1;
     public float posX2;
     public float posY2;
+    private Animator MyAnimation;
+
+    private SpriteRenderer mySpriteRenderer;
+
+    //transformplanb
+
+
+    
 
     void Start() 
     {
+        IsMove = true;
+        mySpriteRenderer = GetComponent<SpriteRenderer>();
+        MyAnimation = GetComponent<Animator>();
         PlayerRigid = GameObject.Find("player").GetComponent<Rigidbody2D>();
         PlayerControllerScript = GameObject.Find("player").GetComponent<playercontroller>();
         MummyManagerScript = GameObject.Find("MummyManager").GetComponent<MummyManager>();
@@ -42,29 +54,46 @@ public class MummyController : MonoBehaviour {
 
     void Update() 
     {
-        HittingWall = Physics2D.OverlapCircle(WallChecker.position, wallCheckRadius, WhatisWall);
-        HittingEdge = Physics2D.OverlapCircle(EdgeChecker.position, wallCheckRadius, WhatisWall);
+       
+            HittingWall = Physics2D.OverlapCircle(WallChecker.position, wallCheckRadius, WhatisWall);
+            HittingEdge = Physics2D.OverlapCircle(EdgeChecker.position, wallCheckRadius, WhatisWall);
+            if (IsMove)
+            {
+                if (HittingWall || !HittingEdge)
+                    moveRight = !moveRight;
+            }
+            if (!HittingEdge)
+            {
+                IsMove = false;
+                StartCoroutine(isMoveEnabled());
 
-        if (HittingWall || !HittingEdge) 
-            moveRight = !moveRight; 
-               
-
-            if (moveRight)
+            }
+         
+            if (!moveRight)
             {
                 //transform.localScale = new Vector3(-24f, 30f, 0);
                 transform.localScale = new Vector3(posX1, posY1, 0);
                 GetComponent<Rigidbody2D>().velocity = new Vector2(_moveSpeed, GetComponent<Rigidbody2D>().velocity.y);
 
             }
-            else if (!moveRight)
+            else if (moveRight)
             {
                 //transform.localScale = new Vector3(24f, 30f, 0);
                 transform.localScale = new Vector3(posX2, posY2, 0);
                 GetComponent<Rigidbody2D>().velocity = new Vector2(-_moveSpeed, GetComponent<Rigidbody2D>().velocity.y);
 
-            }     
-    }
+            }
 
+           
+        
+    }
+    public void MummyAttackMethod() 
+    {
+        MummyMainCollider.enabled = false;
+        MummyManagerScript.ActivateMummyeffect(effectMode, EffectLengthCounter);
+        _moveSpeed = 0;
+        MyAnimation.SetBool("isAttack", false);
+    }
     void OnTriggerEnter2D(Collider2D other)
     {
 
@@ -76,26 +105,57 @@ public class MummyController : MonoBehaviour {
 
         if (other.gameObject.CompareTag("Player"))
         {
-            MummyMainCollider.enabled = false;
-            MummyManagerScript.ActivateMummyeffect(effectMode,EffectLengthCounter);
-            _moveSpeed = 0;
 
+            float PlayerTransform = other.gameObject.transform.position.x;
+            float MummyTransform = gameObject.transform.position.x;
+
+            if (PlayerTransform > MummyTransform)
+            {
+                //rightmummy
+                moveRight = false;
+                MummyAttackMethod();
+
+            }
+            else
+            {
+                //leftMummy
+                moveRight = true;
+                MummyAttackMethod();
+            }
+
+            if (PlayerControllerScript.grounded || !PlayerControllerScript.grounded)
+            {
+                PlayerControllerScript.MummyCollide = false;
+            }
         }
+        
 
         if (other.gameObject.CompareTag("HitBoxCam"))
         {
 
             gameObject.SetActive(false);
+           
         }
       
     }
+ 
 
-
+    public void MummyDirectionAttack() 
+    {
+       
+    }
 
     void OnTriggerExit2D(Collider2D other)
     {
         _moveSpeed = 3;
+        MyAnimation.SetBool("isAttack", true);
+        mySpriteRenderer.flipX = false;
+        PlayerControllerScript.MummyCollide = true;
     }
-   
 
+    IEnumerator isMoveEnabled()
+    {
+        yield return new WaitForSeconds(0.300f);
+        IsMove = true;
+    }
 }

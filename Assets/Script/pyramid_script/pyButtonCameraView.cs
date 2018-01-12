@@ -37,6 +37,10 @@ public class pyButtonCameraView : MonoBehaviour {
     public Animator isInMessage;
     public GameObject buttonZoomOutScreen;
     //stage2
+    public GameObject text16Object;
+    public GameObject text21Object;
+    public GameObject NoticeObject;
+    public GameObject CloseButtonObject;
     public Button isBackButton;
     public Button isNextButton;
 
@@ -76,10 +80,17 @@ public class pyButtonCameraView : MonoBehaviour {
                     isInMessage.SetBool("isIn", true);
                     RescueLevelCheckObject.SetActive(true);
                     LevelButtonPlay.interactable = false;
+                    text16Object.SetActive(true);
+                    if (PlayerPrefs.GetInt("pyisNotice") != 2)
+                    {
+                        PlayerPrefs.SetInt("pyisNotice", 1);
+                    }
                 }
                 else
                 {
                     isInMessage.SetBool("isIn", false);
+                    PlayerPrefs.SetInt("pyisNotice", 0);
+                    NoticeObject.SetActive(false);
                 }
             }
 
@@ -99,10 +110,18 @@ public class pyButtonCameraView : MonoBehaviour {
                     isInMessage.SetBool("isIn", true);
                     RescueLevelCheckObject.SetActive(true);
                     LevelButtonPlay.interactable = false;
+                    text21Object.SetActive(true);
+                    if (PlayerPrefs.GetInt("pyisNotice") != 2)
+                    {
+                        PlayerPrefs.SetInt("pyisNotice", 1);
+
+                    }
                 }
                 else
                 {
                     isInMessage.SetBool("isIn", false);
+                    PlayerPrefs.SetInt("pyisNotice", 0);
+                    NoticeObject.SetActive(false);
                 }
             }
 
@@ -188,6 +207,12 @@ public class pyButtonCameraView : MonoBehaviour {
         LevelStatusHolder = 0;
         isInMessage.SetBool("isIn", false);
         buttonZoomOutScreen.SetActive(false);
+
+        if (PlayerPrefs.GetInt("pyisNotice") == 1)
+        {
+            PlayerPrefs.SetInt("pyisNotice", 2);
+            RescueLevelCheckObject.SetActive(false);
+        }
         //RescueLevelCheckObject.SetActive(false);
         isBackButton.interactable = true;
         isNextButton.interactable = true;
@@ -275,6 +300,31 @@ public class pyButtonCameraView : MonoBehaviour {
     void Update()
     {
         MoveTowardsTarget();
+        NoticeSignOn();
+    }
+    public void NoticeSignOn()
+    {
+        if (PlayerPrefs.GetInt("pyisNotice") == 2)
+        {
+
+            if (!isZoomIn)
+            {
+                NoticeObject.SetActive(true);
+                CloseButtonObject.SetActive(true);
+            }
+            else
+            {
+
+                NoticeObject.SetActive(false);
+                RescueLevelCheckObject.SetActive(false);
+            }
+
+        }
+    }
+
+    public void NoticeEnabled()
+    {
+        RescueLevelCheckObject.SetActive(true);
     }
     //move towards a target at a set speed.
     private void MoveTowardsTarget()
