@@ -66,6 +66,7 @@ public class playercontroller : MonoBehaviour {
     [Header("WalkThroughwalls")]
     private WalkThroughWalls WalkThroughWallsScript;
     private PlatformGenerator PlatformGeneratorScript;
+    private Animator MyAnimationWallofDeath;
 	void start()
 	{	
 		ifRight = true;
@@ -80,6 +81,7 @@ public class playercontroller : MonoBehaviour {
         FloorCounterScript = GetComponent<floorcounterEl>();
         MainFloorCounterScript = GetComponent<floorcounter>();
 		mySpriteRenderer = GetComponent<SpriteRenderer>();
+      
 		TimeManagerScript = GameObject.Find ("countDown").GetComponent<TimeManager> ();
         FireAIscript = GameObject.Find("Fire").GetComponent<FireAi>();
         PlusSpeedManagerScript = GameObject.Find("plusspeedManager").GetComponent<PlusSpeedManager>();
@@ -92,6 +94,7 @@ public class playercontroller : MonoBehaviour {
         CameraFollowScript = GameObject.Find("Main Camera").GetComponent<CameraFollow>();
         WalkThroughWallsScript = GameObject.Find("player").GetComponent<WalkThroughWalls>();
         PlatformGeneratorScript = GameObject.Find("PlatformGeneration").GetComponent<PlatformGenerator>();
+        if (SceneManager.GetActiveScene().name == "GGGPYRAMID") MyAnimationWallofDeath = GameObject.Find("WallOfDeath").GetComponent<Animator>();
 
       if (SceneManager.GetActiveScene().name == "Endless")  scoreManagerScript = GameObject.Find("ScoreManager").GetComponent<ScoreManager>();
        
@@ -286,6 +289,14 @@ public class playercontroller : MonoBehaviour {
             CameraFollowScript.isFollow = false;
             grounded = false;
             isAllMove = false;
+            /*if (SceneManager.GetActiveScene().name == "GGGPYRAMID") 
+            {
+                MyAnimationWallofDeath.SetBool("isIdle", true);
+                PointManagerScript.wallofdeathparticle1.SetActive(false);
+                PointManagerScript.wallofdeathparticle2.SetActive(false);
+            }*/
+              
+          
             //PlayerScript.enabled = false;
              if (PlayerPrefs.HasKey("Building_L" + LevelPassScript.UnlockLevelAmt.ToString()))
             {
@@ -301,7 +312,7 @@ public class playercontroller : MonoBehaviour {
              LevelPassScript.TargetLevel = LevelPassScript.ButtonNextLevel[LevelPassScript.CurrentButtonPassAmt];
              LevelValueHolderScript = LevelPassScript.TargetLevel.GetComponent<LevelValueHolder>();
              LevelPassScript.FireTriggerAmt = LevelValueHolderScript.FireTriggerValue;
- 
+            
         }
         if (other.CompareTag("bolt")&& PlayerPrefs.GetInt("SoundChecker")==0)
         {
@@ -332,13 +343,21 @@ public class playercontroller : MonoBehaviour {
             StartCoroutine(StopEventBox());
         }
         if (other.gameObject.CompareTag("StopCamera"))
-        {//runtooverlaydoor
+        {   //runtooverlaydoor
+            if (SceneManager.GetActiveScene().name == "GGGPYRAMID") MyAnimationWallofDeath.SetBool("isIdle", true);
             FireAIscript.StartFire = false;
             SwipeTestScript.enabled = false;
             PointManagerScript.completeLevelCounterMethod();
             if (ifRight == true)
             {
                 ifRight = false;
+            }
+            if (SceneManager.GetActiveScene().name == "GGGPYRAMID")
+            {
+                MyAnimationWallofDeath.SetBool("isIdle", true);
+                PointManagerScript.wallofdeathparticle1.SetActive(false);
+                PointManagerScript.wallofdeathparticle2.SetActive(false);
+                PointManagerScript.FireSfx.enabled = false;
             }
             print("stopcam");
         }
@@ -448,6 +467,13 @@ public class playercontroller : MonoBehaviour {
            { 
                yield return new WaitForSeconds(0.7f);
                ViewPanel.SetActive(true); 
+           }
+           if (SceneManager.GetActiveScene().name == "GGGPYRAMID")
+           {
+               MyAnimationWallofDeath.SetBool("isIdle", true);
+               PointManagerScript.wallofdeathparticle1.SetActive(false);
+               PointManagerScript.wallofdeathparticle2.SetActive(false);
+               PointManagerScript.FireSfx.enabled = false;
            }
        }
 
