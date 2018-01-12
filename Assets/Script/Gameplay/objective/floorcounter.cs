@@ -20,9 +20,11 @@ public class floorcounter : MonoBehaviour {
     [Header("NewRescuePointGeneration")]
     public int MainFloorHolderDivided;
     public int MainFloorDecreaseDivided;
+    private PlatformGenerator PlatformGeneratorScript;
   
     void Start() 
     {
+        PlatformGeneratorScript = GameObject.Find("PlatformGeneration").GetComponent<PlatformGenerator>();
         countFloor = MainCount;
         theText.text = "" + MainCount;
         //MainFloorHolderDivided = MainCount / 7;
@@ -46,6 +48,7 @@ public class floorcounter : MonoBehaviour {
                     DebriTriggerScript = other.gameObject.GetComponent<DebriTrigger>();
                     DebriTriggerScript.IsTrigger = false;
                     //WalkThroughWallsScript.isChange = true;
+                    //PlatformGeneratorScript.SecondFloorNumber = PlatformGeneratorScript.PrevFloor;
                 }
             }
         }

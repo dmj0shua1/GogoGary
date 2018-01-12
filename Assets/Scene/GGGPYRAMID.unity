@@ -4680,7 +4680,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 15
+  m_SortingOrder: 16
   m_Sprite: {fileID: 21300000, guid: 354b7c9ba3536614ebdb0ed425eede8a, type: 3}
   m_Color: {r: 0.44852942, g: 0.44852942, b: 0.44852942, a: 1}
   m_FlipX: 0
@@ -8274,6 +8274,7 @@ MonoBehaviour:
   LevelPassScript: {fileID: 0}
   addSpeed: 0
   addStar: 0
+  addStar2: 0
   BoltSfx: {fileID: 1210068965}
   StarSfx: {fileID: 897172341}
   Debri_destroy: {fileID: 1186056245}
@@ -9252,6 +9253,9 @@ MonoBehaviour:
   MummyThreshold: 0
   DebriGenerationScript: {fileID: 529383290}
   isEnabledWalkThrougwall: 0
+  FirstFloorNumber: 0
+  SecondFloorNumber: 0
+  isFloorNumberCount: 1
 --- !u!1 &759920893
 GameObject:
   m_ObjectHideFlags: 0

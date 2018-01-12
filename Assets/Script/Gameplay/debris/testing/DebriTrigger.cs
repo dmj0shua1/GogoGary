@@ -24,7 +24,7 @@ public class DebriTrigger : MonoBehaviour {
             StartCoroutine(LoadEnabled());
         }
     }
-
+    
     void OnTriggerEnter2D(Collider2D other)
     {
        
@@ -35,8 +35,6 @@ public class DebriTrigger : MonoBehaviour {
             Col2.enabled = false;
             Col3.enabled = false;
         }
-         
-      
     }
     IEnumerator LoadEnabled()
     {

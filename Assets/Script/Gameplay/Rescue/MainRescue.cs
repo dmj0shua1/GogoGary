@@ -13,6 +13,7 @@ public class MainRescue : MonoBehaviour {
     Text floorDown;
 
     ScoreManager scoreManagerScript;
+    private LevelPass LevelPassScript;
 
     void Start() 
     {
@@ -21,6 +22,7 @@ public class MainRescue : MonoBehaviour {
         flrCounterScript = GameObject.Find("player").GetComponent<floorcounterEl>();
         floorDown = GameObject.Find("FloorDown").GetComponent<Text>();
         scoreManagerScript = GameObject.Find("ScoreManager").GetComponent<ScoreManager>();
+        LevelPassScript = GameObject.Find("Holder").GetComponent<LevelPass>();
     }
     void OnTriggerEnter2D(Collider2D other)
     {
@@ -50,6 +52,60 @@ public class MainRescue : MonoBehaviour {
             //PlatformGeneratorScript.SetRescuePoint = PlatformGeneratorScript.SetRescuePoint - 1;
         }
           
+    }
+
+    void update()
+    {
+        if (SceneManager.GetActiveScene().name == "GGGPYRAMID")
+        {
+            for (int set1 = 26; set1 <= 36; set1++)
+            {
+                if (LevelPassScript.LevelStatusAmt == set1)
+                {
+                    
+                    //if (PlatformGeneratorScript.SecondFloorNumber == 0 && PlatformGeneratorScript.FirstFloorNumber == 1)
+                    //{
+                    //    gameObject.SetActive(false);
+                    //    PlatformGeneratorScript.SetRescuePoint = PlatformGeneratorScript.SetRescuePoint - 1;
+                    //    PlatformGeneratorScript.ExtraRescue();
+                    //}
+                    //else if (PlatformGeneratorScript.SecondFloorNumber == 1 && PlatformGeneratorScript.FirstFloorNumber == 0)
+                    //{
+                    //    gameObject.SetActive(false);
+                    //    PlatformGeneratorScript.SetRescuePoint = PlatformGeneratorScript.SetRescuePoint - 1;
+                    //    PlatformGeneratorScript.ExtraRescue();
+                    //}
+                    //else if (PlatformGeneratorScript.SecondFloorNumber == 0 && PlatformGeneratorScript.FirstFloorNumber == 2)
+                    //{
+                    //    gameObject.SetActive(false);
+                    //    PlatformGeneratorScript.SetRescuePoint = PlatformGeneratorScript.SetRescuePoint - 1;
+                    //    PlatformGeneratorScript.ExtraRescue();
+                    //}
+                    //else if (PlatformGeneratorScript.SecondFloorNumber == 4 && PlatformGeneratorScript.FirstFloorNumber == 3)
+                    //{
+                    //    gameObject.SetActive(false);
+                    //    PlatformGeneratorScript.SetRescuePoint = PlatformGeneratorScript.SetRescuePoint - 1;
+                    //    PlatformGeneratorScript.ExtraRescue();
+                    //}
+                    //else if (PlatformGeneratorScript.SecondFloorNumber == 0 && PlatformGeneratorScript.FirstFloorNumber == 2)
+                    //{
+                    //    gameObject.SetActive(false);
+                    //    PlatformGeneratorScript.SetRescuePoint = PlatformGeneratorScript.SetRescuePoint - 1;
+                    //    PlatformGeneratorScript.ExtraRescue();
+                    //}
+                    //else if (PlatformGeneratorScript.SecondFloorNumber == 2 && PlatformGeneratorScript.FirstFloorNumber == 1)
+                    //{
+                    //    gameObject.SetActive(false);
+                    //    PlatformGeneratorScript.SetRescuePoint = PlatformGeneratorScript.SetRescuePoint - 1;
+                    //    PlatformGeneratorScript.ExtraRescue();
+                    //}
+                }
+            }
+           
+            
+        }
+       
+       
     }
    
 }

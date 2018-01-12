@@ -53,5 +53,6 @@ public class SlowMovement : MonoBehaviour {
     {
         yield return new WaitForSeconds(0.400f);
         gameObject.SetActive(false);
+        ThePlayer.addStar2 = true;
     }
 }

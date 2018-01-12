@@ -66,6 +66,12 @@ public class PlatformGenerator : MonoBehaviour {
     [Header("WalkThrougwalls")]
     private WalkThroughWalls WalkThroughWallsScript;
     public bool isEnabledWalkThrougwall;
+    [Header("FloorCompare")]
+    public int FirstFloorNumber;
+    public int SecondFloorNumber;
+    public bool isFloorNumberCount;
+
+
 
 
 	void Start()
@@ -104,6 +110,8 @@ public class PlatformGenerator : MonoBehaviour {
                 }
 
                 PrevFloor = floorSelector;
+                //FloorCompareMethod();
+                //FloorCompareChecker();
                 transform.position = new Vector3(transform.position.x, transform.position.y + platFormHeight + -distanceBetween, 0);
                 GameObject newPlatform = theObjectPools[floorSelector].GetPooledObject();
                 newPlatform.transform.position = transform.position;
@@ -254,6 +262,26 @@ public class PlatformGenerator : MonoBehaviour {
             }
         }
 	}
+
+    public void FloorCompareMethod() 
+    {
+        if (isFloorNumberCount)
+        {
+            FirstFloorNumber = PrevFloor;
+        }
+    }
+
+    public void FloorCompareChecker() 
+    {
+        if (SecondFloorNumber == 1 && FirstFloorNumber == 2)
+        {
+            print("gumana");
+        }
+        else
+        {
+
+        }
+    }
     public void MummyThresholdAdjust() 
     {
 

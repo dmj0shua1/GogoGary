@@ -32,6 +32,7 @@ public class playercontroller : MonoBehaviour {
     private LevelPass LevelPassScript;
     public bool addSpeed;
     public bool addStar;
+    public bool addStar2;
 
     public AudioSource BoltSfx;
     public AudioSource StarSfx;
@@ -64,6 +65,7 @@ public class playercontroller : MonoBehaviour {
     private CameraFollow CameraFollowScript;
     [Header("WalkThroughwalls")]
     private WalkThroughWalls WalkThroughWallsScript;
+    private PlatformGenerator PlatformGeneratorScript;
 	void start()
 	{	
 		ifRight = true;
@@ -71,6 +73,7 @@ public class playercontroller : MonoBehaviour {
 	}
 	private void Awake()
 	{
+        addStar2 = true;
         MyAnimation = GetComponent<Animator>();
         currentSpeed = moveSpeed;
         isCountDownSwipe = true;
@@ -88,6 +91,7 @@ public class playercontroller : MonoBehaviour {
         GameLevelHolderManagerScript = GameObject.Find("GameLevelManager").GetComponent<GameLevelHolderManager>();
         CameraFollowScript = GameObject.Find("Main Camera").GetComponent<CameraFollow>();
         WalkThroughWallsScript = GameObject.Find("player").GetComponent<WalkThroughWalls>();
+        PlatformGeneratorScript = GameObject.Find("PlatformGeneration").GetComponent<PlatformGenerator>();
 
       if (SceneManager.GetActiveScene().name == "Endless")  scoreManagerScript = GameObject.Find("ScoreManager").GetComponent<ScoreManager>();
        
@@ -349,8 +353,20 @@ public class playercontroller : MonoBehaviour {
                 if (!WalkThroughWallsScript.isChange)
                 {
                     WalkThroughWallsScript.isChange = true;
+                 
+                    
                 }
+                
+                //PlatformGeneratorScript.SecondFloorNumber = PlatformGeneratorScript.FirstFloorNumber;
 
+            }
+        }
+        if (other.CompareTag("debris") && PlayerPrefs.GetInt("SoundChecker") == 0)
+        {
+            if (addStar && addStar2)
+            {
+                Debri_destroy.Play();
+                addStar2 = false;
             }
         }
        
@@ -358,13 +374,13 @@ public class playercontroller : MonoBehaviour {
     void OnTriggerStay2D(Collider2D other)
     {
        
-        if (other.CompareTag("debris") && PlayerPrefs.GetInt("SoundChecker") == 0)
+        /*if (other.CompareTag("debris") && PlayerPrefs.GetInt("SoundChecker") == 0)
         {
             if (addStar == true)
             {
                 Debri_destroy.Play();
             }
-        }
+        }*/
         if (other.gameObject.CompareTag("EventBox3"))
         {
             SwipeTestScript.isSwipe = false;
