@@ -36,6 +36,7 @@ public class MummyController : MonoBehaviour {
     private Animator MyAnimation;
 
     private SpriteRenderer mySpriteRenderer;
+    public AudioSource MummyAttackSfx;
 
     //transformplanb
 
@@ -50,6 +51,7 @@ public class MummyController : MonoBehaviour {
         PlayerRigid = GameObject.Find("player").GetComponent<Rigidbody2D>();
         PlayerControllerScript = GameObject.Find("player").GetComponent<playercontroller>();
         MummyManagerScript = GameObject.Find("MummyManager").GetComponent<MummyManager>();
+        MummyAttackSfx = GameObject.Find("mummy_attack").GetComponent<AudioSource>();
     }
 
     void Update() 
@@ -93,6 +95,7 @@ public class MummyController : MonoBehaviour {
         MummyManagerScript.ActivateMummyeffect(effectMode, EffectLengthCounter);
         _moveSpeed = 0;
         MyAnimation.SetBool("isAttack", false);
+
     }
     void OnTriggerEnter2D(Collider2D other)
     {
@@ -127,6 +130,7 @@ public class MummyController : MonoBehaviour {
             {
                 PlayerControllerScript.MummyCollide = false;
             }
+            MummyAttackSfx.Play(); 
         }
         
 
