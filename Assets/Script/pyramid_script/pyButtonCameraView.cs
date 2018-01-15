@@ -28,8 +28,8 @@ public class pyButtonCameraView : MonoBehaviour {
     public GameObject TotalRescueObject;
     public GameObject MainMenuObject;
     public GameObject BackBtnObject;
-    public GameObject btnNextStage;
-    public GameObject btnPrevStage;
+   //public GameObject btnNextStage;
+    //public GameObject btnPrevStage;
     public GameObject stageLabel;
     public GameObject RescueLevelCheckObject;
     public Button LevelButtonPlay;
@@ -147,8 +147,8 @@ public class pyButtonCameraView : MonoBehaviour {
         StartCoroutine(ButtonZoomOutMethod());
         TotalRescueObject.SetActive(false);
         MainMenuObject.SetActive(false);
-        btnNextStage.SetActive(false);
-        btnPrevStage.SetActive(false);
+        //btnNextStage.SetActive(false);
+        //btnPrevStage.SetActive(false);
         stageLabel.SetActive(false);
         isZoomIn = true;
         if (ButtonNumberHolder == 0)
@@ -200,8 +200,8 @@ public class pyButtonCameraView : MonoBehaviour {
         PanelDisabled.SetActive(false);
         TotalRescueObject.SetActive(true);
         MainMenuObject.SetActive(true);
-        btnNextStage.SetActive(true);
-        btnPrevStage.SetActive(true);
+        //btnNextStage.SetActive(true);
+        //btnPrevStage.SetActive(true);
         stageLabel.SetActive(true);
         isZoomIn = false;
         LevelStatusHolder = 0;

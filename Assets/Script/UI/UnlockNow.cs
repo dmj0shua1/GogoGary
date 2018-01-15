@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.SceneManagement;
 public class UnlockNow : MonoBehaviour {
 
     public GameObject messageBoxObject;
@@ -10,29 +11,30 @@ public class UnlockNow : MonoBehaviour {
     public int CurrentHolder;
     public Text CurrentTotalTxt;
     private pyCurrentLevelZoomIn pyCurrentLevelZoomInScript;
+    //
 
     void Awake()
     {
-       
+        CurrentHolder = 75 - PlayerPrefs.GetInt("TotalRescuePoints");
       
     }
 
     void Start() 
     {
         pyCurrentLevelZoomInScript = GameObject.Find("CurrenLevelZoomOut").GetComponent<pyCurrentLevelZoomIn>();
-        CurrentHolder = 75 - PlayerPrefs.GetInt("TotalRescuePoints");
-        if (PlayerPrefs.GetInt("OpenStagePyramid") == 1)
+     
+        /*if (PlayerPrefs.GetInt("OpenStagePyramid") == 1)
         {
             OpenStage.SetActive(false);
             pyCurrentLevelZoomInScript.Isactivate = true;
 
 
-        }
+        }*/
     }
     
     public void _checkTotalPoints() 
     {
-        if (PlayerPrefs.GetInt("TotalRescuePoints") >= 72)
+        /*if (PlayerPrefs.GetInt("TotalRescuePoints") >= 72)
         {
             UnlockMessageBoxObject.SetActive(true);
             pyCurrentLevelZoomInScript.Isactivate = true;
@@ -43,13 +45,28 @@ public class UnlockNow : MonoBehaviour {
             CurrentTotalTxt.text = "" + CurrentHolder;
             messageBoxObject.SetActive(true);
      
-        }
+        }*/
     }
 
     public void OpenStageMethod() 
     {
         OpenStage.SetActive(false);
     }
+    public void _CheckUnlockStage(string levelname)
+    {
+            if (PlayerPrefs.GetInt("TotalRescuePoints") >= 72)
+            {
+                SceneManager.LoadScene(levelname);
 
+            }
+            else
+            {
+                CurrentTotalTxt.text = "" + CurrentHolder;
+                messageBoxObject.SetActive(true);
+            }  
+        
+       
+       
+    }
   
 }

@@ -12,18 +12,26 @@ public class pyCurrentLevelZoomIn : MonoBehaviour {
     public bool Isactivate;
     void Awake() 
     {
-       
+        if (PlayerPrefs.GetInt("OpenStagePyramid") == 1)
+        {
+            Isactivate = true;
+        }
     }
     void Start() 
     {
         ButtonCameraViewScript = GameObject.Find("Main Camera View").GetComponent<pyButtonCameraView>();
         UnlockLevelHolder = PlayerPrefs.GetInt("UnlockLevels");
-        if (PlayerPrefs.GetInt("CurrentZoom")==0 && UnlockLevelHolder ==1)
+        if (PlayerPrefs.GetInt("OpenStagePyramid") == 1)
+        {
+            Isactivate = true;
+        }
+        /*if (PlayerPrefs.GetInt("CurrentZoom")==0 && UnlockLevelHolder ==1)
         {
             StartCoroutine(AutoPlay());
             //PlayButton.onClick.Invoke();
             //Isactivate = true;
-        }
+        }*/
+       
        
     }
     public void CurrentZoomOff() { /*PlayerPrefs.SetInt("CurrentZoom", 0);*/ }

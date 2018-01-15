@@ -347,7 +347,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!1 &32
 GameObject:
   m_ObjectHideFlags: 0
@@ -2191,7 +2191,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!1 &214
 GameObject:
   m_ObjectHideFlags: 0
@@ -2681,7 +2681,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!114 &259
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2955,7 +2955,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!1 &282
 GameObject:
   m_ObjectHideFlags: 0
@@ -14730,7 +14730,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: 'STAGE 2
+  m_Text: 'EGYPT
 
 '
 --- !u!114 &1122
@@ -15440,7 +15440,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   TextHolder: {fileID: 1121}
   Chinese: "\u95DC\u5361 2"
-  English: 'STAGE 2 '
+  English: 'EGYPT '
 --- !u!114 &1151
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -15510,8 +15510,6 @@ MonoBehaviour:
   TotalRescueObject: {fileID: 15}
   MainMenuObject: {fileID: 22}
   BackBtnObject: {fileID: 25}
-  btnNextStage: {fileID: 213}
-  btnPrevStage: {fileID: 258}
   stageLabel: {fileID: 154}
   RescueLevelCheckObject: {fileID: 647698623}
   LevelButtonPlay: {fileID: 1073}
