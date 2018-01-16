@@ -12779,6 +12779,9 @@ MonoBehaviour:
   MissionFailedObject: {fileID: 494299590}
   isComplete: 1
   isCompleteActivate: 0
+  wallofdeathparticle1: {fileID: 0}
+  wallofdeathparticle2: {fileID: 0}
+  FireSfx: {fileID: 0}
 --- !u!1 &1197349862
 GameObject:
   m_ObjectHideFlags: 0
@@ -18924,7 +18927,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   LevelPassScript: {fileID: 114143607307851322, guid: 28963584d30397049aa76bf19cd256ed,
     type: 2}
-  GoToScene: Stage2
+  GoToScene: StagePickerMenu
 --- !u!1 &1760941384
 GameObject:
   m_ObjectHideFlags: 0
