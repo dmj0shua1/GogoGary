@@ -8,6 +8,7 @@ public class Levelselector : MonoBehaviour {
 
     public Button[] levelButtons;
     public GameObject MainHolderScript;
+    [SerializeField]
     EnergyManager egManagerScript;
     public GameObject NoteToUnlock;
     [SerializeField]

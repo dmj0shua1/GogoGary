@@ -7,7 +7,7 @@ public class cheatcode : MonoBehaviour {
 
     public void UnlockLevelAdd() 
     {
-        PlayerPrefs.SetInt("UnlockLevels",26);
+        PlayerPrefs.SetInt("UnlockLevels",38);
     }
     public void TotalRescueAdd()
     {
