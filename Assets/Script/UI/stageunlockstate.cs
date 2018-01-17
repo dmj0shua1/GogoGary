@@ -64,7 +64,7 @@ public class stageunlockstate : MonoBehaviour {
             }
         }
 
-        if (_StageName == "UNKNOWN")
+        /*if (_StageName == "UNKNOWN")
         {
             if (PlayerPrefs.GetInt("pyTotalRescuePoints") >= 72)
             {
@@ -76,7 +76,7 @@ public class stageunlockstate : MonoBehaviour {
                 CurrentTotalTxt.text = "" + CurrentHolder;
                 messageBoxObject.SetActive(true);
             }
-        }
+        }*/
 
 
     }
