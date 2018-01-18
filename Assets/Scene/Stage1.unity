@@ -1379,6 +1379,7 @@ GameObject:
   - component: {fileID: 198606271}
   - component: {fileID: 198606270}
   - component: {fileID: 198606273}
+  - component: {fileID: 198606274}
   m_Layer: 5
   m_Name: MainMenu
   m_TagString: Untagged
@@ -1519,6 +1520,18 @@ MonoBehaviour:
   m_EffectColor: {r: 0, g: 0, b: 0, a: 0.5}
   m_EffectDistance: {x: 0, y: -3}
   m_UseGraphicAlpha: 1
+--- !u!114 &198606274
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 198606268}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c7784d3694b396c48bbffd9fbc940dbd, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  btnToClick: {fileID: 198606270}
 --- !u!1 &200050933 stripped
 GameObject:
   m_PrefabParentObject: {fileID: 1574636069899718, guid: fc8415ec5e03dff45b33b4721224e3c6,
