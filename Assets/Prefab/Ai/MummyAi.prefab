@@ -267,6 +267,7 @@ MonoBehaviour:
   posX2: 1.4
   posY2: 1.6
   MummyAttackSfx: {fileID: 0}
+  isStop: 0
 --- !u!212 &212282182915169066
 SpriteRenderer:
   m_ObjectHideFlags: 1

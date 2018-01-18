@@ -53,14 +53,29 @@ public class Levelselector : MonoBehaviour {
 
     public void UnlockEndlessMethod(string levelName) 
     {
-        if (PlayerPrefs.GetInt("UnlockLevels") >= 25)
-        {
-            SceneManager.LoadScene(levelName);
-        }
-        else
-        {
-            NoteToUnlock.SetActive(true);
-        }
+        //if (SceneManager.GetActiveScene().name == "GGG")
+        //{
+            if (PlayerPrefs.GetInt("UnlockLevels") >= 25)
+            {
+                SceneManager.LoadScene(levelName);
+            }
+            else
+            {
+                NoteToUnlock.SetActive(true);
+            }
+        //}
+       // if (SceneManager.GetActiveScene().name == "GGGPYRAMID")
+        //{
+           // if (PlayerPrefs.GetInt("UnlockLevels") >= 50)
+           // {
+           //     SceneManager.LoadScene(levelName);
+            //}
+            //else
+            //{
+            //    NoteToUnlock.SetActive(true);
+           // }
+        //}
+       
     }
 
     public void closeNote() 

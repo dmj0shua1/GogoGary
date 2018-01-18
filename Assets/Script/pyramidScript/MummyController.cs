@@ -37,7 +37,7 @@ public class MummyController : MonoBehaviour {
 
     private SpriteRenderer mySpriteRenderer;
     public AudioSource MummyAttackSfx;
-
+    public bool isStop;
     //transformplanb
 
 
@@ -46,6 +46,8 @@ public class MummyController : MonoBehaviour {
     void Start() 
     {
         IsMove = true;
+        isStop = true;
+        //OnAttack = true;
         mySpriteRenderer = GetComponent<SpriteRenderer>();
         MyAnimation = GetComponent<Animator>();
         PlayerRigid = GameObject.Find("player").GetComponent<Rigidbody2D>();
@@ -70,32 +72,37 @@ public class MummyController : MonoBehaviour {
                 StartCoroutine(isMoveEnabled());
 
             }
-         
-            if (!moveRight)
-            {
-                //transform.localScale = new Vector3(-24f, 30f, 0);
-                transform.localScale = new Vector3(posX1, posY1, 0);
-                GetComponent<Rigidbody2D>().velocity = new Vector2(_moveSpeed, GetComponent<Rigidbody2D>().velocity.y);
+            
+                if (!moveRight)
+                {
+                    //transform.localScale = new Vector3(-24f, 30f, 0);
+                    transform.localScale = new Vector3(posX1, posY1, 0);
+                    GetComponent<Rigidbody2D>().velocity = new Vector2(_moveSpeed, GetComponent<Rigidbody2D>().velocity.y);
 
-            }
-            else if (moveRight)
-            {
-                //transform.localScale = new Vector3(24f, 30f, 0);
-                transform.localScale = new Vector3(posX2, posY2, 0);
-                GetComponent<Rigidbody2D>().velocity = new Vector2(-_moveSpeed, GetComponent<Rigidbody2D>().velocity.y);
+                }
+                else if (moveRight)
+                {
+                    //transform.localScale = new Vector3(24f, 30f, 0);
+                    transform.localScale = new Vector3(posX2, posY2, 0);
+                    GetComponent<Rigidbody2D>().velocity = new Vector2(-_moveSpeed, GetComponent<Rigidbody2D>().velocity.y);
 
-            }
-
-           
-        
+                }   
     }
-    public void MummyAttackMethod() 
+    public void MummyAttackMethod()
     {
-        MummyMainCollider.enabled = false;
-        MummyManagerScript.ActivateMummyeffect(effectMode, EffectLengthCounter);
-        _moveSpeed = 0;
-        MyAnimation.SetBool("isAttack", false);
+            MummyMainCollider.enabled = false;
+            MummyManagerScript.ActivateMummyeffect(effectMode, EffectLengthCounter);
+            _moveSpeed = 0;
+            MyAnimation.SetBool("isAttack", false);
+    }
 
+    public void MummyDeathMethod() 
+    {
+
+        if (PlayerControllerScript.addStar)
+        {
+            MyAnimation.SetBool("isDeath", false); 
+        }
     }
     void OnTriggerEnter2D(Collider2D other)
     {
@@ -108,29 +115,33 @@ public class MummyController : MonoBehaviour {
 
         if (other.gameObject.CompareTag("Player"))
         {
+           
+                float PlayerTransform = other.gameObject.transform.position.x;
+                float MummyTransform = gameObject.transform.position.x;
+                //if (!PlayerControllerScript.addStar)
+                //{
+                    if (PlayerTransform > MummyTransform)
+                    {
+                        //rightmummy
+                        moveRight = false;
+                        MummyAttackMethod();
 
-            float PlayerTransform = other.gameObject.transform.position.x;
-            float MummyTransform = gameObject.transform.position.x;
+                    }
+                    else
+                    {
+                        //leftMummy
+                        moveRight = true;
+                        MummyAttackMethod();
+                    }
 
-            if (PlayerTransform > MummyTransform)
-            {
-                //rightmummy
-                moveRight = false;
-                MummyAttackMethod();
-
-            }
-            else
-            {
-                //leftMummy
-                moveRight = true;
-                MummyAttackMethod();
-            }
-
-            if (PlayerControllerScript.grounded || !PlayerControllerScript.grounded)
-            {
-                PlayerControllerScript.MummyCollide = false;
-            }
-            MummyAttackSfx.Play(); 
+                    if (PlayerControllerScript.grounded || !PlayerControllerScript.grounded)
+                    {
+                        PlayerControllerScript.MummyCollide = false;
+                    }
+                //}
+                MummyAttackSfx.Play();
+            
+                //MummyDeathMethod();
         }
         
 

@@ -14,7 +14,7 @@ public class pyLevelChangeStatus : MonoBehaviour {
     }
     public void PlusIntLevelStatus()
     {
-        if (LevelPassScript.LevelStatusAmt == 25)
+        if (LevelPassScript.LevelStatusAmt == 50)
         {
             SceneManager.LoadScene(GoToScene);
         }
