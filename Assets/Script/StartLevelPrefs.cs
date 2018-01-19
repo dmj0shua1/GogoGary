@@ -19,6 +19,8 @@ public class StartLevelPrefs : MonoBehaviour {
         if (!PlayerPrefs.HasKey("OpenStagePyramid")) PlayerPrefs.SetInt("OpenStagePyramid", 0);
         if (!PlayerPrefs.HasKey("isNotice")) PlayerPrefs.SetInt("isNotice", 0);
         if (!PlayerPrefs.HasKey("pyisNotice")) PlayerPrefs.SetInt("pyisNotice", 0);
+        if (!PlayerPrefs.HasKey("LastLevelStagePickerSelect")) PlayerPrefs.SetInt("LastLevelStagePickerSelect", 0);
+
         
 
      

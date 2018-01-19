@@ -17,6 +17,7 @@ public class pyLevelChangeStatus : MonoBehaviour {
         if (LevelPassScript.LevelStatusAmt == 50)
         {
             SceneManager.LoadScene(GoToScene);
+            PlayerPrefs.SetInt("LastLevelStagePickerSelect", 2);
         }
         else
         {

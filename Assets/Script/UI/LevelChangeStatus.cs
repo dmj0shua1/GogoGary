@@ -16,7 +16,8 @@ public class LevelChangeStatus : MonoBehaviour {
     {
         if (LevelPassScript.LevelStatusAmt == 25)
         {
-            SceneManager.LoadScene(GoToScene);
+                    SceneManager.LoadScene(GoToScene);
+                    PlayerPrefs.SetInt("LastLevelStagePickerSelect", 1);    
         }
         else
         {

@@ -7,6 +7,7 @@ public class StagePickerRescueDisplay : MonoBehaviour {
 
     public Text _CityNumTxt, _EgyptNumTxt;/*_PreHistoricNumTxt, _IceAgeNumTxt, _FutureNumTxt;*/
     public int _CityGetTtlPnts, _EgyptGetpyTtlPnts;
+   
 
     void Start() 
     {
@@ -15,6 +16,8 @@ public class StagePickerRescueDisplay : MonoBehaviour {
 
         _CityNumTxt.text = "" + _CityGetTtlPnts;
         _EgyptNumTxt.text = "" + _EgyptGetpyTtlPnts;
+
+      
 
     }
 	
