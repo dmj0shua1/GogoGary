@@ -21,6 +21,7 @@ public class SimpleAd : MonoBehaviour {
     public GameObject PanelForAds;
     public EnergyManager egManagerScript;
     public GameObject internetConDialog;
+    public bool adReady;
     //public Animation gameOverFade;
 #if UNITY_IOS
     private string gameId = "1576335";
@@ -218,6 +219,11 @@ void Awake()
              internetConDialog.SetActive(false);
           
         }
+    }
+
+    public void checkIfReady(string placementId)
+    {
+        adReady = Advertisement.IsReady(placementId);
     }
 
 }

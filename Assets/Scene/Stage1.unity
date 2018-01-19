@@ -4436,7 +4436,7 @@ Prefab:
     - target: {fileID: 114960703173769260, guid: bc53abb24d93c3e4daf7a4ede27299ac,
         type: 2}
       propertyPath: m_Text
-      value: Internet is off or ad is not ready yet
+      value: Internet required
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: bc53abb24d93c3e4daf7a4ede27299ac, type: 2}
@@ -14391,6 +14391,7 @@ MonoBehaviour:
   PanelForAds: {fileID: 0}
   egManagerScript: {fileID: 0}
   internetConDialog: {fileID: 652230993}
+  adReady: 0
 --- !u!4 &1782229743
 Transform:
   m_ObjectHideFlags: 0

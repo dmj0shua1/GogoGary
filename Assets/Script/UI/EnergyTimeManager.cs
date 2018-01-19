@@ -26,11 +26,13 @@ public class EnergyTimeManager : MonoBehaviour
     EnergyTimer latestTimer;
     [SerializeField]
     GameObject refillAmountObj;
+    SimpleAd adScript;
     void Start()
     {
 
         dateCheckerScript = gameObject.GetComponent<DateChecker>();
         egManagerScript = gameObject.GetComponent<EnergyManager>();       //Store the current time when it starts
+        adScript = GameObject.Find("SimpleAd").GetComponent<SimpleAd>();
         currentDate = System.DateTime.Now;
         egName = gameObject.name;
         refreshTime();
@@ -190,7 +192,11 @@ public class EnergyTimeManager : MonoBehaviour
 
             if (PlayerPrefs.GetInt("energyLeft") <= 0)
             {
-                refillAmountObj.SetActive(true);
+           
+
+                adScript.checkIfReady("rewardedVideo");
+                refillAmountObj.SetActive(adScript.adReady);
+                
             }
             else
             {
