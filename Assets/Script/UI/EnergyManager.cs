@@ -171,6 +171,11 @@ public class EnergyManager : MonoBehaviour
     {
         simpleAdScript.rewardedAdLvlSelector();
 
+    }
+
+    public void refillAmountAdSuccess()
+    {
+
         PlayerPrefs.SetInt("energyLeft", 3);
         PlayerPrefs.SetInt("timerCount", 2);
         energyLeft = 3;

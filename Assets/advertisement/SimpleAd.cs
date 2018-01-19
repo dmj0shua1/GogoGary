@@ -19,6 +19,8 @@ public class SimpleAd : MonoBehaviour {
     public GameObject internetMessageBox;
     private internetChecker InternetCheckerScript;
     public GameObject PanelForAds;
+    public EnergyManager egManagerScript;
+    public GameObject internetConDialog;
     //public Animation gameOverFade;
 #if UNITY_IOS
     private string gameId = "1576335";
@@ -27,6 +29,8 @@ private string gameId = "1576334";
 #endif
 void Awake()
 {
+    egManagerScript = GameObject.Find("Energy").GetComponent<EnergyManager>();
+
     if (SceneManager.GetActiveScene().name == "GGG" || SceneManager.GetActiveScene().name == "GGGPYRAMID")
     {
         LevelPassScript = GameObject.Find("Holder").GetComponent<LevelPass>();
@@ -93,6 +97,8 @@ void Awake()
     {
         Advertisement.Show();
     }
+
+
   }
 
      public void DisableAds()
@@ -115,21 +121,26 @@ void Awake()
              Invoke("displayCoinReceived", 1.5f);
           
          }
+
+      /*   var options = new ShowOptions { resultCallback = HandleShowResult };
+         Advertisement.Show("rewardedVideo", options);*/
      }
 
      public void rewardedAdLvlSelector()
      {
          if (Advertisement.IsReady("rewardedVideo"))
          {
-             Advertisement.Show("rewardedVideo");
-             objRewardedAds.SetActive(false);
-             //StartCoroutine(rewardInfoTime());
-             //RewardsInfo.SetActive(true);
-            // ImageDeath.SetActive(true);
-            // Invoke("displayCoinReceived", 1.5f);
+           
+            // Advertisement.Show("rewardedVideo");
 
          }
-         
+         else
+         {
+             Debug.Log(string.Format("Ads not ready for placement '{0}'", "rewardedVideo"));
+             internetConDialog.SetActive(true);
+         }
+         var options = new ShowOptions { resultCallback = HandleShowResult };
+         Advertisement.Show("rewardedVideo", options);
      }
      public void internetmessageBoxMethod() 
      {
@@ -175,5 +186,39 @@ void Awake()
          yield return new WaitForSeconds(2);
          PanelForAds.SetActive(false);
      }
+
+    private void HandleShowResult(ShowResult result)
+    {
+        switch (result)
+        {
+            case ShowResult.Finished:
+                Debug.Log("The ad was successfully shown.");
+                //
+                // YOUR CODE TO REWARD THE GAMER
+                giveRewards();
+                // Give coins etc.
+                break;
+            case ShowResult.Skipped:
+                Debug.Log("The ad was skipped before reaching the end.");
+                break;
+            case ShowResult.Failed:
+                Debug.LogError("The ad failed to be shown.");
+                internetConDialog.SetActive(true);
+                break;
+        }
+    }
+
+    private void giveRewards()
+    {
+        if (SceneManager.GetActiveScene().name == "Stage1" || SceneManager.GetActiveScene().name == "Stage2")
+        {
+            //energy reward
+            objRewardedAds.SetActive(false);
+            egManagerScript.refillAmountAdSuccess();
+             internetConDialog.SetActive(false);
+          
+        }
+    }
+
 }
 
