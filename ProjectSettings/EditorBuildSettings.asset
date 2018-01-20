@@ -32,3 +32,6 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/ScreenSwipe/StagePickerMenu.unity
     guid: 083e91938eb53ba499546840fe722ad0
+  - enabled: 1
+    path: Assets/Scene/GGGPREHISTORIC.unity
+    guid: b6da3771e58bc1f42906fb61907657e8

@@ -61,7 +61,6 @@ GameObject:
   - component: {fileID: 369}
   - component: {fileID: 375}
   - component: {fileID: 367}
-  - component: {fileID: 1152}
   - component: {fileID: 370}
   - component: {fileID: 10}
   m_Layer: 0
@@ -454,7 +453,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!1 &35
 GameObject:
   m_ObjectHideFlags: 0
@@ -997,6 +996,7 @@ GameObject:
   m_Component:
   - component: {fileID: 311}
   - component: {fileID: 832}
+  - component: {fileID: 99}
   m_Layer: 0
   m_Name: startUnlockPrefs
   m_TagString: Untagged
@@ -1004,6 +1004,19 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
+--- !u!114 &99
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 98}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0cdae45e61162ae42a7f9709c66d8ef7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  LevelValueHolderScript: {fileID: 0}
+  SmileSprite: {fileID: 21300000, guid: 1bfa30c72fca81340bac35bb3e30a39e, type: 3}
 --- !u!1 &102
 GameObject:
   m_ObjectHideFlags: 0
@@ -2154,8 +2167,6 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 759}
-  - component: {fileID: 1064}
-  - component: {fileID: 821}
   - component: {fileID: 302}
   m_Layer: 5
   m_Name: StartPrefs
@@ -2465,7 +2476,7 @@ MonoBehaviour:
   PlayButton: {fileID: 0}
   UnlockLevelHolder: 0
   ScrollRectMap: {fileID: 765}
-  Isactivate: 0
+  Isactivate: 1
 --- !u!1 &242
 GameObject:
   m_ObjectHideFlags: 0
@@ -7578,19 +7589,6 @@ MonoBehaviour:
   m_EffectColor: {r: 0, g: 0, b: 0, a: 1}
   m_EffectDistance: {x: 1, y: -1}
   m_UseGraphicAlpha: 1
---- !u!114 &821
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 212}
-  m_Enabled: 0
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 7820520d6b813034ca8a65c2ff971c4a, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  PlaceTotalBuilding: 0
-  NumberOfPeopleText: {fileID: 0}
 --- !u!114 &824
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -7889,7 +7887,7 @@ MonoBehaviour:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 98}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 6d3fab424827c3244bea394f005fa065, type: 3}
   m_Name: 
@@ -12983,19 +12981,6 @@ MonoBehaviour:
   m_FillAmount: 1
   m_FillClockwise: 1
   m_FillOrigin: 0
---- !u!114 &1064
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 212}
-  m_Enabled: 0
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: a5b73907039c9ba4a9e698c9f20c3f8d, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  PlaceTotalBuilding: 26
-  NumberOfPeopleText: {fileID: 843}
 --- !u!114 &1065
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -14875,7 +14860,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1152}
+      - m_Target: {fileID: 10}
         m_MethodName: BackButtonCamera
         m_Mode: 3
         m_Arguments:
@@ -15319,71 +15304,6 @@ MonoBehaviour:
   UnlockLevelHolder: 0
   ScrollRectMap: {fileID: 765}
   Isactivate: 0
---- !u!114 &1152
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 9}
-  m_Enabled: 0
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: acb5eede562628c45a15572cc72e6373, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  LevelNumberText: {fileID: 923}
-  BuildingButtons:
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 64}
-  target: {fileID: 0}
-  ButtonNumberHolder: 0
-  speed: 400
-  LevelPanelObject: {fileID: 242}
-  PanelDisabled: {fileID: 168}
-  IsActivate: 1
-  LevelStatusHolder: 0
-  LevelDisplayHolder: 0
-  ScrollRectMap: {fileID: 765}
-  MainHolderScript: {fileID: 1072}
-  NumberOfPeopleText: {fileID: 843}
-  TotalRescueObject: {fileID: 15}
-  MainMenuObject: {fileID: 22}
-  BackBtnObject: {fileID: 25}
-  stageLabel: {fileID: 154}
-  RescueLevelCheckObject: {fileID: 647698623}
-  LevelButtonPlay: {fileID: 1073}
-  isZoomIn: 0
-  isInMessage: {fileID: 647698624}
-  buttonZoomOutScreen: {fileID: 267802115}
-  text16Object: {fileID: 2120046016}
-  text21Object: {fileID: 1673044056}
-  NoticeObject: {fileID: 975907629}
-  CloseButtonObject: {fileID: 191186296}
-  isBackButton: {fileID: 835}
-  isNextButton: {fileID: 1104}
 --- !u!224 &41035900 stripped
 RectTransform:
   m_PrefabParentObject: {fileID: 224518101358722010, guid: 1c84fab748c457e449df8711690f4ad2,
@@ -17490,7 +17410,7 @@ Prefab:
         type: 2}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
-      objectReference: {fileID: 1152}
+      objectReference: {fileID: 10}
     - target: {fileID: 114909288816867864, guid: e1eb343ba017e5041a67800952967c3e,
         type: 2}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
@@ -21333,7 +21253,7 @@ Prefab:
     - target: {fileID: 114984928027034836, guid: a3893ec4a9149c34abf4c4153229a107,
         type: 2}
       propertyPath: sceneToGo
-      value: GGGPYRAMID
+      value: GGGPREHISTORIC
       objectReference: {fileID: 0}
     - target: {fileID: 114803745154659726, guid: a3893ec4a9149c34abf4c4153229a107,
         type: 2}

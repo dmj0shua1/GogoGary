@@ -69,9 +69,9 @@ public class phButtonCameraView : MonoBehaviour {
  
     public void RescueCheckerLevelMethod() 
     {
-        if (PlayerPrefs.GetInt("UnlockLevels") == 41)
+        if (PlayerPrefs.GetInt("UnlockLevels") == 66)
         {
-            if (LevelStatusHolder >= 41)
+            if (LevelStatusHolder >= 66)
             {
 
                 if (PlayerPrefs.GetInt("phTotalRescuePoints") != 45)
@@ -101,9 +101,9 @@ public class phButtonCameraView : MonoBehaviour {
             }
         }
 
-        if (PlayerPrefs.GetInt("UnlockLevels") == 46)
+        if (PlayerPrefs.GetInt("UnlockLevels") == 71)
         {
-            if (LevelStatusHolder >= 46)
+            if (LevelStatusHolder >= 71)
             {
                 if (PlayerPrefs.GetInt("phTotalRescuePoints") != 60)
                 {
