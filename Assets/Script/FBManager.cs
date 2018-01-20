@@ -124,7 +124,7 @@ public class FBManager : MonoBehaviour
 #if UNITY_ANDROID
         FB.ShareLink(
             // contentTitle: "Gary G message", 
-             new Uri("https://play.google.com/store/apps/details?id=com.LoopBook.GogoGary"),
+             new Uri("https://play.google.com/store/apps/details?id=com.loopbook.gogogary"),
              contentDescription: "Link to the Playstore",
              photoURL: new Uri("https://i.ytimg.com/vi/Yj7ja6BANLM/maxresdefault.jpg"),
              callback: OnShare);
