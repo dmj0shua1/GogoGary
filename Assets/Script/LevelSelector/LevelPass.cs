@@ -38,6 +38,15 @@ public class LevelPass : MonoBehaviour {
                 ButtonNextLevel[num] = (GameObject)Resources.Load("Stage2/pyBuilding_L" + StageNumCounter, typeof(GameObject));
             }
         }
+        else if (sceneName == "Stage3")
+        {
+            StageNumCounter = 50;
+            for (int num = 0; num < 25; num++)
+            {
+                StageNumCounter++;
+                ButtonNextLevel[num] = (GameObject)Resources.Load("Stage3/phBuilding_L" + StageNumCounter, typeof(GameObject));
+            }
+        }
       
     }
     public void TargetMethod()
