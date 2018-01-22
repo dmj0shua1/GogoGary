@@ -316,7 +316,7 @@ MonoBehaviour:
   RescueHolderPlayerPref: 0
   isActivateTipsValue: 0
   isShakeActivateValue: 0
-  CameraColorValue: {r: 0, g: 0, b: 0, a: 0}
+  CameraColorValue: {r: 0.5955882, g: 0.5955882, b: 0.5955882, a: 0}
   Star1: {fileID: 1896913639834990}
   Star2: {fileID: 1345304481200524}
   Star3: {fileID: 1241365209030104}
@@ -490,6 +490,6 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 428.00003, y: 1000.99976}
+  m_AnchoredPosition: {x: 893, y: -21}
   m_SizeDelta: {x: 208, y: 245}
   m_Pivot: {x: 0.5, y: 0.5}

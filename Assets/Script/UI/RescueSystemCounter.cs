@@ -13,9 +13,13 @@ public class RescueSystemCounter : MonoBehaviour {
        {
            RescueNumCounterText.text = "" + (PlayerPrefs.GetInt("TotalRescuePoints"));
        }
-       if (sceneName == "Stage2")
+       else if (sceneName == "Stage2")
        {
            RescueNumCounterText.text = "" + (PlayerPrefs.GetInt("pyTotalRescuePoints"));
+       }
+       else if (sceneName == "Stage3")
+       {
+           RescueNumCounterText.text = "" + (PlayerPrefs.GetInt("phTotalRescuePoints"));
        }
    
     }

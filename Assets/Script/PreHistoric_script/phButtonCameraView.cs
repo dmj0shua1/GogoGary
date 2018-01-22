@@ -189,7 +189,7 @@ public class phButtonCameraView : MonoBehaviour {
     }
     public void BackButtonCamera(int CanvasNumber) 
     {
-        if (LevelStatusHolder >= 39)
+        if (LevelStatusHolder >= 64)
         {
             ScrollRectMap.GetComponent<RectTransform>().localPosition = new Vector3(-10, -716, 0);
         }

@@ -8,20 +8,20 @@ public class phCurrentLevelZoomIn : MonoBehaviour {
     public int UnlockLevelHolder;
     public RectTransform ScrollRectMap;
     private LevelValueHolder LevelValueHolderScript;
-    private pyButtonCameraView ButtonCameraViewScript;
+    private phButtonCameraView ButtonCameraViewScript;
     public bool Isactivate;
     void Awake() 
     {
-        if (PlayerPrefs.GetInt("OpenStagePyramid") == 1)
+        if (PlayerPrefs.GetInt("OpenStagePreHistoric") == 1)
         {
             Isactivate = true;
         }
     }
     void Start() 
     {
-        ButtonCameraViewScript = GameObject.Find("Main Camera View").GetComponent<pyButtonCameraView>();
+        ButtonCameraViewScript = GameObject.Find("Main Camera View").GetComponent<phButtonCameraView>();
         UnlockLevelHolder = PlayerPrefs.GetInt("UnlockLevels");
-        if (PlayerPrefs.GetInt("OpenStagePyramid") == 1)
+        if (PlayerPrefs.GetInt("OpenStagePreHistoric") == 1)
         {
             Isactivate = true;
         }

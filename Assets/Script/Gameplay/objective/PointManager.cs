@@ -132,6 +132,23 @@ public class PointManager : MonoBehaviour {
                 PlayerPrefs.SetInt("pyTotalRescuePoints", PlayerPrefs.GetInt("pyTotalRescuePoints") - LevelPassScript.RescuePointAmtCopy);
             }
         }
+
+        //
+        Scene currentScene3 = SceneManager.GetActiveScene();
+        string sceneName3 = currentScene3.name;
+        if (sceneName3 == "GGGPREHISTORIC")
+        {
+            if (PlayerPrefs.GetInt("phBuilding_L" + LevelPassScript.UnlockLevelAmt.ToString()) < LevelPassScript.RescueHolderPlayerPrefAmt)
+            {
+                if (PlayerPrefs.HasKey("phBuilding_L" + LevelPassScript.UnlockLevelAmt.ToString()))
+                {
+                    PlayerPrefs.SetInt("phBuilding_L" + LevelPassScript.UnlockLevelAmt.ToString(), LevelPassScript.RescueHolderPlayerPrefAmt);
+
+                }
+                PlayerPrefs.SetInt("phTotalRescuePoints", PlayerPrefs.GetInt("phTotalRescuePoints") + LevelPassScript.RescueHolderPlayerPrefAmt);
+                PlayerPrefs.SetInt("phTotalRescuePoints", PlayerPrefs.GetInt("phTotalRescuePoints") - LevelPassScript.RescuePointAmtCopy);
+            }
+        }
        
 	}
     public void completeLevelCounterMethod()

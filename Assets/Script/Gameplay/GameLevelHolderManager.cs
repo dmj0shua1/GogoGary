@@ -246,8 +246,58 @@ public class GameLevelHolderManager : MonoBehaviour {
                 }
             }
         }
-        
-        //stage2
+//
+        else if (sceneName == "GGGPREHISTORIC")
+        {
+            if (PlayerPrefs.GetInt("UnlockLevels") == 65 || PlayerPrefs.GetInt("UnlockLevels") == 66)
+            {
+                if (LevelPassScript.LevelStatusAmt >= 65)
+                {
+
+                    if (PlayerPrefs.GetInt("phTotalRescuePoints") != 45)
+                    {
+                        ImageWin.SetActive(false);
+                        ImageNote.SetActive(true);
+                        NextButton.interactable = false;
+                    }
+                    else
+                    {
+                        ImageWin.SetActive(true);
+                        ImageNote.SetActive(false);
+                    }
+                }
+
+                else
+                {
+                    ImageWin.SetActive(true);
+                    ImageNote.SetActive(false);
+                }
+            }
+            if (PlayerPrefs.GetInt("UnlockLevels") == 70 || PlayerPrefs.GetInt("UnlockLevels") == 71)
+            {
+                if (LevelPassScript.LevelStatusAmt >= 70)
+                {
+
+                    if (PlayerPrefs.GetInt("phTotalRescuePoints") != 60)
+                    {
+                        ImageWin.SetActive(false);
+                        ImageNote.SetActive(true);
+                        NextButton.interactable = false;
+                    }
+                    else
+                    {
+                        ImageWin.SetActive(true);
+                        ImageNote.SetActive(false);
+                    }
+                }
+
+                else
+                {
+                    ImageWin.SetActive(true);
+                    ImageNote.SetActive(false);
+                }
+            }
+        }
     }
     //
 }

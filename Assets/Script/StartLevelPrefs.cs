@@ -17,6 +17,7 @@ public class StartLevelPrefs : MonoBehaviour {
         if (!PlayerPrefs.HasKey("CurrentZoom")) PlayerPrefs.SetInt("CurrentZoom", 0);
         if (!PlayerPrefs.HasKey("CompleteLevelCounter")) PlayerPrefs.SetInt("CompleteLevelCounter", 0);
         if (!PlayerPrefs.HasKey("OpenStagePyramid")) PlayerPrefs.SetInt("OpenStagePyramid", 0);
+        if (!PlayerPrefs.HasKey("OpenStagePreHistoric")) PlayerPrefs.SetInt("OpenStagePreHistoric", 0);
         if (!PlayerPrefs.HasKey("isNotice")) PlayerPrefs.SetInt("isNotice", 0);
         if (!PlayerPrefs.HasKey("pyisNotice")) PlayerPrefs.SetInt("pyisNotice", 0);
         if (!PlayerPrefs.HasKey("LastLevelStagePickerSelect")) PlayerPrefs.SetInt("LastLevelStagePickerSelect", 0);

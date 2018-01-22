@@ -30,5 +30,10 @@ public class textLevelStatus : MonoBehaviour {
              LevelStatusNumber.text = "" + NumberOfLevel;
             NumberOfLevel = LevelPassScript.LevelStatusAmt-25;
         }
+        else if (sceneName == "GGGPREHISTORIC")
+        {
+            LevelStatusNumber.text = "" + NumberOfLevel;
+            NumberOfLevel = LevelPassScript.LevelStatusAmt - 50;
+        }
     }
 }
