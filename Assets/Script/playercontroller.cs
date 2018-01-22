@@ -372,12 +372,7 @@ public class playercontroller : MonoBehaviour {
                 if (!WalkThroughWallsScript.isChange)
                 {
                     WalkThroughWallsScript.isChange = true;
-                 
-                    
                 }
-                
-                //PlatformGeneratorScript.SecondFloorNumber = PlatformGeneratorScript.FirstFloorNumber;
-
             }
         }
         if (other.CompareTag("debris") && PlayerPrefs.GetInt("SoundChecker") == 0)
@@ -463,7 +458,7 @@ public class playercontroller : MonoBehaviour {
        IEnumerator GameOverDelay()
        {
 
-           if (SceneManager.GetActiveScene().name == "GGG" || SceneManager.GetActiveScene().name == "GGGPYRAMID")
+           if (SceneManager.GetActiveScene().name == "GGG" || SceneManager.GetActiveScene().name == "GGGPYRAMID" || SceneManager.GetActiveScene().name == "GGGPREHISTORIC")
            { 
                yield return new WaitForSeconds(0.7f);
                ViewPanel.SetActive(true); 

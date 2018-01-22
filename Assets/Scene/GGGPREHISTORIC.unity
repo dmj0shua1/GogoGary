@@ -118,6 +118,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4579457}
   - component: {fileID: 4579456}
+  - component: {fileID: 4579458}
   m_Layer: 5
   m_Name: settings
   m_TagString: Untagged
@@ -131,7 +132,7 @@ MonoBehaviour:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 4579455}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: b4f28352c18571848a53d142d254ba97, type: 3}
   m_Name: 
@@ -158,6 +159,19 @@ RectTransform:
   m_AnchoredPosition: {x: 884, y: 1815}
   m_SizeDelta: {x: 100, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &4579458
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 4579455}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: aa7a74d79708aeb47a5856c03ff94eb4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  LevelPassScript: {fileID: 0}
+  MainHolderScript: {fileID: 0}
 --- !u!1 &4699721
 GameObject:
   m_ObjectHideFlags: 0
@@ -662,7 +676,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 4579456}
+      - m_Target: {fileID: 4579458}
         m_MethodName: ChangezeroRescuePoint
         m_Mode: 1
         m_Arguments:
@@ -673,7 +687,7 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
-      - m_Target: {fileID: 4579456}
+      - m_Target: {fileID: 4579458}
         m_MethodName: RescueCopyMethod
         m_Mode: 1
         m_Arguments:
@@ -964,7 +978,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 4579456}
+      - m_Target: {fileID: 4579458}
         m_MethodName: select
         m_Mode: 3
         m_Arguments:
@@ -2189,7 +2203,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 4579456}
+      - m_Target: {fileID: 4579458}
         m_MethodName: ChangezeroRescuePoint
         m_Mode: 1
         m_Arguments:
@@ -2200,7 +2214,7 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
-      - m_Target: {fileID: 4579456}
+      - m_Target: {fileID: 4579458}
         m_MethodName: RescueCopyMethod
         m_Mode: 1
         m_Arguments:
@@ -4376,7 +4390,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 4579456}
+      - m_Target: {fileID: 4579458}
         m_MethodName: select
         m_Mode: 3
         m_Arguments:
@@ -4409,7 +4423,7 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
-      - m_Target: {fileID: 4579456}
+      - m_Target: {fileID: 4579458}
         m_MethodName: CurrentZoomOn
         m_Mode: 1
         m_Arguments:
@@ -4622,7 +4636,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 4579456}
+      - m_Target: {fileID: 4579458}
         m_MethodName: select
         m_Mode: 3
         m_Arguments:
@@ -4644,7 +4658,7 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
-      - m_Target: {fileID: 4579456}
+      - m_Target: {fileID: 4579458}
         m_MethodName: CurrentZoomOn
         m_Mode: 1
         m_Arguments:
@@ -5304,7 +5318,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 4579456}
+      - m_Target: {fileID: 4579458}
         m_MethodName: ChangezeroRescuePoint
         m_Mode: 1
         m_Arguments:
@@ -5315,7 +5329,7 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
-      - m_Target: {fileID: 4579456}
+      - m_Target: {fileID: 4579458}
         m_MethodName: RescueCopyMethod
         m_Mode: 1
         m_Arguments:
@@ -11188,7 +11202,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 4579456}
+      - m_Target: {fileID: 4579458}
         m_MethodName: select
         m_Mode: 3
         m_Arguments:
@@ -13175,7 +13189,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 4579456}
+      - m_Target: {fileID: 4579458}
         m_MethodName: ChangezeroRescuePoint
         m_Mode: 1
         m_Arguments:
@@ -13186,7 +13200,7 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
-      - m_Target: {fileID: 4579456}
+      - m_Target: {fileID: 4579458}
         m_MethodName: RescueCopyMethod
         m_Mode: 1
         m_Arguments:
@@ -15639,7 +15653,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 4579456}
+      - m_Target: {fileID: 4579458}
         m_MethodName: select
         m_Mode: 3
         m_Arguments:
@@ -15661,7 +15675,7 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
-      - m_Target: {fileID: 4579456}
+      - m_Target: {fileID: 4579458}
         m_MethodName: CurrentZoomOn
         m_Mode: 1
         m_Arguments:
@@ -31100,7 +31114,7 @@ MonoBehaviour:
           m_StringArgument: Stage2
           m_BoolArgument: 0
         m_CallState: 2
-      - m_Target: {fileID: 4579456}
+      - m_Target: {fileID: 4579458}
         m_MethodName: CurrentZoomOn
         m_Mode: 1
         m_Arguments:
@@ -39311,7 +39325,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 4579456}
+      - m_Target: {fileID: 4579458}
         m_MethodName: select
         m_Mode: 3
         m_Arguments:
