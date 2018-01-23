@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class TemporaryWall : MonoBehaviour {
 
@@ -10,18 +11,40 @@ public class TemporaryWall : MonoBehaviour {
     void Awake() 
     {
         LevelPassScript = GameObject.Find("Holder").GetComponent<LevelPass>();
-        if (LevelPassScript.LevelStatusAmt >= 36)
+        
+        if (SceneManager.GetActiveScene().name == "GGGPYRAMID")
         {
-            isActivate = false;
+            if (LevelPassScript.LevelStatusAmt >= 36)
+            {
+                isActivate = false;
+            }
+            if (isActivate)
+            {
+                _TempWall.SetActive(true);
+            }
+            else if (!isActivate)
+            {
+                _TempWall.SetActive(false);
+            }
         }
-        if (isActivate)
+        if (SceneManager.GetActiveScene().name == "GGGPREHISTORIC")
         {
-            _TempWall.SetActive(true);
+            if (LevelPassScript.LevelStatusAmt >= 36)
+            {
+                isActivate = false;
+            }
+            if (isActivate)
+            {
+                _TempWall.SetActive(true);
+            }
+            else if (!isActivate)
+            {
+                _TempWall.SetActive(false);
+            }
         }
-        else if(!isActivate)
-        {
-            _TempWall.SetActive(false);
-        }
+
+
+      
     }
 
 
