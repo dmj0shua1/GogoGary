@@ -7,8 +7,9 @@ public class cheatcode : MonoBehaviour {
 
     public void UnlockLevelAdd() 
     {
-        PlayerPrefs.SetInt("UnlockLevels",26);
+        PlayerPrefs.SetInt("UnlockLevels",51);
         PlayerPrefs.SetInt("TotalRescuePoints", 75);
+        PlayerPrefs.SetInt("pyTotalRescuePoints", 75);
     }
     public void TotalRescueAdd()
     {

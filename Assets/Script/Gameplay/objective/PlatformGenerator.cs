@@ -70,6 +70,12 @@ public class PlatformGenerator : MonoBehaviour {
     public int FirstFloorNumber;
     public int SecondFloorNumber;
     public bool isFloorNumberCount;
+    [Header("phBird")]
+    //public MummyController MummyControllerScript;
+    public bool IsGeneratephBird;
+    public ObjectPooler phBirdPooler;
+    public float phbirdheight;
+    public int phbirdThreshold;
 
 
 
@@ -242,7 +248,7 @@ public class PlatformGenerator : MonoBehaviour {
                         }
                     }
                 }
-                      
+                    
                       
                         fireHalfFloorMethod();
                 //random gobackagain walk throughwalls
@@ -257,6 +263,29 @@ public class PlatformGenerator : MonoBehaviour {
                                 } 
                             }
                             
+                        }
+                //
+                        //phbird
+                        if (sceneName == "GGGPREHISTORIC")
+                       {
+                            //MummyThresholdAdjust();
+                            //if (LevelPassScript.LevelStatusAmt >= 51)
+                            //{
+                            //IsGeneratephBird = true;
+                            if (IsGeneratephBird)
+                            {
+
+                            if (Counts % phbirdThreshold == 0)
+                            {
+                                GameObject newphbird = phBirdPooler.GetPooledObject();
+                                float phBirdXposition = Random.Range(1, 16);
+                                Vector3 phBirdPosition = new Vector3(phBirdXposition, phbirdheight, 0f);
+                                newphbird.transform.position = transform.position + phBirdPosition;
+                                newphbird.transform.rotation = transform.rotation;
+                                newphbird.SetActive(true);
+                            }
+                            }
+                            //}
                         }
                 //
             }

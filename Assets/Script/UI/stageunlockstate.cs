@@ -32,8 +32,15 @@ public class stageunlockstate : MonoBehaviour {
 	    }
         if (_StageName == "PREHISTORIC")
         {
+            if (PlayerPrefs.GetInt("pyTotalRescuePoints") >= 72)
+            {
+                TextHolder.GetComponent<Text>().text = UnlockTextState;
+            }
+            else
+            {
                 StageImage.GetComponent<Image>().color = Color.black;
-                TextHolder.GetComponent<Text>().text = LockTextState; 
+                TextHolder.GetComponent<Text>().text = LockTextState;
+            }
         }
         if (_StageName == "ICEAGE")
         {
@@ -64,11 +71,12 @@ public class stageunlockstate : MonoBehaviour {
             }
         }
 
-        /*if (_StageName == "UNKNOWN")
+        if (_StageName == "PREHISTORIC")
         {
             if (PlayerPrefs.GetInt("pyTotalRescuePoints") >= 72)
             {
                 SceneManager.LoadScene(levelname);
+                PlayerPrefs.SetInt("OpenStagePreHistoric", 1);
 
             }
             else
@@ -76,8 +84,7 @@ public class stageunlockstate : MonoBehaviour {
                 CurrentTotalTxt.text = "" + CurrentHolder;
                 messageBoxObject.SetActive(true);
             }
-        }*/
-
+        }
 
     }
 }
