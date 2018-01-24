@@ -71,11 +71,12 @@ public class PlatformGenerator : MonoBehaviour {
     public int SecondFloorNumber;
     public bool isFloorNumberCount;
     [Header("phBird")]
-    //public MummyController MummyControllerScript;
+    public phBirdController phBirdContollerScript;
     public bool IsGeneratephBird;
     public ObjectPooler phBirdPooler;
     public float phbirdheight;
     public int phbirdThreshold;
+    
 
 
 
@@ -278,10 +279,15 @@ public class PlatformGenerator : MonoBehaviour {
                             if (Counts % phbirdThreshold == 0)
                             {
                                 GameObject newphbird = phBirdPooler.GetPooledObject();
-                                float phBirdXposition = Random.Range(1, 16);
+                                float phBirdXposition = Random.Range(1, 1);
                                 Vector3 phBirdPosition = new Vector3(phBirdXposition, phbirdheight, 0f);
                                 newphbird.transform.position = transform.position + phBirdPosition;
                                 newphbird.transform.rotation = transform.rotation;
+                                //MummyControllerScript = newMummy.gameObject.GetComponent<MummyController>();
+                                phBirdContollerScript = newphbird.gameObject.GetComponent<phBirdController>();
+                                /*phBirdContollerScript.playerRange = 12;
+                                phBirdContollerScript.Activate = true;*/
+                                phBirdContollerScript._moveSpeed = 30;
                                 newphbird.SetActive(true);
                             }
                             }

@@ -20,26 +20,13 @@ GameObject:
   m_Component:
   - component: {fileID: 4622799235499536}
   - component: {fileID: 114339597421798388}
-  - component: {fileID: 58169418263310794}
+  - component: {fileID: 212081200198136288}
+  - component: {fileID: 114421876846171170}
+  - component: {fileID: 50068340878799064}
+  - component: {fileID: 61494645166399130}
   m_Layer: 0
   m_Name: PhBird
   m_TagString: pybird
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!1 &1779560665121802
-GameObject:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  serializedVersion: 5
-  m_Component:
-  - component: {fileID: 4664024391656962}
-  - component: {fileID: 212034124732689184}
-  m_Layer: 0
-  m_Name: phbirdsprite
-  m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -51,28 +38,34 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1586642851589228}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -269.3875, y: -121.85, z: 0}
-  m_LocalScale: {x: 0.54059607, y: 0.54059607, z: 0.54059607}
-  m_Children:
-  - {fileID: 4664024391656962}
+  m_LocalPosition: {x: 5.5, y: 2.2, z: 0}
+  m_LocalScale: {x: 1.0665668, y: 1.0665668, z: 1.0665668}
+  m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!4 &4664024391656962
-Transform:
+--- !u!50 &50068340878799064
+Rigidbody2D:
+  serializedVersion: 4
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1779560665121802}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1.9784036, y: 1.9784036, z: 1.9784036}
-  m_Children: []
-  m_Father: {fileID: 4622799235499536}
-  m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!58 &58169418263310794
-CircleCollider2D:
+  m_GameObject: {fileID: 1586642851589228}
+  m_BodyType: 1
+  m_Simulated: 1
+  m_UseFullKinematicContacts: 0
+  m_UseAutoMass: 0
+  m_Mass: 1
+  m_LinearDrag: 0
+  m_AngularDrag: 0.05
+  m_GravityScale: 1
+  m_Material: {fileID: 0}
+  m_Interpolate: 0
+  m_SleepingMode: 1
+  m_CollisionDetection: 0
+  m_Constraints: 4
+--- !u!61 &61494645166399130
+BoxCollider2D:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
@@ -83,9 +76,19 @@ CircleCollider2D:
   m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0, y: -3.81}
+  m_Offset: {x: -0.17590404, y: -1.495194}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0.5, y: 0.5}
+    oldSize: {x: 6.84, y: 10.8}
+    newSize: {x: 6.84, y: 10.8}
+    adaptiveTilingThreshold: 0.5
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
   serializedVersion: 2
-  m_Radius: 3.704563
+  m_Size: {x: 3.1459904, y: 4.819231}
+  m_EdgeRadius: 0
 --- !u!114 &114339597421798388
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -97,8 +100,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 99c707b119e75c44b9d474d66bed9fce, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  moveSpeed: 20
-  playerRange: 10
+  GoRightObject: {fileID: 0}
+  moveSpeed: 40
+  playerRange: 12
   playerLayer:
     serializedVersion: 2
     m_Bits: 512
@@ -106,12 +110,37 @@ MonoBehaviour:
   facingAway: 0
   followOnLookAway: 1
   On: 0
---- !u!212 &212034124732689184
+  EffectLengthCounter: 1
+  effectMode: 1
+  Activate: 0
+  posX1: -1.066567
+  posY1: 1.066567
+  posX2: 1.066567
+  posY2: 1.066567
+  _moveSpeed: 35
+  moveRight: 0
+  BirdTransform: {fileID: 4622799235499536}
+  DistancePos: 0
+  action: 0
+  PlayerControllerScript: {fileID: 0}
+--- !u!114 &114421876846171170
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1586642851589228}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 66b5cd132826d6b42bc407485601a6b0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  platformDestructionPoint: {fileID: 0}
+--- !u!212 &212081200198136288
 SpriteRenderer:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1779560665121802}
+  m_GameObject: {fileID: 1586642851589228}
   m_Enabled: 1
   m_CastShadows: 0
   m_ReceiveShadows: 0
