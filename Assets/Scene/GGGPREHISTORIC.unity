@@ -11591,7 +11591,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 0}
-  m_AnchoredPosition: {x: -9, y: 903.0001}
+  m_AnchoredPosition: {x: -9, y: 903.0002}
   m_SizeDelta: {x: -726, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!1 &836445298
@@ -26680,7 +26680,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &1490743694
 RectTransform:
   m_ObjectHideFlags: 0
@@ -34000,7 +34000,7 @@ GameObject:
   - component: {fileID: 1797047579}
   - component: {fileID: 1797047580}
   m_Layer: 0
-  m_Name: WallOfDeath
+  m_Name: LavaOfDeath
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -34032,7 +34032,7 @@ Animator:
   m_GameObject: {fileID: 1797047578}
   m_Enabled: 1
   m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 9100000, guid: 2dd64c87489cdd6449599804d655a36a, type: 2}
+  m_Controller: {fileID: 9100000, guid: 11dd303a62763d449a7c2ad8fe30c458, type: 2}
   m_CullingMode: 0
   m_UpdateMode: 0
   m_ApplyRootMotion: 0
