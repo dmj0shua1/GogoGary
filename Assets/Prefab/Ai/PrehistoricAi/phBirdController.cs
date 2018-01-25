@@ -123,6 +123,7 @@ public class phBirdController : MonoBehaviour {
     void Start() 
     {
         action = true;
+        mySpriteRenderer = GetComponent<SpriteRenderer>();
         phBirdManagerScript = GameObject.Find("BirdManager").GetComponent<PhBirdManager>();
         GoRightObject = GameObject.Find("GoRight").GetComponent<Transform>();
         PlayerControllerScript = GameObject.Find("player").GetComponent<playercontroller>();
@@ -161,6 +162,7 @@ public class phBirdController : MonoBehaviour {
     {
         yield return new WaitForSeconds(0.8f);
         //transform.position += Vector3.up * Time.deltaTime * 20;
+        mySpriteRenderer.flipX = true;
         transform.position = Vector3.MoveTowards(transform.position, GoRightObject.transform.position, 30 * Time.deltaTime);
        
     }
