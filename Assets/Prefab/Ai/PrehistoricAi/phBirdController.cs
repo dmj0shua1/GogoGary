@@ -34,6 +34,7 @@ public class phBirdController : MonoBehaviour {
     public bool action;
     [SerializeField]
     private playercontroller PlayerControllerScript;
+    private Animator MyAnimation;
 
     //function1
     /*void Start() 
@@ -124,6 +125,7 @@ public class phBirdController : MonoBehaviour {
     void Start() 
     {
         action = true;
+        MyAnimation = GetComponent<Animator>();
         mySpriteRenderer = GetComponent<SpriteRenderer>();
         phBirdManagerScript = GameObject.Find("BirdManager").GetComponent<PhBirdManager>();
         GoRightObject = GameObject.Find("GoRight").GetComponent<Transform>();
@@ -197,10 +199,15 @@ public class phBirdController : MonoBehaviour {
             if (PlayerControllerScript.grounded)
             {
                 AttackMethod();
+                MyAnimation.SetBool("isAttack", false);
                 _moveSpeed = 0;
             }
            
         }
+    }
+    void OnTriggerExit2D(Collider2D other)
+    {
+        MyAnimation.SetBool("isAttack", true);
     }
 
     public void AttackMethod() 

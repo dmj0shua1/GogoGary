@@ -31,6 +31,7 @@ public class PointManager : MonoBehaviour {
     public bool isComplete;
     public bool isCompleteActivate;
     private Animator MyAnimation;
+    private Animator MyAnimationLava;
 
     public GameObject wallofdeathparticle1;
     public GameObject wallofdeathparticle2;
@@ -42,6 +43,7 @@ public class PointManager : MonoBehaviour {
 	void Start()
 	{
         if (SceneManager.GetActiveScene().name == "GGGPYRAMID") MyAnimation = GameObject.Find("WallOfDeath").GetComponent<Animator>();
+        if (SceneManager.GetActiveScene().name == "GGGPREHISTORIC")MyAnimationLava= GameObject.Find("LavaOfDeath").GetComponent<Animator>();
 		FloorCounterScript = GameObject.Find("player").GetComponent<floorcounter>();
 		CameraFollowScript = GameObject.Find ("Main Camera").GetComponent<CameraFollow>();
 		FireAiScript = GameObject.Find ("Fire").GetComponent<FireAi> ();
@@ -252,6 +254,11 @@ public class PointManager : MonoBehaviour {
                 wallofdeathparticle1.SetActive(true);
                 wallofdeathparticle2.SetActive(true);
                 MyAnimation.SetBool("isIdle", false); 
+            }
+            if (sceneNamewd == "GGGPREHISTORIC")
+            {
+                
+                MyAnimationLava.SetBool("isIdle", false);
             }
          
         }    

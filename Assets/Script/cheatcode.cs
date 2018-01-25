@@ -11,6 +11,11 @@ public class cheatcode : MonoBehaviour {
         PlayerPrefs.SetInt("TotalRescuePoints", 75);
         PlayerPrefs.SetInt("pyTotalRescuePoints", 75);
     }
+    public void UnlockLevelEn()
+    {
+        PlayerPrefs.SetInt("energyLeft", 5);
+
+    }
     public void TotalRescueAdd()
     {
         PlayerPrefs.SetInt("TotalRescuePoints", 75);

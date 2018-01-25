@@ -24,6 +24,7 @@ GameObject:
   - component: {fileID: 114421876846171170}
   - component: {fileID: 50068340878799064}
   - component: {fileID: 61494645166399130}
+  - component: {fileID: 95709934236377740}
   m_Layer: 0
   m_Name: PhBird
   m_TagString: pybird
@@ -80,7 +81,7 @@ BoxCollider2D:
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 6.84, y: 10.8}
+    oldSize: {x: 19.199999, y: 10.799999}
     newSize: {x: 6.84, y: 10.8}
     adaptiveTilingThreshold: 0.5
     drawMode: 0
@@ -89,6 +90,23 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 3.1459904, y: 4.819231}
   m_EdgeRadius: 0
+--- !u!95 &95709934236377740
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1586642851589228}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: de603719b76d0644288d4dfd8114d22b, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
 --- !u!114 &114339597421798388
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -101,7 +119,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   GoRightObject: {fileID: 0}
-  LeftObject: {fileID: 0}
+  GoLeftObject: {fileID: 0}
   moveSpeed: 40
   playerRange: 12
   playerLayer:
@@ -167,8 +185,8 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 18
-  m_Sprite: {fileID: 21300000, guid: 0add74850262e0a45a00bea8c4248550, type: 3}
+  m_SortingOrder: 20
+  m_Sprite: {fileID: 21300000, guid: 357a50d67f917894db4bb935047b0783, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
