@@ -101,6 +101,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   GoRightObject: {fileID: 0}
+  LeftObject: {fileID: 0}
   moveSpeed: 40
   playerRange: 12
   playerLayer:
