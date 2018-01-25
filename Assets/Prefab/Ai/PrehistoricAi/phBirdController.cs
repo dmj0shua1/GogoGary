@@ -6,6 +6,7 @@ public class phBirdController : MonoBehaviour {
 
     private playercontroller ThePlayer;
     public Transform GoRightObject;
+    public Transform GoLeftObject;
 
     public float moveSpeed;
     public float playerRange;
@@ -126,6 +127,7 @@ public class phBirdController : MonoBehaviour {
         mySpriteRenderer = GetComponent<SpriteRenderer>();
         phBirdManagerScript = GameObject.Find("BirdManager").GetComponent<PhBirdManager>();
         GoRightObject = GameObject.Find("GoRight").GetComponent<Transform>();
+        GoLeftObject = GameObject.Find("GoLeft").GetComponent<Transform>();
         PlayerControllerScript = GameObject.Find("player").GetComponent<playercontroller>();
     }
     void Update() 
@@ -162,8 +164,17 @@ public class phBirdController : MonoBehaviour {
     {
         yield return new WaitForSeconds(0.8f);
         //transform.position += Vector3.up * Time.deltaTime * 20;
-        mySpriteRenderer.flipX = true;
-        transform.position = Vector3.MoveTowards(transform.position, GoRightObject.transform.position, 30 * Time.deltaTime);
+        if (moveRight)
+        {
+            mySpriteRenderer.flipX = true;
+            transform.position = Vector3.MoveTowards(transform.position, GoRightObject.transform.position, 30 * Time.deltaTime);
+        } else if (!moveRight)
+        {
+            mySpriteRenderer.flipX = true;
+            transform.position = Vector3.MoveTowards(transform.position, GoLeftObject.transform.position, 30 * Time.deltaTime);
+        }
+
+
        
     }
     IEnumerator isMoveTrue()

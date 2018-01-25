@@ -270,9 +270,9 @@ public class PlatformGenerator : MonoBehaviour {
                         if (sceneName == "GGGPREHISTORIC")
                        {
                             //MummyThresholdAdjust();
-                            //if (LevelPassScript.LevelStatusAmt >= 51)
-                            //{
-                            //IsGeneratephBird = true;
+                            if (LevelPassScript.LevelStatusAmt >= 53)
+                            {
+                            IsGeneratephBird = true;
                             if (IsGeneratephBird)
                             {
 
@@ -291,7 +291,7 @@ public class PlatformGenerator : MonoBehaviour {
                                 newphbird.SetActive(true);
                             }
                             }
-                            //}
+                            }
                         }
                 //
             }
