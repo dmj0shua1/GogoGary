@@ -76,6 +76,10 @@ public class PlatformGenerator : MonoBehaviour {
     public ObjectPooler phBirdPooler;
     public float phbirdheight;
     public int phbirdThreshold;
+    [Header("Smudge")]
+    public bool isSmudge;
+    public GameObject SmudgeObject;
+    public int smudgeDivided;
     
 
 
@@ -253,7 +257,7 @@ public class PlatformGenerator : MonoBehaviour {
                       
                         fireHalfFloorMethod();
                 //random gobackagain walk throughwalls
-                        if (sceneName == "GGGPYRAMID")
+                        if (sceneName == "GGGPYRAMID" || sceneName == "GGGPREHISTORIC")
                         {
                             if (isEnabledWalkThrougwall)
                             {
@@ -270,6 +274,7 @@ public class PlatformGenerator : MonoBehaviour {
                         if (sceneName == "GGGPREHISTORIC")
                        {
                             //MummyThresholdAdjust();
+                            PhBirdThresholdAdjust();
                             if (LevelPassScript.LevelStatusAmt >= 53)
                             {
                             IsGeneratephBird = true;
@@ -293,6 +298,21 @@ public class PlatformGenerator : MonoBehaviour {
                             }
                             }
                         }
+                //  
+                        if (sceneName == "GGGPREHISTORIC")
+                        {
+                          
+                            if (isSmudge)
+                            {
+                                smudgeDivided = EndGenerate / 3;
+                                if (Counts % smudgeDivided == 0)
+                                {
+                                    SmudgeObject.SetActive(true);
+                                }
+                            }
+                        }
+                      
+                //
                 //
             }
         }
@@ -371,6 +391,67 @@ public class PlatformGenerator : MonoBehaviour {
             }
         }
      
+    }
+    public void PhBirdThresholdAdjust()
+    {
+
+        for (int set1 = 51; set1 <= 52; set1++)
+        {
+            if (LevelPassScript.LevelStatusAmt == set1)
+            {
+                isSmudge = true;
+            }
+        }
+        for (int set2 = 53; set2 <= 57; set2++)
+        {
+            if (LevelPassScript.LevelStatusAmt == set2)
+            {
+                phbirdThreshold = 8;
+                isSmudge = true;
+            }
+        }
+        for (int set3 = 58; set3 <= 62; set3++)
+        {
+            if (LevelPassScript.LevelStatusAmt == set3)
+            {
+                phbirdThreshold = 7;
+                isSmudge = true;
+            }
+        }
+        for (int set4 = 63; set4 <= 67; set4++)
+        {
+            if (LevelPassScript.LevelStatusAmt == set4)
+            {
+                phbirdThreshold = 6;
+                DebriGenerationScript.randomDebrisThreshold = 15;
+                isSmudge = true;
+                //isEnabledWalkThrougwall = true;
+            }
+        }
+        for (int set5 = 68; set5 <= 72; set5++)
+        {
+            if (LevelPassScript.LevelStatusAmt == set5)
+            {
+                phbirdThreshold = 3;
+                DebriGenerationScript.randomDebrisThreshold = 20;
+                timeThreshold = 10;
+                isSmudge = true;
+                //isEnabledWalkThrougwall = true;
+
+            }
+        }
+        for (int set6 = 73; set6 <= 75; set6++)
+        {
+            if (LevelPassScript.LevelStatusAmt == set6)
+            {
+                phbirdThreshold = 2;
+                DebriGenerationScript.randomDebrisThreshold = 25;
+                timeThreshold = 10;
+                isSmudge = true;
+                //isEnabledWalkThrougwall = true;
+            }
+        }
+
     }
     public void fireHalfFloorMethod() 
     {

@@ -204,14 +204,20 @@ public class phBirdController : MonoBehaviour {
             }
            
         }
+        if (other.gameObject.CompareTag("HitBoxCam"))
+        {
+            gameObject.SetActive(false);
+        }
     }
     void OnTriggerExit2D(Collider2D other)
     {
         MyAnimation.SetBool("isAttack", true);
+        PlayerControllerScript.MummyCollide = true;
     }
 
     public void AttackMethod() 
     {
         phBirdManagerScript.ActivateBirdeffect(effectMode, EffectLengthCounter);
+        PlayerControllerScript.MummyCollide = false;
     }
 }

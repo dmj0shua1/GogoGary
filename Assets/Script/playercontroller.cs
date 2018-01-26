@@ -268,6 +268,10 @@ public class playercontroller : MonoBehaviour {
         {
             MyAnimation.SetBool("isDefend", MummyCollide);
         }
+        else if (SceneManager.GetActiveScene().name == "GGGPREHISTORIC")
+        {
+            MyAnimation.SetBool("isDefend", MummyCollide);
+        }
      
     }
     void OnTriggerEnter2D(Collider2D other) 
