@@ -304,8 +304,8 @@ public class PlatformGenerator : MonoBehaviour {
                           
                             if (isSmudge)
                             {
-                                smudgeDivided = EndGenerate / 3;
-                                if (Counts % smudgeDivided == 0)
+                                smudgeDivided = EndGenerate / 2;
+                                if (/*Counts % smudgeDivided == 0*/smudgeDivided == FloorCounterScript.countFloor)
                                 {
                                     SmudgeObject.SetActive(true);
                                 }

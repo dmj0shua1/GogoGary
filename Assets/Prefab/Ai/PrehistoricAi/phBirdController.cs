@@ -175,9 +175,6 @@ public class phBirdController : MonoBehaviour {
             mySpriteRenderer.flipX = true;
             transform.position = Vector3.MoveTowards(transform.position, GoLeftObject.transform.position, 30 * Time.deltaTime);
         }
-
-
-       
     }
     IEnumerator isMoveTrue()
     {
@@ -193,7 +190,6 @@ public class phBirdController : MonoBehaviour {
 
     void OnTriggerEnter2D(Collider2D other)
     {
-
         if (other.gameObject.CompareTag("Player"))
         {
             if (PlayerControllerScript.grounded)
@@ -202,7 +198,7 @@ public class phBirdController : MonoBehaviour {
                 MyAnimation.SetBool("isAttack", false);
                 _moveSpeed = 0;
             }
-           
+
         }
         if (other.gameObject.CompareTag("HitBoxCam"))
         {
