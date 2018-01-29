@@ -425,7 +425,7 @@ public class PlatformGenerator : MonoBehaviour {
                 phbirdThreshold = 6;
                 DebriGenerationScript.randomDebrisThreshold = 15;
                 isSmudge = true;
-                //isEnabledWalkThrougwall = true;
+                isEnabledWalkThrougwall = true;
             }
         }
         for (int set5 = 68; set5 <= 72; set5++)
@@ -436,7 +436,7 @@ public class PlatformGenerator : MonoBehaviour {
                 DebriGenerationScript.randomDebrisThreshold = 20;
                 timeThreshold = 10;
                 isSmudge = true;
-                //isEnabledWalkThrougwall = true;
+                isEnabledWalkThrougwall = true;
 
             }
         }
@@ -448,7 +448,7 @@ public class PlatformGenerator : MonoBehaviour {
                 DebriGenerationScript.randomDebrisThreshold = 25;
                 timeThreshold = 10;
                 isSmudge = true;
-                //isEnabledWalkThrougwall = true;
+                isEnabledWalkThrougwall = true;
             }
         }
 

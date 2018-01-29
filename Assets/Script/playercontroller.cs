@@ -369,7 +369,7 @@ public class playercontroller : MonoBehaviour {
         {
             MummyCollide = false;
         }*/
-        if (SceneManager.GetActiveScene().name == "GGGPYRAMID") 
+        if (SceneManager.GetActiveScene().name == "GGGPYRAMID" || SceneManager.GetActiveScene().name == "GGGPREHISTORIC") 
         {
             if (other.gameObject.CompareTag("Hitbox"))
             {

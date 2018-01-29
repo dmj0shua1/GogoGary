@@ -4192,7 +4192,7 @@ GameObject:
   - component: {fileID: 326202655}
   - component: {fileID: 326202654}
   m_Layer: 5
-  m_Name: wrongwalltext
+  m_Name: PhBirdltext
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -4248,7 +4248,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: This Way or That
+  m_Text: Big Bird Alert!
 --- !u!222 &326202655
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -11737,7 +11737,7 @@ GameObject:
   - component: {fileID: 826074748}
   - component: {fileID: 826074747}
   m_Layer: 5
-  m_Name: MummyTips
+  m_Name: LavaScreenTips
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -11799,7 +11799,7 @@ MonoBehaviour:
       m_Calls: []
     m_TypeName: UnityEngine.UI.MaskableGraphic+CullStateChangedEvent, UnityEngine.UI,
       Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
-  m_Sprite: {fileID: 21300000, guid: 66632ccce673a5249a990c87ddd06785, type: 3}
+  m_Sprite: {fileID: 21300000, guid: d37b85d8a2cd5324793315ea3ae7e7ed, type: 3}
   m_Type: 0
   m_PreserveAspect: 1
   m_FillCenter: 1
@@ -15248,8 +15248,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 8, y: 86}
-  m_SizeDelta: {x: 537, y: 67}
+  m_AnchoredPosition: {x: 23.999992, y: 86}
+  m_SizeDelta: {x: 634, y: 67}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1097902574
 MonoBehaviour:
@@ -15272,10 +15272,10 @@ MonoBehaviour:
       Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
   m_FontData:
     m_Font: {fileID: 12800000, guid: 2b160f3ec8a6f574ba63d5b44b091255, type: 3}
-    m_FontSize: 35
+    m_FontSize: 30
     m_FontStyle: 1
     m_BestFit: 0
-    m_MinSize: 10
+    m_MinSize: 0
     m_MaxSize: 52
     m_Alignment: 0
     m_AlignByGeometry: 0
@@ -15283,7 +15283,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: BEWARE OF MUMMY ATTACKS
+  m_Text: YOU CAN SWIPE BUT YOU CAN'T SIGHT
 --- !u!222 &1097902575
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -28400,7 +28400,7 @@ GameObject:
   - component: {fileID: 1570786213}
   - component: {fileID: 1570786212}
   m_Layer: 5
-  m_Name: WrongWall
+  m_Name: PhbirdTips
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -28462,7 +28462,7 @@ MonoBehaviour:
       m_Calls: []
     m_TypeName: UnityEngine.UI.MaskableGraphic+CullStateChangedEvent, UnityEngine.UI,
       Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
-  m_Sprite: {fileID: 21300000, guid: 41a7a3350dfff774486ca58d60208d3a, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 08b43eded0d9c854e9969a8fb1c2fbad, type: 3}
   m_Type: 0
   m_PreserveAspect: 1
   m_FillCenter: 1

@@ -15965,21 +15965,6 @@ Prefab:
       propertyPath: m_Pivot.y
       value: 0.5
       objectReference: {fileID: 0}
-    - target: {fileID: 114482019137605924, guid: b9cab6576427f074996d1831235b1829,
-        type: 2}
-      propertyPath: TestButtonObject
-      value: 
-      objectReference: {fileID: 1073}
-    - target: {fileID: 114482019137605924, guid: b9cab6576427f074996d1831235b1829,
-        type: 2}
-      propertyPath: MainHolderScript
-      value: 
-      objectReference: {fileID: 1072}
-    - target: {fileID: 114482019137605924, guid: b9cab6576427f074996d1831235b1829,
-        type: 2}
-      propertyPath: ButtonCameraViewScript
-      value: 
-      objectReference: {fileID: 10}
     - target: {fileID: 114228280517770132, guid: b9cab6576427f074996d1831235b1829,
         type: 2}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
@@ -16015,6 +16000,21 @@ Prefab:
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[7].m_Target
       value: 
       objectReference: {fileID: 2143548820}
+    - target: {fileID: 114482019137605924, guid: b9cab6576427f074996d1831235b1829,
+        type: 2}
+      propertyPath: TestButtonObject
+      value: 
+      objectReference: {fileID: 1073}
+    - target: {fileID: 114482019137605924, guid: b9cab6576427f074996d1831235b1829,
+        type: 2}
+      propertyPath: MainHolderScript
+      value: 
+      objectReference: {fileID: 1072}
+    - target: {fileID: 114482019137605924, guid: b9cab6576427f074996d1831235b1829,
+        type: 2}
+      propertyPath: ButtonCameraViewScript
+      value: 
+      objectReference: {fileID: 10}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: b9cab6576427f074996d1831235b1829, type: 2}
   m_IsPrefabParent: 0
@@ -16192,21 +16192,6 @@ Prefab:
       propertyPath: m_Pivot.y
       value: 0.5
       objectReference: {fileID: 0}
-    - target: {fileID: 114149213439415912, guid: dd655cd02f472bd41b3c5c56a2896363,
-        type: 2}
-      propertyPath: TestButtonObject
-      value: 
-      objectReference: {fileID: 1073}
-    - target: {fileID: 114149213439415912, guid: dd655cd02f472bd41b3c5c56a2896363,
-        type: 2}
-      propertyPath: MainHolderScript
-      value: 
-      objectReference: {fileID: 1072}
-    - target: {fileID: 114149213439415912, guid: dd655cd02f472bd41b3c5c56a2896363,
-        type: 2}
-      propertyPath: ButtonCameraViewScript
-      value: 
-      objectReference: {fileID: 10}
     - target: {fileID: 114289338352964492, guid: dd655cd02f472bd41b3c5c56a2896363,
         type: 2}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
@@ -16242,6 +16227,21 @@ Prefab:
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[7].m_Target
       value: 
       objectReference: {fileID: 2143548820}
+    - target: {fileID: 114149213439415912, guid: dd655cd02f472bd41b3c5c56a2896363,
+        type: 2}
+      propertyPath: TestButtonObject
+      value: 
+      objectReference: {fileID: 1073}
+    - target: {fileID: 114149213439415912, guid: dd655cd02f472bd41b3c5c56a2896363,
+        type: 2}
+      propertyPath: MainHolderScript
+      value: 
+      objectReference: {fileID: 1072}
+    - target: {fileID: 114149213439415912, guid: dd655cd02f472bd41b3c5c56a2896363,
+        type: 2}
+      propertyPath: ButtonCameraViewScript
+      value: 
+      objectReference: {fileID: 10}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: dd655cd02f472bd41b3c5c56a2896363, type: 2}
   m_IsPrefabParent: 0
@@ -16975,21 +16975,6 @@ Prefab:
       propertyPath: m_Pivot.y
       value: 0.5
       objectReference: {fileID: 0}
-    - target: {fileID: 114884307323501148, guid: c09b5536933367d4ea932527aab784a9,
-        type: 2}
-      propertyPath: TestButtonObject
-      value: 
-      objectReference: {fileID: 1073}
-    - target: {fileID: 114884307323501148, guid: c09b5536933367d4ea932527aab784a9,
-        type: 2}
-      propertyPath: MainHolderScript
-      value: 
-      objectReference: {fileID: 1072}
-    - target: {fileID: 114884307323501148, guid: c09b5536933367d4ea932527aab784a9,
-        type: 2}
-      propertyPath: ButtonCameraViewScript
-      value: 
-      objectReference: {fileID: 10}
     - target: {fileID: 114448915713925264, guid: c09b5536933367d4ea932527aab784a9,
         type: 2}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
@@ -17025,6 +17010,21 @@ Prefab:
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[7].m_Target
       value: 
       objectReference: {fileID: 2143548820}
+    - target: {fileID: 114884307323501148, guid: c09b5536933367d4ea932527aab784a9,
+        type: 2}
+      propertyPath: TestButtonObject
+      value: 
+      objectReference: {fileID: 1073}
+    - target: {fileID: 114884307323501148, guid: c09b5536933367d4ea932527aab784a9,
+        type: 2}
+      propertyPath: MainHolderScript
+      value: 
+      objectReference: {fileID: 1072}
+    - target: {fileID: 114884307323501148, guid: c09b5536933367d4ea932527aab784a9,
+        type: 2}
+      propertyPath: ButtonCameraViewScript
+      value: 
+      objectReference: {fileID: 10}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: c09b5536933367d4ea932527aab784a9, type: 2}
   m_IsPrefabParent: 0
@@ -19032,21 +19032,6 @@ Prefab:
       propertyPath: m_Pivot.y
       value: 0.5
       objectReference: {fileID: 0}
-    - target: {fileID: 114253211090176522, guid: b9bc30fc2d27ab246a26f7f28866dccf,
-        type: 2}
-      propertyPath: TestButtonObject
-      value: 
-      objectReference: {fileID: 1073}
-    - target: {fileID: 114253211090176522, guid: b9bc30fc2d27ab246a26f7f28866dccf,
-        type: 2}
-      propertyPath: MainHolderScript
-      value: 
-      objectReference: {fileID: 1072}
-    - target: {fileID: 114253211090176522, guid: b9bc30fc2d27ab246a26f7f28866dccf,
-        type: 2}
-      propertyPath: ButtonCameraViewScript
-      value: 
-      objectReference: {fileID: 10}
     - target: {fileID: 114705159815728608, guid: b9bc30fc2d27ab246a26f7f28866dccf,
         type: 2}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
@@ -19082,6 +19067,21 @@ Prefab:
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[7].m_Target
       value: 
       objectReference: {fileID: 2143548820}
+    - target: {fileID: 114253211090176522, guid: b9bc30fc2d27ab246a26f7f28866dccf,
+        type: 2}
+      propertyPath: TestButtonObject
+      value: 
+      objectReference: {fileID: 1073}
+    - target: {fileID: 114253211090176522, guid: b9bc30fc2d27ab246a26f7f28866dccf,
+        type: 2}
+      propertyPath: MainHolderScript
+      value: 
+      objectReference: {fileID: 1072}
+    - target: {fileID: 114253211090176522, guid: b9bc30fc2d27ab246a26f7f28866dccf,
+        type: 2}
+      propertyPath: ButtonCameraViewScript
+      value: 
+      objectReference: {fileID: 10}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: b9bc30fc2d27ab246a26f7f28866dccf, type: 2}
   m_IsPrefabParent: 0
@@ -19286,21 +19286,6 @@ Prefab:
       propertyPath: m_Pivot.y
       value: 0.5
       objectReference: {fileID: 0}
-    - target: {fileID: 114618320083167990, guid: 1c84fab748c457e449df8711690f4ad2,
-        type: 2}
-      propertyPath: TestButtonObject
-      value: 
-      objectReference: {fileID: 1073}
-    - target: {fileID: 114618320083167990, guid: 1c84fab748c457e449df8711690f4ad2,
-        type: 2}
-      propertyPath: MainHolderScript
-      value: 
-      objectReference: {fileID: 1072}
-    - target: {fileID: 114618320083167990, guid: 1c84fab748c457e449df8711690f4ad2,
-        type: 2}
-      propertyPath: ButtonCameraViewScript
-      value: 
-      objectReference: {fileID: 10}
     - target: {fileID: 114924826735037974, guid: 1c84fab748c457e449df8711690f4ad2,
         type: 2}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
@@ -19336,6 +19321,21 @@ Prefab:
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[7].m_Target
       value: 
       objectReference: {fileID: 2143548820}
+    - target: {fileID: 114618320083167990, guid: 1c84fab748c457e449df8711690f4ad2,
+        type: 2}
+      propertyPath: TestButtonObject
+      value: 
+      objectReference: {fileID: 1073}
+    - target: {fileID: 114618320083167990, guid: 1c84fab748c457e449df8711690f4ad2,
+        type: 2}
+      propertyPath: MainHolderScript
+      value: 
+      objectReference: {fileID: 1072}
+    - target: {fileID: 114618320083167990, guid: 1c84fab748c457e449df8711690f4ad2,
+        type: 2}
+      propertyPath: ButtonCameraViewScript
+      value: 
+      objectReference: {fileID: 10}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 1c84fab748c457e449df8711690f4ad2, type: 2}
   m_IsPrefabParent: 0
@@ -19436,21 +19436,6 @@ Prefab:
       propertyPath: m_Pivot.y
       value: 0.5
       objectReference: {fileID: 0}
-    - target: {fileID: 114794951471143636, guid: 13458b5415337b44cbb6f9ecdf765d2d,
-        type: 2}
-      propertyPath: TestButtonObject
-      value: 
-      objectReference: {fileID: 1073}
-    - target: {fileID: 114794951471143636, guid: 13458b5415337b44cbb6f9ecdf765d2d,
-        type: 2}
-      propertyPath: MainHolderScript
-      value: 
-      objectReference: {fileID: 1072}
-    - target: {fileID: 114794951471143636, guid: 13458b5415337b44cbb6f9ecdf765d2d,
-        type: 2}
-      propertyPath: ButtonCameraViewScript
-      value: 
-      objectReference: {fileID: 10}
     - target: {fileID: 114745757694299746, guid: 13458b5415337b44cbb6f9ecdf765d2d,
         type: 2}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
@@ -19486,6 +19471,21 @@ Prefab:
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[7].m_Target
       value: 
       objectReference: {fileID: 2143548820}
+    - target: {fileID: 114794951471143636, guid: 13458b5415337b44cbb6f9ecdf765d2d,
+        type: 2}
+      propertyPath: TestButtonObject
+      value: 
+      objectReference: {fileID: 1073}
+    - target: {fileID: 114794951471143636, guid: 13458b5415337b44cbb6f9ecdf765d2d,
+        type: 2}
+      propertyPath: MainHolderScript
+      value: 
+      objectReference: {fileID: 1072}
+    - target: {fileID: 114794951471143636, guid: 13458b5415337b44cbb6f9ecdf765d2d,
+        type: 2}
+      propertyPath: ButtonCameraViewScript
+      value: 
+      objectReference: {fileID: 10}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 13458b5415337b44cbb6f9ecdf765d2d, type: 2}
   m_IsPrefabParent: 0
@@ -20964,21 +20964,6 @@ Prefab:
       propertyPath: m_Pivot.y
       value: 0.5
       objectReference: {fileID: 0}
-    - target: {fileID: 114321227766898174, guid: 9fde9031f31350048a4713b74f341998,
-        type: 2}
-      propertyPath: TestButtonObject
-      value: 
-      objectReference: {fileID: 1073}
-    - target: {fileID: 114321227766898174, guid: 9fde9031f31350048a4713b74f341998,
-        type: 2}
-      propertyPath: MainHolderScript
-      value: 
-      objectReference: {fileID: 1072}
-    - target: {fileID: 114321227766898174, guid: 9fde9031f31350048a4713b74f341998,
-        type: 2}
-      propertyPath: ButtonCameraViewScript
-      value: 
-      objectReference: {fileID: 10}
     - target: {fileID: 114627936052977142, guid: 9fde9031f31350048a4713b74f341998,
         type: 2}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
@@ -21014,6 +20999,21 @@ Prefab:
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[7].m_Target
       value: 
       objectReference: {fileID: 2143548820}
+    - target: {fileID: 114321227766898174, guid: 9fde9031f31350048a4713b74f341998,
+        type: 2}
+      propertyPath: TestButtonObject
+      value: 
+      objectReference: {fileID: 1073}
+    - target: {fileID: 114321227766898174, guid: 9fde9031f31350048a4713b74f341998,
+        type: 2}
+      propertyPath: MainHolderScript
+      value: 
+      objectReference: {fileID: 1072}
+    - target: {fileID: 114321227766898174, guid: 9fde9031f31350048a4713b74f341998,
+        type: 2}
+      propertyPath: ButtonCameraViewScript
+      value: 
+      objectReference: {fileID: 10}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 9fde9031f31350048a4713b74f341998, type: 2}
   m_IsPrefabParent: 0
