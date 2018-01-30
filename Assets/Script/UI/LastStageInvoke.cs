@@ -8,6 +8,7 @@ public class LastStageInvoke : MonoBehaviour {
     public float PosX;
     public RectTransform ListTrans;
     public bool Activate2;
+    public bool Activate3;
 	void Start () 
     {
         ListTrans = GameObject.Find("List").GetComponent<RectTransform>();
@@ -21,6 +22,11 @@ public class LastStageInvoke : MonoBehaviour {
         {
             Activate2 = true;
            
+        }
+        if (PlayerPrefs.GetInt("LastLevelStagePickerSelect") == 3)
+        {
+            Activate3 = true;
+
         }
       
 	}
@@ -39,6 +45,19 @@ public class LastStageInvoke : MonoBehaviour {
                 PlayerPrefs.SetInt("LastLevelStagePickerSelect", 0);
             }
        
+        }
+        if (Activate3)
+        {
+            if (PosX < 500)
+            {
+                Activate3 = false;
+            }
+            else
+            {
+                StartCoroutine(AutoPlay2());
+                PlayerPrefs.SetInt("LastLevelStagePickerSelect", 0);
+            }
+
         }
       
     }

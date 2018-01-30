@@ -35,6 +35,8 @@ public class phBirdController : MonoBehaviour {
     [SerializeField]
     private playercontroller PlayerControllerScript;
     private Animator MyAnimation;
+    public Collider2D MainCollider;
+    public bool isCollide;
 
     //function1
     /*void Start() 
@@ -131,6 +133,7 @@ public class phBirdController : MonoBehaviour {
         GoRightObject = GameObject.Find("GoRight").GetComponent<Transform>();
         GoLeftObject = GameObject.Find("GoLeft").GetComponent<Transform>();
         PlayerControllerScript = GameObject.Find("player").GetComponent<playercontroller>();
+        MainCollider = GetComponent<Collider2D>();
     }
     void Update() 
     {
@@ -160,6 +163,10 @@ public class phBirdController : MonoBehaviour {
             {
                 StartCoroutine(isGoAway());
             }
+            if (isCollide)
+            {
+                MainCollider.enabled = true;
+            }
     }
 
     IEnumerator isGoAway()
@@ -175,6 +182,7 @@ public class phBirdController : MonoBehaviour {
             mySpriteRenderer.flipX = true;
             transform.position = Vector3.MoveTowards(transform.position, GoLeftObject.transform.position, 30 * Time.deltaTime);
         }
+  
     }
     IEnumerator isMoveTrue()
     {
@@ -187,6 +195,11 @@ public class phBirdController : MonoBehaviour {
         yield return new WaitForSeconds(0.1f);
         moveRight = false;
     }
+    IEnumerator isCollideTime()
+    {
+        yield return new WaitForSeconds(0.1f);
+        isCollide = true;
+    }
 
     void OnTriggerEnter2D(Collider2D other)
     {
@@ -195,7 +208,7 @@ public class phBirdController : MonoBehaviour {
             if (PlayerControllerScript.grounded)
             {
                 AttackMethod();
-                MyAnimation.SetBool("isAttack", false);
+                //MyAnimation.SetBool("isAttack", false);
                 _moveSpeed = 0;
             }
 
@@ -203,7 +216,10 @@ public class phBirdController : MonoBehaviour {
         if (other.gameObject.CompareTag("HitBoxCam"))
         {
             gameObject.SetActive(false);
-        }
+  
+
+       }
+        
     }
     void OnTriggerStay2D(Collider2D other)
     {
@@ -211,14 +227,23 @@ public class phBirdController : MonoBehaviour {
         {
             if (PlayerControllerScript.grounded)
             {
+                MyAnimation.SetBool("isAttack", false);
                 PlayerControllerScript.MummyCollide = false;
             }
+        }
+        if (other.gameObject.CompareTag("Hitbox"))
+        {
+            MainCollider.enabled = false;
+            isCollide = false;
+        
         }
     }
     void OnTriggerExit2D(Collider2D other)
     {
         MyAnimation.SetBool("isAttack", true);
         PlayerControllerScript.MummyCollide = true;
+        StartCoroutine(isCollideTime());
+       
     }
 
     public void AttackMethod() 

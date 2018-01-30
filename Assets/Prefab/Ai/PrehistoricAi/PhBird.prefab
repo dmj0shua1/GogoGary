@@ -142,6 +142,8 @@ MonoBehaviour:
   DistancePos: 0
   action: 0
   PlayerControllerScript: {fileID: 0}
+  MainCollider: {fileID: 61494645166399130}
+  isCollide: 1
 --- !u!114 &114421876846171170
 MonoBehaviour:
   m_ObjectHideFlags: 1
