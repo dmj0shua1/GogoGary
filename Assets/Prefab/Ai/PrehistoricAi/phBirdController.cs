@@ -205,6 +205,16 @@ public class phBirdController : MonoBehaviour {
             gameObject.SetActive(false);
         }
     }
+    void OnTriggerStay2D(Collider2D other)
+    {
+        if (other.gameObject.CompareTag("Player"))
+        {
+            if (PlayerControllerScript.grounded)
+            {
+                PlayerControllerScript.MummyCollide = false;
+            }
+        }
+    }
     void OnTriggerExit2D(Collider2D other)
     {
         MyAnimation.SetBool("isAttack", true);
@@ -214,6 +224,6 @@ public class phBirdController : MonoBehaviour {
     public void AttackMethod() 
     {
         phBirdManagerScript.ActivateBirdeffect(effectMode, EffectLengthCounter);
-        PlayerControllerScript.MummyCollide = false;
+        //PlayerControllerScript.MummyCollide = false;
     }
 }

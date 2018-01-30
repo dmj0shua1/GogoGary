@@ -264,14 +264,14 @@ public class playercontroller : MonoBehaviour {
     }
     public void GaryDefend() 
     {
-        if (SceneManager.GetActiveScene().name == "GGGPYRAMID") 
+        if (SceneManager.GetActiveScene().name == "GGGPYRAMID" || SceneManager.GetActiveScene().name == "GGGPREHISTORIC") 
         {
             MyAnimation.SetBool("isDefend", MummyCollide);
         }
-        else if (SceneManager.GetActiveScene().name == "GGGPREHISTORIC")
+        /*else if (SceneManager.GetActiveScene().name == "GGGPREHISTORIC")
         {
             MyAnimation.SetBool("isDefend", MummyCollide);
-        }
+        }*/
      
     }
     void OnTriggerEnter2D(Collider2D other) 

@@ -444,7 +444,7 @@ public class PlatformGenerator : MonoBehaviour {
         {
             if (LevelPassScript.LevelStatusAmt == set6)
             {
-                phbirdThreshold = 2;
+                phbirdThreshold = 3;
                 DebriGenerationScript.randomDebrisThreshold = 25;
                 timeThreshold = 10;
                 isSmudge = true;
