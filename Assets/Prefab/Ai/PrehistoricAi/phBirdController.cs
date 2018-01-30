@@ -205,12 +205,30 @@ public class phBirdController : MonoBehaviour {
     {
         if (other.gameObject.CompareTag("Player"))
         {
-            if (PlayerControllerScript.grounded)
+            /*if (PlayerControllerScript.grounded || !PlayerControllerScript.grounded)
             {
-                AttackMethod();
+                //AttackMethod();
+                //_moveSpeed = 0;
                 //MyAnimation.SetBool("isAttack", false);
-                _moveSpeed = 0;
-            }
+                float PlayerTransform = other.gameObject.transform.position.x;
+                float MummyTransform = gameObject.transform.position.x;
+                if (PlayerTransform > MummyTransform)
+                {
+                    //rightmummy
+                    AttackMethod();
+                    _moveSpeed = 0;
+                    moveRight = false;
+
+                }
+                else
+                {
+                    //leftMummy
+                    AttackMethod();
+                    _moveSpeed = 0;
+                    moveRight = true;
+                }
+
+            }*/
 
         }
         if (other.gameObject.CompareTag("HitBoxCam"))
@@ -225,11 +243,38 @@ public class phBirdController : MonoBehaviour {
     {
         if (other.gameObject.CompareTag("Player"))
         {
+
             if (PlayerControllerScript.grounded)
             {
                 MyAnimation.SetBool("isAttack", false);
                 PlayerControllerScript.MummyCollide = false;
             }
+            //
+            if (PlayerControllerScript.grounded || !PlayerControllerScript.grounded)
+            {
+                //AttackMethod();
+                //_moveSpeed = 0;
+                //MyAnimation.SetBool("isAttack", false);
+                float PlayerTransform = other.gameObject.transform.position.x;
+                float MummyTransform = gameObject.transform.position.x;
+                if (PlayerTransform > MummyTransform)
+                {
+                    //rightmummy
+                    AttackMethod();
+                    _moveSpeed = 0;
+                    moveRight = false;
+
+                }
+                else
+                {
+                    //leftMummy
+                    AttackMethod();
+                    _moveSpeed = 0;
+                    moveRight = true;
+                }
+
+            }
+            //
         }
         if (other.gameObject.CompareTag("Hitbox"))
         {

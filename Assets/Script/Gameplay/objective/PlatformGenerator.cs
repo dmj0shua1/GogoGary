@@ -218,17 +218,21 @@ public class PlatformGenerator : MonoBehaviour {
                         }
             //ShakeGenerate
             //end
-                //      
-                        blackOutHolderDivided = EndGenerate / 3;
-                        if (/*Counts % blackOutHolderDivided ==0*/blackOutHolderDivided == FloorCounterScript.countFloor)
+                //    
+                        Scene currentScene = SceneManager.GetActiveScene();
+                        string sceneName = currentScene.name;
+                        if (sceneName == "GGGPYRAMID" || sceneName == "GGG")
                         {
-                            blackOutGameObject.SetActive(true);
-                            blackOutAnimation.SetBool("IsIdle",true);
-                            
+                            blackOutHolderDivided = EndGenerate / 3;
+                            if (/*Counts % blackOutHolderDivided ==0*/blackOutHolderDivided == FloorCounterScript.countFloor)
+                            {
+                                blackOutGameObject.SetActive(true);
+                                blackOutAnimation.SetBool("IsIdle", true);
+
+                            }
                         }
                         //Mummy  
-                Scene currentScene = SceneManager.GetActiveScene();
-                string sceneName = currentScene.name;
+               
                     if (sceneName == "GGGPYRAMID")
                     {
                         MummyThresholdAdjust();
@@ -290,6 +294,7 @@ public class PlatformGenerator : MonoBehaviour {
                                 newphbird.transform.rotation = transform.rotation;
                                 //MummyControllerScript = newMummy.gameObject.GetComponent<MummyController>();
                                 phBirdContollerScript = newphbird.gameObject.GetComponent<phBirdController>();
+                                phBirdContollerScript.isCollide = true;
                                 /*phBirdContollerScript.playerRange = 12;
                                 phBirdContollerScript.Activate = true;*/
                                 phBirdContollerScript._moveSpeed = 30;
