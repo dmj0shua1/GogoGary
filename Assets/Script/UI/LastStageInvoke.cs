@@ -9,26 +9,30 @@ public class LastStageInvoke : MonoBehaviour {
     public RectTransform ListTrans;
     public bool Activate2;
     public bool Activate3;
+
+    void Awake() 
+    {
+       
+    }
 	void Start () 
     {
         ListTrans = GameObject.Find("List").GetComponent<RectTransform>();
-       
-        if (PlayerPrefs.GetInt("LastLevelStagePickerSelect") == 1)
+
+        if (PlayerPrefs.GetInt("LastLevelStagePickerSelect") == 1 || PlayerPrefs.GetInt("UnlockLevels") >= 26)
         {
             StartCoroutine(AutoPlay());
             PlayerPrefs.SetInt("LastLevelStagePickerSelect", 0);
         }
-        if (PlayerPrefs.GetInt("LastLevelStagePickerSelect") == 2)
+        if (PlayerPrefs.GetInt("LastLevelStagePickerSelect") == 2 || PlayerPrefs.GetInt("UnlockLevels") >= 51)
         {
             Activate2 = true;
            
         }
-        if (PlayerPrefs.GetInt("LastLevelStagePickerSelect") == 3)
+        if (PlayerPrefs.GetInt("LastLevelStagePickerSelect") == 3 || PlayerPrefs.GetInt("UnlockLevels") >= 76)
         {
             Activate3 = true;
 
-        }
-      
+        } 
 	}
     void Update()
     {
