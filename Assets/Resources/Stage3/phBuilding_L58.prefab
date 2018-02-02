@@ -289,7 +289,7 @@ MonoBehaviour:
   RescueHolderPlayerPref: 0
   isActivateTipsValue: 0
   isShakeActivateValue: 0
-  CameraColorValue: {r: 0.5955882, g: 0.5955882, b: 0.5955882, a: 0}
+  CameraColorValue: {r: 0.3529412, g: 0.25882354, b: 0.1764706, a: 0}
   Star1: {fileID: 1785534801491438}
   Star2: {fileID: 1080288494502744}
   Star3: {fileID: 1410337056245918}

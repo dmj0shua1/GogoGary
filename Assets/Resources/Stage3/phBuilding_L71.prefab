@@ -151,7 +151,7 @@ MonoBehaviour:
       m_Calls: []
     m_TypeName: UnityEngine.UI.MaskableGraphic+CullStateChangedEvent, UnityEngine.UI,
       Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
-  m_Sprite: {fileID: 21300000, guid: 91e2f624c6f3a6e439cf8f0e1a552898, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 6d5cbddacc150594c94df4e8cdfec9f2, type: 3}
   m_Type: 0
   m_PreserveAspect: 1
   m_FillCenter: 1
@@ -316,7 +316,7 @@ MonoBehaviour:
   RescueHolderPlayerPref: 0
   isActivateTipsValue: 0
   isShakeActivateValue: 0
-  CameraColorValue: {r: 0.5955882, g: 0.5955882, b: 0.5955882, a: 0}
+  CameraColorValue: {r: 0.45882356, g: 0.42352945, b: 0.23529413, a: 0}
   Star1: {fileID: 1438107960052066}
   Star2: {fileID: 1191178306668492}
   Star3: {fileID: 1632450831160720}
