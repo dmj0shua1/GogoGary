@@ -8,6 +8,7 @@ public class StartLevelPrefs : MonoBehaviour {
     private LevelValueHolder LevelValueHolderScript;
     private pyLevelValueHolder pyLevelValueHolderScript;
     private phLevelValueHolder phLevelValueHolderScript;
+    private ieLevelValueHolder ieLevelValueHolderScript;
     public Text NumberOfPeopleText;
     void Start() 
     {
@@ -18,10 +19,12 @@ public class StartLevelPrefs : MonoBehaviour {
         if (!PlayerPrefs.HasKey("CompleteLevelCounter")) PlayerPrefs.SetInt("CompleteLevelCounter", 0);
         if (!PlayerPrefs.HasKey("OpenStagePyramid")) PlayerPrefs.SetInt("OpenStagePyramid", 0);
         if (!PlayerPrefs.HasKey("OpenStagePreHistoric")) PlayerPrefs.SetInt("OpenStagePreHistoric", 0);
+        if (!PlayerPrefs.HasKey("OpenStageIceAge")) PlayerPrefs.SetInt("OpenStageIceAge", 0);
         if (!PlayerPrefs.HasKey("isNotice")) PlayerPrefs.SetInt("isNotice", 0);
         if (!PlayerPrefs.HasKey("pyisNotice")) PlayerPrefs.SetInt("pyisNotice", 0);
         if (!PlayerPrefs.HasKey("LastLevelStagePickerSelect")) PlayerPrefs.SetInt("LastLevelStagePickerSelect", 0);
         if (!PlayerPrefs.HasKey("phTotalRescuePoints")) PlayerPrefs.SetInt("phTotalRescuePoints", 0);
+        if (!PlayerPrefs.HasKey("phTotalRescuePoints")) PlayerPrefs.SetInt("ieTotalRescuePoints", 0);
         if (!PlayerPrefs.HasKey("OpenStagePreHistoric")) PlayerPrefs.SetInt("OpenStagePreHistoric", 0);
 
         
@@ -46,6 +49,12 @@ public class StartLevelPrefs : MonoBehaviour {
             if (!PlayerPrefs.HasKey("phBuilding_L" + num.ToString())) PlayerPrefs.SetInt("phBuilding_L" + num.ToString(), 0);
             phLevelValueHolderScript = GameObject.Find("phBuilding_L" + num.ToString()).GetComponent<phLevelValueHolder>();
             phLevelValueHolderScript.RescueHolderPlayerPref = PlayerPrefs.GetInt("phBuilding_L" + num.ToString());
+        }
+        for (int num = 76; num < 101; num++)
+        {
+            if (!PlayerPrefs.HasKey("ieBuilding_L" + num.ToString())) PlayerPrefs.SetInt("ieBuilding_L" + num.ToString(), 0);
+            ieLevelValueHolderScript = GameObject.Find("ieBuilding_L" + num.ToString()).GetComponent<ieLevelValueHolder>();
+            ieLevelValueHolderScript.RescueHolderPlayerPref = PlayerPrefs.GetInt("ieBuilding_L" + num.ToString());
         }
         
     }
