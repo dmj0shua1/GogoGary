@@ -21,6 +21,10 @@ public class RescueSystemCounter : MonoBehaviour {
        {
            RescueNumCounterText.text = "" + (PlayerPrefs.GetInt("phTotalRescuePoints"));
        }
+       else if (sceneName == "Stage4")
+       {
+           RescueNumCounterText.text = "" + (PlayerPrefs.GetInt("ieTotalRescuePoints"));
+       }
    
     }
 	// Use this for initialization

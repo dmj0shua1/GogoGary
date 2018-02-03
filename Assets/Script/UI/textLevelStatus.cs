@@ -35,5 +35,10 @@ public class textLevelStatus : MonoBehaviour {
             LevelStatusNumber.text = "" + NumberOfLevel;
             NumberOfLevel = LevelPassScript.LevelStatusAmt - 50;
         }
+        else if (sceneName == "GGGICEAGE")
+        {
+            LevelStatusNumber.text = "" + NumberOfLevel;
+            NumberOfLevel = LevelPassScript.LevelStatusAmt - 75;
+        }
     }
 }

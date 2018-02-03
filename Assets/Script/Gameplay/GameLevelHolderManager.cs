@@ -298,6 +298,59 @@ public class GameLevelHolderManager : MonoBehaviour {
                 }
             }
         }
+        //
+        else if (sceneName == "GGGICEAGE")
+        {
+            if (PlayerPrefs.GetInt("UnlockLevels") == 90 || PlayerPrefs.GetInt("UnlockLevels") == 91)
+            {
+                if (LevelPassScript.LevelStatusAmt >= 90)
+                {
+
+                    if (PlayerPrefs.GetInt("ieTotalRescuePoints") != 45)
+                    {
+                        ImageWin.SetActive(false);
+                        ImageNote.SetActive(true);
+                        NextButton.interactable = false;
+                    }
+                    else
+                    {
+                        ImageWin.SetActive(true);
+                        ImageNote.SetActive(false);
+                    }
+                }
+
+                else
+                {
+                    ImageWin.SetActive(true);
+                    ImageNote.SetActive(false);
+                }
+            }
+            if (PlayerPrefs.GetInt("UnlockLevels") == 95 || PlayerPrefs.GetInt("UnlockLevels") == 96)
+            {
+                if (LevelPassScript.LevelStatusAmt >= 95)
+                {
+
+                    if (PlayerPrefs.GetInt("ieTotalRescuePoints") != 60)
+                    {
+                        ImageWin.SetActive(false);
+                        ImageNote.SetActive(true);
+                        NextButton.interactable = false;
+                    }
+                    else
+                    {
+                        ImageWin.SetActive(true);
+                        ImageNote.SetActive(false);
+                    }
+                }
+
+                else
+                {
+                    ImageWin.SetActive(true);
+                    ImageNote.SetActive(false);
+                }
+            }
+        }
+        //
     }
     //
 }

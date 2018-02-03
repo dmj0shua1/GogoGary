@@ -38,3 +38,9 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scene/Stage3.unity
     guid: 4d6f32817e07db547a4fb060f078530b
+  - enabled: 1
+    path: Assets/Scene/Stage4.unity
+    guid: 8a5b2da4ee4fc1748843b77e31d4dd9f
+  - enabled: 1
+    path: Assets/Scene/GGGICEAGE.unity
+    guid: c316eab8452e5104a9d3c451dbd6a9bf

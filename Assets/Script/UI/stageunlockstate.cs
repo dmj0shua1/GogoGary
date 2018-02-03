@@ -44,8 +44,16 @@ public class stageunlockstate : MonoBehaviour {
         }
         if (_StageName == "ICEAGE")
         {
-            StageImage.GetComponent<Image>().color = Color.black;
-            TextHolder.GetComponent<Text>().text = LockTextState;
+            if (PlayerPrefs.GetInt("ieTotalRescuePoints") >= 72)
+            {
+                TextHolder.GetComponent<Text>().text = UnlockTextState;
+            }
+            else
+            {
+                StageImage.GetComponent<Image>().color = Color.black;
+                TextHolder.GetComponent<Text>().text = LockTextState;
+            }
+         
         }
         if (_StageName == "FUTURE")
         {
@@ -77,6 +85,20 @@ public class stageunlockstate : MonoBehaviour {
             {
                 SceneManager.LoadScene(levelname);
                 PlayerPrefs.SetInt("OpenStagePreHistoric", 1);
+
+            }
+            else
+            {
+                CurrentTotalTxt.text = "" + CurrentHolder;
+                messageBoxObject.SetActive(true);
+            }
+        }
+        if (_StageName == "ICEAGE")
+        {
+            if (PlayerPrefs.GetInt("phTotalRescuePoints") >= 72)
+            {
+                SceneManager.LoadScene(levelname);
+                PlayerPrefs.SetInt("OpenStageIceAge", 1);
 
             }
             else

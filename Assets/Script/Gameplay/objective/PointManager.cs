@@ -151,6 +151,22 @@ public class PointManager : MonoBehaviour {
                 PlayerPrefs.SetInt("phTotalRescuePoints", PlayerPrefs.GetInt("phTotalRescuePoints") - LevelPassScript.RescuePointAmtCopy);
             }
         }
+        //
+        Scene currentScene4 = SceneManager.GetActiveScene();
+        string sceneName4 = currentScene4.name;
+        if (sceneName4 == "GGGICEAGE")
+        {
+            if (PlayerPrefs.GetInt("ieBuilding_L" + LevelPassScript.UnlockLevelAmt.ToString()) < LevelPassScript.RescueHolderPlayerPrefAmt)
+            {
+                if (PlayerPrefs.HasKey("ieBuilding_L" + LevelPassScript.UnlockLevelAmt.ToString()))
+                {
+                    PlayerPrefs.SetInt("ieBuilding_L" + LevelPassScript.UnlockLevelAmt.ToString(), LevelPassScript.RescueHolderPlayerPrefAmt);
+
+                }
+                PlayerPrefs.SetInt("ieTotalRescuePoints", PlayerPrefs.GetInt("ieTotalRescuePoints") + LevelPassScript.RescueHolderPlayerPrefAmt);
+                PlayerPrefs.SetInt("ieTotalRescuePoints", PlayerPrefs.GetInt("ieTotalRescuePoints") - LevelPassScript.RescuePointAmtCopy);
+            }
+        }
        
 	}
     public void completeLevelCounterMethod()
