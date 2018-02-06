@@ -14,10 +14,10 @@ public class ieLevelChangeStatus : MonoBehaviour {
     }
     public void PlusIntLevelStatus()
     {
-        if (LevelPassScript.LevelStatusAmt == 75)
+        if (LevelPassScript.LevelStatusAmt == 100)
         {
             SceneManager.LoadScene(GoToScene);
-            PlayerPrefs.SetInt("LastLevelStagePickerSelect", 3);
+            PlayerPrefs.SetInt("LastLevelStagePickerSelect", 4);
         }
         else
         {
