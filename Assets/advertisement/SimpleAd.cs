@@ -211,7 +211,7 @@ void Awake()
 
     private void giveRewards()
     {
-        if (SceneManager.GetActiveScene().name == "Stage1" || SceneManager.GetActiveScene().name == "Stage2")
+        if (SceneManager.GetActiveScene().name == "Stage1" || SceneManager.GetActiveScene().name == "Stage2" || SceneManager.GetActiveScene().name == "Stage3" || SceneManager.GetActiveScene().name == "Stage4")
         {
             //energy reward
             objRewardedAds.SetActive(false);
