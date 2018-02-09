@@ -38,6 +38,8 @@ public class phBirdController : MonoBehaviour {
     public Collider2D MainCollider;
     public bool isCollide;
 
+    public AudioSource ph_BirdAttack;
+
     //function1
     /*void Start() 
     {
@@ -134,6 +136,7 @@ public class phBirdController : MonoBehaviour {
         GoLeftObject = GameObject.Find("GoLeft").GetComponent<Transform>();
         PlayerControllerScript = GameObject.Find("player").GetComponent<playercontroller>();
         MainCollider = GetComponent<Collider2D>();
+        ph_BirdAttack = GameObject.Find("ph_birdAttack").GetComponent<AudioSource>();
     }
     void Update() 
     {
@@ -205,6 +208,10 @@ public class phBirdController : MonoBehaviour {
     {
         if (other.gameObject.CompareTag("Player"))
         {
+            if (PlayerPrefs.GetInt("SoundChecker") == 0)
+            {
+                ph_BirdAttack.Play();
+            }
             /*if (PlayerControllerScript.grounded || !PlayerControllerScript.grounded)
             {
                 //AttackMethod();
@@ -243,7 +250,7 @@ public class phBirdController : MonoBehaviour {
     {
         if (other.gameObject.CompareTag("Player"))
         {
-
+         
             if (PlayerControllerScript.grounded)
             {
                 MyAnimation.SetBool("isAttack", false);
@@ -263,6 +270,7 @@ public class phBirdController : MonoBehaviour {
                     AttackMethod();
                     _moveSpeed = 0;
                     moveRight = false;
+               
 
                 }
                 else
@@ -271,6 +279,7 @@ public class phBirdController : MonoBehaviour {
                     AttackMethod();
                     _moveSpeed = 0;
                     moveRight = true;
+                   
                 }
 
             }

@@ -32,7 +32,7 @@ void Awake()
 {
     egManagerScript = GameObject.Find("Energy").GetComponent<EnergyManager>();
 
-    if (SceneManager.GetActiveScene().name == "GGG" || SceneManager.GetActiveScene().name == "GGGPYRAMID")
+    if (SceneManager.GetActiveScene().name == "GGG" || SceneManager.GetActiveScene().name == "GGGPYRAMID" || SceneManager.GetActiveScene().name == "GGGPREHISTORIC" || SceneManager.GetActiveScene().name == "GGGICEAGE")
     {
         LevelPassScript = GameObject.Find("Holder").GetComponent<LevelPass>();
         ImageDeath.SetActive(false);
