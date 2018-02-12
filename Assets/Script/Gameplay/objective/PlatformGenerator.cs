@@ -261,7 +261,7 @@ public class PlatformGenerator : MonoBehaviour {
                       
                         fireHalfFloorMethod();
                 //random gobackagain walk throughwalls
-                        if (sceneName == "GGGPYRAMID" || sceneName == "GGGPREHISTORIC")
+                        if (sceneName == "GGGPYRAMID" || sceneName == "GGGPREHISTORIC" )
                         {
                             if (isEnabledWalkThrougwall)
                             {
@@ -304,7 +304,7 @@ public class PlatformGenerator : MonoBehaviour {
                             }
                         }
                 //  
-                        if (sceneName == "GGGPREHISTORIC")
+                        if (sceneName == "GGGPREHISTORIC" || sceneName == "GGGICEAGE")
                         {
                           
                             if (isSmudge)
