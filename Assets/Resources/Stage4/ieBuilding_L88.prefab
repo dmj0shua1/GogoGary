@@ -146,14 +146,14 @@ MonoBehaviour:
   TestButtonObject: {fileID: 0}
   MainHolderScript: {fileID: 0}
   ButtonCameraViewScript: {fileID: 0}
-  ObjectiveValue: 25
-  FloorValue: 23
+  ObjectiveValue: 85
+  FloorValue: 83
   StartingValue: 0
   DebrisValue: 0
   TimeValue: 0
   HalfObjectiveValue: 0
   UnlockedValue: 88
-  FireTriggerValue: 24
+  FireTriggerValue: 84
   PowerupValue: 0
   LevelPlaceValue: 12
   RescuePointValue: 3
