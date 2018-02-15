@@ -1380,7 +1380,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 1, y: 1}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: -646, y: -746.0002}
+  m_AnchoredPosition: {x: -646, y: -746.0003}
   m_SizeDelta: {x: 224, y: 203}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &75309518
@@ -15135,6 +15135,7 @@ MonoBehaviour:
   isBlizzard: 0
   BlizzardObject: {fileID: 1077114652}
   blizzardDivided: 0
+  BlizzardAnimation: {fileID: 1077114656}
 --- !u!1 &757897339
 GameObject:
   m_ObjectHideFlags: 0
@@ -16301,7 +16302,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 0}
-  m_AnchoredPosition: {x: -9, y: 903}
+  m_AnchoredPosition: {x: -9, y: 902.9999}
   m_SizeDelta: {x: -726, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!1 &836445298
@@ -17660,7 +17661,7 @@ ParticleSystem:
   moveWithTransform: 0
   moveWithCustomTransform: {fileID: 0}
   scalingMode: 1
-  randomSeed: -821636720
+  randomSeed: 146178700
   InitialModule:
     serializedVersion: 3
     enabled: 1
@@ -22511,7 +22512,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 1, y: 1}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: -420, y: -746.0002}
+  m_AnchoredPosition: {x: -420, y: -746.0003}
   m_SizeDelta: {x: 224, y: 203}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1074295455
@@ -22645,6 +22646,7 @@ GameObject:
   - component: {fileID: 1077114653}
   - component: {fileID: 1077114655}
   - component: {fileID: 1077114654}
+  - component: {fileID: 1077114656}
   m_Layer: 0
   m_Name: snow2
   m_TagString: Untagged
@@ -22773,7 +22775,7 @@ ParticleSystem:
   moveWithTransform: 0
   moveWithCustomTransform: {fileID: 0}
   scalingMode: 1
-  randomSeed: -1461419832
+  randomSeed: 1010594366
   InitialModule:
     serializedVersion: 3
     enabled: 1
@@ -25842,6 +25844,23 @@ ParticleSystem:
         m_PreInfinity: 2
         m_PostInfinity: 2
         m_RotationOrder: 4
+--- !u!95 &1077114656
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1077114652}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 676ed4829cd1f3a45af2fa5d261ed28d, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
 --- !u!1 &1077777522
 GameObject:
   m_ObjectHideFlags: 0
@@ -26977,7 +26996,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: -3, y: -342.99994}
+  m_AnchoredPosition: {x: -3, y: -342.99997}
   m_SizeDelta: {x: 0, y: 137}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!95 &1132051098
@@ -40227,7 +40246,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 0}
-  m_AnchoredPosition: {x: -235, y: 714}
+  m_AnchoredPosition: {x: -235, y: 713.99994}
   m_SizeDelta: {x: -700, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!1 &1570786210
@@ -57793,7 +57812,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 1, y: 1}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: -197, y: -746.0002}
+  m_AnchoredPosition: {x: -197, y: -746.0003}
   m_SizeDelta: {x: 224, y: 203}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &2099048556

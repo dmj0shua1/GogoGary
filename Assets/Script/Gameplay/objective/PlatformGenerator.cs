@@ -84,6 +84,8 @@ public class PlatformGenerator : MonoBehaviour {
     public bool isBlizzard;
     public GameObject BlizzardObject;
     public int blizzardDivided;
+    [SerializeField]
+    private Animator BlizzardAnimation;
     
 
 
@@ -102,6 +104,7 @@ public class PlatformGenerator : MonoBehaviour {
         blackOutAnimation = blackOutGameObject.GetComponent<Animator>();
         DebriGenerationScript = GameObject.Find("DebrisGeneration").GetComponent<debrisGeneration>();
         WalkThroughWallsScript = GameObject.Find("player").GetComponent<WalkThroughWalls>();
+        BlizzardAnimation = GameObject.Find("snow2").GetComponent<Animator>();
         RescueSelector = Random.Range(0, RescuePointPooler.Length);
         prevRescue = RescueSelector;
         if (LevelPassScript.isShakeActivateAmt == true)
@@ -330,8 +333,10 @@ public class PlatformGenerator : MonoBehaviour {
                                 if (/*Counts % smudgeDivided == 0*/blizzardDivided == FloorCounterScript.countFloor)
                                 {
                                     BlizzardObject.SetActive(true);
+                                    StartCoroutine(BlizzardFade());
                                 }
-                            }
+
+                            } 
                         }
                       
                 //
@@ -596,6 +601,11 @@ public class PlatformGenerator : MonoBehaviour {
         {
             SetRescuePoint++;
         }
+    }
+    IEnumerator BlizzardFade()
+    {
+        yield return new WaitForSeconds(10);
+        BlizzardAnimation.SetBool("isFade", false);
     }
    
 }

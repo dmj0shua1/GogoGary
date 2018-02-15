@@ -44,7 +44,7 @@ public class stageunlockstate : MonoBehaviour {
         }
         if (_StageName == "ICEAGE")
         {
-            if (PlayerPrefs.GetInt("ieTotalRescuePoints") >= 72)
+            if (PlayerPrefs.GetInt("phTotalRescuePoints") >= 72)
             {
                 TextHolder.GetComponent<Text>().text = UnlockTextState;
             }
