@@ -80,6 +80,10 @@ public class PlatformGenerator : MonoBehaviour {
     public bool isSmudge;
     public GameObject SmudgeObject;
     public int smudgeDivided;
+    [Header("Blizzard")]
+    public bool isBlizzard;
+    public GameObject BlizzardObject;
+    public int blizzardDivided;
     
 
 
@@ -316,8 +320,26 @@ public class PlatformGenerator : MonoBehaviour {
                                 }
                             }
                         }
+                //
+                        if (sceneName == "GGGICEAGE")
+                        {
+
+                            if (isBlizzard)
+                            {
+                                blizzardDivided = EndGenerate / 2;
+                                if (/*Counts % smudgeDivided == 0*/blizzardDivided == FloorCounterScript.countFloor)
+                                {
+                                    BlizzardObject.SetActive(true);
+                                }
+                            }
+                        }
                       
                 //
+                        if (sceneName == "GGGICEAGE")
+                        {
+                            IeThresholdAdjust();
+                        }
+
                 //
             }
         }
@@ -454,6 +476,58 @@ public class PlatformGenerator : MonoBehaviour {
                 timeThreshold = 10;
                 isSmudge = true;
                 isEnabledWalkThrougwall = true;
+            }
+        }
+
+    }
+    public void IeThresholdAdjust()
+    {
+
+        for (int set1 = 76; set1 <= 77; set1++)
+        {
+            if (LevelPassScript.LevelStatusAmt == set1)
+            {
+                isBlizzard = true;
+            }
+        }
+        for (int set2 = 78; set2 <= 82; set2++)
+        {
+            if (LevelPassScript.LevelStatusAmt == set2)
+            {
+                isBlizzard = true;
+            }
+        }
+        for (int set3 = 83; set3 <= 87; set3++)
+        {
+            if (LevelPassScript.LevelStatusAmt == set3)
+            {
+                isBlizzard = true;
+            }
+        }
+        for (int set4 = 88; set4 <= 92; set4++)
+        {
+            if (LevelPassScript.LevelStatusAmt == set4)
+            {
+                isBlizzard = true;
+                DebriGenerationScript.randomDebrisThreshold = 15;
+            }
+        }
+        for (int set5 = 93; set5 <= 97; set5++)
+        {
+            if (LevelPassScript.LevelStatusAmt == set5)
+            {
+                isBlizzard = true;
+                DebriGenerationScript.randomDebrisThreshold = 20;
+                timeThreshold = 10;
+            }
+        }
+        for (int set6 = 98; set6 <= 100; set6++)
+        {
+            if (LevelPassScript.LevelStatusAmt == set6)
+            {
+                isBlizzard = true;
+                DebriGenerationScript.randomDebrisThreshold = 25;
+                timeThreshold = 10;
             }
         }
 
