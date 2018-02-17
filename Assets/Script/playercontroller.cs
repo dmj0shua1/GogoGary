@@ -14,7 +14,7 @@ public class playercontroller : MonoBehaviour {
 
 	public bool OnDebris;
 	public float DecreaseSpeed;
-	private float currentSpeed;
+	public float currentSpeed;
 
     public bool isAllMove;
     public GameObject ViewPanel;

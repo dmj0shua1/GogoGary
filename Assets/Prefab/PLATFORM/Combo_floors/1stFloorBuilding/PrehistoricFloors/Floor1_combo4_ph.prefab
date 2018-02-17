@@ -164,7 +164,6 @@ GameObject:
   - component: {fileID: 114001203297227864}
   - component: {fileID: 61456606850544460}
   - component: {fileID: 114677599162777674}
-  - component: {fileID: 114969409562187306}
   m_Layer: 8
   m_Name: Floor1_combo4_ph
   m_TagString: floor
@@ -915,8 +914,8 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1006166161304554}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -1.79, y: 3.44, z: 0}
-  m_LocalScale: {x: 0.48, y: 0.72497225, z: 1}
+  m_LocalPosition: {x: -1.03, y: 2.19, z: 0}
+  m_LocalScale: {x: 0.23096499, y: 0.23896773, z: 0.81165105}
   m_Children: []
   m_Father: {fileID: 4645777636254788}
   m_RootOrder: 0
@@ -1212,7 +1211,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1225554306889930}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -1361.8, y: 938.8, z: 0}
+  m_LocalPosition: {x: -332.80383, y: -56.677162, z: 0}
   m_LocalScale: {x: 3.18, y: 2.15144, z: 1}
   m_Children:
   - {fileID: 4002361579268614}
@@ -1521,19 +1520,6 @@ MonoBehaviour:
   Col2: {fileID: 61272384680717750}
   Col3: {fileID: 0}
   IsTrigger: 0
---- !u!114 &114969409562187306
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1225554306889930}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 535dfa27452016c468248483753b218e, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  _TempWall: {fileID: 1925901477912526}
-  isActivate: 1
 --- !u!212 &212000105742948074
 SpriteRenderer:
   m_ObjectHideFlags: 1
@@ -2386,7 +2372,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 16
-  m_Sprite: {fileID: 21300000, guid: abfd9f341fb160c4290346d87afbaab1, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 1303a652a5b96b94fa5a7a4e4319a158, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0

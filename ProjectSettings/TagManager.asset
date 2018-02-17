@@ -33,6 +33,7 @@ TagManager:
   - fireadjust
   - pyMummy
   - pybird
+  - ieBigFoot
   layers:
   - Default
   - TransparentFX

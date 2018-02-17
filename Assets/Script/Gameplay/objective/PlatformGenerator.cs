@@ -357,11 +357,12 @@ public class PlatformGenerator : MonoBehaviour {
                             {
                                 if (Counts % ieBigFootThreshold == 0)
                                 {
-                                    GameObject newIeBigFoot = phBirdPooler.GetPooledObject();
-                                    float IeBigFootXposition = Random.Range(6, 5);
+                                    GameObject newIeBigFoot = ieBigfootPooler.GetPooledObject();
+                                    float IeBigFootXposition = Random.Range(1, 1);
                                     Vector3 IeBigFootPosition = new Vector3(IeBigFootXposition, ieBigFootheight, 0f);
                                     newIeBigFoot.transform.position = transform.position + IeBigFootPosition;
                                     newIeBigFoot.transform.rotation = transform.rotation;
+                                    newIeBigFoot.SetActive(true);
                                 }
                                 /*if (Counts % 10 == 0)
                                 {
