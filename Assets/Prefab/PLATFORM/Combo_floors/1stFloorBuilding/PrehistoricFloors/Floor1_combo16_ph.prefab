@@ -263,7 +263,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!1 &1262151933433508
 GameObject:
   m_ObjectHideFlags: 1
@@ -800,7 +800,6 @@ GameObject:
   - component: {fileID: 61091214661849438}
   - component: {fileID: 114796723463307340}
   - component: {fileID: 61943645193818224}
-  - component: {fileID: 114968429739883274}
   m_Layer: 8
   m_Name: Floor1_combo16_ph
   m_TagString: floor
@@ -1408,7 +1407,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1963808865285904}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -1345.9, y: 908.3, z: 0}
+  m_LocalPosition: {x: -526.80505, y: -116.686905, z: 0}
   m_LocalScale: {x: 3.18, y: 2.15144, z: 1}
   m_Children:
   - {fileID: 4247783656297040}
@@ -1806,19 +1805,6 @@ MonoBehaviour:
   Col2: {fileID: 61368199115628548}
   Col3: {fileID: 61943645193818224}
   IsTrigger: 0
---- !u!114 &114968429739883274
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1963808865285904}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 535dfa27452016c468248483753b218e, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  _TempWall: {fileID: 1146721460389382}
-  isActivate: 1
 --- !u!212 &212005059131614342
 SpriteRenderer:
   m_ObjectHideFlags: 1

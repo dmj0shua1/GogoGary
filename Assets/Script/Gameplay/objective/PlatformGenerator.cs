@@ -86,6 +86,11 @@ public class PlatformGenerator : MonoBehaviour {
     public int blizzardDivided;
     [SerializeField]
     private Animator BlizzardAnimation;
+    [Header("BigFoot")]
+    public bool isBigFoot;
+    public ObjectPooler ieBigfootPooler;
+    public float ieBigFootheight;
+    public int ieBigFootThreshold;
     
 
 
@@ -345,6 +350,29 @@ public class PlatformGenerator : MonoBehaviour {
                             IeThresholdAdjust();
                         }
 
+                //bigfoot
+                        if (sceneName == "GGGICEAGE")
+                        {
+                            if (isBigFoot)
+                            {
+                                if (Counts % ieBigFootThreshold == 0)
+                                {
+                                    GameObject newIeBigFoot = phBirdPooler.GetPooledObject();
+                                    float IeBigFootXposition = Random.Range(6, 5);
+                                    Vector3 IeBigFootPosition = new Vector3(IeBigFootXposition, ieBigFootheight, 0f);
+                                    newIeBigFoot.transform.position = transform.position + IeBigFootPosition;
+                                    newIeBigFoot.transform.rotation = transform.rotation;
+                                }
+                                /*if (Counts % 10 == 0)
+                                {
+                                    TestingCameraShakeScript.IsActiveShake = true;
+                                    if (TestingCameraShakeScript.shakeDuration == 0)
+                                    {
+                                        TestingCameraShakeScript.shakeDuration = 1f;
+                                    }
+                                }*/
+                            }
+                        }
                 //
             }
         }
