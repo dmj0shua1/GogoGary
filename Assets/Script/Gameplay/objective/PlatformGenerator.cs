@@ -109,15 +109,16 @@ public class PlatformGenerator : MonoBehaviour {
         blackOutAnimation = blackOutGameObject.GetComponent<Animator>();
         DebriGenerationScript = GameObject.Find("DebrisGeneration").GetComponent<debrisGeneration>();
         WalkThroughWallsScript = GameObject.Find("player").GetComponent<WalkThroughWalls>();
-        BlizzardAnimation = GameObject.Find("snow2").GetComponent<Animator>();
-        RescueSelector = Random.Range(0, RescuePointPooler.Length);
-        prevRescue = RescueSelector;
         if (LevelPassScript.isShakeActivateAmt == true)
         {
             isShake = true;
             //BlackOutObject.SetActive(true);
 
         }
+        BlizzardAnimation = GameObject.Find("snow2").GetComponent<Animator>();
+        RescueSelector = Random.Range(0, RescuePointPooler.Length);
+        prevRescue = RescueSelector;
+        
 	}
     //note 13.7 DistanceBetween
 	void Update()
@@ -358,7 +359,7 @@ public class PlatformGenerator : MonoBehaviour {
                                 if (Counts % ieBigFootThreshold == 0)
                                 {
                                     GameObject newIeBigFoot = ieBigfootPooler.GetPooledObject();
-                                    float IeBigFootXposition = Random.Range(1, 1);
+                                    float IeBigFootXposition = Random.Range(2, 2);
                                     Vector3 IeBigFootPosition = new Vector3(IeBigFootXposition, ieBigFootheight, 0f);
                                     newIeBigFoot.transform.position = transform.position + IeBigFootPosition;
                                     newIeBigFoot.transform.rotation = transform.rotation;

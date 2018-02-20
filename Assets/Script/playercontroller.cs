@@ -67,6 +67,9 @@ public class playercontroller : MonoBehaviour {
     private WalkThroughWalls WalkThroughWallsScript;
     private PlatformGenerator PlatformGeneratorScript;
     private Animator MyAnimationWallofDeath;
+    [SerializeField]
+    private testingcamerashake TestingCameraShakeScript;
+    public bool IsShakeZone;
 	void start()
 	{	
 		ifRight = true;
@@ -94,6 +97,7 @@ public class playercontroller : MonoBehaviour {
         CameraFollowScript = GameObject.Find("Main Camera").GetComponent<CameraFollow>();
         WalkThroughWallsScript = GameObject.Find("player").GetComponent<WalkThroughWalls>();
         PlatformGeneratorScript = GameObject.Find("PlatformGeneration").GetComponent<PlatformGenerator>();
+        if (SceneManager.GetActiveScene().name == "GGGICEAGE") TestingCameraShakeScript = GameObject.Find("camerashaketest").GetComponent<testingcamerashake>();
         if (SceneManager.GetActiveScene().name == "GGGPYRAMID") MyAnimationWallofDeath = GameObject.Find("WallOfDeath").GetComponent<Animator>();
 
       if (SceneManager.GetActiveScene().name == "Endless")  scoreManagerScript = GameObject.Find("ScoreManager").GetComponent<ScoreManager>();
@@ -388,6 +392,7 @@ public class playercontroller : MonoBehaviour {
             }
         }
        
+       
     }
     void OnTriggerStay2D(Collider2D other)
     {
@@ -409,12 +414,24 @@ public class playercontroller : MonoBehaviour {
             GameLevelHolderManagerScript.RescueUnlockChecker();
             mySpriteRenderer.enabled = false;
         }
-        
+        /*if (SceneManager.GetActiveScene().name == "GGGICEAGE")
+        {
+            if (other.gameObject.CompareTag("ShakeZone"))
+            {
+                IsShakeZone = true;
+                //if (TestingCameraShakeScript.IsActiveShake)
+                //{
+                //TestingCameraShakeScript.IsActiveShake = false;
+                //TestingCameraShakeScript.shakeDuration = 0f;
+                //}
+            }
+        }*/
     }
     void OnTriggerExit2D(Collider2D other) 
     {
         //SwipeLeftObject.SetActive(false);
         SwipeTestScript.isSwipe = true;
+        //IsShakeZone = false;
         //MummyCollide = false;
        
     }

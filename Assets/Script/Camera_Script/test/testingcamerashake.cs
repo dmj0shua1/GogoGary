@@ -17,6 +17,8 @@ public class testingcamerashake : MonoBehaviour {
     public bool IsActiveShake;
 
     Vector3 originalPos;
+    public Vector3 MovePos;
+    // 
 
     void Awake()
     {
@@ -38,13 +40,14 @@ public class testingcamerashake : MonoBehaviour {
             if (shakeDuration > 0)
             {
             camTransform.localPosition = originalPos + Random.insideUnitSphere * shakeAmount;
-
+            //camTransform.localPosition = MovePos + Random.insideUnitSphere * shakeAmount;
             shakeDuration -= Time.deltaTime * decreaseFactor;
             }
             else
             {
             shakeDuration = 0f;
             camTransform.localPosition = originalPos;
+            //camTransform.localPosition = MovePos;
             IsActiveShake = false;
             }
         }

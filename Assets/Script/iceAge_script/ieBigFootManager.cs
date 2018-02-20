@@ -16,7 +16,6 @@ public class ieBigFootManager : MonoBehaviour {
 	
 
 	void Update () {
-       
         if (isShake)
         {
             TestingCameraShakeScript.IsActiveShake = true;
@@ -32,6 +31,7 @@ public class ieBigFootManager : MonoBehaviour {
         {
             //PlayerControllerScript.moveSpeed = PlayerControllerScript.currentSpeed;
         }
+       
 	}
 
     IEnumerator isCollideTime()
