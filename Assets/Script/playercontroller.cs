@@ -294,7 +294,12 @@ public class playercontroller : MonoBehaviour {
             PauseButton.SetActive(false);
             SimpleAdScript.gameOverAd();
             //booSFX.Play();
-            CameraFollowScript.isFollow = false;
+            //backup
+            if (!TestingCameraShakeScript.IsActiveShake)
+            {
+               CameraFollowScript.isFollow = false; 
+            }
+            //CameraFollowScript.isFollow = false;
             grounded = false;
             isAllMove = false;
             /*if (SceneManager.GetActiveScene().name == "GGGPYRAMID") 

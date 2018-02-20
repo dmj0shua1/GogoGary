@@ -6,7 +6,6 @@ public class testingcamerashake : MonoBehaviour {
     // Transform of the camera to shake. Grabs the gameObject's transform
     // if null.
     public Transform camTransform;
-
     // How long the object should shake for.
     public float shakeDuration;
 
@@ -16,7 +15,7 @@ public class testingcamerashake : MonoBehaviour {
 
     public bool IsActiveShake;
 
-    Vector3 originalPos;
+    public Vector3 originalPos;
     public Vector3 MovePos;
     // 
 
@@ -26,17 +25,21 @@ public class testingcamerashake : MonoBehaviour {
         {
             camTransform = GetComponent(typeof(Transform)) as Transform;
         }
+       
     }
 
     void OnEnable()
     {
         originalPos = camTransform.localPosition;
+      
     }
 
     void Update()
     {
+       
         if (IsActiveShake)
         {
+            //MovePos = camTransform.localPosition;
             if (shakeDuration > 0)
             {
             camTransform.localPosition = originalPos + Random.insideUnitSphere * shakeAmount;
@@ -47,7 +50,7 @@ public class testingcamerashake : MonoBehaviour {
             {
             shakeDuration = 0f;
             camTransform.localPosition = originalPos;
-            //camTransform.localPosition = MovePos;
+            //camTransform2.localPosition = MovePos;
             IsActiveShake = false;
             }
         }

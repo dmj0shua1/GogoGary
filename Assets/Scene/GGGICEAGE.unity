@@ -6450,7 +6450,7 @@ MonoBehaviour:
     m_Bits: 512
   minSpeed: 9
   maxSpeed: 9
-  ChangeMaxSpeed: 15
+  ChangeMaxSpeed: 20
   ChangeMinSpeed: 9
 --- !u!50 &441492725
 Rigidbody2D:
@@ -26007,6 +26007,7 @@ MonoBehaviour:
   shakeAmount: 0.5
   decreaseFactor: 1
   IsActiveShake: 0
+  originalPos: {x: 0, y: 0, z: 0}
   MovePos: {x: 0, y: 0, z: 0}
 --- !u!4 &1086760090
 Transform:
@@ -27006,7 +27007,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: -3, y: -342.99994}
+  m_AnchoredPosition: {x: -3, y: -342.99997}
   m_SizeDelta: {x: 0, y: 137}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!95 &1132051098
@@ -31450,7 +31451,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &1379122723
 Transform:
   m_ObjectHideFlags: 0
