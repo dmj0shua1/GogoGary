@@ -1091,7 +1091,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1006166161304554}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -1.47, y: 2.34, z: 0}
+  m_LocalPosition: {x: -0.88, y: 2.34, z: 0}
   m_LocalScale: {x: 0.23096499, y: 0.23896773, z: 0.81165105}
   m_Children: []
   m_Father: {fileID: 4645777636254788}
@@ -1713,7 +1713,7 @@ MonoBehaviour:
   Col1: {fileID: 61456606850544460}
   Col2: {fileID: 61272384680717750}
   Col3: {fileID: 0}
-  IsTrigger: 0
+  IsTrigger: 1
 --- !u!114 &114715044588730642
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -1729,7 +1729,7 @@ MonoBehaviour:
   Col1: {fileID: 61456606850544460}
   Col2: {fileID: 61272384680717750}
   Col3: {fileID: 0}
-  IsTrigger: 0
+  IsTrigger: 1
 --- !u!212 &212000105742948074
 SpriteRenderer:
   m_ObjectHideFlags: 1
