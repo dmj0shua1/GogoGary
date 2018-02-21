@@ -430,6 +430,7 @@ public class PlatformGenerator : MonoBehaviour {
                 MummyThreshold = 4;
                 DebriGenerationScript.randomDebrisThreshold = 15;
                 isEnabledWalkThrougwall = true;
+
             }
         }
         for (int set5 = 43; set5 <= 47; set5++)
@@ -545,6 +546,7 @@ public class PlatformGenerator : MonoBehaviour {
             {
                 isBlizzard = true;
                 DebriGenerationScript.randomDebrisThreshold = 15;
+                isBigFoot = true;
             }
         }
         for (int set5 = 93; set5 <= 97; set5++)
@@ -554,6 +556,7 @@ public class PlatformGenerator : MonoBehaviour {
                 isBlizzard = true;
                 DebriGenerationScript.randomDebrisThreshold = 20;
                 timeThreshold = 10;
+                isBigFoot = true;
             }
         }
         for (int set6 = 98; set6 <= 100; set6++)
@@ -563,6 +566,7 @@ public class PlatformGenerator : MonoBehaviour {
                 isBlizzard = true;
                 DebriGenerationScript.randomDebrisThreshold = 25;
                 timeThreshold = 10;
+                isBigFoot = true;
             }
         }
 

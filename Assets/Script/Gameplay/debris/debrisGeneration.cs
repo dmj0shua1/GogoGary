@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class debrisGeneration : MonoBehaviour {
 
@@ -21,6 +22,8 @@ public class debrisGeneration : MonoBehaviour {
     private debrisZone DebriZoneScript;
     private SlowMovement SlowMovementScript;
     public AudioSource FallingDebri;
+    //debrisXPosition
+    public int DebrisPos1, DebrisPos2;
 	void Start()
 	{
 		debrisHeight = debris.GetComponent<BoxCollider2D>().size.y;
@@ -31,6 +34,18 @@ public class debrisGeneration : MonoBehaviour {
         {
             IsActivate = true; 
         }
+        Scene currentScene = SceneManager.GetActiveScene();
+        string sceneName = currentScene.name;
+        if (sceneName == "GGGPYRAMID" || sceneName == "GGG" || sceneName == "GGGPREHISTORIC")
+        {
+            DebrisPos1 = -10;
+            DebrisPos2 = 10;
+        }
+        else if (sceneName == "GGGICEAGE")
+        {
+            DebrisPos1 = -1;
+            DebrisPos2 = 5;
+        }     
 	}
 	void Update()
 	{	
@@ -59,7 +74,8 @@ public class debrisGeneration : MonoBehaviour {
                 if (Random.Range(0f, 100f) < randomDebrisThreshold)
                 {
                     GameObject newDebris = debrisPool.GetPooledObject();
-                    float debrisXposition = Random.Range(-10, 10);
+                    //float debrisXposition = Random.Range(-10, 10);
+                    float debrisXposition = Random.Range(DebrisPos1, DebrisPos2);
                     Vector3 debrisPosition = new Vector3(debrisXposition, debrisHeight, 0f);
                     newDebris.transform.position = transform.position + debrisPosition;
                     newDebris.transform.rotation = transform.rotation;

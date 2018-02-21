@@ -1380,7 +1380,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 1, y: 1}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: -646, y: -746.0004}
+  m_AnchoredPosition: {x: -646, y: -746.0005}
   m_SizeDelta: {x: 224, y: 203}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &75309518
@@ -7669,6 +7669,8 @@ MonoBehaviour:
   IsDebriActivate: 0
   FloorCounterScript: {fileID: 0}
   FallingDebri: {fileID: 1880391389}
+  DebrisPos1: 0
+  DebrisPos2: 0
 --- !u!1001 &530224302
 Prefab:
   m_ObjectHideFlags: 0
@@ -15141,7 +15143,7 @@ MonoBehaviour:
   BlizzardObject: {fileID: 1077114652}
   blizzardDivided: 0
   BlizzardAnimation: {fileID: 1077114656}
-  isBigFoot: 1
+  isBigFoot: 0
   ieBigfootPooler: {fileID: 1429008358}
   ieBigFootheight: 1
   ieBigFootThreshold: 20
@@ -16311,7 +16313,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 0}
-  m_AnchoredPosition: {x: -9, y: 902.9997}
+  m_AnchoredPosition: {x: -9, y: 902.99976}
   m_SizeDelta: {x: -726, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!1 &836445298
@@ -21881,7 +21883,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: RUN FROM THE LAVA
+  m_Text: RUN FROM THE AVALANCHE
 --- !u!222 &1018981312
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -21915,7 +21917,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   TextHolder: {fileID: 1018981311}
   Chinese: "\u9003\u96E2\u706B\u6E90"
-  English: RUN FROM THE LAVA
+  English: RUN FROM THE AVALANCHE
 --- !u!1 &1035221820
 GameObject:
   m_ObjectHideFlags: 0
@@ -22521,7 +22523,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 1, y: 1}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: -420, y: -746.0004}
+  m_AnchoredPosition: {x: -420, y: -746.0005}
   m_SizeDelta: {x: 224, y: 203}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1074295455
@@ -40440,7 +40442,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 0}
-  m_AnchoredPosition: {x: -235, y: 714.0001}
+  m_AnchoredPosition: {x: -235, y: 714.00006}
   m_SizeDelta: {x: -700, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!1 &1570786210
@@ -58006,7 +58008,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 1, y: 1}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: -197, y: -746.0004}
+  m_AnchoredPosition: {x: -197, y: -746.0005}
   m_SizeDelta: {x: 224, y: 203}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &2099048556

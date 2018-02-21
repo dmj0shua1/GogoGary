@@ -979,7 +979,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 1, y: 1}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: -646, y: -746.00006}
+  m_AnchoredPosition: {x: -646, y: -746.0001}
   m_SizeDelta: {x: 224, y: 203}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &75309518
@@ -6571,6 +6571,8 @@ MonoBehaviour:
   IsDebriActivate: 0
   FloorCounterScript: {fileID: 0}
   FallingDebri: {fileID: 1880391389}
+  DebrisPos1: 0
+  DebrisPos2: 0
 --- !u!1001 &530224302
 Prefab:
   m_ObjectHideFlags: 0
@@ -9285,7 +9287,7 @@ MonoBehaviour:
   isCheckBolt: 0
   isDebriGround: 0
   MummyCollide: 1
-  TestingCameraShakeScript: {fileID: 0}
+  TestingCameraShakeScript: {fileID: 1086760089}
   IsShakeZone: 0
 --- !u!61 &711469305
 BoxCollider2D:
@@ -11442,7 +11444,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 0}
-  m_AnchoredPosition: {x: -9, y: 902.9997}
+  m_AnchoredPosition: {x: -9, y: 902.99976}
   m_SizeDelta: {x: -726, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!1 &835305196
@@ -14330,7 +14332,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 1, y: 1}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: -420, y: -746.00006}
+  m_AnchoredPosition: {x: -420, y: -746.0001}
   m_SizeDelta: {x: 224, y: 203}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1074295455
@@ -15331,7 +15333,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: -3, y: -342.99994}
+  m_AnchoredPosition: {x: -3, y: -342.99997}
   m_SizeDelta: {x: 0, y: 137}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!95 &1132051098
@@ -24041,7 +24043,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 0}
-  m_AnchoredPosition: {x: -235, y: 713.9998}
+  m_AnchoredPosition: {x: -235, y: 713.9999}
   m_SizeDelta: {x: -700, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!1 &1570786210
@@ -34780,7 +34782,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 1, y: 1}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: -197, y: -746.00006}
+  m_AnchoredPosition: {x: -197, y: -746.0001}
   m_SizeDelta: {x: 224, y: 203}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &2099048556
