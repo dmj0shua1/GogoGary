@@ -14637,7 +14637,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: PREHISTORIC
+  m_Text: ICE AGE
 --- !u!114 &1122
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -15345,7 +15345,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   TextHolder: {fileID: 1121}
   Chinese: "\u95DC\u5361 3"
-  English: PREHISTORIC
+  English: ICE AGE
 --- !u!1001 &33661456
 Prefab:
   m_ObjectHideFlags: 0

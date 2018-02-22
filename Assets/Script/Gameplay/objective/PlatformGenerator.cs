@@ -173,8 +173,6 @@ public class PlatformGenerator : MonoBehaviour {
                     PowerUpdHolderDivided = EndGenerate / 2;
                     if (Counts % PowerUpdHolderDivided == 0)
                     {
-
-
                         GameObject newPowerup = powerupPooler.GetPooledObject();
                         float PowerUpposition = Random.Range(8, 12);
                         Vector3 PowerupPos = new Vector3(PowerUpposition, PowerupsHeight, 0f);
@@ -197,7 +195,94 @@ public class PlatformGenerator : MonoBehaviour {
                 //}
                 //
             //newrrescuegeneration----------------------------
-                        RescueHolderDivided = EndGenerate / 5;
+
+                Scene currentScene = SceneManager.GetActiveScene();
+                string sceneName = currentScene.name;
+                if (sceneName == "GGG")
+                {
+                    RescueHolderDivided = EndGenerate / 5;
+                    if (Counts % RescueHolderDivided == 0)
+                    {
+                        if (floorSelector == 0 || floorSelector == 1 || floorSelector == 2 )
+                        {
+
+                            FloorCounterScript.MainFloorDecreaseDivided = FloorCounterScript.MainFloorHolderDivided;
+                            GameObject newRescue = RescuePointPooler[RescueSelector].GetPooledObject();
+                            float RescueXposition = Random.Range(8, 12);
+                            Vector3 rescuePosition = new Vector3(RescueXposition, RescuePointheight, 0f);
+                            newRescue.transform.position = transform.position + rescuePosition;
+                            newRescue.transform.rotation = transform.rotation;
+                            newRescue.SetActive(true);
+
+                            if (SetRescuePoint == AmountRescuePoint)
+                            {
+                                newRescue.SetActive(false);
+                            }
+                            else
+                            {
+                                SetRescuePoint++;
+                            }
+
+                        }
+                    }
+                }
+                if (sceneName == "GGGPREHISTORIC" )
+                {
+                    RescueHolderDivided = EndGenerate / 5;
+                    if (Counts % RescueHolderDivided == 0)
+                    {
+                        if (floorSelector == 0 || floorSelector == 3 || floorSelector == 2 || floorSelector == 4)
+                        {
+
+                            FloorCounterScript.MainFloorDecreaseDivided = FloorCounterScript.MainFloorHolderDivided;
+                            GameObject newRescue = RescuePointPooler[RescueSelector].GetPooledObject();
+                            float RescueXposition = Random.Range(8, 12);
+                            Vector3 rescuePosition = new Vector3(RescueXposition, RescuePointheight, 0f);
+                            newRescue.transform.position = transform.position + rescuePosition;
+                            newRescue.transform.rotation = transform.rotation;
+                            newRescue.SetActive(true);
+
+                            if (SetRescuePoint == AmountRescuePoint)
+                            {
+                                newRescue.SetActive(false);
+                            }
+                            else
+                            {
+                                SetRescuePoint++;
+                            }
+
+                        }
+                    }
+                }
+                if (sceneName == "GGGPYRAMID" ||sceneName == "GGGICEAGE")
+                {
+                    RescueHolderDivided = EndGenerate / 5;
+                    if (Counts % RescueHolderDivided == 0)
+                    {
+                        if (floorSelector == 0 || floorSelector == 1 || floorSelector == 2 || floorSelector == 4)
+                        {
+
+                            FloorCounterScript.MainFloorDecreaseDivided = FloorCounterScript.MainFloorHolderDivided;
+                            GameObject newRescue = RescuePointPooler[RescueSelector].GetPooledObject();
+                            float RescueXposition = Random.Range(8, 12);
+                            Vector3 rescuePosition = new Vector3(RescueXposition, RescuePointheight, 0f);
+                            newRescue.transform.position = transform.position + rescuePosition;
+                            newRescue.transform.rotation = transform.rotation;
+                            newRescue.SetActive(true);
+
+                            if (SetRescuePoint == AmountRescuePoint)
+                            {
+                                newRescue.SetActive(false);
+                            }
+                            else
+                            {
+                                SetRescuePoint++;
+                            }
+
+                        }
+                    }
+                }
+                        /*RescueHolderDivided = EndGenerate / 5;
                         if (Counts % RescueHolderDivided ==0)
                         {
                             FloorCounterScript.MainFloorDecreaseDivided = FloorCounterScript.MainFloorHolderDivided;
@@ -216,7 +301,7 @@ public class PlatformGenerator : MonoBehaviour {
                             {
                                 SetRescuePoint++;
                             }
-                        }
+                        }*/
             //----------------------------------------------
                         if (isShake)
                         {
@@ -231,9 +316,7 @@ public class PlatformGenerator : MonoBehaviour {
                         }
             //ShakeGenerate
             //end
-                //    
-                        Scene currentScene = SceneManager.GetActiveScene();
-                        string sceneName = currentScene.name;
+                //  
                         if (sceneName == "GGGPYRAMID" || sceneName == "GGG")
                         {
                             blackOutHolderDivided = EndGenerate / 3;

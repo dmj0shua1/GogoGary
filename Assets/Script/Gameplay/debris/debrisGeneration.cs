@@ -29,7 +29,7 @@ public class debrisGeneration : MonoBehaviour {
 		debrisHeight = debris.GetComponent<BoxCollider2D>().size.y;
         MainHolderScript = GameObject.Find("Holder").GetComponent<LevelPass>();
         FloorCounterScript = GameObject.Find("player").GetComponent<floorcounter>();
-
+        int Randomdebri = Random.Range(6, 10);
         if (MainHolderScript.isActivateTipsAmt == true)
         {
             IsActivate = true; 
@@ -44,7 +44,7 @@ public class debrisGeneration : MonoBehaviour {
         else if (sceneName == "GGGICEAGE")
         {
             DebrisPos1 = -1;
-            DebrisPos2 = 5;
+            DebrisPos2 = /*5;*/ Randomdebri;
         }     
 	}
 	void Update()

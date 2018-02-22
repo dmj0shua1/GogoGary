@@ -9,6 +9,7 @@ public class LastStageInvoke : MonoBehaviour {
     public RectTransform ListTrans;
     public bool Activate2;
     public bool Activate3;
+    public bool Activate4;
 
     void Awake() 
     {
@@ -31,6 +32,11 @@ public class LastStageInvoke : MonoBehaviour {
         if (PlayerPrefs.GetInt("LastLevelStagePickerSelect") == 3 || PlayerPrefs.GetInt("UnlockLevels") >= 76)
         {
             Activate3 = true;
+
+        }
+        if (PlayerPrefs.GetInt("LastLevelStagePickerSelect") == 4 || PlayerPrefs.GetInt("UnlockLevels") >= 101)
+        {
+            Activate4 = true;
 
         } 
 	}
@@ -63,6 +69,19 @@ public class LastStageInvoke : MonoBehaviour {
             }
 
         }
+        if (Activate4)
+        {
+            if (PosX < -500)
+            {
+                Activate3 = false;
+            }
+            else
+            {
+                StartCoroutine(AutoPlay3());
+                PlayerPrefs.SetInt("LastLevelStagePickerSelect", 0);
+            }
+
+        }
       
     }
 
@@ -78,5 +97,12 @@ public class LastStageInvoke : MonoBehaviour {
         NextBtn.onClick.Invoke();
 
     }
+    IEnumerator AutoPlay3()
+    {
+        yield return new WaitForSeconds(0.001f);
+        NextBtn.onClick.Invoke();
+
+    }
+  
   
 }
