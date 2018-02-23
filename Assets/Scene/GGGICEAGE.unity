@@ -1380,7 +1380,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 1, y: 1}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: -646, y: -746.0004}
+  m_AnchoredPosition: {x: -646, y: -746.00037}
   m_SizeDelta: {x: 224, y: 203}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &75309518
@@ -5252,7 +5252,7 @@ Prefab:
         type: 2}
       propertyPath: m_Sprite
       value: 
-      objectReference: {fileID: 21300000, guid: 5ec08c00debf3914b92c2c6d9b25ede9,
+      objectReference: {fileID: 21300000, guid: fb8a5009d7aeb6547ac4844f527fac7e,
         type: 3}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 2f569f700ff4e2a41b2cf2fe3204e193, type: 2}
@@ -15145,7 +15145,7 @@ MonoBehaviour:
   BlizzardAnimation: {fileID: 1077114656}
   isBigFoot: 0
   ieBigfootPooler: {fileID: 1429008358}
-  ieBigFootheight: 1
+  ieBigFootheight: 2.5
   ieBigFootThreshold: 20
 --- !u!1 &757897339
 GameObject:
@@ -16313,7 +16313,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 0}
-  m_AnchoredPosition: {x: -9, y: 902.9997}
+  m_AnchoredPosition: {x: -9, y: 902.99963}
   m_SizeDelta: {x: -726, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!1 &836445298
@@ -22523,7 +22523,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 1, y: 1}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: -420, y: -746.0004}
+  m_AnchoredPosition: {x: -420, y: -746.00037}
   m_SizeDelta: {x: 224, y: 203}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1074295455
@@ -26372,7 +26372,7 @@ Prefab:
         type: 2}
       propertyPath: m_Sprite
       value: 
-      objectReference: {fileID: 21300000, guid: 2fa8ebbd96341004b9102b3ebac83a33,
+      objectReference: {fileID: 21300000, guid: 2c715b234bbeda7448320e146b8b2aa4,
         type: 3}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 148ca55bcf0a99e43ba2c2d796d81100, type: 2}
@@ -40442,7 +40442,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 0}
-  m_AnchoredPosition: {x: -235, y: 714.0001}
+  m_AnchoredPosition: {x: -235, y: 713.9999}
   m_SizeDelta: {x: -700, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!1 &1570786210
@@ -49569,7 +49569,7 @@ MonoBehaviour:
       m_Calls: []
     m_TypeName: UnityEngine.UI.MaskableGraphic+CullStateChangedEvent, UnityEngine.UI,
       Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
-  m_Sprite: {fileID: 21300000, guid: 498f466e169ef374cad393aad86b97aa, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 1edf52fe2f340554e9ed1d3bc7719272, type: 3}
   m_Type: 0
   m_PreserveAspect: 1
   m_FillCenter: 1
@@ -58008,7 +58008,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 1, y: 1}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: -197, y: -746.0004}
+  m_AnchoredPosition: {x: -197, y: -746.00037}
   m_SizeDelta: {x: 224, y: 203}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &2099048556

@@ -259,7 +259,7 @@ public class PlatformGenerator : MonoBehaviour {
                     RescueHolderDivided = EndGenerate / 5;
                     if (Counts % RescueHolderDivided == 0)
                     {
-                        if (floorSelector == 0 || floorSelector == 1 || floorSelector == 2 || floorSelector == 4)
+                        if (floorSelector == 0 || floorSelector == 3 || floorSelector == 2 || floorSelector == 4)
                         {
 
                             FloorCounterScript.MainFloorDecreaseDivided = FloorCounterScript.MainFloorHolderDivided;
