@@ -7,9 +7,23 @@ public class BigFootController : MonoBehaviour {
     public GameObject BigFootObject;
     [SerializeField]
     private ieBigFootManager ieBigFootManagerScript;
+    public Animator BigFootBackAnim;
+    public bool isEnabled;
     void Start() 
     {
         ieBigFootManagerScript = GameObject.Find("BigFootManager").GetComponent<ieBigFootManager>();
+        BigFootBackAnim = GameObject.Find("ieBigFoot").GetComponent<Animator>();
+    }
+    void Update() 
+    {
+        //if (isAnimate)
+       // {
+           // BigFootBackAnim.SetBool("isBack", false);
+        //}
+        if (isEnabled)
+        {
+            StartCoroutine(isCollideEnabled());
+        }
     }
     void OnTriggerEnter2D(Collider2D other)
     {
@@ -17,7 +31,23 @@ public class BigFootController : MonoBehaviour {
         {
             BigFootObject.SetActive(true);
             ieBigFootManagerScript.isShake = true;
+            StartCoroutine(isCollideTime());
         }  
+
+    }
+
+   
+    IEnumerator isCollideTime()
+    {
+        yield return new WaitForSeconds(3f);
+        BigFootBackAnim.SetBool("isBack", false);
+        isEnabled = true;
+
+    }
+    IEnumerator isCollideEnabled()
+    {
+        yield return new WaitForSeconds(3f);
+        BigFootObject.SetActive(false);
 
     }
 }

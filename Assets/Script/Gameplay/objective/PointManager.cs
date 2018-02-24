@@ -36,6 +36,7 @@ public class PointManager : MonoBehaviour {
     public GameObject wallofdeathparticle1;
     public GameObject wallofdeathparticle2;
     public AudioSource FireSfx;
+    public AudioSource viewPanelSfx;
     //public Text TestDisplay;
     //public Sprite SmileyObject;
 
@@ -53,7 +54,15 @@ public class PointManager : MonoBehaviour {
         LevelPassScript = GameObject.Find("Holder").GetComponent<LevelPass>();
         PlusSpeedManagerScript = GameObject.Find("plusspeedManager").GetComponent<PlusSpeedManager>();
         RescueManagerScript = GameObject.Find("RescueManager").GetComponent<RescueManager>();
-       
+        if (PlayerPrefs.GetInt("SoundChecker") == 0)
+        {
+            viewPanelSfx.enabled = true;
+          
+        }
+        else if (PlayerPrefs.GetInt("SoundChecker") == 1)
+        {
+            viewPanelSfx.enabled = false;
+        }
 	}
 	void Update()
 	{
@@ -61,6 +70,7 @@ public class PointManager : MonoBehaviour {
 		CheckPointObjective ();
 		HalfFloorCount ();
         WarningSignTrigger();
+       
         //completeLevelCounterMethod();
         /*if (loadScene == true)
          {
@@ -266,17 +276,27 @@ public class PointManager : MonoBehaviour {
             string sceneNamewd = currentScenewd.name;
             if (sceneNamewd == "GGGPYRAMID")
             {
-                FireSfx.enabled = true;
                 wallofdeathparticle1.SetActive(true);
                 wallofdeathparticle2.SetActive(true);
                 MyAnimation.SetBool("isIdle", false); 
+            }
+            if (sceneNamewd == "GGGPYRAMID" && PlayerPrefs.GetInt("SoundChecker") == 0)
+            {
+                FireSfx.enabled = true;
+                wallofdeathparticle1.SetActive(true);
+                wallofdeathparticle2.SetActive(true);
+                MyAnimation.SetBool("isIdle", false);
             }
             if (sceneNamewd == "GGGPREHISTORIC")
             {
                 
                 MyAnimationLava.SetBool("isIdle", false);
             }
-         
+            if (sceneNamewd == "GGGICEAGE" && PlayerPrefs.GetInt("SoundChecker") == 0)
+            {
+                FireSfx.enabled = true;
+               
+            }
         }    
     }
     

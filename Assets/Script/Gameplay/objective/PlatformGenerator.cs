@@ -91,6 +91,8 @@ public class PlatformGenerator : MonoBehaviour {
     public ObjectPooler ieBigfootPooler;
     public float ieBigFootheight;
     public int ieBigFootThreshold;
+    public ieBigFootManager ieBigFootManagerScript;
+    public BigFootController BigFootControllerScript;
     
 
 
@@ -102,6 +104,8 @@ public class PlatformGenerator : MonoBehaviour {
 		WallGeneratorScript = GameObject.Find ("WallGeneration").GetComponent<WallGenerator> ();
         floorSelector = Random.Range(0, theObjectPools.Length);
         PrevFloor = floorSelector;
+        RescueSelector = Random.Range(0, RescuePointPooler.Length);
+        prevRescue = RescueSelector;
         FloorCounterScript = GameObject.Find("player").GetComponent<floorcounter>();
         LevelPassScript = GameObject.Find("Holder").GetComponent<LevelPass>();
         TestingCameraShakeScript = GameObject.Find("camerashaketest").GetComponent<testingcamerashake>();
@@ -109,6 +113,7 @@ public class PlatformGenerator : MonoBehaviour {
         blackOutAnimation = blackOutGameObject.GetComponent<Animator>();
         DebriGenerationScript = GameObject.Find("DebrisGeneration").GetComponent<debrisGeneration>();
         WalkThroughWallsScript = GameObject.Find("player").GetComponent<WalkThroughWalls>();
+        if (SceneManager.GetActiveScene().name == "GGGICEAGE") ieBigFootManagerScript = GameObject.Find("BigFootManager").GetComponent<ieBigFootManager>();
         if (LevelPassScript.isShakeActivateAmt == true)
         {
             isShake = true;
@@ -116,8 +121,7 @@ public class PlatformGenerator : MonoBehaviour {
 
         }
         BlizzardAnimation = GameObject.Find("snow2").GetComponent<Animator>();
-        RescueSelector = Random.Range(0, RescuePointPooler.Length);
-        prevRescue = RescueSelector;
+      
         
 	}
     //note 13.7 DistanceBetween
@@ -205,7 +209,11 @@ public class PlatformGenerator : MonoBehaviour {
                     {
                         if (floorSelector == 0 || floorSelector == 1 || floorSelector == 2 )
                         {
-
+                            while (RescueSelector == prevRescue)
+                            {
+                                RescueSelector = Random.Range(0, RescuePointPooler.Length);
+                            }
+                            prevRescue = RescueSelector;
                             FloorCounterScript.MainFloorDecreaseDivided = FloorCounterScript.MainFloorHolderDivided;
                             GameObject newRescue = RescuePointPooler[RescueSelector].GetPooledObject();
                             float RescueXposition = Random.Range(8, 12);
@@ -233,7 +241,11 @@ public class PlatformGenerator : MonoBehaviour {
                     {
                         if (floorSelector == 0 || floorSelector == 3 || floorSelector == 2 || floorSelector == 4)
                         {
-
+                            while (RescueSelector == prevRescue)
+                            {
+                                RescueSelector = Random.Range(0, RescuePointPooler.Length);
+                            }
+                            prevRescue = RescueSelector;
                             FloorCounterScript.MainFloorDecreaseDivided = FloorCounterScript.MainFloorHolderDivided;
                             GameObject newRescue = RescuePointPooler[RescueSelector].GetPooledObject();
                             float RescueXposition = Random.Range(8, 12);
@@ -256,11 +268,17 @@ public class PlatformGenerator : MonoBehaviour {
                 }
                 if (sceneName == "GGGPYRAMID" ||sceneName == "GGGICEAGE")
                 {
+                   
                     RescueHolderDivided = EndGenerate / 5;
                     if (Counts % RescueHolderDivided == 0)
                     {
                         if (floorSelector == 0 || floorSelector == 3 || floorSelector == 2 || floorSelector == 4)
                         {
+                            while (RescueSelector == prevRescue)
+                            {
+                                RescueSelector = Random.Range(0, RescuePointPooler.Length);
+                            }
+                            prevRescue = RescueSelector;
 
                             FloorCounterScript.MainFloorDecreaseDivided = FloorCounterScript.MainFloorHolderDivided;
                             GameObject newRescue = RescuePointPooler[RescueSelector].GetPooledObject();
@@ -446,6 +464,9 @@ public class PlatformGenerator : MonoBehaviour {
                                     Vector3 IeBigFootPosition = new Vector3(IeBigFootXposition, ieBigFootheight, 0f);
                                     newIeBigFoot.transform.position = transform.position + IeBigFootPosition;
                                     newIeBigFoot.transform.rotation = transform.rotation;
+                                    BigFootControllerScript = newIeBigFoot.gameObject.GetComponent<BigFootController>();
+                                    BigFootControllerScript.isEnabled = false;
+                                    //ieBigFootManagerScript.isAnimate = false;
                                     newIeBigFoot.SetActive(true);
                                 }
                                 /*if (Counts % 10 == 0)

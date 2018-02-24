@@ -99,12 +99,12 @@ public class playercontroller : MonoBehaviour {
         PlatformGeneratorScript = GameObject.Find("PlatformGeneration").GetComponent<PlatformGenerator>();
         if (SceneManager.GetActiveScene().name == "GGGICEAGE") TestingCameraShakeScript = GameObject.Find("camerashaketest").GetComponent<testingcamerashake>();
         if (SceneManager.GetActiveScene().name == "GGGPYRAMID") MyAnimationWallofDeath = GameObject.Find("WallOfDeath").GetComponent<Animator>();
-
       if (SceneManager.GetActiveScene().name == "Endless")  scoreManagerScript = GameObject.Find("ScoreManager").GetComponent<ScoreManager>();
        
 	}
 	void Update ()
 	{
+    
         if (isAllMove) { 
 		if (grounded = GetComponent<Rigidbody2D>().IsTouchingLayers (LayerMask.GetMask("Ground")))
         {
@@ -157,22 +157,7 @@ public class playercontroller : MonoBehaviour {
         if (!isCountDownSwipe)
         {
             StartCoroutine(ReadyToSwipe());
-            /*if (isCheckBolt == false)
-            {
-                if (PlusSpeedManagerScript.SpeedTimeLength >=0)
-                {
-                    PlusSpeedManagerScript.addSpeedActive = true;
-                }    
-            }*/
-            /*if (ifRight == true)
-            {
-                MyAnimation.enabled = true;
-                Player_Gary.bodyType = RigidbodyType2D.Dynamic;
-                HandLeftIcon.SetActive(false);
-                //G1Object.SetActive(false);
-                SwipeAgainText.SetActive(false);
-            }*/ 
-        } 
+        }
 	}
     public void GaryHop() 
     {
@@ -354,6 +339,7 @@ public class playercontroller : MonoBehaviour {
             SwipeAgainText.SetActive(true);
             isCountDownSwipe = false;
             StartCoroutine(StopEventBox());
+          
         }
         if (other.gameObject.CompareTag("StopCamera"))
         {   //runtooverlaydoor
@@ -372,7 +358,10 @@ public class playercontroller : MonoBehaviour {
                 PointManagerScript.wallofdeathparticle2.SetActive(false);
                 PointManagerScript.FireSfx.enabled = false;
             }
+            
             print("stopcam");
+          
+           
         }
         /*if (other.gameObject.CompareTag("pyMummy"))
         {
@@ -396,6 +385,7 @@ public class playercontroller : MonoBehaviour {
                 addStar2 = false;
             }
         }
+
        
        
     }
@@ -418,6 +408,11 @@ public class playercontroller : MonoBehaviour {
             PointManagerScript.FloorObjective();
             GameLevelHolderManagerScript.RescueUnlockChecker();
             mySpriteRenderer.enabled = false;
+            if (SceneManager.GetActiveScene().name == "GGGICEAGE")
+            {
+
+                PointManagerScript.FireSfx.enabled = false;
+            }
         }
         /*if (SceneManager.GetActiveScene().name == "GGGICEAGE")
         {
@@ -438,6 +433,7 @@ public class playercontroller : MonoBehaviour {
         SwipeTestScript.isSwipe = true;
         //IsShakeZone = false;
         //MummyCollide = false;
+      
        
     }
     IEnumerator StopFireAnimation()

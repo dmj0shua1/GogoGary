@@ -8,7 +8,7 @@ public class ieBigFootManager : MonoBehaviour {
     private testingcamerashake TestingCameraShakeScript;
     public bool isShake;
     public playercontroller PlayerControllerScript;
-
+    //public bool isAnimate;
 	void Start () {
         TestingCameraShakeScript = GameObject.Find("camerashaketest").GetComponent<testingcamerashake>();
         PlayerControllerScript = GameObject.Find("Player").GetComponent<playercontroller>();
@@ -29,8 +29,13 @@ public class ieBigFootManager : MonoBehaviour {
         }
         if (!isShake)
         {
+         
             //PlayerControllerScript.moveSpeed = PlayerControllerScript.currentSpeed;
         }
+        /*if (isAnimate)
+        {
+            isAnimate = false;
+        }*/
        
 	}
 
@@ -39,6 +44,7 @@ public class ieBigFootManager : MonoBehaviour {
         yield return new WaitForSeconds(3f);
         isShake = false;
         PlayerControllerScript.moveSpeed = PlayerControllerScript.currentSpeed;
+        //isAnimate = true;
  
     }
 }
