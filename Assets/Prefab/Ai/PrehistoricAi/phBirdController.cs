@@ -39,6 +39,7 @@ public class phBirdController : MonoBehaviour {
     public bool isCollide;
 
     public AudioSource ph_BirdAttack;
+    public bool isPlayBirdAttackSfx;
 
     //function1
     /*void Start() 
@@ -208,9 +209,15 @@ public class phBirdController : MonoBehaviour {
     {
         if (other.gameObject.CompareTag("Player"))
         {
+            isPlayBirdAttackSfx = true;
             if (PlayerPrefs.GetInt("SoundChecker") == 0)
             {
-                ph_BirdAttack.Play();
+                if (isPlayBirdAttackSfx)
+                {
+                    ph_BirdAttack.Play();
+                    isPlayBirdAttackSfx = false;
+                }
+               
             }
             /*if (PlayerControllerScript.grounded || !PlayerControllerScript.grounded)
             {

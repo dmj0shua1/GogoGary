@@ -9,6 +9,7 @@ public class BigFootController : MonoBehaviour {
     private ieBigFootManager ieBigFootManagerScript;
     public Animator BigFootBackAnim;
     public bool isEnabled;
+    public AudioSource BigFootSfx;
     void Start() 
     {
         ieBigFootManagerScript = GameObject.Find("BigFootManager").GetComponent<ieBigFootManager>();
@@ -41,6 +42,7 @@ public class BigFootController : MonoBehaviour {
     {
         yield return new WaitForSeconds(3f);
         BigFootBackAnim.SetBool("isBack", false);
+        BigFootSfx.volume = (0.020f);
         isEnabled = true;
 
     }
@@ -48,6 +50,7 @@ public class BigFootController : MonoBehaviour {
     {
         yield return new WaitForSeconds(3f);
         BigFootObject.SetActive(false);
+        BigFootSfx.enabled = false;
 
     }
 }

@@ -466,6 +466,7 @@ public class PlatformGenerator : MonoBehaviour {
                                     newIeBigFoot.transform.rotation = transform.rotation;
                                     BigFootControllerScript = newIeBigFoot.gameObject.GetComponent<BigFootController>();
                                     BigFootControllerScript.isEnabled = false;
+                                    BigFootControllerScript.BigFootSfx.enabled = true;
                                     //ieBigFootManagerScript.isAnimate = false;
                                     newIeBigFoot.SetActive(true);
                                 }

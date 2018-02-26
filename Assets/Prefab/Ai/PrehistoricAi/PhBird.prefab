@@ -39,7 +39,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1586642851589228}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -1310.1127, y: 954.93774, z: 0}
+  m_LocalPosition: {x: -310.9112, y: -108.58224, z: 0}
   m_LocalScale: {x: 1.0665668, y: 1.0665668, z: 1.0665668}
   m_Children: []
   m_Father: {fileID: 0}
@@ -145,6 +145,7 @@ MonoBehaviour:
   MainCollider: {fileID: 61494645166399130}
   isCollide: 1
   ph_BirdAttack: {fileID: 0}
+  isPlayBirdAttackSfx: 0
 --- !u!114 &114421876846171170
 MonoBehaviour:
   m_ObjectHideFlags: 1
