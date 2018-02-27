@@ -1422,7 +1422,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 1, y: 1}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: -646, y: -746.00006}
+  m_AnchoredPosition: {x: -646, y: -746.0001}
   m_SizeDelta: {x: 224, y: 203}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &75309518
@@ -16438,7 +16438,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 0}
-  m_AnchoredPosition: {x: -9, y: 902.9993}
+  m_AnchoredPosition: {x: -9, y: 902.9994}
   m_SizeDelta: {x: -726, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!1 &836445298
@@ -17683,7 +17683,7 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 931330689}
   m_LocalRotation: {x: 0.7071068, y: 0, z: 0, w: 0.7071068}
-  m_LocalPosition: {x: 0, y: -1.62, z: 0}
+  m_LocalPosition: {x: 0, y: -1.318, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 441492721}
@@ -17748,7 +17748,7 @@ ParticleSystem:
   m_GameObject: {fileID: 931330689}
   serializedVersion: 5
   lengthInSec: 5
-  simulationSpeed: 1
+  simulationSpeed: 2
   looping: 1
   prewarm: 0
   playOnAwake: 1
@@ -17797,14 +17797,14 @@ ParticleSystem:
   moveWithTransform: 0
   moveWithCustomTransform: {fileID: 0}
   scalingMode: 1
-  randomSeed: -1048345868
+  randomSeed: -1127692108
   InitialModule:
     serializedVersion: 3
     enabled: 1
     startLifetime:
       serializedVersion: 2
       minMaxState: 0
-      scalar: 5
+      scalar: 6
       minScalar: 5
       maxCurve:
         serializedVersion: 2
@@ -17845,7 +17845,7 @@ ParticleSystem:
     startSpeed:
       serializedVersion: 2
       minMaxState: 0
-      scalar: 8.79
+      scalar: 5
       minScalar: 5
       maxCurve:
         serializedVersion: 2
@@ -17949,7 +17949,7 @@ ParticleSystem:
     startSize:
       serializedVersion: 2
       minMaxState: 0
-      scalar: 1
+      scalar: 3
       minScalar: 1
       maxCurve:
         serializedVersion: 2
@@ -18193,7 +18193,7 @@ ParticleSystem:
         m_PostInfinity: 2
         m_RotationOrder: 4
     randomizeRotationDirection: 0
-    maxNumParticles: 20000
+    maxNumParticles: 50
     size3D: 0
     rotation3D: 0
     gravityModifier:
@@ -18240,14 +18240,14 @@ ParticleSystem:
   ShapeModule:
     serializedVersion: 4
     enabled: 1
-    type: 0
+    type: 2
     angle: 25
     length: 5
     boxX: 1
     boxY: 1
     boxZ: 1
     radius:
-      value: 31.4
+      value: 50
       mode: 0
       spread: 0
       speed:
@@ -18293,7 +18293,7 @@ ParticleSystem:
           m_RotationOrder: 4
     arc:
       value: 360
-      mode: 0
+      mode: 3
       spread: 0
       speed:
         serializedVersion: 2
@@ -18354,7 +18354,7 @@ ParticleSystem:
     rateOverTime:
       serializedVersion: 2
       minMaxState: 0
-      scalar: 200
+      scalar: 10
       minScalar: 10
       maxCurve:
         serializedVersion: 2
@@ -19273,7 +19273,7 @@ ParticleSystem:
     magnitude:
       serializedVersion: 2
       minMaxState: 0
-      scalar: 1
+      scalar: 4.5
       minScalar: 1
       maxCurve:
         serializedVersion: 2
@@ -19311,7 +19311,7 @@ ParticleSystem:
         m_PreInfinity: 2
         m_PostInfinity: 2
         m_RotationOrder: 4
-    separateAxis: 0
+    separateAxis: 1
     inWorldSpace: 0
     dampen: 1
   NoiseModule:
@@ -22648,7 +22648,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 1, y: 1}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: -420, y: -746.00006}
+  m_AnchoredPosition: {x: -420, y: -746.0001}
   m_SizeDelta: {x: 224, y: 203}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1074295455
@@ -22911,7 +22911,7 @@ ParticleSystem:
   moveWithTransform: 0
   moveWithCustomTransform: {fileID: 0}
   scalingMode: 1
-  randomSeed: 1010594366
+  randomSeed: -2013647254
   InitialModule:
     serializedVersion: 3
     enabled: 1
@@ -40568,7 +40568,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 0}
-  m_AnchoredPosition: {x: -235, y: 713.9996}
+  m_AnchoredPosition: {x: -235, y: 713.99963}
   m_SizeDelta: {x: -700, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!1 &1570786210
@@ -58176,7 +58176,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 1, y: 1}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: -197, y: -746.00006}
+  m_AnchoredPosition: {x: -197, y: -746.0001}
   m_SizeDelta: {x: 224, y: 203}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &2099048556

@@ -9,6 +9,7 @@ public class SondStartPrefs : MonoBehaviour {
     public AudioSource FireSound;
     public GameObject fireObject;
     public bool IsSound;
+    public GameObject xMarkObject;
     void Awake() 
     {
         /*if (PlayerPrefs.GetInt("SoundChecker") == 0)
@@ -23,6 +24,14 @@ public class SondStartPrefs : MonoBehaviour {
             IsSound=true;
             SoundBtnOFF.SetActive(true);
             SoundBtnON.SetActive(false);
+        }
+        if (PlayerPrefs.GetInt("VibrateSettings") == 0)
+        {
+            xMarkObject.SetActive(false);
+        }
+        else if (PlayerPrefs.GetInt("VibrateSettings") == 1)
+        {
+            xMarkObject.SetActive(true);
         }
         
 	}
@@ -52,4 +61,18 @@ public class SondStartPrefs : MonoBehaviour {
             fireObject.SetActive(true);     
         }
 	}
+
+    public void VibrateMethod() 
+    {
+        if (PlayerPrefs.GetInt("VibrateSettings") == 0)
+        {
+            PlayerPrefs.SetInt("VibrateSettings", 1);
+            xMarkObject.SetActive(true);
+        }
+        else if (PlayerPrefs.GetInt("VibrateSettings") == 1)
+        {
+            PlayerPrefs.SetInt("VibrateSettings", 0);
+            xMarkObject.SetActive(false);
+        }
+    }
 }

@@ -26,6 +26,7 @@ public class StartLevelPrefs : MonoBehaviour {
         if (!PlayerPrefs.HasKey("phTotalRescuePoints")) PlayerPrefs.SetInt("phTotalRescuePoints", 0);
         if (!PlayerPrefs.HasKey("phTotalRescuePoints")) PlayerPrefs.SetInt("ieTotalRescuePoints", 0);
         if (!PlayerPrefs.HasKey("OpenStagePreHistoric")) PlayerPrefs.SetInt("OpenStagePreHistoric", 0);
+        if (!PlayerPrefs.HasKey("VibrateSettings")) PlayerPrefs.SetInt("VibrateSettings", 0);
 
         
 

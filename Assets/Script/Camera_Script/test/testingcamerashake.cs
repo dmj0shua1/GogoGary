@@ -45,6 +45,11 @@ public class testingcamerashake : MonoBehaviour {
             camTransform.localPosition = originalPos + Random.insideUnitSphere * shakeAmount;
             //camTransform.localPosition = MovePos + Random.insideUnitSphere * shakeAmount;
             shakeDuration -= Time.deltaTime * decreaseFactor;
+            if (PlayerPrefs.GetInt("VibrateSettings") ==0)
+            {
+                Handheld.Vibrate();
+            }
+          
             }
             else
             {
