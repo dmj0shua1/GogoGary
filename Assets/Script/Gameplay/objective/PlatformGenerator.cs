@@ -636,7 +636,8 @@ public class PlatformGenerator : MonoBehaviour {
             if (LevelPassScript.LevelStatusAmt == set2)
             {
                 isBlizzard = true;
-                isBigFoot = true;
+                DebriGenerationScript.randomDebrisThreshold = 15;
+                //isBigFoot = true;
             }
         }
         for (int set3 = 83; set3 <= 87; set3++)
@@ -644,7 +645,8 @@ public class PlatformGenerator : MonoBehaviour {
             if (LevelPassScript.LevelStatusAmt == set3)
             {
                 isBlizzard = true;
-                isBigFoot = true;
+                DebriGenerationScript.randomDebrisThreshold = 20;
+                //isBigFoot = true;
             }
         }
         for (int set4 = 88; set4 <= 92; set4++)
@@ -652,7 +654,7 @@ public class PlatformGenerator : MonoBehaviour {
             if (LevelPassScript.LevelStatusAmt == set4)
             {
                 isBlizzard = true;
-                DebriGenerationScript.randomDebrisThreshold = 15;
+                DebriGenerationScript.randomDebrisThreshold = 20;
                 isBigFoot = true;
             }
         }

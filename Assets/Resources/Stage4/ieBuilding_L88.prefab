@@ -158,7 +158,7 @@ MonoBehaviour:
   LevelPlaceValue: 12
   RescuePointValue: 3
   RescueHolderPlayerPref: 0
-  isActivateTipsValue: 0
+  isActivateTipsValue: 1
   isShakeActivateValue: 0
   CameraColorValue: {r: 0.4431373, g: 0.49411768, b: 0.54509807, a: 0}
   Star1: {fileID: 1117659171116102}
@@ -167,7 +167,7 @@ MonoBehaviour:
   debriTipsValue: 0
   starTipsValue: 0
   boltTipsValue: 0
-  shakeTipsValue: 0
+  shakeTipsValue: 1
 --- !u!114 &114434593959876282
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -469,7 +469,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 957, y: 273}
+  m_AnchoredPosition: {x: 509, y: 82}
   m_SizeDelta: {x: 208, y: 245}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!224 &224944213182745988
