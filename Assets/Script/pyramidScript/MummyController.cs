@@ -139,8 +139,10 @@ public class MummyController : MonoBehaviour {
                         PlayerControllerScript.MummyCollide = false;
                     }
                 //}
-                MummyAttackSfx.Play();
-            
+                    if (PlayerPrefs.GetInt("SoundChecker") == 0)
+                    {
+                        MummyAttackSfx.Play();
+                    }
                 //MummyDeathMethod();
         }
         

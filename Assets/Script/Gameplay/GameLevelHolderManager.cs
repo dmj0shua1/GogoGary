@@ -301,9 +301,9 @@ public class GameLevelHolderManager : MonoBehaviour {
         //
         else if (sceneName == "GGGICEAGE")
         {
-            if (PlayerPrefs.GetInt("UnlockLevels") == 91 || PlayerPrefs.GetInt("UnlockLevels") == 92)
+            if (PlayerPrefs.GetInt("UnlockLevels") == 91 || PlayerPrefs.GetInt("UnlockLevels") == 90)
             {
-                if (LevelPassScript.LevelStatusAmt >= 91)
+                if (LevelPassScript.LevelStatusAmt >= 90)
                 {
 
                     if (PlayerPrefs.GetInt("ieTotalRescuePoints") != 45)
@@ -325,9 +325,9 @@ public class GameLevelHolderManager : MonoBehaviour {
                     ImageNote.SetActive(false);
                 }
             }
-            if (PlayerPrefs.GetInt("UnlockLevels") == 96 || PlayerPrefs.GetInt("UnlockLevels") == 97)
+            if (PlayerPrefs.GetInt("UnlockLevels") == 96 || PlayerPrefs.GetInt("UnlockLevels") == 95)
             {
-                if (LevelPassScript.LevelStatusAmt >= 96)
+                if (LevelPassScript.LevelStatusAmt >= 95)
                 {
 
                     if (PlayerPrefs.GetInt("ieTotalRescuePoints") != 60)

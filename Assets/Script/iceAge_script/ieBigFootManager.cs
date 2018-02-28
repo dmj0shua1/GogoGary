@@ -24,7 +24,7 @@ public class ieBigFootManager : MonoBehaviour {
                 TestingCameraShakeScript.shakeDuration = 1f;
                
             }
-            PlayerControllerScript.moveSpeed = 10;
+            PlayerControllerScript.moveSpeed = 13;
             StartCoroutine(isCollideTime());
         }
         if (!isShake)

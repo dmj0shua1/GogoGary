@@ -310,7 +310,7 @@ MonoBehaviour:
   HalfObjectiveValue: 0
   UnlockedValue: 71
   FireTriggerValue: 119
-  PowerupValue: 75
+  PowerupValue: 0
   LevelPlaceValue: 20
   RescuePointValue: 3
   RescueHolderPlayerPref: 0
@@ -469,7 +469,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 740.3, y: 1106}
+  m_AnchoredPosition: {x: 375, y: 978}
   m_SizeDelta: {x: 208, y: 245}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!224 &224964454469880256

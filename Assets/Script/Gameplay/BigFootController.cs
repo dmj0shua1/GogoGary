@@ -10,10 +10,16 @@ public class BigFootController : MonoBehaviour {
     public Animator BigFootBackAnim;
     public bool isEnabled;
     public AudioSource BigFootSfx;
+
+    void Awake() 
+    {
+    }
     void Start() 
     {
         ieBigFootManagerScript = GameObject.Find("BigFootManager").GetComponent<ieBigFootManager>();
         BigFootBackAnim = GameObject.Find("ieBigFoot").GetComponent<Animator>();
+        
+       
     }
     void Update() 
     {
@@ -25,6 +31,18 @@ public class BigFootController : MonoBehaviour {
         {
             StartCoroutine(isCollideEnabled());
         }
+        if (BigFootObject.activeInHierarchy == true)
+        {
+            if (PlayerPrefs.GetInt("SoundChecker") == 0)
+            {
+                BigFootSfx.enabled = true;
+            }
+            else if (PlayerPrefs.GetInt("SoundChecker") == 1)
+            {
+                BigFootSfx.enabled = false;
+            }
+        }
+      
     }
     void OnTriggerEnter2D(Collider2D other)
     {
@@ -50,7 +68,6 @@ public class BigFootController : MonoBehaviour {
     {
         yield return new WaitForSeconds(3f);
         BigFootObject.SetActive(false);
-        BigFootSfx.enabled = false;
-
+            BigFootSfx.enabled = false;
     }
 }

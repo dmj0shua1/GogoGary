@@ -3206,7 +3206,7 @@ Camera:
   m_Enabled: 1
   serializedVersion: 2
   m_ClearFlags: 1
-  m_BackGroundColor: {r: 0.9176471, g: 0.70980394, b: 0.3372549, a: 0}
+  m_BackGroundColor: {r: 0.9058824, g: 0.9568628, b: 0.9607844, a: 0}
   m_NormalizedViewPortRect:
     serializedVersion: 2
     x: 0
@@ -18202,7 +18202,7 @@ Prefab:
         type: 2}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
-      objectReference: {fileID: 0}
+      objectReference: {fileID: 16}
     - target: {fileID: 114909288816867864, guid: e1eb343ba017e5041a67800952967c3e,
         type: 2}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
