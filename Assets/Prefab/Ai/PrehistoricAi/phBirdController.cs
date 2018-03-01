@@ -201,7 +201,7 @@ public class phBirdController : MonoBehaviour {
     }
     IEnumerator isCollideTime()
     {
-        yield return new WaitForSeconds(0.2f);
+        yield return new WaitForSeconds(0.1f);
         isCollide = true;
     }
 
@@ -222,7 +222,8 @@ public class phBirdController : MonoBehaviour {
         if (other.gameObject.CompareTag("HitBoxCam"))
         {
             gameObject.SetActive(false);
-        }   
+        }
+      
     }
     void OnTriggerStay2D(Collider2D other)
     {
@@ -260,8 +261,10 @@ public class phBirdController : MonoBehaviour {
             MainCollider.enabled = false;
             isCollide = false;
         }
+    
      
     }
+   
     void OnTriggerExit2D(Collider2D other)
     {
         MyAnimation.SetBool("isAttack", true);
