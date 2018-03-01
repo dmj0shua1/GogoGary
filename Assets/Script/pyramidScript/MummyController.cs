@@ -155,8 +155,7 @@ public class MummyController : MonoBehaviour {
         }
       
     }
- 
-
+    
     public void MummyDirectionAttack() 
     {
        

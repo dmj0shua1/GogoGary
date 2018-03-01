@@ -256,11 +256,11 @@ public class phBirdController : MonoBehaviour {
                 }
             }
         }
-        if (other.gameObject.CompareTag("Hitbox"))
-        {
-            MainCollider.enabled = false;
-            isCollide = false;
-        }
+        //if (other.gameObject.CompareTag("Hitbox"))
+        //{
+        //    MainCollider.enabled = false;
+        //    isCollide = false;
+        //}
     
      
     }
@@ -269,7 +269,7 @@ public class phBirdController : MonoBehaviour {
     {
         MyAnimation.SetBool("isAttack", true);
         PlayerControllerScript.MummyCollide = true;
-        StartCoroutine(isCollideTime());
+        //StartCoroutine(isCollideTime());
     }
 
     public void AttackMethod() 

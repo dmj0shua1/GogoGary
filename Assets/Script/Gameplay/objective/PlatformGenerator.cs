@@ -204,7 +204,7 @@ public class PlatformGenerator : MonoBehaviour {
                 string sceneName = currentScene.name;
                 if (sceneName == "GGG")
                 {
-                    RescueHolderDivided = EndGenerate / 5;
+                    RescueHolderDivided = EndGenerate / 4;
                     if (Counts % RescueHolderDivided == 0)
                     {
                         if (floorSelector == 0 || floorSelector == 1 || floorSelector == 2 )
@@ -239,7 +239,7 @@ public class PlatformGenerator : MonoBehaviour {
                     RescueHolderDivided = EndGenerate / 5;
                     if (Counts % RescueHolderDivided == 0)
                     {
-                        if (floorSelector == 0 || floorSelector == 3 || floorSelector == 2 || floorSelector == 4)
+                        if (floorSelector == 0 || floorSelector == 3 || floorSelector == 4)
                         {
                             while (RescueSelector == prevRescue)
                             {
@@ -266,13 +266,47 @@ public class PlatformGenerator : MonoBehaviour {
                         }
                     }
                 }
-                if (sceneName == "GGGPYRAMID" ||sceneName == "GGGICEAGE")
+                if (sceneName == "GGGICEAGE")
                 {
                    
                     RescueHolderDivided = EndGenerate / 5;
                     if (Counts % RescueHolderDivided == 0)
                     {
                         if (floorSelector == 0 || floorSelector == 3 || floorSelector == 2 || floorSelector == 4)
+                        {
+                            while (RescueSelector == prevRescue)
+                            {
+                                RescueSelector = Random.Range(0, RescuePointPooler.Length);
+                            }
+                            prevRescue = RescueSelector;
+
+                            FloorCounterScript.MainFloorDecreaseDivided = FloorCounterScript.MainFloorHolderDivided;
+                            GameObject newRescue = RescuePointPooler[RescueSelector].GetPooledObject();
+                            float RescueXposition = Random.Range(8, 12);
+                            Vector3 rescuePosition = new Vector3(RescueXposition, RescuePointheight, 0f);
+                            newRescue.transform.position = transform.position + rescuePosition;
+                            newRescue.transform.rotation = transform.rotation;
+                            newRescue.SetActive(true);
+
+                            if (SetRescuePoint == AmountRescuePoint)
+                            {
+                                newRescue.SetActive(false);
+                            }
+                            else
+                            {
+                                SetRescuePoint++;
+                            }
+
+                        }
+                    }
+                }
+                if (sceneName == "GGGPYRAMID")
+                {
+
+                    RescueHolderDivided = EndGenerate / 5;
+                    if (Counts % RescueHolderDivided == 0)
+                    {
+                        if (floorSelector == 0 || floorSelector == 3 || floorSelector == 4 || floorSelector == 1 )
                         {
                             while (RescueSelector == prevRescue)
                             {
