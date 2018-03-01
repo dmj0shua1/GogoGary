@@ -216,59 +216,27 @@ public class phBirdController : MonoBehaviour {
                 {
                     ph_BirdAttack.Play();
                     isPlayBirdAttackSfx = false;
-                }
-               
+                }          
             }
-            /*if (PlayerControllerScript.grounded || !PlayerControllerScript.grounded)
-            {
-                //AttackMethod();
-                //_moveSpeed = 0;
-                //MyAnimation.SetBool("isAttack", false);
-                float PlayerTransform = other.gameObject.transform.position.x;
-                float MummyTransform = gameObject.transform.position.x;
-                if (PlayerTransform > MummyTransform)
-                {
-                    //rightmummy
-                    AttackMethod();
-                    _moveSpeed = 0;
-                    moveRight = false;
-
-                }
-                else
-                {
-                    //leftMummy
-                    AttackMethod();
-                    _moveSpeed = 0;
-                    moveRight = true;
-                }
-
-            }*/
-
         }
         if (other.gameObject.CompareTag("HitBoxCam"))
         {
             gameObject.SetActive(false);
-  
-
-       }
-        
+        }   
     }
     void OnTriggerStay2D(Collider2D other)
     {
         if (other.gameObject.CompareTag("Player"))
         {
-         
+
             if (PlayerControllerScript.grounded)
             {
                 MyAnimation.SetBool("isAttack", false);
                 PlayerControllerScript.MummyCollide = false;
             }
-            //
+
             if (PlayerControllerScript.grounded || !PlayerControllerScript.grounded)
             {
-                //AttackMethod();
-                //_moveSpeed = 0;
-                //MyAnimation.SetBool("isAttack", false);
                 float PlayerTransform = other.gameObject.transform.position.x;
                 float MummyTransform = gameObject.transform.position.x;
                 if (PlayerTransform > MummyTransform)
@@ -277,8 +245,6 @@ public class phBirdController : MonoBehaviour {
                     AttackMethod();
                     _moveSpeed = 0;
                     moveRight = false;
-               
-
                 }
                 else
                 {
@@ -286,25 +252,21 @@ public class phBirdController : MonoBehaviour {
                     AttackMethod();
                     _moveSpeed = 0;
                     moveRight = true;
-                   
                 }
-
             }
-            //
         }
         if (other.gameObject.CompareTag("Hitbox"))
         {
             MainCollider.enabled = false;
             isCollide = false;
-        
         }
+     
     }
     void OnTriggerExit2D(Collider2D other)
     {
         MyAnimation.SetBool("isAttack", true);
         PlayerControllerScript.MummyCollide = true;
         StartCoroutine(isCollideTime());
-       
     }
 
     public void AttackMethod() 

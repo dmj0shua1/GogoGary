@@ -401,18 +401,21 @@ public class PlatformGenerator : MonoBehaviour {
 
                             if (Counts % phbirdThreshold == 0)
                             {
-                                GameObject newphbird = phBirdPooler.GetPooledObject();
-                                float phBirdXposition = Random.Range(1, 1);
-                                Vector3 phBirdPosition = new Vector3(phBirdXposition, phbirdheight, 0f);
-                                newphbird.transform.position = transform.position + phBirdPosition;
-                                newphbird.transform.rotation = transform.rotation;
-                                //MummyControllerScript = newMummy.gameObject.GetComponent<MummyController>();
-                                phBirdContollerScript = newphbird.gameObject.GetComponent<phBirdController>();
-                                phBirdContollerScript.isCollide = true;
-                                /*phBirdContollerScript.playerRange = 12;
-                                phBirdContollerScript.Activate = true;*/
-                                phBirdContollerScript._moveSpeed = 30;
-                                newphbird.SetActive(true);
+                                if (floorSelector == 0 || floorSelector == 2 || floorSelector == 3 || floorSelector == 1)
+                                {
+                                    GameObject newphbird = phBirdPooler.GetPooledObject();
+                                    float phBirdXposition = Random.Range(1, 1);
+                                    Vector3 phBirdPosition = new Vector3(phBirdXposition, phbirdheight, 0f);
+                                    newphbird.transform.position = transform.position + phBirdPosition;
+                                    newphbird.transform.rotation = transform.rotation;
+                                    //MummyControllerScript = newMummy.gameObject.GetComponent<MummyController>();
+                                    phBirdContollerScript = newphbird.gameObject.GetComponent<phBirdController>();
+                                    phBirdContollerScript.isCollide = true;
+                                    /*phBirdContollerScript.playerRange = 12;
+                                    phBirdContollerScript.Activate = true;*/
+                                    phBirdContollerScript._moveSpeed = 30;
+                                    newphbird.SetActive(true);
+                                }
                             }
                             }
                             }
