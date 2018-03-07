@@ -158,7 +158,7 @@ MonoBehaviour:
   LevelPlaceValue: 0
   RescuePointValue: 3
   RescueHolderPlayerPref: 0
-  isActivateTipsValue: 0
+  isActivateTipsValue: 1
   isShakeActivateValue: 0
   CameraColorValue: {r: 0.9338235, g: 0.80361724, b: 0.60423875, a: 0}
   Star1: {fileID: 1834323451092494}
@@ -166,7 +166,7 @@ MonoBehaviour:
   Star3: {fileID: 1980811366727656}
   debriTipsValue: 0
   starTipsValue: 0
-  boltTipsValue: 0
+  boltTipsValue: 1
   shakeTipsValue: 0
 --- !u!114 &114175064299127460
 MonoBehaviour:

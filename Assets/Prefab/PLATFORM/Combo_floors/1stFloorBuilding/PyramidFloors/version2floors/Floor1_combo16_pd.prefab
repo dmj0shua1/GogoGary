@@ -721,7 +721,6 @@ GameObject:
   - component: {fileID: 61091214661849438}
   - component: {fileID: 114796723463307340}
   - component: {fileID: 61943645193818224}
-  - component: {fileID: 114968429739883274}
   m_Layer: 8
   m_Name: Floor1_combo16_pd
   m_TagString: floor
@@ -918,8 +917,8 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1240722647308798}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -1.03, y: 1.26, z: 0}
-  m_LocalScale: {x: 0.48, y: 0.37095103, z: 1}
+  m_LocalPosition: {x: -1.03, y: 1.2, z: 0}
+  m_LocalScale: {x: 0.48, y: 0.35979757, z: 1}
   m_Children: []
   m_Father: {fileID: 4474895813750268}
   m_RootOrder: 0
@@ -1272,7 +1271,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1963808865285904}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -336.94818, y: -174.44633, z: 0}
+  m_LocalPosition: {x: -367.63284, y: -143.09065, z: 0}
   m_LocalScale: {x: 3.18, y: 2.15144, z: 1}
   m_Children:
   - {fileID: 4247783656297040}
@@ -1382,8 +1381,8 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1354362621775074}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -1.44, y: 1.31, z: 0}
-  m_LocalScale: {x: 0.48, y: 0.38207197, z: 1}
+  m_LocalPosition: {x: -1.44, y: 1.2, z: 0}
+  m_LocalScale: {x: 0.48, y: 0.35976365, z: 1}
   m_Children: []
   m_Father: {fileID: 4339637770327510}
   m_RootOrder: 0
@@ -1425,7 +1424,7 @@ BoxCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: -1.2736096, y: 1.3870931}
+  m_Offset: {x: -1.2736096, y: 1.1790676}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0, y: 0}
@@ -1436,7 +1435,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 1.2489928, y: 3.7741861}
+  m_Size: {x: 1.2489929, y: 3.3581352}
   m_EdgeRadius: 0
 --- !u!61 &61237871101460790
 BoxCollider2D:
@@ -1674,19 +1673,6 @@ MonoBehaviour:
   Col2: {fileID: 61368199115628548}
   Col3: {fileID: 61943645193818224}
   IsTrigger: 0
---- !u!114 &114968429739883274
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1963808865285904}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 535dfa27452016c468248483753b218e, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  _TempWall: {fileID: 1146721460389382}
-  isActivate: 1
 --- !u!212 &212005624945065656
 SpriteRenderer:
   m_ObjectHideFlags: 1

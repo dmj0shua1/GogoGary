@@ -4586,7 +4586,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: COLLECT 72 RESCUES ON STAGE
+  m_Text: COLLECT 75 RESCUES ON STAGE
 --- !u!222 &1578179064
 CanvasRenderer:
   m_ObjectHideFlags: 0

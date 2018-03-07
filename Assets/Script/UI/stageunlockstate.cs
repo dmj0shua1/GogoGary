@@ -20,7 +20,7 @@ public class stageunlockstate : MonoBehaviour {
     {
         if (_StageName == "EGYPT")
 	    {
-		  if (PlayerPrefs.GetInt("TotalRescuePoints") >= 72)
+		  if (PlayerPrefs.GetInt("TotalRescuePoints") >= 75)
           {
               TextHolder.GetComponent<Text>().text = UnlockTextState;
           }
@@ -32,7 +32,7 @@ public class stageunlockstate : MonoBehaviour {
 	    }
         if (_StageName == "PREHISTORIC")
         {
-            if (PlayerPrefs.GetInt("pyTotalRescuePoints") >= 72)
+            if (PlayerPrefs.GetInt("pyTotalRescuePoints") >= 75)
             {
                 TextHolder.GetComponent<Text>().text = UnlockTextState;
             }
@@ -44,7 +44,7 @@ public class stageunlockstate : MonoBehaviour {
         }
         if (_StageName == "ICEAGE")
         {
-            if (PlayerPrefs.GetInt("phTotalRescuePoints") >= 72)
+            if (PlayerPrefs.GetInt("phTotalRescuePoints") >= 75)
             {
                 TextHolder.GetComponent<Text>().text = UnlockTextState;
             }
@@ -66,7 +66,7 @@ public class stageunlockstate : MonoBehaviour {
     {
         if (_StageName == "EGYPT")
         {
-            if (PlayerPrefs.GetInt("TotalRescuePoints") >= 72)
+            if (PlayerPrefs.GetInt("TotalRescuePoints") >= 75)
             {
                 SceneManager.LoadScene(levelname);
                 PlayerPrefs.SetInt("OpenStagePyramid", 1);
@@ -81,7 +81,7 @@ public class stageunlockstate : MonoBehaviour {
 
         if (_StageName == "PREHISTORIC")
         {
-            if (PlayerPrefs.GetInt("pyTotalRescuePoints") >= 72)
+            if (PlayerPrefs.GetInt("pyTotalRescuePoints") >= 75)
             {
                 SceneManager.LoadScene(levelname);
                 PlayerPrefs.SetInt("OpenStagePreHistoric", 1);
@@ -95,7 +95,7 @@ public class stageunlockstate : MonoBehaviour {
         }
         if (_StageName == "ICEAGE")
         {
-            if (PlayerPrefs.GetInt("phTotalRescuePoints") >= 72)
+            if (PlayerPrefs.GetInt("phTotalRescuePoints") >= 75)
             {
                 SceneManager.LoadScene(levelname);
                 PlayerPrefs.SetInt("OpenStageIceAge", 1);

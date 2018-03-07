@@ -290,9 +290,9 @@ MonoBehaviour:
   isActivateTipsValue: 0
   isShakeActivateValue: 0
   CameraColorValue: {r: 0.6156863, g: 0.5019608, b: 0.15686275, a: 0}
-  Star1: {fileID: 0}
-  Star2: {fileID: 0}
-  Star3: {fileID: 0}
+  Star1: {fileID: 1900821126741834}
+  Star2: {fileID: 1408826182541112}
+  Star3: {fileID: 1157151932489758}
   debriTipsValue: 0
   starTipsValue: 0
   boltTipsValue: 0

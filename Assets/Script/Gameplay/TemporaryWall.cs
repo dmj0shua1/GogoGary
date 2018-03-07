@@ -14,7 +14,7 @@ public class TemporaryWall : MonoBehaviour {
         
         if (SceneManager.GetActiveScene().name == "GGGPYRAMID")
         {
-            if (LevelPassScript.LevelStatusAmt >= 36)
+            if (LevelPassScript.LevelStatusAmt >= 26)
             {
                 isActivate = false;
             }
