@@ -306,7 +306,7 @@ public class PlatformGenerator : MonoBehaviour {
                     RescueHolderDivided = EndGenerate / 5;
                     if (Counts % RescueHolderDivided == 0)
                     {
-                        if (floorSelector == 0 || floorSelector == 3 || floorSelector == 4 || floorSelector == 1 )
+                        if (floorSelector == 0 || floorSelector == 3 || floorSelector == 4 || floorSelector == 2)
                         {
                             while (RescueSelector == prevRescue)
                             {
