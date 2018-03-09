@@ -288,7 +288,7 @@ MonoBehaviour:
   RescuePointValue: 3
   RescueHolderPlayerPref: 0
   isActivateTipsValue: 0
-  isShakeActivateValue: 0
+  isShakeActivateValue: 1
   CameraColorValue: {r: 0.6156863, g: 0.5019608, b: 0.15686275, a: 0}
   Star1: {fileID: 1900821126741834}
   Star2: {fileID: 1408826182541112}
