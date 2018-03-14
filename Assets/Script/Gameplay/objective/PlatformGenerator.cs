@@ -522,25 +522,7 @@ public class PlatformGenerator : MonoBehaviour {
         }
 	}
 
-    public void FloorCompareMethod() 
-    {
-        if (isFloorNumberCount)
-        {
-            FirstFloorNumber = PrevFloor;
-        }
-    }
 
-    public void FloorCompareChecker() 
-    {
-        if (SecondFloorNumber == 1 && FirstFloorNumber == 2)
-        {
-            print("gumana");
-        }
-        else
-        {
-
-        }
-    }
     public void MummyThresholdAdjust() 
     {
 

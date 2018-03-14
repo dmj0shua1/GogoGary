@@ -458,7 +458,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e524fbb4ebe30ce4dad9bdb033e45157, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  PooledObject: {fileID: 1871889739400770, guid: 8f3cfeed82dd6c84e9c3dc091fa6bf2b,
+  PooledObject: {fileID: 1963808865285904, guid: 9c6db03faafe8114d99462e937333291,
     type: 2}
   pooledAmount: 5
 --- !u!1 &53739092
@@ -8092,7 +8092,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e524fbb4ebe30ce4dad9bdb033e45157, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  PooledObject: {fileID: 1229013084216402, guid: 1b80f9b0dab6d014fa5744b46c0aaa90,
+  PooledObject: {fileID: 1597748442088222, guid: 855cf56057a63314a90825a4e0cc159c,
     type: 2}
   pooledAmount: 5
 --- !u!1 &706794346
@@ -9383,7 +9383,7 @@ SpriteRenderer:
   m_Size: {x: 5.38, y: 1.68}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
-  m_WasSpriteAssigned: 1
+  m_WasSpriteAssigned: 0
 --- !u!1 &796918369
 GameObject:
   m_ObjectHideFlags: 0
@@ -9886,7 +9886,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e524fbb4ebe30ce4dad9bdb033e45157, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  PooledObject: {fileID: 1838265542131496, guid: d14b953b373aa4f4585dd67e7a9525f1,
+  PooledObject: {fileID: 1161627473160284, guid: 92ae7ae04fcbaed4598ea494886fe0e7,
     type: 2}
   pooledAmount: 5
 --- !u!1 &897172340
@@ -13822,7 +13822,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e524fbb4ebe30ce4dad9bdb033e45157, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  PooledObject: {fileID: 1183728209452270, guid: ae72124a643d7104882c2d7a16a40729,
+  PooledObject: {fileID: 1963808865285904, guid: 1290035df7b027d49b71a1280ea2ac03,
     type: 2}
   pooledAmount: 5
 --- !u!1 &1239729826
@@ -15609,7 +15609,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e524fbb4ebe30ce4dad9bdb033e45157, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  PooledObject: {fileID: 1844973547363916, guid: d71ba763d10a209408186f14092f0b41,
+  PooledObject: {fileID: 1225554306889930, guid: f6893ad85a9959f4bb49af7a47237e22,
     type: 2}
   pooledAmount: 5
 --- !u!1 &1435634288
