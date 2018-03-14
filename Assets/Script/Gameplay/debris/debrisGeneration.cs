@@ -36,7 +36,7 @@ public class debrisGeneration : MonoBehaviour {
         }
         Scene currentScene = SceneManager.GetActiveScene();
         string sceneName = currentScene.name;
-        if (sceneName == "GGGPYRAMID" || sceneName == "GGG" || sceneName == "GGGPREHISTORIC")
+        if (sceneName == "GGGPYRAMID" || sceneName == "GGG" || sceneName == "GGGPREHISTORIC" || sceneName == "Endless")
         {
             DebrisPos1 = -10;
             DebrisPos2 = 10;
