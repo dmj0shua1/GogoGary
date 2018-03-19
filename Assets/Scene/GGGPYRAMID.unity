@@ -12644,7 +12644,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: RUN FROM THE ROCK
+  m_Text: RUN !!!
 --- !u!222 &1018981312
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -12678,7 +12678,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   TextHolder: {fileID: 1018981311}
   Chinese: "\u9003\u96E2\u706B\u6E90"
-  English: RUN FROM THE ROCK
+  English: RUN !!!
 --- !u!1 &1035221820
 GameObject:
   m_ObjectHideFlags: 0
@@ -30699,7 +30699,7 @@ SpriteRenderer:
   m_Size: {x: 5.38, y: 1.68}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
-  m_WasSpriteAssigned: 1
+  m_WasSpriteAssigned: 0
 --- !u!1 &1734967372
 GameObject:
   m_ObjectHideFlags: 0
