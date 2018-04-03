@@ -16063,7 +16063,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 0}
-  m_AnchoredPosition: {x: -9, y: 902.9993}
+  m_AnchoredPosition: {x: -9, y: 902.99927}
   m_SizeDelta: {x: -726, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!1 &836445298
@@ -21557,7 +21557,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: RUN FROM THE AVALANCHE
+  m_Text: RUN AWAY FROM THE AVALANCHE
 --- !u!222 &1018981312
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -21591,7 +21591,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   TextHolder: {fileID: 1018981311}
   Chinese: "\u9003\u96E2\u706B\u6E90"
-  English: RUN FROM THE AVALANCHE
+  English: RUN AWAY FROM THE AVALANCHE
 --- !u!1 &1035221820
 GameObject:
   m_ObjectHideFlags: 0
@@ -26640,7 +26640,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: -3, y: -343}
+  m_AnchoredPosition: {x: -3, y: -342.99997}
   m_SizeDelta: {x: 0, y: 137}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!95 &1132051098
