@@ -25,7 +25,9 @@ public class StartLevelPrefs : MonoBehaviour {
         if (!PlayerPrefs.HasKey("LastLevelStagePickerSelect")) PlayerPrefs.SetInt("LastLevelStagePickerSelect", 0);
         if (!PlayerPrefs.HasKey("phTotalRescuePoints")) PlayerPrefs.SetInt("phTotalRescuePoints", 0);
         if (!PlayerPrefs.HasKey("phTotalRescuePoints")) PlayerPrefs.SetInt("ieTotalRescuePoints", 0);
+        if (!PlayerPrefs.HasKey("ftTotalRescuePoints")) PlayerPrefs.SetInt("ftTotalRescuePoints", 0);
         if (!PlayerPrefs.HasKey("OpenStagePreHistoric")) PlayerPrefs.SetInt("OpenStagePreHistoric", 0);
+        if (!PlayerPrefs.HasKey("OpenStageFuturistic")) PlayerPrefs.SetInt("OpenStageFuturistic", 0);
         if (!PlayerPrefs.HasKey("VibrateSettings")) PlayerPrefs.SetInt("VibrateSettings", 0);
 
         

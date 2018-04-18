@@ -56,6 +56,15 @@ public class LevelPass : MonoBehaviour {
                 ButtonNextLevel[num] = (GameObject)Resources.Load("Stage4/ieBuilding_L" + StageNumCounter, typeof(GameObject));
             }
         }
+        else if (sceneName == "Stage5")
+        {
+            StageNumCounter = 100;
+            for (int num = 0; num < 25; num++)
+            {
+                StageNumCounter++;
+                ButtonNextLevel[num] = (GameObject)Resources.Load("Stage5/ftBuilding_L" + StageNumCounter, typeof(GameObject));
+            }
+        }
       
     }
     public void TargetMethod()
