@@ -9,6 +9,7 @@ public class StartLevelPrefs : MonoBehaviour {
     private pyLevelValueHolder pyLevelValueHolderScript;
     private phLevelValueHolder phLevelValueHolderScript;
     private ieLevelValueHolder ieLevelValueHolderScript;
+    private ftLevelValueHolder ftLevelValueHolderScript;
     public Text NumberOfPeopleText;
     void Start() 
     {
@@ -59,6 +60,11 @@ public class StartLevelPrefs : MonoBehaviour {
             ieLevelValueHolderScript = GameObject.Find("ieBuilding_L" + num.ToString()).GetComponent<ieLevelValueHolder>();
             ieLevelValueHolderScript.RescueHolderPlayerPref = PlayerPrefs.GetInt("ieBuilding_L" + num.ToString());
         }
-        
+        for (int num = 101; num < 126; num++)
+        {
+            if (!PlayerPrefs.HasKey("ftBuilding_L" + num.ToString())) PlayerPrefs.SetInt("ftBuilding_L" + num.ToString(), 0);
+            ftLevelValueHolderScript = GameObject.Find("ftBuilding_L" + num.ToString()).GetComponent<ftLevelValueHolder>();
+            ftLevelValueHolderScript.RescueHolderPlayerPref = PlayerPrefs.GetInt("ftBuilding_L" + num.ToString());
+        }
     }
 }

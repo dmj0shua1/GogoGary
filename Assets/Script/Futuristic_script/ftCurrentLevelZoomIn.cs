@@ -8,7 +8,7 @@ public class ftCurrentLevelZoomIn : MonoBehaviour {
     public int UnlockLevelHolder;
     public RectTransform ScrollRectMap;
     private LevelValueHolder LevelValueHolderScript;
-    private ieButtonCameraView ButtonCameraViewScript;
+    private ftButtonCameraView ButtonCameraViewScript;
     public bool Isactivate;
     void Awake() 
     {
@@ -19,7 +19,7 @@ public class ftCurrentLevelZoomIn : MonoBehaviour {
     }
     void Start() 
     {
-        ButtonCameraViewScript = GameObject.Find("Main Camera View").GetComponent<ieButtonCameraView>();
+        ButtonCameraViewScript = GameObject.Find("Main Camera View").GetComponent<ftButtonCameraView>();
         UnlockLevelHolder = PlayerPrefs.GetInt("UnlockLevels");
         if (PlayerPrefs.GetInt("OpenStageFuturistic") == 1)
         {
@@ -45,7 +45,7 @@ public class ftCurrentLevelZoomIn : MonoBehaviour {
                 SampleButton.onClick.Invoke();
                 ButtonCameraViewScript.RescueCheckerLevelMethod();
                 Isactivate = false;
-                if (UnlockLevelHolder >= 88)
+                if (UnlockLevelHolder >= 114)
                 {
                     ScrollRectMap.GetComponent<RectTransform>().localPosition = new Vector3(-10, -716, 0);
                 }

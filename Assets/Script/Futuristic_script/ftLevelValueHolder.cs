@@ -8,7 +8,7 @@ public class ftLevelValueHolder : MonoBehaviour {
     [SerializeField]
     private MainHolder MainHolderScript;
     [SerializeField]
-    private ieButtonCameraView ButtonCameraViewScript;
+    private ftButtonCameraView ButtonCameraViewScript;
     public int ObjectiveValue, FloorValue, StartingValue, DebrisValue, TimeValue, HalfObjectiveValue, UnlockedValue, FireTriggerValue, PowerupValue, LevelPlaceValue,RescuePointValue,RescueHolderPlayerPref;
     public bool isActivateTipsValue, isShakeActivateValue;
     public Color CameraColorValue;
@@ -20,7 +20,7 @@ public class ftLevelValueHolder : MonoBehaviour {
     void Start() 
     {
         MainHolderScript = GameObject.Find("LevelButton1").GetComponent<MainHolder>();
-        ButtonCameraViewScript = GameObject.Find("Main Camera View").GetComponent<ieButtonCameraView>();
+        ButtonCameraViewScript = GameObject.Find("Main Camera View").GetComponent<ftButtonCameraView>();
     }
 
     public void CheckEnabled() 

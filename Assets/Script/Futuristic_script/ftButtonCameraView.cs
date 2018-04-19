@@ -189,7 +189,7 @@ public class ftButtonCameraView : MonoBehaviour {
     }
     public void BackButtonCamera(int CanvasNumber) 
     {
-        if (LevelStatusHolder >= 89)
+        if (LevelStatusHolder >= 114)
         {
             ScrollRectMap.GetComponent<RectTransform>().localPosition = new Vector3(-10, -716, 0);
         }
