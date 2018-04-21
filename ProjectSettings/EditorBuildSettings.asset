@@ -47,3 +47,6 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scene/Stage5.unity
     guid: 07157f24fefe7164fa04dae728b7ee60
+  - enabled: 1
+    path: Assets/Scene/GGGFUTURE.unity
+    guid: bc8b69a1d62860148aede39a693885c4
