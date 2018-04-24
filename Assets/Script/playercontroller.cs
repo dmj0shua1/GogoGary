@@ -480,7 +480,7 @@ public class playercontroller : MonoBehaviour {
        IEnumerator GameOverDelay()
        {
 
-           if (SceneManager.GetActiveScene().name == "GGG" || SceneManager.GetActiveScene().name == "GGGPYRAMID" || SceneManager.GetActiveScene().name == "GGGPREHISTORIC" || SceneManager.GetActiveScene().name == "GGGICEAGE")
+           if (SceneManager.GetActiveScene().name == "GGG" || SceneManager.GetActiveScene().name == "GGGPYRAMID" || SceneManager.GetActiveScene().name == "GGGPREHISTORIC" || SceneManager.GetActiveScene().name == "GGGICEAGE" || SceneManager.GetActiveScene().name == "GGGFUTURE")
            { 
                yield return new WaitForSeconds(0.7f);
                ViewPanel.SetActive(true); 
