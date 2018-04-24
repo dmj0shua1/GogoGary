@@ -132,27 +132,29 @@ public class PlatformGenerator : MonoBehaviour {
             if (transform.position.y > generationPoint.position.y)
             {
                 //platform Generate
-                while (floorSelector == PrevFloor)
-                {
-                    floorSelector = Random.Range(0, theObjectPools.Length);
-                }
+                    while (floorSelector == PrevFloor)
+                    {
+                        floorSelector = Random.Range(0, theObjectPools.Length);
+                    }
 
-                PrevFloor = floorSelector;
-                //FloorCompareMethod();
-                //FloorCompareChecker();
-                transform.position = new Vector3(transform.position.x, transform.position.y + platFormHeight + -distanceBetween, 0);
-                GameObject newPlatform = theObjectPools[floorSelector].GetPooledObject();
-                newPlatform.transform.position = transform.position;
-                newPlatform.transform.rotation = transform.rotation;
-                newPlatform.gameObject.tag = "floor";
-                //
-                DebriTriggerScript = newPlatform.gameObject.GetComponent<DebriTrigger>();
-                DebriTriggerScript.IsTrigger = true;
-                //
-                newPlatform.SetActive(true);
-                //print(floorSelector);
-                NewHolderOfPlatform = theObjectPools[floorSelector].GetPooledObject();
-                FloorCounter();
+                    PrevFloor = floorSelector;
+                    //FloorCompareMethod();
+                    //FloorCompareChecker();
+                    transform.position = new Vector3(transform.position.x, transform.position.y + platFormHeight + -distanceBetween, 0);
+                    GameObject newPlatform = theObjectPools[floorSelector].GetPooledObject();
+                    newPlatform.transform.position = transform.position;
+                    newPlatform.transform.rotation = transform.rotation;
+                    newPlatform.gameObject.tag = "floor";
+
+                    //
+                    DebriTriggerScript = newPlatform.gameObject.GetComponent<DebriTrigger>();
+                    DebriTriggerScript.IsTrigger = true;
+                    //
+                    newPlatform.SetActive(true);
+
+                    //print(floorSelector);
+                    NewHolderOfPlatform = theObjectPools[floorSelector].GetPooledObject();
+                    FloorCounter();
                 //hourglassgenerate
 
                 //if (Random.Range(0f, 100f) < timeThreshold)

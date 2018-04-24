@@ -451,7 +451,6 @@ GameObject:
   m_Component:
   - component: {fileID: 4353059567858558}
   - component: {fileID: 212757812220049794}
-  - component: {fileID: 95897209256922060}
   m_Layer: 0
   m_Name: fctcscreen (1)
   m_TagString: Untagged
@@ -533,7 +532,6 @@ GameObject:
   m_Component:
   - component: {fileID: 4933869052233692}
   - component: {fileID: 212463421013678424}
-  - component: {fileID: 95154069903361844}
   m_Layer: 0
   m_Name: fctcscreen (2)
   m_TagString: Untagged
@@ -1124,7 +1122,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1161627473160284}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -950.2716, y: 11.523245, z: 0}
+  m_LocalPosition: {x: -893.87, y: 23.16, z: 0}
   m_LocalScale: {x: 3.18, y: 2.15144, z: 1}
   m_Children:
   - {fileID: 4323404002399690}
@@ -1456,23 +1454,6 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 7.1262403, y: 0.31960666}
   m_EdgeRadius: 0
---- !u!95 &95154069903361844
-Animator:
-  serializedVersion: 3
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1711247493006502}
-  m_Enabled: 1
-  m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 9100000, guid: c89087c70fe0c0a4896faeacbf39da3c, type: 2}
-  m_CullingMode: 0
-  m_UpdateMode: 0
-  m_ApplyRootMotion: 0
-  m_LinearVelocityBlending: 0
-  m_WarningMessage: 
-  m_HasTransformHierarchy: 1
-  m_AllowConstantClipSamplingOptimization: 1
 --- !u!95 &95481272390326858
 Animator:
   serializedVersion: 3
@@ -1480,23 +1461,6 @@ Animator:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1122244545604898}
-  m_Enabled: 1
-  m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 9100000, guid: c89087c70fe0c0a4896faeacbf39da3c, type: 2}
-  m_CullingMode: 0
-  m_UpdateMode: 0
-  m_ApplyRootMotion: 0
-  m_LinearVelocityBlending: 0
-  m_WarningMessage: 
-  m_HasTransformHierarchy: 1
-  m_AllowConstantClipSamplingOptimization: 1
---- !u!95 &95897209256922060
-Animator:
-  serializedVersion: 3
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1533375371481826}
   m_Enabled: 1
   m_Avatar: {fileID: 0}
   m_Controller: {fileID: 9100000, guid: c89087c70fe0c0a4896faeacbf39da3c, type: 2}
