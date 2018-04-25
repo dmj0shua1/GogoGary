@@ -57,8 +57,15 @@ public class stageunlockstate : MonoBehaviour {
         }
         if (_StageName == "FUTURE")
         {
-            StageImage.GetComponent<Image>().color = Color.black;
-            TextHolder.GetComponent<Text>().text = LockTextState;
+            if (PlayerPrefs.GetInt("ieTotalRescuePoints") >= 75)
+            {
+                TextHolder.GetComponent<Text>().text = UnlockTextState;
+            }
+            else
+            {
+                StageImage.GetComponent<Image>().color = Color.black;
+                TextHolder.GetComponent<Text>().text = LockTextState;
+            }
         }
        
     }
@@ -107,6 +114,21 @@ public class stageunlockstate : MonoBehaviour {
                 messageBoxObject.SetActive(true);
             }
         }
+        if (_StageName == "FUTURE")
+        {
+            if (PlayerPrefs.GetInt("ieTotalRescuePoints") >= 75)
+            {
+                SceneManager.LoadScene(levelname);
+                PlayerPrefs.SetInt("OpenStageFuturistic", 1);
+
+            }
+            else
+            {
+                CurrentTotalTxt.text = "" + CurrentHolder;
+                messageBoxObject.SetActive(true);
+            }
+        }
+        //
 
     }
 }

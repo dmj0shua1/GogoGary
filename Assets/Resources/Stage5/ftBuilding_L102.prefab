@@ -156,11 +156,11 @@ MonoBehaviour:
   FireTriggerValue: 29
   PowerupValue: 0
   LevelPlaceValue: 1
-  RescuePointValue: 0
+  RescuePointValue: 3
   RescueHolderPlayerPref: 0
   isActivateTipsValue: 0
   isShakeActivateValue: 0
-  CameraColorValue: {r: 0, g: 0, b: 0, a: 0}
+  CameraColorValue: {r: 0.015686275, g: 0.4745098, b: 0.5882353, a: 0}
   Star1: {fileID: 1147681278635442}
   Star2: {fileID: 1777337172919252}
   Star3: {fileID: 1056897186340020}

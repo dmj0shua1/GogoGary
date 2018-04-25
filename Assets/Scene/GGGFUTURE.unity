@@ -120,6 +120,7 @@ GameObject:
   - component: {fileID: 4579456}
   - component: {fileID: 4579458}
   - component: {fileID: 4579459}
+  - component: {fileID: 4579460}
   m_Layer: 5
   m_Name: settings
   m_TagString: Untagged
@@ -180,9 +181,23 @@ MonoBehaviour:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 4579455}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 40106a56bfb0d334fa5e0a7c52e3649a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  LevelPassScript: {fileID: 0}
+  MainHolderScript: {fileID: 1556951551684486, guid: 28963584d30397049aa76bf19cd256ed,
+    type: 2}
+--- !u!114 &4579460
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 4579455}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 48e80f5c795ffc2438ddf28e820f25a2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   LevelPassScript: {fileID: 0}
@@ -1078,7 +1093,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 4579459}
+      - m_Target: {fileID: 4579460}
         m_MethodName: ChangezeroRescuePoint
         m_Mode: 1
         m_Arguments:
@@ -1089,7 +1104,7 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
-      - m_Target: {fileID: 4579459}
+      - m_Target: {fileID: 4579460}
         m_MethodName: RescueCopyMethod
         m_Mode: 1
         m_Arguments:
@@ -1108,7 +1123,7 @@ MonoBehaviour:
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
           m_IntArgument: 0
           m_FloatArgument: 0
-          m_StringArgument: Stage4
+          m_StringArgument: Stage5
           m_BoolArgument: 0
         m_CallState: 2
       - m_Target: {fileID: 991713064}
@@ -1380,7 +1395,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 4579459}
+      - m_Target: {fileID: 4579460}
         m_MethodName: select
         m_Mode: 5
         m_Arguments:
@@ -3073,7 +3088,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 4579459}
+      - m_Target: {fileID: 4579460}
         m_MethodName: ChangezeroRescuePoint
         m_Mode: 1
         m_Arguments:
@@ -3084,7 +3099,7 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
-      - m_Target: {fileID: 4579459}
+      - m_Target: {fileID: 4579460}
         m_MethodName: RescueCopyMethod
         m_Mode: 1
         m_Arguments:
@@ -3103,7 +3118,7 @@ MonoBehaviour:
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
           m_IntArgument: 0
           m_FloatArgument: 0
-          m_StringArgument: Stage4
+          m_StringArgument: Stage5
           m_BoolArgument: 0
         m_CallState: 2
       - m_Target: {fileID: 991713064}
@@ -6131,7 +6146,7 @@ MonoBehaviour:
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
           m_IntArgument: 4
           m_FloatArgument: 0
-          m_StringArgument: Stage4
+          m_StringArgument: Stage5
           m_BoolArgument: 0
         m_CallState: 2
       - m_Target: {fileID: 991713064}
@@ -6145,7 +6160,7 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
-      - m_Target: {fileID: 4579459}
+      - m_Target: {fileID: 4579460}
         m_MethodName: CurrentZoomOn
         m_Mode: 1
         m_Arguments:
@@ -13928,7 +13943,7 @@ BoxCollider2D:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
     oldSize: {x: 10.8, y: 10.8}
-    newSize: {x: 7.2, y: 7.2}
+    newSize: {x: 10.8, y: 10.8}
     adaptiveTilingThreshold: 0.5
     drawMode: 0
     adaptiveTiling: 0
@@ -13990,15 +14005,15 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 15
-  m_Sprite: {fileID: 21300000, guid: fbf02cedad95f55419a18921be18cde2, type: 3}
+  m_Sprite: {fileID: 21300000, guid: fc0d9f5fc802ec74e822d95d937aeba9, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
-  m_Size: {x: 7.2, y: 7.2}
+  m_Size: {x: 10.8, y: 10.8}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
-  m_WasSpriteAssigned: 0
+  m_WasSpriteAssigned: 1
 --- !u!95 &711469308
 Animator:
   serializedVersion: 3
@@ -16344,7 +16359,7 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 864826535}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -0.1, y: -0.13, z: 0}
+  m_LocalPosition: {x: -0.1, y: -0.05, z: 0}
   m_LocalScale: {x: 0.3845727, y: 0.3257354, z: 0.48699576}
   m_Children: []
   m_Father: {fileID: 706794347}
@@ -16966,7 +16981,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 4579459}
+      - m_Target: {fileID: 4579460}
         m_MethodName: select
         m_Mode: 5
         m_Arguments:
@@ -17405,7 +17420,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &931330690
 Transform:
   m_ObjectHideFlags: 0
@@ -17527,7 +17542,7 @@ ParticleSystem:
   moveWithTransform: 0
   moveWithCustomTransform: {fileID: 0}
   scalingMode: 1
-  randomSeed: 1611334102
+  randomSeed: 916261283
   InitialModule:
     serializedVersion: 3
     enabled: 1
@@ -22458,7 +22473,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 4579459}
+      - m_Target: {fileID: 4579460}
         m_MethodName: ChangezeroRescuePoint
         m_Mode: 1
         m_Arguments:
@@ -22469,7 +22484,7 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
-      - m_Target: {fileID: 4579459}
+      - m_Target: {fileID: 4579460}
         m_MethodName: RescueCopyMethod
         m_Mode: 1
         m_Arguments:
@@ -22488,7 +22503,7 @@ MonoBehaviour:
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
           m_IntArgument: 0
           m_FloatArgument: 0
-          m_StringArgument: Stage4
+          m_StringArgument: Stage5
           m_BoolArgument: 0
         m_CallState: 2
       - m_Target: {fileID: 991713064}
@@ -26858,7 +26873,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: -3, y: -343}
+  m_AnchoredPosition: {x: -3, y: -342.99997}
   m_SizeDelta: {x: 0, y: 137}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!95 &1132051098
@@ -27205,8 +27220,8 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1143434461}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -0.028536739, y: -1.4403486, z: 0}
-  m_LocalScale: {x: 0.15579955, y: 0.023558658, z: 1}
+  m_LocalPosition: {x: 0.02, y: -1.436, z: 0}
+  m_LocalScale: {x: 0.1127271, y: 0.023558658, z: 1}
   m_Children: []
   m_Father: {fileID: 441492721}
   m_RootOrder: 3
@@ -28760,7 +28775,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 4579459}
+      - m_Target: {fileID: 4579460}
         m_MethodName: select
         m_Mode: 5
         m_Arguments:
@@ -28768,7 +28783,7 @@ MonoBehaviour:
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
           m_IntArgument: 4
           m_FloatArgument: 0
-          m_StringArgument: Stage4
+          m_StringArgument: Stage5
           m_BoolArgument: 0
         m_CallState: 2
       - m_Target: {fileID: 991713064}
@@ -28782,7 +28797,7 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
-      - m_Target: {fileID: 4579459}
+      - m_Target: {fileID: 4579460}
         m_MethodName: CurrentZoomOn
         m_Mode: 1
         m_Arguments:
@@ -29069,6 +29084,21 @@ Prefab:
     - target: {fileID: 4850118143035536, guid: 1561969b53a05944793539275da866fd, type: 2}
       propertyPath: m_RootOrder
       value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 212184225924152248, guid: 1561969b53a05944793539275da866fd,
+        type: 2}
+      propertyPath: m_Color.r
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 212184225924152248, guid: 1561969b53a05944793539275da866fd,
+        type: 2}
+      propertyPath: m_Color.g
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 212184225924152248, guid: 1561969b53a05944793539275da866fd,
+        type: 2}
+      propertyPath: m_Color.b
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 1561969b53a05944793539275da866fd, type: 2}
@@ -48601,6 +48631,7 @@ GameObject:
   - component: {fileID: 1756082264}
   - component: {fileID: 1756082265}
   - component: {fileID: 1756082266}
+  - component: {fileID: 1756082267}
   m_Layer: 5
   m_Name: Next
   m_TagString: Untagged
@@ -48676,10 +48707,10 @@ MonoBehaviour:
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
           m_IntArgument: 5
           m_FloatArgument: 0
-          m_StringArgument: Stage4
+          m_StringArgument: Stage5
           m_BoolArgument: 0
         m_CallState: 2
-      - m_Target: {fileID: 4579459}
+      - m_Target: {fileID: 4579460}
         m_MethodName: CurrentZoomOn
         m_Mode: 1
         m_Arguments:
@@ -48690,7 +48721,7 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
-      - m_Target: {fileID: 1756082266}
+      - m_Target: {fileID: 1756082267}
         m_MethodName: PlusIntLevelStatus
         m_Mode: 1
         m_Arguments:
@@ -48701,7 +48732,7 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
-      - m_Target: {fileID: 1756082266}
+      - m_Target: {fileID: 1756082267}
         m_MethodName: RescuePointAmtChange
         m_Mode: 1
         m_Arguments:
@@ -48819,9 +48850,22 @@ MonoBehaviour:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1756082258}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: e200d9463691d984f82db8e1e8f8fdb5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  LevelPassScript: {fileID: 0}
+  GoToScene: StagePickerMenu
+--- !u!114 &1756082267
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1756082258}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7f1534c44413f7941b6f9aad4a052033, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   LevelPassScript: {fileID: 0}
@@ -51563,7 +51607,7 @@ ParticleSystem:
   moveWithTransform: 0
   moveWithCustomTransform: {fileID: 0}
   scalingMode: 1
-  randomSeed: -71736671
+  randomSeed: 1731093896
   InitialModule:
     serializedVersion: 3
     enabled: 1
@@ -57736,7 +57780,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 4579459}
+      - m_Target: {fileID: 4579460}
         m_MethodName: select
         m_Mode: 5
         m_Arguments:
@@ -57744,7 +57788,7 @@ MonoBehaviour:
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
           m_IntArgument: 4
           m_FloatArgument: 0
-          m_StringArgument: Stage4
+          m_StringArgument: Stage5
           m_BoolArgument: 0
         m_CallState: 2
       - m_Target: {fileID: 991713064}

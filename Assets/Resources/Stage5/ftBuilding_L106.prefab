@@ -183,7 +183,7 @@ MonoBehaviour:
   FireTriggerValue: 49
   PowerupValue: 0
   LevelPlaceValue: 5
-  RescuePointValue: 0
+  RescuePointValue: 3
   RescueHolderPlayerPref: 0
   isActivateTipsValue: 0
   isShakeActivateValue: 0

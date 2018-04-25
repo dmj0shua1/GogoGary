@@ -33,7 +33,7 @@ public class ftGoToLevels : MonoBehaviour {
     }
     public void ChangezeroRescuePoint() 
     {
-        if (PlayerPrefs.HasKey("ieBuilding_L" + LevelPassScript.UnlockLevelAmt.ToString()))
+        if (PlayerPrefs.HasKey("ftBuilding_L" + LevelPassScript.UnlockLevelAmt.ToString()))
         {
             LevelPassScript.RescueHolderPlayerPrefAmt = LevelPassScript.RescuePointAmtCopy; 
         }
@@ -63,10 +63,10 @@ public class ftGoToLevels : MonoBehaviour {
 
     public void RescueCopyMethod()
     {
-        if (PlayerPrefs.HasKey("ieBuilding_L" + LevelPassScript.UnlockLevelAmt.ToString()))
+        if (PlayerPrefs.HasKey("ftBuilding_L" + LevelPassScript.UnlockLevelAmt.ToString()))
         {
 
-            LevelPassScript.RescueHolderPlayerPrefAmt = PlayerPrefs.GetInt("ieBuilding_L" + LevelPassScript.UnlockLevelAmt.ToString());
+            LevelPassScript.RescueHolderPlayerPrefAmt = PlayerPrefs.GetInt("ftBuilding_L" + LevelPassScript.UnlockLevelAmt.ToString());
             LevelPassScript.RescuePointAmtCopy = LevelPassScript.RescueHolderPlayerPrefAmt;
         }
     }

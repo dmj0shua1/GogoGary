@@ -204,7 +204,7 @@ public class PlatformGenerator : MonoBehaviour {
 
                 Scene currentScene = SceneManager.GetActiveScene();
                 string sceneName = currentScene.name;
-                if (sceneName == "GGG")
+                if (sceneName == "GGG" || sceneName == "GGGFUTURE")
                 {
                     RescueHolderDivided = EndGenerate / 4;
                     if (Counts % RescueHolderDivided == 0)

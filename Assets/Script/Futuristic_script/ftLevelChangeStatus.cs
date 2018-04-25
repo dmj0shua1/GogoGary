@@ -6,7 +6,7 @@ using UnityEngine.SceneManagement;
 public class ftLevelChangeStatus : MonoBehaviour {
     [SerializeField]
     private LevelPass LevelPassScript;
-    private ieLevelValueHolder LevelValueHolderScript;
+    private ftLevelValueHolder LevelValueHolderScript;
     public string GoToScene;
     void Start() 
     {
@@ -14,16 +14,16 @@ public class ftLevelChangeStatus : MonoBehaviour {
     }
     public void PlusIntLevelStatus()
     {
-        if (LevelPassScript.LevelStatusAmt == 100)
+        if (LevelPassScript.LevelStatusAmt == 125)
         {
             SceneManager.LoadScene(GoToScene);
-            PlayerPrefs.SetInt("LastLevelStagePickerSelect", 4);
+            PlayerPrefs.SetInt("LastLevelStagePickerSelect", 5);
         }
         else
         {
             LevelPassScript.CurrentButtonPassAmt = LevelPassScript.CurrentButtonPassAmt + 1;
             LevelPassScript.TargetLevel = LevelPassScript.ButtonNextLevel[LevelPassScript.CurrentButtonPassAmt];
-            LevelValueHolderScript = LevelPassScript.TargetLevel.GetComponent<ieLevelValueHolder>();
+            LevelValueHolderScript = LevelPassScript.TargetLevel.GetComponent<ftLevelValueHolder>();
             LevelPassScript.ObjectiveAmt = LevelValueHolderScript.ObjectiveValue;
             LevelPassScript.FloorAmt = LevelValueHolderScript.FloorValue;
             LevelPassScript.StartingAmt = LevelValueHolderScript.StartingValue;
@@ -47,10 +47,10 @@ public class ftLevelChangeStatus : MonoBehaviour {
 
     public void RescuePointAmtChange() 
     { 
-                if (PlayerPrefs.HasKey("ieBuilding_L" + LevelPassScript.UnlockLevelAmt.ToString()))
+                if (PlayerPrefs.HasKey("ftBuilding_L" + LevelPassScript.UnlockLevelAmt.ToString()))
                 {
 
-                    LevelPassScript.RescueHolderPlayerPrefAmt = PlayerPrefs.GetInt("ieBuilding_L" + LevelPassScript.UnlockLevelAmt.ToString());
+                    LevelPassScript.RescueHolderPlayerPrefAmt = PlayerPrefs.GetInt("ftBuilding_L" + LevelPassScript.UnlockLevelAmt.ToString());
                     LevelPassScript.RescuePointAmtCopy = LevelPassScript.RescueHolderPlayerPrefAmt;
                 }
             

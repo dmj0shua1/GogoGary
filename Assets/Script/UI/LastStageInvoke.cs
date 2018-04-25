@@ -34,11 +34,11 @@ public class LastStageInvoke : MonoBehaviour {
             Activate3 = true;
 
         }
-        /*if (PlayerPrefs.GetInt("LastLevelStagePickerSelect") == 4 || PlayerPrefs.GetInt("UnlockLevels") >= 101)
+        if (PlayerPrefs.GetInt("LastLevelStagePickerSelect") == 4 || PlayerPrefs.GetInt("UnlockLevels") >= 101)
         {
             Activate4 = true;
 
-        } */
+        } 
 	}
     void Update()
     {
@@ -69,11 +69,11 @@ public class LastStageInvoke : MonoBehaviour {
             }
 
         }
-        /*if (Activate4)
+        if (Activate4)
         {
             if (PosX < -1600)
             {
-                Activate3 = false;
+                Activate4 = false;
             }
             else
             {
@@ -81,7 +81,7 @@ public class LastStageInvoke : MonoBehaviour {
                 PlayerPrefs.SetInt("LastLevelStagePickerSelect", 0);
             }
 
-        }*/
+        }
       
     }
 
