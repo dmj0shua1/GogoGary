@@ -204,7 +204,7 @@ public class PlatformGenerator : MonoBehaviour {
 
                 Scene currentScene = SceneManager.GetActiveScene();
                 string sceneName = currentScene.name;
-                if (sceneName == "GGG" || sceneName == "GGGFUTURE")
+                if (sceneName == "GGG")
                 {
                     RescueHolderDivided = EndGenerate / 4;
                     if (Counts % RescueHolderDivided == 0)
@@ -309,6 +309,40 @@ public class PlatformGenerator : MonoBehaviour {
                     if (Counts % RescueHolderDivided == 0)
                     {
                         if (floorSelector == 0 || floorSelector == 3 || floorSelector == 4 || floorSelector == 2)
+                        {
+                            while (RescueSelector == prevRescue)
+                            {
+                                RescueSelector = Random.Range(0, RescuePointPooler.Length);
+                            }
+                            prevRescue = RescueSelector;
+
+                            FloorCounterScript.MainFloorDecreaseDivided = FloorCounterScript.MainFloorHolderDivided;
+                            GameObject newRescue = RescuePointPooler[RescueSelector].GetPooledObject();
+                            float RescueXposition = Random.Range(8, 12);
+                            Vector3 rescuePosition = new Vector3(RescueXposition, RescuePointheight, 0f);
+                            newRescue.transform.position = transform.position + rescuePosition;
+                            newRescue.transform.rotation = transform.rotation;
+                            newRescue.SetActive(true);
+
+                            if (SetRescuePoint == AmountRescuePoint)
+                            {
+                                newRescue.SetActive(false);
+                            }
+                            else
+                            {
+                                SetRescuePoint++;
+                            }
+
+                        }
+                    }
+                }
+                if (sceneName == "GGGFUTURE")
+                {
+
+                    RescueHolderDivided = EndGenerate / 5;
+                    if (Counts % RescueHolderDivided == 0)
+                    {
+                        if (floorSelector == 0 || floorSelector == 1 || floorSelector == 3 )
                         {
                             while (RescueSelector == prevRescue)
                             {
