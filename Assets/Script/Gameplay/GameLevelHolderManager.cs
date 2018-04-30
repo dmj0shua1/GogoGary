@@ -351,7 +351,57 @@ public class GameLevelHolderManager : MonoBehaviour {
             }
         }
         //
+        else if (sceneName == "GGGFUTURE")
+        {
+            if (PlayerPrefs.GetInt("UnlockLevels") == 116 || PlayerPrefs.GetInt("UnlockLevels") == 115)
+            {
+                if (LevelPassScript.LevelStatusAmt >= 115)
+                {
 
+                    if (PlayerPrefs.GetInt("ftTotalRescuePoints") != 45)
+                    {
+                        ImageWin.SetActive(false);
+                        ImageNote.SetActive(true);
+                        NextButton.interactable = false;
+                    }
+                    else
+                    {
+                        ImageWin.SetActive(true);
+                        ImageNote.SetActive(false);
+                    }
+                }
+
+                else
+                {
+                    ImageWin.SetActive(true);
+                    ImageNote.SetActive(false);
+                }
+            }
+            if (PlayerPrefs.GetInt("UnlockLevels") == 120 || PlayerPrefs.GetInt("UnlockLevels") == 121)
+            {
+                if (LevelPassScript.LevelStatusAmt >= 121)
+                {
+
+                    if (PlayerPrefs.GetInt("ftTotalRescuePoints") != 60)
+                    {
+                        ImageWin.SetActive(false);
+                        ImageNote.SetActive(true);
+                        NextButton.interactable = false;
+                    }
+                    else
+                    {
+                        ImageWin.SetActive(true);
+                        ImageNote.SetActive(false);
+                    }
+                }
+
+                else
+                {
+                    ImageWin.SetActive(true);
+                    ImageNote.SetActive(false);
+                }
+            }
+        }
         //
     }
     //

@@ -69,9 +69,9 @@ public class ftButtonCameraView : MonoBehaviour {
  
     public void RescueCheckerLevelMethod() 
     {
-        if (PlayerPrefs.GetInt("UnlockLevels") == 91)
+        if (PlayerPrefs.GetInt("UnlockLevels") == 116)
         {
-            if (LevelStatusHolder >= 91)
+            if (LevelStatusHolder >= 116)
             {
 
                 if (PlayerPrefs.GetInt("ftTotalRescuePoints") != 45)
@@ -101,9 +101,9 @@ public class ftButtonCameraView : MonoBehaviour {
             }
         }
 
-        if (PlayerPrefs.GetInt("UnlockLevels") == 96)
+        if (PlayerPrefs.GetInt("UnlockLevels") == 121)
         {
-            if (LevelStatusHolder >= 96)
+            if (LevelStatusHolder >= 121)
             {
                 if (PlayerPrefs.GetInt("ftTotalRescuePoints") != 60)
                 {
