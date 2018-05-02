@@ -481,7 +481,6 @@ GameObject:
   - component: {fileID: 61282594541672174}
   - component: {fileID: 114458494851797184}
   - component: {fileID: 61730989542526856}
-  - component: {fileID: 114877212237660826}
   m_Layer: 8
   m_Name: Floor1_combo3_ft
   m_TagString: floor
@@ -1607,7 +1606,7 @@ BoxCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: -1.2921169, y: 1.3870931}
+  m_Offset: {x: -1.2921169, y: 1.1930665}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0, y: 0}
@@ -1618,7 +1617,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 1.2860072, y: 3.7741861}
+  m_Size: {x: 1.2860072, y: 3.386133}
   m_EdgeRadius: 0
 --- !u!61 &61127587778980224
 BoxCollider2D:
@@ -1807,7 +1806,7 @@ BoxCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: -1.0933235, y: 1.3870931}
+  m_Offset: {x: -1.0933235, y: 1.1715087}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0, y: 0}
@@ -1818,7 +1817,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 0.996666, y: 3.7741861}
+  m_Size: {x: 0.99666595, y: 3.3430173}
   m_EdgeRadius: 0
 --- !u!95 &95773230781237398
 Animator:
@@ -1881,19 +1880,6 @@ MonoBehaviour:
   Col2: {fileID: 61801219167193134}
   Col3: {fileID: 61730989542526856}
   IsTrigger: 1
---- !u!114 &114877212237660826
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1597748442088222}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 535dfa27452016c468248483753b218e, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  _TempWall: {fileID: 1234041879059608}
-  isActivate: 1
 --- !u!212 &212025907804477796
 SpriteRenderer:
   m_ObjectHideFlags: 1

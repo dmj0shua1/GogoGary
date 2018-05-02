@@ -15288,8 +15288,9 @@ MonoBehaviour:
   BigFootControllerScript: {fileID: 0}
   isftGate: 1
   ftGatePooler: {fileID: 656258187}
-  ftGateheight: -0.5
+  ftGateheight: -0.4
   ftGateThreshold: 1
+  ftMainGateScript: {fileID: 0}
 --- !u!1 &757897339
 GameObject:
   m_ObjectHideFlags: 0
