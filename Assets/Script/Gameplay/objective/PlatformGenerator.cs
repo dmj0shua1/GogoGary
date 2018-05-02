@@ -93,11 +93,13 @@ public class PlatformGenerator : MonoBehaviour {
     public int ieBigFootThreshold;
     public ieBigFootManager ieBigFootManagerScript;
     public BigFootController BigFootControllerScript;
-    
-
-
-
-
+    [Header("MainGate")]
+    public bool isftGate;
+    public ObjectPooler ftGatePooler;
+    public float ftGateheight;
+    public int ftGateThreshold;
+    public ftMainGate ftMainGateScript;
+  
 	void Start()
 	{
 		platFormHeight = floor.GetComponent<BoxCollider2D>().size.y;
@@ -551,6 +553,35 @@ public class PlatformGenerator : MonoBehaviour {
                                         TestingCameraShakeScript.shakeDuration = 1f;
                                     }
                                 }*/
+                            }
+                        }
+                //
+                        if (sceneName == "GGGFUTURE")
+                        {
+                            if (floorSelector == 0)
+                            {
+                                if (isftGate)
+                                {
+                                    if (Counts % ftGateThreshold == 0)
+                                    {
+                                        GameObject newftGate = ftGatePooler.GetPooledObject();
+                                        float ftGateXposition = Random.Range(11.3f, 11.3f);
+                                        Vector3 ftGatePosition = new Vector3(ftGateXposition, ftGateheight, 0f);
+                                        newftGate.transform.position = transform.position + ftGatePosition;
+                                        newftGate.transform.rotation = transform.rotation;
+                                        ftMainGateScript = newftGate.gameObject.GetComponent<ftMainGate>();
+                                        float ftRandomNum = Random.Range(1, 10);
+                                        if (ftRandomNum > 5)
+                                        {
+                                            ftMainGateScript.isGate = true;
+                                        }else
+                                        {
+                                            ftMainGateScript.isGate = false;
+                                        }
+                                        newftGate.SetActive(true);
+                                    }
+                                  
+                                }
                             }
                         }
                 //
