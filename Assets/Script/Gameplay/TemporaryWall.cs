@@ -27,7 +27,7 @@ public class TemporaryWall : MonoBehaviour {
                 _TempWall.SetActive(false);
             }
         }
-        if (SceneManager.GetActiveScene().name == "GGGPREHISTORIC" || SceneManager.GetActiveScene().name == "GGGICEAGE" || SceneManager.GetActiveScene().name == "GGGFUTURE")
+        if (SceneManager.GetActiveScene().name == "GGGPREHISTORIC" || SceneManager.GetActiveScene().name == "GGGICEAGE" /*|| SceneManager.GetActiveScene().name == "GGGFUTURE"*/)
         {
             if (LevelPassScript.LevelStatusAmt >= 36)
             {

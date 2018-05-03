@@ -99,6 +99,12 @@ public class PlatformGenerator : MonoBehaviour {
     public float ftGateheight;
     public int ftGateThreshold;
     public ftMainGate ftMainGateScript;
+    [Header("bottrap")]
+    public bool isftBot;
+    public ObjectPooler ftBotPooler;
+    public float ftBotheight;
+    public int ftBotThreshold;
+
   
 	void Start()
 	{
@@ -581,6 +587,25 @@ public class PlatformGenerator : MonoBehaviour {
                                         newftGate.SetActive(true);
                                     }
                                   
+                                }
+                            }
+                        }
+                //
+                        if (sceneName == "GGGFUTURE")
+                        {
+                            if (floorSelector == 1 || floorSelector == 2 || floorSelector == 3)
+                            {
+                                if (isftBot)
+                                {
+                                    if (Counts % ftBotThreshold == 0)
+                                    {
+                                        GameObject newftBot = ftBotPooler.GetPooledObject();
+                                        float ftBotXposition = Random.Range(2, 20);
+                                        Vector3 ftBotPosition = new Vector3(ftBotXposition, ftBotheight, 0f);
+                                        newftBot.transform.position = transform.position + ftBotPosition;
+                                        newftBot.transform.rotation = transform.rotation;
+                                        newftBot.SetActive(true);
+                                    }
                                 }
                             }
                         }
