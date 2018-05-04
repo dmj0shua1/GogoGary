@@ -576,7 +576,7 @@ public class PlatformGenerator : MonoBehaviour {
                                         newftGate.transform.position = transform.position + ftGatePosition;
                                         newftGate.transform.rotation = transform.rotation;
                                         ftMainGateScript = newftGate.gameObject.GetComponent<ftMainGate>();
-                                        float ftRandomNum = Random.Range(1, 10);
+                                        float ftRandomNum = Random.Range(1,10);
                                         if (ftRandomNum > 5)
                                         {
                                             ftMainGateScript.isGate = true;
@@ -600,7 +600,9 @@ public class PlatformGenerator : MonoBehaviour {
                                     if (Counts % ftBotThreshold == 0)
                                     {
                                         GameObject newftBot = ftBotPooler.GetPooledObject();
-                                        float ftBotXposition = Random.Range(2, 20);
+                                        float num1 = Random.Range(2, 2);
+                                        float num2 = Random.Range(20, 20);
+                                        float ftBotXposition = Random.Range(/*2, 20*/num1,num2);
                                         Vector3 ftBotPosition = new Vector3(ftBotXposition, ftBotheight, 0f);
                                         newftBot.transform.position = transform.position + ftBotPosition;
                                         newftBot.transform.rotation = transform.rotation;

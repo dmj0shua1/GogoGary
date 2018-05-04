@@ -35,8 +35,7 @@ TagManager:
   - pybird
   - ieBigFoot
   - ShakeZone
-  - gatetrap1
-  - gatetrap2
+  - trap1
   layers:
   - Default
   - TransparentFX
