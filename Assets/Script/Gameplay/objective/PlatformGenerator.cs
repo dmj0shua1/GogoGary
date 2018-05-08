@@ -600,8 +600,8 @@ public class PlatformGenerator : MonoBehaviour {
                                     if (Counts % ftBotThreshold == 0)
                                     {
                                         GameObject newftBot = ftBotPooler.GetPooledObject();
-                                        float num1 = Random.Range(2, 2);
-                                        float num2 = Random.Range(20, 20);
+                                        float num1 = Random.Range(3, 3);
+                                        float num2 = Random.Range(15, 15);
                                         float ftBotXposition = Random.Range(/*2, 20*/num1,num2);
                                         Vector3 ftBotPosition = new Vector3(ftBotXposition, ftBotheight, 0f);
                                         newftBot.transform.position = transform.position + ftBotPosition;

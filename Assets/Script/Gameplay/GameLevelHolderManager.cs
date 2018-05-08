@@ -379,7 +379,7 @@ public class GameLevelHolderManager : MonoBehaviour {
             }
             if (PlayerPrefs.GetInt("UnlockLevels") == 120 || PlayerPrefs.GetInt("UnlockLevels") == 121)
             {
-                if (LevelPassScript.LevelStatusAmt >= 121)
+                if (LevelPassScript.LevelStatusAmt >= 120)
                 {
 
                     if (PlayerPrefs.GetInt("ftTotalRescuePoints") != 60)
