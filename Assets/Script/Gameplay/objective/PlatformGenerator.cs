@@ -101,6 +101,8 @@ public class PlatformGenerator : MonoBehaviour {
     public ftMainGate ftMainGateScript;
     [Header("bottrap")]
     public bool isftBot;
+    public bool ischangebotPos;
+    public float maintBot;
     public ObjectPooler ftBotPooler;
     public float ftBotheight;
     public int ftBotThreshold;
@@ -600,10 +602,22 @@ public class PlatformGenerator : MonoBehaviour {
                                     if (Counts % ftBotThreshold == 0)
                                     {
                                         GameObject newftBot = ftBotPooler.GetPooledObject();
-                                        float num1 = Random.Range(3, 3);
-                                        float num2 = Random.Range(15, 15);
-                                        float ftBotXposition = Random.Range(/*2, 20*/num1,num2);
-                                        Vector3 ftBotPosition = new Vector3(ftBotXposition, ftBotheight, 0f);
+                                        
+                                        //float num1 = Random.Range(2, 2);
+                                        //float num2 = Random.Range(12, 12);
+                                        float ftBotXposition = Random.Range(/*num1,num2*/8,8);
+                                        float ftBotXposition2 = Random.Range(/*num1,num2*/19, 19);
+                                        if (ischangebotPos)
+                                        {
+                                            maintBot = ftBotXposition;
+                                            ischangebotPos = false;
+                                        }
+                                        else if(!ischangebotPos)
+                                        {
+                                            maintBot = ftBotXposition2;
+                                            ischangebotPos = true;
+                                        }
+                                        Vector3 ftBotPosition = new Vector3(/*ftBotXposition*/maintBot, ftBotheight, 0f);
                                         newftBot.transform.position = transform.position + ftBotPosition;
                                         newftBot.transform.rotation = transform.rotation;
                                         newftBot.SetActive(true);
