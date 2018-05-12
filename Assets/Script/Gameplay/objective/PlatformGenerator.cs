@@ -606,7 +606,7 @@ public class PlatformGenerator : MonoBehaviour {
                                         //float num1 = Random.Range(2, 2);
                                         //float num2 = Random.Range(12, 12);
                                         float ftBotXposition = Random.Range(/*num1,num2*/8,8);
-                                        float ftBotXposition2 = Random.Range(/*num1,num2*/19, 19);
+                                        float ftBotXposition2 = Random.Range(/*num1,num2*/18, 18);
                                         if (ischangebotPos)
                                         {
                                             maintBot = ftBotXposition;
