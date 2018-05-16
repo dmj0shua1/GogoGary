@@ -595,6 +595,10 @@ public class PlatformGenerator : MonoBehaviour {
                 //
                         if (sceneName == "GGGFUTURE")
                         {
+                            FtThresholdAdjust();
+                        }
+                        if (sceneName == "GGGFUTURE")
+                        {
                             if (floorSelector == 1 || floorSelector == 2 || floorSelector == 3)
                             {
                                 if (isftBot)
@@ -816,6 +820,66 @@ public class PlatformGenerator : MonoBehaviour {
         }
 
     }
+    //
+    public void FtThresholdAdjust()
+    {
+
+        for (int set1 = 101; set1 <= 102; set1++)
+        {
+            if (LevelPassScript.LevelStatusAmt == set1)
+            {
+            
+            }
+        }
+        for (int set2 = 103; set2 <= 107; set2++)
+        {
+            if (LevelPassScript.LevelStatusAmt == set2)
+            {
+                isftGate = true;
+                ftGateThreshold = 1;
+            }
+        }
+        for (int set3 = 108; set3 <= 112; set3++)
+        {
+            if (LevelPassScript.LevelStatusAmt == set3)
+            {
+                isftGate = true;
+                ftGateThreshold = 1;
+            }
+        }
+        for (int set4 = 113; set4 <= 117; set4++)
+        {
+            if (LevelPassScript.LevelStatusAmt == set4)
+            {
+                isftGate = true;
+                ftGateThreshold = 1;
+                isftBot = true;
+                ftBotThreshold = 5;
+            }
+        }
+        for (int set5 = 118; set5 <= 122; set5++)
+        {
+            if (LevelPassScript.LevelStatusAmt == set5)
+            {
+                isftGate = true;
+                ftGateThreshold = 1;
+                isftBot = true;
+                ftBotThreshold = 5;
+            }
+        }
+        for (int set6 = 123; set6 <= 125; set6++)
+        {
+            if (LevelPassScript.LevelStatusAmt == set6)
+            {
+                isftGate = true;
+                ftGateThreshold = 1;
+                isftBot = true;
+                ftBotThreshold = 5;
+            }
+        }
+
+    }
+    //
     public void fireHalfFloorMethod() 
     {
         FireHolderDivided = EndGenerate / 2;

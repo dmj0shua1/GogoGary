@@ -32,7 +32,7 @@ void Awake()
 {
     egManagerScript = GameObject.Find("Energy").GetComponent<EnergyManager>();
 
-    if (SceneManager.GetActiveScene().name == "GGG" || SceneManager.GetActiveScene().name == "GGGPYRAMID" || SceneManager.GetActiveScene().name == "GGGPREHISTORIC" || SceneManager.GetActiveScene().name == "GGGICEAGE")
+    if (SceneManager.GetActiveScene().name == "GGG" || SceneManager.GetActiveScene().name == "GGGPYRAMID" || SceneManager.GetActiveScene().name == "GGGPREHISTORIC" || SceneManager.GetActiveScene().name == "GGGICEAGE" || SceneManager.GetActiveScene().name == "GGGFUTURE")
     {
         LevelPassScript = GameObject.Find("Holder").GetComponent<LevelPass>();
         ImageDeath.SetActive(false);
@@ -211,7 +211,7 @@ void Awake()
 
     private void giveRewards()
     {
-        if (SceneManager.GetActiveScene().name == "Stage1" || SceneManager.GetActiveScene().name == "Stage2" || SceneManager.GetActiveScene().name == "Stage3" || SceneManager.GetActiveScene().name == "Stage4")
+        if (SceneManager.GetActiveScene().name == "Stage1" || SceneManager.GetActiveScene().name == "Stage2" || SceneManager.GetActiveScene().name == "Stage3" || SceneManager.GetActiveScene().name == "Stage4" || SceneManager.GetActiveScene().name == "Stage5")
         {
             //energy reward
             objRewardedAds.SetActive(false);
