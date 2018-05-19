@@ -1823,7 +1823,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 100
+  m_SortingOrder: 99
   m_Sprite: {fileID: 21300000, guid: 788a8cc7264427f4f9721960a637f72d, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
@@ -5277,7 +5277,7 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 353582507}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -371.5, y: -712.7, z: 0}
+  m_LocalPosition: {x: -413.8, y: -712.7, z: 0}
   m_LocalScale: {x: 0.5578814, y: 0.5578814, z: 0.5578815}
   m_Children: []
   m_Father: {fileID: 976940427}
@@ -5314,7 +5314,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 100
+  m_SortingOrder: 99
   m_Sprite: {fileID: 21300000, guid: 788a8cc7264427f4f9721960a637f72d, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
@@ -15709,8 +15709,8 @@ MonoBehaviour:
   phBirdPooler: {fileID: 53593180}
   phbirdheight: 4.5
   phbirdThreshold: 0
-  isSmudge: 0
-  SmudgeObject: {fileID: 1008414496}
+  isSmudge: 1
+  SmudgeObject: {fileID: 976940426}
   smudgeDivided: 0
   isBlizzard: 0
   BlizzardObject: {fileID: 1077114652}
@@ -27904,7 +27904,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 100
+  m_SortingOrder: 99
   m_Sprite: {fileID: 21300000, guid: 788a8cc7264427f4f9721960a637f72d, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
@@ -37139,7 +37139,7 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1454662018}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -372.2, y: -723.5, z: 0}
+  m_LocalPosition: {x: -414.1, y: -723.5, z: 0}
   m_LocalScale: {x: 0.5578814, y: 0.5578814, z: 0.5578815}
   m_Children: []
   m_Father: {fileID: 976940427}
@@ -37176,7 +37176,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 100
+  m_SortingOrder: 99
   m_Sprite: {fileID: 21300000, guid: 788a8cc7264427f4f9721960a637f72d, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
@@ -53601,7 +53601,7 @@ ParticleSystem:
   moveWithTransform: 0
   moveWithCustomTransform: {fileID: 0}
   scalingMode: 1
-  randomSeed: 1731093896
+  randomSeed: -15662774
   InitialModule:
     serializedVersion: 3
     enabled: 1
@@ -57535,7 +57535,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 100
+  m_SortingOrder: 99
   m_Sprite: {fileID: 21300000, guid: 788a8cc7264427f4f9721960a637f72d, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0

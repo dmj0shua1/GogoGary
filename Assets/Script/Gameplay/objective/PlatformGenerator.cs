@@ -501,7 +501,7 @@ public class PlatformGenerator : MonoBehaviour {
                             }
                         }
                 //  
-                        if (sceneName == "GGGPREHISTORIC" || sceneName == "GGGICEAGE")
+                        if (sceneName == "GGGPREHISTORIC" || sceneName == "GGGICEAGE" || sceneName == "GGGFUTURE")
                         {
                           
                             if (isSmudge)
