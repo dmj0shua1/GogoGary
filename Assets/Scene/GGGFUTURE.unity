@@ -22699,7 +22699,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: RUN AWAY FROM THE AVALANCHE
+  m_Text: RUN AWAY FROM THE LASER
 --- !u!222 &1018981312
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -22733,7 +22733,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   TextHolder: {fileID: 1018981311}
   Chinese: "\u9003\u96E2\u706B\u6E90"
-  English: RUN AWAY FROM THE AVALANCHE
+  English: RUN AWAY FROM THE LASER
 --- !u!1 &1035221820
 GameObject:
   m_ObjectHideFlags: 0
