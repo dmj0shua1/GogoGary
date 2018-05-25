@@ -38,8 +38,12 @@ public class LastStageInvoke : MonoBehaviour {
         {
             Activate4 = true;
 
-        } 
+        }
 	}
+    public void DisabledActivate() 
+    {
+        Activate4 = false;
+    }
     void Update()
     {
         PosX = ListTrans.transform.position.x;
@@ -64,7 +68,7 @@ public class LastStageInvoke : MonoBehaviour {
             }
             else
             {
-                StartCoroutine(AutoPlay2());
+                StartCoroutine(AutoPlay3());
                 PlayerPrefs.SetInt("LastLevelStagePickerSelect", 0);
             }
 
@@ -77,7 +81,7 @@ public class LastStageInvoke : MonoBehaviour {
             }
             else
             {
-                StartCoroutine(AutoPlay3());
+                StartCoroutine(AutoPlay4());
                 PlayerPrefs.SetInt("LastLevelStagePickerSelect", 0);
             }
 
@@ -103,6 +107,11 @@ public class LastStageInvoke : MonoBehaviour {
         NextBtn.onClick.Invoke();
 
     }
-  
+    IEnumerator AutoPlay4()
+    {
+        yield return new WaitForSeconds(0.001f);
+        NextBtn.onClick.Invoke();
+
+    }
   
 }

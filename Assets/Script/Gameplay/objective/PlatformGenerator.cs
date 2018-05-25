@@ -828,13 +828,14 @@ public class PlatformGenerator : MonoBehaviour {
         {
             if (LevelPassScript.LevelStatusAmt == set1)
             {
-            
+                isSmudge = true;
             }
         }
         for (int set2 = 103; set2 <= 107; set2++)
         {
             if (LevelPassScript.LevelStatusAmt == set2)
             {
+                isSmudge = true;
                 isftGate = true;
                 ftGateThreshold = 1;
             }
@@ -843,6 +844,7 @@ public class PlatformGenerator : MonoBehaviour {
         {
             if (LevelPassScript.LevelStatusAmt == set3)
             {
+                isSmudge = true;
                 isftGate = true;
                 ftGateThreshold = 1;
             }
@@ -851,6 +853,7 @@ public class PlatformGenerator : MonoBehaviour {
         {
             if (LevelPassScript.LevelStatusAmt == set4)
             {
+                isSmudge = true;
                 isftGate = true;
                 ftGateThreshold = 1;
                 isftBot = true;
@@ -861,6 +864,7 @@ public class PlatformGenerator : MonoBehaviour {
         {
             if (LevelPassScript.LevelStatusAmt == set5)
             {
+                isSmudge = true;
                 isftGate = true;
                 ftGateThreshold = 1;
                 isftBot = true;
@@ -871,6 +875,7 @@ public class PlatformGenerator : MonoBehaviour {
         {
             if (LevelPassScript.LevelStatusAmt == set6)
             {
+                isSmudge = true;
                 isftGate = true;
                 ftGateThreshold = 1;
                 isftBot = true;
