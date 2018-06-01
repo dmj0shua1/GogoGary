@@ -838,6 +838,7 @@ public class PlatformGenerator : MonoBehaviour {
                 isSmudge = true;
                 isftGate = true;
                 ftGateThreshold = 1;
+                DebriGenerationScript.randomDebrisThreshold = 15;
             }
         }
         for (int set3 = 108; set3 <= 112; set3++)
@@ -847,6 +848,7 @@ public class PlatformGenerator : MonoBehaviour {
                 isSmudge = true;
                 isftGate = true;
                 ftGateThreshold = 1;
+                DebriGenerationScript.randomDebrisThreshold = 15;
             }
         }
         for (int set4 = 113; set4 <= 117; set4++)
@@ -858,6 +860,7 @@ public class PlatformGenerator : MonoBehaviour {
                 ftGateThreshold = 1;
                 isftBot = true;
                 ftBotThreshold = 5;
+                DebriGenerationScript.randomDebrisThreshold = 15;
             }
         }
         for (int set5 = 118; set5 <= 122; set5++)
@@ -869,6 +872,7 @@ public class PlatformGenerator : MonoBehaviour {
                 ftGateThreshold = 1;
                 isftBot = true;
                 ftBotThreshold = 5;
+                DebriGenerationScript.randomDebrisThreshold = 20;
             }
         }
         for (int set6 = 123; set6 <= 125; set6++)
@@ -880,6 +884,7 @@ public class PlatformGenerator : MonoBehaviour {
                 ftGateThreshold = 1;
                 isftBot = true;
                 ftBotThreshold = 5;
+                DebriGenerationScript.randomDebrisThreshold = 25;
             }
         }
 
